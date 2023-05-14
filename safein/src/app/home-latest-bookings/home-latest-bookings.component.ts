@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Handles } from '../handles';
 
 @Component({
   selector: 'app-home-latest-bookings',
