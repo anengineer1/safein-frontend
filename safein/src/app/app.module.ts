@@ -9,6 +9,7 @@ import { BookingsViewerColumnBookingsComponent } from './components/bookings-vie
 import { BookingsViewerColumnCountriesComponent } from './components/bookings-viewer-column-countries/bookings-viewer-column-countries.component';
 import { BookingsViewerColumnCitiesComponent } from './components/bookings-viewer-column-cities/bookings-viewer-column-cities.component';
 import { BookingsViewerColumnHotelsComponent } from './components/bookings-viewer-column-hotels/bookings-viewer-column-hotels.component';
+import { BookingsViewerColumnRoomsComponent } from './components/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BookingsViewerColumnHotelsComponent } from './components/bookings-viewe
     BookingsViewerColumnBookingsComponent,
     BookingsViewerColumnCountriesComponent,
     BookingsViewerColumnCitiesComponent,
-    BookingsViewerColumnHotelsComponent
+    BookingsViewerColumnHotelsComponent,
+    BookingsViewerColumnRoomsComponent
   ],
   imports: [
     BrowserModule,
