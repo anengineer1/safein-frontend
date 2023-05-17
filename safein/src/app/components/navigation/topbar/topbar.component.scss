@@ -2,7 +2,6 @@
     height: 60px;
   }
 
-
 /* Bootstrap custom */
 .container-fluid{
     padding-left: 0rem;
@@ -25,15 +24,19 @@ input.form-control {
     
 }
 
+.navbar p,span{
+    font-family: 'space Mono';
+}
+
 .navbar_1{
 border-top-left-radius: 7px;
 border-top-right-radius: 7px;
 }
 
-.navbar_2{
+/* .navbar_2{
 
     box-shadow: 10px 10px 30px gray ;
-}
+} */
 
 /* Logo */
 .navbar-brand{
@@ -66,4 +69,13 @@ border-top-right-radius: 7px;
     
     margin-top: 0px;
     margin-right: 0px;
+}
+
+p, span{
+    font-size: smaller;
+    font-weight: 600;
+}
+
+nav-link{
+    height: 25px !important;
 }

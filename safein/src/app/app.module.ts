@@ -14,6 +14,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { BookingsViewerColumnRoomsComponent } from './components/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
 import { StyleTestComponent } from './components/style-test/style-test.component';
 import { TopbarComponent } from './components/navigation/topbar/topbar.component';
+import { DatebarComponent } from './components/navigation/topbar/datebar/datebar.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TopbarComponent } from './components/navigation/topbar/topbar.component
     BookingsViewerColumnRoomsComponent,
     StyleTestComponent,
     TopbarComponent,
+    DatebarComponent,
 
   ],
   imports: [

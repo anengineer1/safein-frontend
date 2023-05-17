@@ -75,6 +75,7 @@ h3 {
   font-size: 1.7rem;
 }
 
+
 /* ------------Body with medeiq ----------------*/
 
 
@@ -179,7 +180,10 @@ nav a {
 
 nav a:hover {
   color: #f5efdf;
-  background-color: #b8a464;
+  /* background-color: #b8186a; */
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #b8186a;
 }
 nav a.active {
   background-color: black;
