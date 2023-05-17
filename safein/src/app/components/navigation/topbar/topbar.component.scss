@@ -1,3 +1,7 @@
+.navbar-custom {
+    height: 60px;
+  }
+
 
 /* Bootstrap custom */
 .container-fluid{
@@ -13,10 +17,11 @@ input.form-control {
 }
 
 .font-nav{
-    font-size: 9px;
+    font-size: 10px;
+    font-family: "Space Mono", monospace;
     text-decoration:none;
     outline: none;
-    color: inherit;
+    color: bg-success;
     
 }
 
@@ -28,4 +33,37 @@ border-top-right-radius: 7px;
 .navbar_2{
 
     box-shadow: 10px 10px 30px gray ;
+}
+
+/* Logo */
+.navbar-brand{
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    
+}
+
+/* Logo */
+.nav-link{
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    
+}
+
+/* Toggler */
+.navbar-toggler{
+    border:0px;
+}
+
+.navbar-nav{
+    
+    margin-top: 0px;
+    margin-right: 0px;
 }
