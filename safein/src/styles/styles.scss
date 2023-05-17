@@ -87,8 +87,8 @@ button {
   color: #f5efdf;
   border: #aaa 1px solid;
   font-size: 1.2rem;
-  padding: 1rem;
-  margin-right: 1rem;
+  // padding: 1rem;  pensar qué hacer con esto?
+  // margin-right: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
   border-radius: 15px;
@@ -199,6 +199,22 @@ input[type="text"] {
   width: 100%;
   padding: 0.5rem;
 }
+
+// Extra classes
+.bubble {
+    color: #BCA162;
+    border: solid #BCA162 1px;
+    border-radius: 10px;
+    background-color: #F6EEDF;
+}
+
+.bubble-heading {
+    color: #BCA162;
+    border: solid #BCA162 1px;
+    border-radius: 5px;
+    background-color: #F6EEDF;
+}
+
 
 /*
   Copyright Google LLC. All Rights Reserved.
