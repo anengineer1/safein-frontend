@@ -6,21 +6,23 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<html>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-3 p-0">
+		<div class="col-md-1 p-0">
 			<div class="sidebar">
 				<app-navbar></app-navbar>
 			</div>
 		</div>
-		<div class="col-md-9">
-			<router-outlet></router-outlet>
+		<div class="col-md-11">
+			<div class="page">
+				<app-home></app-home>
+			</div>
 		</div>
 	</div>
 </div>
-
-
+<router-outlet></router-outlet>
+</html>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->

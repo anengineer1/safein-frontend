@@ -7,11 +7,17 @@ import { BookingsViewerColumnHotelsComponent } from './components/bookings-viewe
 import { BookingsViewerColumnComponent } from './components/bookings-viewer-column/bookings-viewer-column.component';
 import { HomeLatestBookingsComponent } from './components/home-latest-bookings/home-latest-bookings.component'
 import { BookingsViewerColumnRoomsComponent } from './components/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
 	{ // Home
 		path: "home",
-		component: HomeLatestBookingsComponent
+		component: HomeComponent, children: [
+			{
+				path:"",
+				component: HomeLatestBookingsComponent
+			}
+		]
 	},
 	{ // Bookings route
 		path: "bookings", component: BookingsViewerColumnComponent, children: [
