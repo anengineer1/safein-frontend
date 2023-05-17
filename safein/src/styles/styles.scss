@@ -1,0 +1,215 @@
+/* Font for titles */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+/* Font for Web*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Colors:
+primary: #564B14
+secondary:#B8A464
+success: #b8186a
+info: #F5EFDF
+dark: #3D393B
+light: #F5EFDF
+*/
+/* ------------Background Color ----------------*/
+.bg-primary {
+  background-color: #564b14 !important;
+}
+.bg-secondary {
+  background-color: #b8a464 !important;
+}
+.bg-success {
+  background-color: #b8186a !important;
+}
+.bg-light {
+  background-color: #f5efdf !important;
+}
+.bg-dark {
+  background-color: #3d393b !important;
+}
+/* ------------Text ----------------*/
+.text-primary {
+  color: #564b14 !important;
+}
+.text-secondary {
+  color: #b8a464 !important;
+}
+.text-success {
+  color: #b8186a !important;
+}
+.text-light {
+  color: #f5efdf !important;
+}
+.text-dark {
+  color: #3d393b !important;
+}
+
+/* ------------Titles ----------------*/
+h1 {
+  color: #564b14;
+  font-size: 2.5rem;
+  font-family: "Space Mono", monospace;
+}
+h2,
+h3,
+h4,
+h5 {
+  color: #564b14;
+  font-weight: lighter;
+  font-family: "Space Mono", monospace;
+}
+h3 {
+  font-size: 1.7rem;
+}
+
+/* ------------Body with medeiq ----------------*/
+body {
+  padding: 0.5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (min-width: 600px) {
+  body {
+    padding: 2rem;
+  }
+}
+
+/* ------------Input text ----------------*/
+body,
+input[text] {
+  color: #564b14;
+}
+a {
+  cursor: pointer;
+}
+
+button {
+  background-color: #564b14;
+  cursor: pointer;
+  color: #f5efdf;
+  border: #aaa 1px solid;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 15px;
+}
+button:hover,
+.btn:hover {
+  background-color: #f5efdf;
+  color: #564b14;
+  border: #564b14 2px solid;
+}
+button:disabled {
+  background-color: #f5efdf;
+  color: #aaa;
+  cursor: auto;
+}
+
+.btn-primary {
+  background-color: #564b14;
+  color: #f5efdf;
+  border:1px solid #f5efdf;
+}
+
+.btn-primary:hover {
+  background-color: #f5efdf;
+  color: #564b14;
+  border: #564b14 2px solid;
+}
+
+.btn-secondary {
+  background-color: #b8a464;
+  color: #f5efdf;
+  border: #f5efdf px solid;
+}
+
+.btn-success {
+  background-color: #b8186a;
+  color: #f5efdf;
+  border: #f5efdf 1px solid;
+}
+
+.btn-success:hover {
+  background-color: #f5efdf;
+  color: #b8186a;
+  border: #b8186a 1px solid;
+}
+
+.btn-info {
+  background-color: #f5efdf;
+  color: #414141;
+  border: #414141 2px solid;
+}
+
+.btn-info:hover {
+  background-color: #414141;
+  color: #f5efdf;
+  border: #f5efdf 1px solid;
+}
+
+.btn-dark {
+  background-color: #3d393b;
+  color: #f5efdf;
+  border: #f5efdf 1px solid;
+}
+.btn-dark:hover {
+  background-color: #f5efdf;
+  color: #3d393b;
+  border: #3d393b 2px solid;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #f5efdf;
+  color: #b8a464;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: #f5efdf;
+  background-color: #b8a464;
+}
+nav a.active {
+  background-color: black;
+  color: white;
+}
+hr {
+  margin: 1.5rem 0;
+}
+
+
+/* Inputs styles */
+input {
+  cursor: pointer;
+  color: #564b14;
+  border: #b8a464 2px solid;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 15px;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+/*
+  Copyright Google LLC. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at https://angular.io/license
+  */

@@ -15,10 +15,14 @@
     "@angular/compiler": "^16.0.0",
     "@angular/core": "^16.0.0",
     "@angular/forms": "^16.0.0",
+    "@angular/language-server": "^16.0.0",
+    "@angular/language-service": "^16.1.0-next.0",
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
     "bootstrap-icons": "^1.10.5",
+    "angular": "^1.8.3",
+
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

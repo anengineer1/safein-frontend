@@ -11,6 +11,8 @@ import { BookingsViewerColumnCitiesComponent } from './components/bookings-viewe
 import { BookingsViewerColumnHotelsComponent } from './components/bookings-viewer-column-hotels/bookings-viewer-column-hotels.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BookingsViewerColumnRoomsComponent } from './components/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
+import { StyleTestComponent } from './components/style-test/style-test.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,9 @@ import { HomeComponent } from './pages/home/home.component';
     BookingsViewerColumnHotelsComponent,
     NavbarComponent,
     HomeComponent
+    BookingsViewerColumnRoomsComponent,
+    StyleTestComponent,
+
   ],
   imports: [
     BrowserModule,

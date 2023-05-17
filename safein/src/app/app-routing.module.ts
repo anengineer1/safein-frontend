@@ -6,6 +6,7 @@ import { BookingsViewerColumnCountriesComponent } from './components/bookings-vi
 import { BookingsViewerColumnHotelsComponent } from './components/bookings-viewer-column-hotels/bookings-viewer-column-hotels.component';
 import { BookingsViewerColumnComponent } from './components/bookings-viewer-column/bookings-viewer-column.component';
 import { HomeLatestBookingsComponent } from './components/home-latest-bookings/home-latest-bookings.component'
+import { BookingsViewerColumnRoomsComponent } from './components/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
 
 const routes: Routes = [
 	{ // Home
@@ -29,7 +30,12 @@ const routes: Routes = [
 			{
 				path: "hotelsview",
 				component: BookingsViewerColumnHotelsComponent
+			},
+			{
+				path: "roomsview",
+				component: BookingsViewerColumnRoomsComponent
 			}
+
 		]
 	}
 ];
