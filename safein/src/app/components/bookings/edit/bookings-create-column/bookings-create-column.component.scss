@@ -1,8 +1,18 @@
 .box__container{
     border: 1px solid transparent;
     border-radius: 10px;
+ /*    height: 100vh; */
 }
 
 h2{
     color: white !important;
+}
+
+
+.nav-link:focus, .nav-link:hover{
+    background-color:#B9A667 !important;
+}
+
+.nav-link:active{
+    background-color: #B9A667 !important;
 }

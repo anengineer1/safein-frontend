@@ -56,7 +56,7 @@ const routes: Routes = [
 				component: BookingEditComponent
 			},
 			{
-				path:"booking_edit",
+				path:"booking_delete",
 				component: BookingDeleteComponent
 			}
 

@@ -1,35 +1,23 @@
-
-
 <!-- Component that contains all the block relative the booking edition: create-edit-delete -->
 <div class="container mt-3 bg-success rounded ">
     <h2>Edit Bookings</h2>
 </div>
 
-<div class="box__container bg-light navbar navbar-expand-lg">
-    <div id="edit-bookings" class="container">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="ms-3 me-3 mt-3">
-                <a href="" data-toggle="tab " class="nav-link"><i class="bi bi-plus-lg me-2"></i>Create Booking</a>
-            </li >
-            <li class="ms-3 me-3 mt-3" >
-                <a href="#2tab" data-toggle="tab" class="nav-link"><i class="bi bi-pencil-square me-2"></i>Edit Booking</a>
-            </li>
-            <li class="ms-3 me-3 mt-3">
-                <a href="#3tab" data-toggle="tab" class="nav-link"><i class="bi bi-trash3 me-2"></i>Delete Booking</a>
-            </li>
-        </ul>
-
-<!--         <div class="tab-content clearfix">
-            <div class="tab-pane active" id="1tab">
-                <h3>Same as example 1 but we have now styled the tab's corner</h3>
-            </div>
-            <div class="tab-pane" id="2tab">
-                <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for
-                    the tab</h3>
-            </div>
-            <div class="tab-pane" id="3tab">
-                <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
-            </div>
-        </div> -->
+<nav>
+    <div class="nav nav-tabs bg-light navbar-expand-lg box__container " id="nav-tab" role="tablist">
+      <button class="nav-link active rounded text-dark" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i
+        class="bi bi-plus-lg me-2"></i>Create a booking</button>
+      <button class="nav-link rounded text-dark" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="bi bi-pencil-square me-2"></i>Edit a booking</button>
+      <button class="nav-link rounded text-dark" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="bi bi-trash3 me-2"></i>Delete a booking</button>
     </div>
-</div>
+  </nav>
+  <div class="tab-content bg-light rounded mt-1" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0"><app-booking-create></app-booking-create></div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0"><app-booking-edit></app-booking-edit></div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0"><app-booking-delete></app-booking-delete></div>
+  </div>
+
+
+
+
+
