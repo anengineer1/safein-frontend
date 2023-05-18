@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeLatestBookingsComponent } from './components/home-latest-bookings/home-latest-bookings.component';
@@ -13,7 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BookingsViewerColumnRoomsComponent } from './components/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
 import { StyleTestComponent } from './components/style-test/style-test.component';
-import { BookingListComponent } from './components/last-booking-list/booking-list.component';
+import { ExpandedSidebarComponent } from './components/expanded-sidebar/expanded-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +27,13 @@ import { BookingListComponent } from './components/last-booking-list/booking-lis
     HomeComponent,
     BookingsViewerColumnRoomsComponent,
     StyleTestComponent,
-    BookingListComponent,
+    ExpandedSidebarComponent
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

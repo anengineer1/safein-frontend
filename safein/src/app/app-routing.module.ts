@@ -34,7 +34,7 @@ const routes: Routes = [
 			{
 				path: "roomsview",
 				component: BookingsViewerColumnRoomsComponent
-			}
+			},
 
 		]
 	}

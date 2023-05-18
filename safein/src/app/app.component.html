@@ -9,15 +9,21 @@
 
 <div class="container-fluid">
 	<div class="row">
+
+		<!--<app-style-test></app-style-test>-->
+		<router-outlet></router-outlet>
+
 		<div class="col-md-3 p-0">
 			<div class="sidebar">
 				<app-navbar></app-navbar>
-				<app-booking-list></app-booking-list>
+				<!--<app-booking-list></app-booking-list>-->
+
 			</div>
 		</div>
 		<div class="col-md-9">
 			<router-outlet></router-outlet>
 		</div>
+
 	</div>
 </div>
 
