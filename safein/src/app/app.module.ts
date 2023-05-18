@@ -13,7 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BookingsViewerColumnRoomsComponent } from './components/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
 import { StyleTestComponent } from './components/style-test/style-test.component';
-import { BookingListComponent } from './components/booking-list/booking-list.component';
+import { BookingListComponent } from './components/last-booking-list/booking-list.component';
 
 @NgModule({
   declarations: [
