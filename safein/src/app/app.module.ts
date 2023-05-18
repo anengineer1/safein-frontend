@@ -24,7 +24,7 @@ import { StyleTestComponent } from './components/style-test/style-test.component
     BookingsViewerColumnCitiesComponent,
     BookingsViewerColumnHotelsComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
     BookingsViewerColumnRoomsComponent,
     StyleTestComponent,
 
