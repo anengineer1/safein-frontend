@@ -24,31 +24,29 @@ const routes: Routes = [
 	{ // Bookings route
 		path: "bookings",
 		component: BookingsComponent, children: [
-			{ // Bookings route
-				path: "bookings", component: BookingsViewerColumnComponent, children: [
-					{
-						path: "bookingsview",
-						component: BookingsViewerColumnBookingsComponent
-					},
-					{
-						path: "countriesview",
-						component: BookingsViewerColumnCountriesComponent
-					},
-					{
-						path: "citiesview",
-						component: BookingsViewerColumnCitiesComponent
-					},
-					{
-						path: "hotelsview",
-						component: BookingsViewerColumnHotelsComponent
-					},
-					{
-						path: "roomsview",
-						component: BookingsViewerColumnRoomsComponent
-					}
 
-				]
+			{
+				path: "bookingsview",
+				component: BookingsViewerColumnBookingsComponent
+			},
+			{
+				path: "countriesview",
+				component: BookingsViewerColumnCountriesComponent
+			},
+			{
+				path: "citiesview",
+				component: BookingsViewerColumnCitiesComponent
+			},
+			{
+				path: "hotelsview",
+				component: BookingsViewerColumnHotelsComponent
+			},
+			{
+				path: "roomsview",
+				component: BookingsViewerColumnRoomsComponent
 			}
+
+
 		]
 	}
 ];
