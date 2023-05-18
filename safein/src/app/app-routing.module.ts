@@ -8,6 +8,10 @@ import { BookingsViewerColumnComponent } from './components/bookings/bookings-vi
 import { HomeLatestBookingsComponent } from './components/home-latest-bookings/home-latest-bookings.component'
 import { BookingsViewerColumnRoomsComponent } from './components/bookings/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BookingEditComponent } from './components/bookings/edit/booking-edit/booking-edit.component';
+import { BookingCreateComponent } from './components/bookings/edit/booking-create/booking-create.component';
+import { BookingsCreateColumnComponent } from './components/bookings/edit/bookings-create-column/bookings-create-column.component';
+import { BookingDeleteComponent } from './components/bookings/edit/booking-delete/booking-delete.component';
 
 const routes: Routes = [
 	{ // Home
@@ -40,6 +44,20 @@ const routes: Routes = [
 			{
 				path: "roomsview",
 				component: BookingsViewerColumnRoomsComponent
+			},
+			{
+				path: "bookingedit",
+				component: BookingsCreateColumnComponent
+			},{
+				path: "booking_create",
+				component: BookingCreateComponent
+			},{
+				path:"booking_edit",
+				component: BookingEditComponent
+			},
+			{
+				path:"booking_edit",
+				component: BookingDeleteComponent
 			}
 
 		]
