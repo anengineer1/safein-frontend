@@ -1,4 +1,5 @@
-<div class="input-group mb-3">
+<!-- <div class="d-flex flex-column m-3 col col-12 justify-content-center align-items-right"> -->
+<div class="input-group mb-3 m-3">
 	<button class="btn btn-primary" type="button">By bookings Id</button>
 	<button class="btn btn-primary" type="button">by user Id</button>
 	<button class="btn btn-primary" type="button">by customer Id</button>
@@ -17,21 +18,81 @@
 			<th scope="col">Panding Pay</th>
 			<th scope="col">Country</th>
 		</tr>
+
 	</thead>
 	<tbody>
-		<tr  data-bs-toggle="modal" data-bs-target="#myModal">
+		<tr data-bs-toggle="collapse" data-bs-target="#demo">
 			<th scope="row">1</th>
 			<td>2023-09-14T12:00:00</td>
 			<td>2023-09-16T12:00:00</td>
 			<td>False</td>
 			<td>Bhutan</td>
 		</tr>
+		<tr id="demo" class="collapse">
+			<td colspan=5>
+				<h3>Booking</h3>
+				<hr>
+				<p>Id: 1</p>
+				<p>Date of arrival: 2023-09-14T12:00:00</p>
+				<p>Departure date: 2023-09-16T12:00:00</p>
+				<h4>Booking data:</h4>
+				<p>Id: 1</p>
+				<p>Ammount: 0</p>
+				<p>Number of people: 0</p>
+				<p>Payed: False</p>
+				<p>Payment pending: True</p>
+				<h4>Customer:</h4>
+				<p>Id: 2</p>
+				<p>Name: Robert Kappa</p>
+				<p>Email: rcopa@gmail.com</p>
+				<p>Press Media: Freelancer</p>
+				<p>Doc Identifier: DNI</p>
+				<p>Num Identifier: 20394826</p>
+				<p>Phonenumber: +34183564784</p>
+				<h5>Customer county:</h5>
+				<p>Country code: SO</p>
+				<p>Country name: Somalia</p>
+				<p>Situation: War</p>
+				<p>Longitude: 10</p>
+				<p>Latitude: 49</p>
+				<h4>Hotel</h4>
+				<p>Id: 1</p>
+				<p>Name: Hotel Palace</p>
+				<p>Phonenumber: +34555555555</p>
+				<p>Email: reboca@gmail.com</p>
+				<p>Address: Arbeitzer street 5</p>
+				<p>Latitude: 37.7749</p>
+				<p>Longitude: -122.4194</p>
+				<p>Security level: Diplomatic coverage and private security</p>
+				<p>Energy Suficient: True</p>
+				<h5>Room:</h5>
+				<p>Id: 1</p>
+				<p>Code: 103</p>
+				<p>Number of people: 1</p>
+				<p>Price per night: 59.99</p>
+				<p>Internet Type: Fiber</p>
+				<p>Has terrace: True</p>
+				<h5>Hotel's City:</h5>
+				<p>id: 1</p>
+				<p>Name: Kirtze</p>
+				<p>Latitude: 37.7749</p>
+				<p>Longitude: -122.4194</p>
+				<h5>Hotel's Country</h5>
+				<p>Country code: BU</p>
+				<p>Country name: Bhutan</p>
+				<p>Situation: War</p>
+				<p>Longitude: 10</p>
+				<p>Latitude: 49</p>
+
+			</td>
+		</tr>
+
 	</tbody>
 </table>
 
 
 <!-- The Modal -->
-<div class="modal" id="myModal">
+<div class="modal" id="bookingsModal">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content bubble shadow">
 

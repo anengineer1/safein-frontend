@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./bookings-viewer-column-rooms.component.scss']
 })
 export class BookingsViewerColumnRoomsComponent {
-
 }
