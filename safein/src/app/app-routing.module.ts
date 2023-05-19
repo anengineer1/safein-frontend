@@ -4,8 +4,6 @@ import { BookingsViewerColumnBookingsComponent } from './components/bookings/boo
 import { BookingsViewerColumnCitiesComponent } from './components/bookings/bookings-viewer-column-cities/bookings-viewer-column-cities.component';
 import { BookingsViewerColumnCountriesComponent } from './components/bookings/bookings-viewer-column-countries/bookings-viewer-column-countries.component';
 import { BookingsViewerColumnHotelsComponent } from './components/bookings/bookings-viewer-column-hotels/bookings-viewer-column-hotels.component';
-import { BookingsViewerColumnComponent } from './components/bookings/bookings-viewer-column/bookings-viewer-column.component';
-import { HomeLatestBookingsComponent } from './components/home-latest-bookings/home-latest-bookings.component'
 import { BookingsViewerColumnRoomsComponent } from './components/bookings/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BookingEditComponent } from './components/bookings/edit/booking-edit/booking-edit.component';
@@ -37,7 +35,7 @@ const routes: Routes = [
 				path: "home",
 				component: HomeComponent
 			},
-			{ // Hotels/Rooms
+			{ // Customers
 				path: "customers",
 				component: CustomersComponent
 			},
@@ -52,44 +50,7 @@ const routes: Routes = [
 
 			{ // Bookings route
 				path: "bookings",
-				component: BookingsComponent, children: [
-
-					{
-						path: "bookingsview",
-						component: BookingsViewerColumnBookingsComponent
-					},
-					{
-						path: "countriesview",
-						component: BookingsViewerColumnCountriesComponent
-					},
-					{
-						path: "citiesview",
-						component: BookingsViewerColumnCitiesComponent
-					},
-					{
-						path: "hotelsview",
-						component: BookingsViewerColumnHotelsComponent
-					},
-					{
-						path: "roomsview",
-						component: BookingsViewerColumnRoomsComponent
-					},
-
-					{
-						path: "bookingedit",
-						component: BookingsCreateColumnComponent
-					}, {
-						path: "booking_create",
-						component: BookingCreateComponent
-					}, {
-						path: "booking_edit",
-						component: BookingEditComponent
-					},
-					{
-						path: "booking_delete",
-						component: BookingDeleteComponent
-					}
-				]
+				component: BookingsComponent
 			}
 		]
 	}
