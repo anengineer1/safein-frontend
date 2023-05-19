@@ -16,6 +16,10 @@ import { StyleTestComponent } from './components/style-test/style-test.component
 import { TopbarComponent } from './components/navigation/topbar/topbar.component';
 import { DatebarComponent } from './components/navigation/topbar/datebar/datebar.component';
 import { BookingsComponent } from './pages/bookings/bookings.component';
+import { BookingsCreateColumnComponent } from './components/bookings/edit/bookings-create-column/bookings-create-column.component';
+import { BookingCreateComponent } from './components/bookings/edit/booking-create/booking-create.component';
+import { BookingEditComponent } from './components/bookings/edit/booking-edit/booking-edit.component';
+import { BookingDeleteComponent } from './components/bookings/edit/booking-delete/booking-delete.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,10 @@ import { BookingsComponent } from './pages/bookings/bookings.component';
     TopbarComponent,
     DatebarComponent,
     BookingsComponent,
+    BookingsCreateColumnComponent,
+    BookingCreateComponent,
+    BookingEditComponent,
+    BookingDeleteComponent,
 
   ],
   imports: [
