@@ -1,66 +1,89 @@
-<!------------- Formulario: Alta Booking ------------------>
+<!------------- Formulario: Alta Hotel ------------------>
 <div class="d-flex flex-column m-3 col col-12 justify-content-center align-items-right">
     <!--       Create a handle/booking -->
     <form class="d-flex flex-column m-3 row justify-content-center align-items-center ">
-        <h3 class="mb-1">Create a handle/booking</h3>
+        <h3 class="mb-1">Create a Room/Hotel</h3>
 
         <div class="row">
-        <!-- Create a Booking -->
+        <!-- Create a Hotel -->
         <div class="col col-6 g-1 mt-3 mb-3">
 
-            <h6 class="mt-1 g-0 text-light bg-dark col-6 rounded">Add a Booking</h6>
+            <h6 class="mt-1 g-0 text-light bg-dark col-6 rounded">Add a Hotel</h6>
             <!-- AMOUNT PRICE  -->
             <div class="row g-3 mb-1 align-items-center">
                 <div class="col-6 col-sm-6">
-                    <label for="inputAmount" class="col-form-label">Amount: </label>
+                    <label for="inputAmount" class="col-form-label">name: </label>
                 </div>
                 <div class="col-6">
-                    <input type="number" id="inputAmount" class="form-control" #bookingAmount>
+                    <input type="text" id="inputAmount" class="form-control" #bookingAmount>
                 </div>
             </div>
-            <!-- NUM PEOPLE IN BOOKING  -->
+            <!-- NUM PEOPLE IN HOTEL  -->
             <div class="row g-3 mb-1 align-items-center">
                 <div class="col-6 col-sm-6">
-                    <label for="inputpeoplenumber" class="col-form-label">People number: </label>
+                    <label for="inputpeoplenumber" class="col-form-label">Phonenumber: </label>
                 </div>
                 <div class="col-6">
                     <input type="number" id="inputpeoplenumber" class="form-control" #bookingpeoplenumber>
                 </div>
             </div>
+            <div class="row g-3 mb-1 align-items-center">
+                <div class="col-6 col-sm-6">
+                    <label for="inputpeoplenumber" class="col-form-label">latitude: </label>
+                </div>
+                <div class="col-6">
+                    <input type="number" id="inputpeoplenumber" class="form-control" #bookingpeoplenumber>
+                </div>
+            </div>
+            <div class="row g-3 mb-1 align-items-center">
+                <div class="col-6 col-sm-6">
+                    <label for="inputpeoplenumber" class="col-form-label">longitude: </label>
+                </div>
+                <div class="col-6">
+                    <input type="number" id="inputpeoplenumber" class="form-control" #bookingpeoplenumber>
+                </div>
+            </div>
+                <div class="row g-3 mb-1 align-items-center">
+                <div class="col-6 col-sm-6">
+                    <label for="inputpeoplenumber" class="col-form-label">address: </label>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="inputpeoplenumber" class="form-control" #bookingpeoplenumber>
+                </div>
+            </div>
+                <div class="row g-3 mb-1 align-items-center">
+                <div class="col-6 col-sm-6">
+                    <label for="inputpeoplenumber" class="col-form-label">email: </label>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="inputpeoplenumber" class="form-control" #bookingpeoplenumber>
+                </div>
+            </div>
             <!-- CUSTOMER EMAIL  -->
             <div class="row g-3 mb-1 me-0 align-items-center">
                 <div class="col-6 col-sm-6">
-                    <label for="selectCustomer" class="col-form-label">Customer email:</label>
+                    <label for="selectCustomer" class="col-form-label">Security Level:</label>
                 </div>
                 <div class="col-6">
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" #customeremail>
-                        <option selected>Select a customer email</option>
-                        <option value="1">email 1</option>
-                        <option value="2">email 2</option>
-                        <option value="3">email 3</option>
+                        <option selected>Select a security level</option>
+                        <option value="1">Diplomatic coverage and private security</option>
+                        <option value="2">Private security</option>
+                        <option value="3">Diplomatic coverage</option>
                     </select>
                 </div>
 
                 <!-- IS PAYED  -->
                 <div class="row g-3 mb-1">
                     <div class="col-6 col-sm-6">
-                        <label for="inputispayed" class="col-form-label">IsPayed? </label>
+                        <label for="inputispayed" class="col-form-label">Energy suficiency? </label>
                     </div>
                     <div class="col-6">
                         <input type="checkbox" id="inputispayed" class="form-control checkbox-input float-right" #bookingpayed>
                     </div>
                 </div>
 
-                <!-- IS PENDING PAY  -->
-                <div class="row g-3 mb-1 align-items-right">
-                    <div class="col-6 col-sm-6">
-                        <label for="inputispending" class="col-form-label">Is Pending Pay? </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="checkbox" id="inputispending" class="form-control checkbox-input" #bookingpending>
-                    </div>
-                </div>
-            </div>
+                
             <!--     BUTTOM to add a handle -->
             <div class="row g-3 mb-3 align-items-center">
                 <div class="col-9 col-sm-2">
@@ -72,53 +95,57 @@
         <!-- Create a Handle -->
         <div class="col col-6 g-1 mb-3">
 
-            <h6 class="mt-3 g-0 text-light bg-dark col-6 rounded">Add a Handle</h6>
+            <h6 class="mt-3 g-0 text-light bg-dark col-6 rounded">Add a Room</h6>
             <!-- ARRIVAL DATE  -->
             <div class="row g-6 mb-1 align-items-center">
                 <div class="col-6 col-sm-6">
-                    <label for="inputarrival" class="col-form-label">Arrival Date: </label>
+                    <label for="inputarrival" class="col-form-label">Num people: </label>
                 </div>
                 <div class="col-6">
-                    <input type="date" id="inputarrival" class="form-control" #arrivalDate>
+                    <input type="number" id="inputarrival" class="form-control" #arrivalDate>
                 </div>
             </div>
             <!-- DEPARTURE DATE  -->
             <div class="row g-3 mb-1 align-items-center">
                 <div class="col-6 col-sm-6">
-                    <label for="inputdeparture" class="col-form-label">Departure Date: </label>
+                    <label for="inputdeparture" class="col-form-label">price per night: </label>
                 </div>
                 <div class="col-6">
-                    <input type="date" id="inputdeparture" class="form-control" #departureDate>
+                    <input type="number" id="inputdeparture" class="form-control" #departureDate>
                 </div>
             </div>
             <!-- BOOKING NUMBER  -->
             <div class="row g-3 mb-1 align-items-center">
                 <div class="col-6 col-sm-6">
-                    <label for="inputBookingNumber" class="col-form-label">Booking Number:</label>
+                    <label for="inputBookingNumber" class="col-form-label">Internet type:</label>
                 </div>
                 <div class="col-6">
                     <select class="form-select form-select-sm" id="inputBookingNumber"
                         aria-label="form-select-sm example" #bookingNumber>
-                        <option selected>Select booking number</option>
-                        <option value="1">booking 1</option>
-                        <option value="2">booking 2</option>
-                        <option value="3">booking 3</option>
+                        <option selected>Select internet type</option>
+                        <option value="1">Fiber</option>
+                        <option value="2">Cable</option>
+                        <option value="3">Satellite</option>
                     </select>
                 </div>
             </div>
             <!-- ROOM DATE  -->
-            <div class="row g-3 mb-1 align-items-center">
+            <!-- IS PAYED  -->
+            <div class="row g-3 mb-1">
                 <div class="col-6 col-sm-6">
-                    <label for="inputroomnumber" class="col-form-label">Room Number:</label>
+                    <label for="inputispayed" class="col-form-label">is smoker? </label>
                 </div>
                 <div class="col-6">
-                    <select class="form-select form-select-sm" id="inputRoomNumber" aria-label=".form-select-sm example"
-                        #roomNumber>
-                        <option selected>Select a room number</option>
-                        <option value="1">Room id 1</option>
-                        <option value="2">Room id 2</option>
-                        <option value="3">Room id 3</option>
-                    </select>
+                    <input type="checkbox" id="inputispayed" class="form-control checkbox-input float-right" #bookingpayed>
+                </div>
+            </div>
+             <!-- IS PAYED  -->
+             <div class="row g-3 mb-1">
+                <div class="col-6 col-sm-6">
+                    <label for="inputispayed" class="col-form-label">Has terrace? </label>
+                </div>
+                <div class="col-6">
+                    <input type="checkbox" id="inputispayed" class="form-control checkbox-input float-right" #bookingpayed>
                 </div>
             </div>
 
@@ -131,4 +158,3 @@
 
         </div>
     </div>
-    </form>

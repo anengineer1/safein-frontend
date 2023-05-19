@@ -30,6 +30,7 @@ import { CustomersComponent } from './pages/customers/customers.component';
 import { RoomHotelsCreateComponent } from './components/rooms-hotels/edit/room-hotels-create/room-hotels-create.component';
 import { RoomHotelsDeleteComponent } from './components/rooms-hotels/edit/room-hotels-delete/room-hotels-delete.component';
 import { RoomHotelsEditComponent } from './components/rooms-hotels/edit/room-hotels-edit/room-hotels-edit.component';
+import { RoomHotelsColumncreationComponent } from './components/rooms-hotels/edit/room-hotels-columncreation/room-hotels-columncreation.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { RoomHotelsEditComponent } from './components/rooms-hotels/edit/room-hot
     RoomHotelsCreateComponent,
     RoomHotelsDeleteComponent,
     RoomHotelsEditComponent,
+    RoomHotelsColumncreationComponent
 
   ],
   imports: [
