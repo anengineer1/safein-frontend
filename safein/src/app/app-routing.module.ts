@@ -32,12 +32,7 @@ const routes: Routes = [
 
 			{ // Home
 				path: "home",
-				component: HomeComponent, children: [
-					{
-						path: "latestbookings",
-						component: HomeLatestBookingsComponent
-					}
-				]
+				component: HomeComponent
 			},
 			{ // Bookings route
 				path: "bookings",
