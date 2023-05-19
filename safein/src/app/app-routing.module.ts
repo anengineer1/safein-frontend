@@ -42,11 +42,11 @@ const routes: Routes = [
 				component: CustomersComponent
 			},
 			{ // Hotels/Rooms
-				path: "rooms",
+				path: "rooms-hotels",
 				component: RoomsHotelsComponent
 			},
 			{ // Cities/Countries
-				path: "cities",
+				path: "cities-countries",
 				component: CitiesCountriesComponent
 			},
 
