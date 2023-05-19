@@ -20,7 +20,7 @@ import { WorkingspaceComponent } from './pages/workingspace/workingspace.compone
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/account', pathMatch: 'full' },
-	, {//User Account: Signin
+	{//User Account: Signin
 		path: "signin",
 		component: SigninComponent
 	}, {
@@ -29,7 +29,7 @@ const routes: Routes = [
 	}, {
 		path: "workingspace",
 		component: WorkingspaceComponent, children: [
-			
+
 			{ // Home
 				path: "home",
 				component: HomeComponent, children: [
@@ -38,56 +38,54 @@ const routes: Routes = [
 						component: HomeLatestBookingsComponent
 					}
 				]
+			},
+			{ // Bookings route
+				path: "bookings",
+				component: BookingsComponent, children: [
+
+					{
+						path: "bookingsview",
+						component: BookingsViewerColumnBookingsComponent
+					},
+					{
+						path: "countriesview",
+						component: BookingsViewerColumnCountriesComponent
+					},
+					{
+						path: "citiesview",
+						component: BookingsViewerColumnCitiesComponent
+					},
+					{
+						path: "hotelsview",
+						component: BookingsViewerColumnHotelsComponent
+					},
+					{
+						path: "roomsview",
+						component: BookingsViewerColumnRoomsComponent
+					},
+
+					{
+						path: "bookingedit",
+						component: BookingsCreateColumnComponent
+					}, {
+						path: "booking_create",
+						component: BookingCreateComponent
+					}, {
+						path: "booking_edit",
+						component: BookingEditComponent
+					},
+					{
+						path: "booking_delete",
+						component: BookingDeleteComponent
+					}
+				]
 			}
 		]
 	}
-	,
-	{ // Bookings route
-		path: "bookings",
-		component: BookingsComponent, children: [
-
-			{
-				path: "bookingsview",
-				component: BookingsViewerColumnBookingsComponent
-			},
-			{
-				path: "countriesview",
-				component: BookingsViewerColumnCountriesComponent
-			},
-			{
-				path: "citiesview",
-				component: BookingsViewerColumnCitiesComponent
-			},
-			{
-				path: "hotelsview",
-				component: BookingsViewerColumnHotelsComponent
-			},
-			{
-				path: "roomsview",
-				component: BookingsViewerColumnRoomsComponent
-			},
-
-			{
-				path: "bookingedit",
-				component: BookingsCreateColumnComponent
-			}, {
-				path: "booking_create",
-				component: BookingCreateComponent
-			}, {
-				path: "booking_edit",
-				component: BookingEditComponent
-			},
-			{
-				path: "booking_delete",
-				component: BookingDeleteComponent
-			}
-		]
-	}
-
 ];
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
