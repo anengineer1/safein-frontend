@@ -16,6 +16,9 @@ import { BookingsComponent } from './pages/bookings/bookings.component';
 import { SigninComponent } from './components/user-account/signin/signin.component';
 import { AccountComponent } from './pages/account/account.component';
 import { WorkingspaceComponent } from './pages/workingspace/workingspace.component';
+import { RoomsHotelsComponent } from './pages/rooms-hotels/rooms-hotels.component';
+import { CitiesCountriesComponent } from './pages/cities-countries/cities-countries.component';
+import { CustomersComponent } from './pages/customers/customers.component';
 
 
 const routes: Routes = [
@@ -34,6 +37,19 @@ const routes: Routes = [
 				path: "home",
 				component: HomeComponent
 			},
+			{ // Hotels/Rooms
+				path: "customers",
+				component: CustomersComponent
+			},
+			{ // Hotels/Rooms
+				path: "rooms",
+				component: RoomsHotelsComponent
+			},
+			{ // Cities/Countries
+				path: "cities",
+				component: CitiesCountriesComponent
+			},
+
 			{ // Bookings route
 				path: "bookings",
 				component: BookingsComponent, children: [

@@ -24,6 +24,9 @@ import { SigninComponent } from './components/user-account/signin/signin.compone
 import { AccountComponent } from './pages/account/account.component';
 import { WorkingspaceComponent } from './pages/workingspace/workingspace.component';
 import { LatestBookingperuserComponent } from './components/bookings/latest-bookingperuser/latest-bookingperuser.component';
+import { RoomsHotelsComponent } from './pages/rooms-hotels/rooms-hotels.component';
+import { CitiesCountriesComponent } from './pages/cities-countries/cities-countries.component';
+import { CustomersComponent } from './pages/customers/customers.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { LatestBookingperuserComponent } from './components/bookings/latest-book
     AccountComponent,
     WorkingspaceComponent,
     LatestBookingperuserComponent,
+    RoomsHotelsComponent,
+    CitiesCountriesComponent,
+    CustomersComponent,
 
   ],
   imports: [
