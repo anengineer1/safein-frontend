@@ -8,35 +8,24 @@
 		<button class="nav-link active rounded text-dark" id="nav-bookings-tab" data-bs-toggle="tab"
 			data-bs-target="#nav-bookings" type="button" role="tab" aria-controls="nav-bookings"
 			aria-selected="true">Bookings</button>
+		<button class="nav-link rounded text-dark" id="nav-data-bookings-tab" data-bs-toggle="tab"
+			data-bs-target="#nav-data-bookings" type="button" role="tab" aria-controls="nav-data-bookings"
+			aria-selected="false">Bookings data</button>
 		<button class="nav-link rounded text-dark" id="nav-rooms-tab" data-bs-toggle="tab" data-bs-target="#nav-rooms"
 			type="button" role="tab" aria-controls="nav-rooms" aria-selected="false">Rooms</button>
-		<button class="nav-link rounded text-dark" id="nav-hotels-tab" data-bs-toggle="tab" data-bs-target="#nav-hotels"
-			type="button" role="tab" aria-controls="nav-hotels" aria-selected="false">Hotels</button>
-		<button class="nav-link rounded text-dark" id="nav-cities-tab" data-bs-toggle="tab" data-bs-target="#nav-cities"
-			type="button" role="tab" aria-controls="nav-cities" aria-selected="false">Cities</button>
-		<button class="nav-link rounded text-dark" id="nav-countries-tab" data-bs-toggle="tab"
-			data-bs-target="#nav-countries" type="button" role="tab" aria-controls="nav-countries"
-			aria-selected="false">Countries</button>
 	</div>
 </nav>
 <div class="tab-content bg-light rounded mt-0" id="nav-tabContent">
 	<div class="tab-pane fade show active" id="nav-bookings" role="tabpanel" aria-labelledby="nav-bookings-tab"
 		tabindex="0">
-	  <app-bookings-viewer-column-bookings></app-bookings-viewer-column-bookings>
-	  	
-	</div>
-	<div class="tab-pane fade" id="nav-rooms" role="tabpanel" aria-labelledby="nav-rooms-tab" tabindex="1">
-		<app-bookings-viewer-column-rooms></app-bookings-viewer-column-rooms>
-	</div>
-	<div class="tab-pane fade" id="nav-hotels" role="tabpanel" aria-labelledby="nav-hotels-tab" tabindex="2">
-		<app-bookings-viewer-column-hotels></app-bookings-viewer-column-hotels>
-	</div>
+		<app-bookings-viewer-column-bookings></app-bookings-viewer-column-bookings>
 
-	<div class="tab-pane fade" id="nav-cities" role="tabpanel" aria-labelledby="nav-cities-tab" tabindex="3">
-		<app-bookings-viewer-column-cities></app-bookings-viewer-column-cities>
 	</div>
-	
-	<div class="tab-pane fade" id="nav-countries" role="tabpanel" aria-labelledby="nav-countries-tab" tabindex="4">
-		<app-bookings-viewer-column-countries></app-bookings-viewer-column-countries>
+	<div class="tab-pane fade" id="nav-data-bookings" role="tabpanel" aria-labelledby="nav-data-bookings-tab"
+		tabindex="1">
+		<app-bookings-viewer-column-data-bookings></app-bookings-viewer-column-data-bookings>
+	</div>
+	<div class="tab-pane fade" id="nav-rooms" role="tabpanel" aria-labelledby="nav-rooms-tab" tabindex="2">
+		<app-bookings-viewer-column-rooms></app-bookings-viewer-column-rooms>
 	</div>
 </div>
