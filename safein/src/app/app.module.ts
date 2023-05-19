@@ -23,7 +23,7 @@ import { BookingDeleteComponent } from './components/bookings/edit/booking-delet
 import { SigninComponent } from './components/user-account/signin/signin.component';
 import { AccountComponent } from './pages/account/account.component';
 import { WorkingspaceComponent } from './pages/workingspace/workingspace.component';
-import { LatestBookingperuserComponent } from './components/latest-bookingperuser/latest-bookingperuser.component';
+import { LatestBookingperuserComponent } from './components/bookings/latest-bookingperuser/latest-bookingperuser.component';
 
 @NgModule({
   declarations: [
