@@ -12,19 +12,24 @@ import { BookingEditComponent } from './components/bookings/edit/booking-edit/bo
 import { BookingCreateComponent } from './components/bookings/edit/booking-create/booking-create.component';
 import { BookingsCreateColumnComponent } from './components/bookings/edit/bookings-create-column/bookings-create-column.component';
 import { BookingDeleteComponent } from './components/bookings/edit/booking-delete/booking-delete.component';
+import { BookingsComponent } from './pages/bookings/bookings.component';
+
 
 const routes: Routes = [
+	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ // Home
 		path: "home",
 		component: HomeComponent, children: [
 			{
-				path:"",
+				path: "latestbookings",
 				component: HomeLatestBookingsComponent
 			}
 		]
 	},
 	{ // Bookings route
-		path: "bookings", component: BookingsViewerColumnComponent, children: [
+		path: "bookings",
+		component: BookingsComponent, children: [
+
 			{
 				path: "bookingsview",
 				component: BookingsViewerColumnBookingsComponent
@@ -59,7 +64,6 @@ const routes: Routes = [
 				path:"booking_delete",
 				component: BookingDeleteComponent
 			}
-
 		]
 	}
 ];
