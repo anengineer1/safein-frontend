@@ -1,14 +1,42 @@
-<div class="col">
-	<div class="bubble text-center mb-2">
-		<nav class="nav">
-			<a class="nav-link" aria-current="page" href="/bookings/bookingsview">Bookings</a>
-			<a class="nav-link" href="/bookings/countriesview">Countries</a>
-			<a class="nav-link" href="/bookings/citiesview">Cities</a>
-			<a class="nav-link" href="/bookings/hotelsview">Hotels</a>
-			<a class="nav-link" href="/bookings/roomsview">Rooms</a>
-		</nav>
+<!-- Component that contains all the block relative the booking edition: create-edit-delete -->
+<div class="container bg-success rounded">
+	<h2>Data viewer</h2>
+</div>
+
+<nav>
+	<div class="nav nav-tabs bg-light navbar-expand-lg box__container " id="nav-tab" role="tablist">
+		<button class="nav-link active rounded text-dark" id="nav-bookings-tab" data-bs-toggle="tab"
+			data-bs-target="#nav-bookings" type="button" role="tab" aria-controls="nav-bookings"
+			aria-selected="true">Bookings</button>
+		<button class="nav-link rounded text-dark" id="nav-rooms-tab" data-bs-toggle="tab" data-bs-target="#nav-rooms"
+			type="button" role="tab" aria-controls="nav-rooms" aria-selected="false">Rooms</button>
+		<button class="nav-link rounded text-dark" id="nav-hotels-tab" data-bs-toggle="tab" data-bs-target="#nav-hotels"
+			type="button" role="tab" aria-controls="nav-hotels" aria-selected="false">Hotels</button>
+		<button class="nav-link rounded text-dark" id="nav-cities-tab" data-bs-toggle="tab" data-bs-target="#nav-cities"
+			type="button" role="tab" aria-controls="nav-cities" aria-selected="false">Cities</button>
+		<button class="nav-link rounded text-dark" id="nav-countries-tab" data-bs-toggle="tab"
+			data-bs-target="#nav-countries" type="button" role="tab" aria-controls="nav-countries"
+			aria-selected="false">Countries</button>
 	</div>
-	<div class="bubble shadow">
-		<router-outlet></router-outlet>
+</nav>
+<div class="tab-content bg-light rounded mt-0" id="nav-tabContent">
+	<div class="tab-pane fade show active" id="nav-bookings" role="tabpanel" aria-labelledby="nav-bookings-tab"
+		tabindex="0">
+	  <app-bookings-viewer-column-bookings></app-bookings-viewer-column-bookings>
+	  	
+	</div>
+	<div class="tab-pane fade" id="nav-rooms" role="tabpanel" aria-labelledby="nav-rooms-tab" tabindex="1">
+		<app-bookings-viewer-column-rooms></app-bookings-viewer-column-rooms>
+	</div>
+	<div class="tab-pane fade" id="nav-hotels" role="tabpanel" aria-labelledby="nav-hotels-tab" tabindex="2">
+		<app-bookings-viewer-column-hotels></app-bookings-viewer-column-hotels>
+	</div>
+
+	<div class="tab-pane fade" id="nav-cities" role="tabpanel" aria-labelledby="nav-cities-tab" tabindex="3">
+		<app-bookings-viewer-column-cities></app-bookings-viewer-column-cities>
+	</div>
+	
+	<div class="tab-pane fade" id="nav-countries" role="tabpanel" aria-labelledby="nav-countries-tab" tabindex="4">
+		<app-bookings-viewer-column-countries></app-bookings-viewer-column-countries>
 	</div>
 </div>
