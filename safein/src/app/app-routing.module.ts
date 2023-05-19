@@ -15,19 +15,33 @@ import { BookingDeleteComponent } from './components/bookings/edit/booking-delet
 import { BookingsComponent } from './pages/bookings/bookings.component';
 import { SigninComponent } from './components/user-account/signin/signin.component';
 import { AccountComponent } from './pages/account/account.component';
+import { WorkingspaceComponent } from './pages/workingspace/workingspace.component';
 
 
 const routes: Routes = [
 	{ path: '', redirectTo: '/account', pathMatch: 'full' },
-	{ // Home
-		path: "home",
-		component: HomeComponent, children: [
-			{
-				path: "latestbookings",
-				component: HomeLatestBookingsComponent
+	, {//User Account: Signin
+		path: "signin",
+		component: SigninComponent
+	}, {
+		path: "account",
+		component: AccountComponent
+	}, {
+		path: "workingspace",
+		component: WorkingspaceComponent, children: [
+			
+			{ // Home
+				path: "home",
+				component: HomeComponent, children: [
+					{
+						path: "latestbookings",
+						component: HomeLatestBookingsComponent
+					}
+				]
 			}
 		]
-	},
+	}
+	,
 	{ // Bookings route
 		path: "bookings",
 		component: BookingsComponent, children: [
@@ -56,29 +70,24 @@ const routes: Routes = [
 			{
 				path: "bookingedit",
 				component: BookingsCreateColumnComponent
-			},{
+			}, {
 				path: "booking_create",
 				component: BookingCreateComponent
-			},{
-				path:"booking_edit",
+			}, {
+				path: "booking_edit",
 				component: BookingEditComponent
 			},
 			{
-				path:"booking_delete",
+				path: "booking_delete",
 				component: BookingDeleteComponent
 			}
 		]
-	},{//User Account: Signin
-		path: "signin",
-		component: SigninComponent
-	},{
-		path:"account",
-		component: AccountComponent
 	}
+
 ];
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

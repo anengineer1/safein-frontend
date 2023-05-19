@@ -22,6 +22,7 @@ import { BookingEditComponent } from './components/bookings/edit/booking-edit/bo
 import { BookingDeleteComponent } from './components/bookings/edit/booking-delete/booking-delete.component';
 import { SigninComponent } from './components/user-account/signin/signin.component';
 import { AccountComponent } from './pages/account/account.component';
+import { WorkingspaceComponent } from './pages/workingspace/workingspace.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AccountComponent } from './pages/account/account.component';
     BookingDeleteComponent,
     SigninComponent,
     AccountComponent,
+    WorkingspaceComponent,
 
   ],
   imports: [
