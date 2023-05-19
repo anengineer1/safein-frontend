@@ -27,6 +27,9 @@ import { LatestBookingperuserComponent } from './components/bookings/latest-book
 import { RoomsHotelsComponent } from './pages/rooms-hotels/rooms-hotels.component';
 import { CitiesCountriesComponent } from './pages/cities-countries/cities-countries.component';
 import { CustomersComponent } from './pages/customers/customers.component';
+import { RoomHotelsCreateComponent } from './components/rooms-hotels/edit/room-hotels-create/room-hotels-create.component';
+import { RoomHotelsDeleteComponent } from './components/rooms-hotels/edit/room-hotels-delete/room-hotels-delete.component';
+import { RoomHotelsEditComponent } from './components/rooms-hotels/edit/room-hotels-edit/room-hotels-edit.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { CustomersComponent } from './pages/customers/customers.component';
     RoomsHotelsComponent,
     CitiesCountriesComponent,
     CustomersComponent,
+    RoomHotelsCreateComponent,
+    RoomHotelsDeleteComponent,
+    RoomHotelsEditComponent,
 
   ],
   imports: [
