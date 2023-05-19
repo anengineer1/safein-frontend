@@ -13,10 +13,12 @@ import { BookingCreateComponent } from './components/bookings/edit/booking-creat
 import { BookingsCreateColumnComponent } from './components/bookings/edit/bookings-create-column/bookings-create-column.component';
 import { BookingDeleteComponent } from './components/bookings/edit/booking-delete/booking-delete.component';
 import { BookingsComponent } from './pages/bookings/bookings.component';
+import { SigninComponent } from './components/user-account/signin/signin.component';
+import { AccountComponent } from './pages/account/account.component';
 
 
 const routes: Routes = [
-	{ path: '', redirectTo: '/home', pathMatch: 'full' },
+	{ path: '', redirectTo: '/account', pathMatch: 'full' },
 	{ // Home
 		path: "home",
 		component: HomeComponent, children: [
@@ -65,6 +67,12 @@ const routes: Routes = [
 				component: BookingDeleteComponent
 			}
 		]
+	},{//User Account: Signin
+		path: "signin",
+		component: SigninComponent
+	},{
+		path:"account",
+		component: AccountComponent
 	}
 ];
 

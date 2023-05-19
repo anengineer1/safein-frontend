@@ -20,6 +20,8 @@ import { BookingsCreateColumnComponent } from './components/bookings/edit/bookin
 import { BookingCreateComponent } from './components/bookings/edit/booking-create/booking-create.component';
 import { BookingEditComponent } from './components/bookings/edit/booking-edit/booking-edit.component';
 import { BookingDeleteComponent } from './components/bookings/edit/booking-delete/booking-delete.component';
+import { SigninComponent } from './components/user-account/signin/signin.component';
+import { AccountComponent } from './pages/account/account.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { BookingDeleteComponent } from './components/bookings/edit/booking-delet
     BookingCreateComponent,
     BookingEditComponent,
     BookingDeleteComponent,
+    SigninComponent,
+    AccountComponent,
 
   ],
   imports: [
