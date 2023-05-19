@@ -1,0 +1,59 @@
+
+<nav class="navbar navbar-expand  navbar-light col-12 navbar_2 bg-light g-0 py-0 navbar-custom">
+    <div class="container-fluid g-0">
+        <a class="navbar-brand d-block g-0 ms-1 py-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="../../../../assets/logo/logo_navbar.png" alt="" width="54" height="57"
+                class="d-inline-block align-text-top ">
+        </a>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <!--                     <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li> -->
+            </ul>
+            <div class="navbar-nav">
+                <div class="ms-3 me-3"><span>Active Bookings: {{'Number'}}</span></div>
+                <div class="ms-3 me-3"><span>Number of Clients: {{'Number'}}</span></div>
+            </div>
+        </div>
+        <div class="navbar-nav float-center">
+            <div class="me-3 mt-4 me-3"><app-datebar></app-datebar></div>
+        </div>
+        <div class="navbar-nav flex-row mt-1 ms-3 me-3">
+            <span class="ms-3 me-3">Notifications</span>
+            <span class="ms-3 me-3">Hello {{'User'}},({{'rol'}})</span>
+        </div>
+        <!--    <a class="navbar-brand ms-5" href="#">SafeIn</a> -->
+
+        <ul class="navbar-nav d-flex flex-row">
+
+            <!-- Icon dropdown -->
+            <li class="nav-item me-lg-3 dropdown dropstart">
+                <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="bi bi-person-square text-success fs-2"></i>
+                </a>
+                <ul class="dropdown-menu me-3 bg-success ">
+                    <li>
+                        <a class="dropdown-item text-light" href="#">My account</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item text-light" href="#">Settings</a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider text-light" />
+                    </li>
+                    <li>
+                        <a class="dropdown-item text-light" href="#">Sign Out</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
