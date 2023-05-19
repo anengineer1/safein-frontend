@@ -1,0 +1,43 @@
+<div class="input-group mb-3 m-3">
+	<button class="btn btn-primary" type="button">By bookings Id</button>
+	<button class="btn btn-primary" type="button">by customer Id</button>
+	<input type="text" class="form-control md-7" placeholder="Search">
+</div>
+<table class="table table-hover table-borderless">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Ammount</th>
+			<th scope="col">numPeople</th>
+			<th scope="col">Panding Pay</th>
+			<th scope="col">Is Payed</th>
+			<th scope="col">Id customer</th>
+		</tr>
+
+	</thead>
+	<tbody>
+		<tr data-bs-toggle="collapse" data-bs-target="#demo">
+			<th scope="row">1</th>
+			<td>129,99</td>
+			<td>3</td>
+			<td>False</td>
+			<td>True</td>
+			<td>1</td>
+		</tr>
+		<tr id="demo" class="collapse">
+			<td colspan=6>
+				<h3>Booking</h3>
+				<hr>
+				<p>Id: 1</p>
+				<p>Ammount:</p>
+				<p>Pending Pay:</p>
+				<p>Is payed</p>
+				<p>Id customer</p>
+				<h4>Customer:</h4>
+				<p>Name: </p>
+				<p>Press media: </p>
+				<p>Identification: </p>
+			</td>
+		</tr>
+	</tbody>
+</table>

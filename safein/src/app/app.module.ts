@@ -26,6 +26,10 @@ import { LatestBookingperuserComponent } from './components/bookings/latest-book
 import { RoomsHotelsComponent } from './pages/rooms-hotels/rooms-hotels.component';
 import { CitiesCountriesComponent } from './pages/cities-countries/cities-countries.component';
 import { CustomersComponent } from './pages/customers/customers.component';
+import { CitiesCountriesViewerColumnComponent } from './components/cities-countries/cities-countries-viewer-column/cities-countries-viewer-column.component';
+import { BookingsViewerColumnDataBookingsComponent } from './components/bookings/bookings-viewer-column-data-bookings/bookings-viewer-column-data-bookings.component';
+import { CustomerViewerColumnComponent } from './components/customer/customer-viewer-column/customer-viewer-column.component';
+import { CustomerViewerColumnCustomerComponent } from './components/customer/customer-viewer-column-customer/customer-viewer-column-customer.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +58,10 @@ import { CustomersComponent } from './pages/customers/customers.component';
     RoomsHotelsComponent,
     CitiesCountriesComponent,
     CustomersComponent,
+    CitiesCountriesViewerColumnComponent,
+    BookingsViewerColumnDataBookingsComponent,
+    CustomerViewerColumnComponent,
+    CustomerViewerColumnCustomerComponent,
 
   ],
   imports: [
