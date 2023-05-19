@@ -2,6 +2,7 @@
 html{
   //background: url('../assets/images/mapamundi_background.png') no-repeat;
   background: url('../assets/images/image_big.png') repeat;
+  background-size: 95%;
   height:100vh;
   }
 
@@ -76,11 +77,8 @@ h3 {
 }
 
 
-/* ------------Body with medeiq ----------------*/
 
-
-
-/* ------------Input text ----------------*/
+/* ------------Elements----------------*/
 body,
 input[text] {
   color: #564b14;
@@ -202,13 +200,19 @@ hr {
     border: #564b14 2px solid;
 }
 
+/* Label styles */
+label{
+  font-size: smaller;
+}
+
 
 /* Inputs styles */
 input {
   cursor: pointer;
   color: #564b14;
   border: #b8a464 2px solid;
-  font-size: 1.2rem;
+  //font-size: 1.2rem;
+  font-size: 0.7rem;
   padding: 0.5rem;
   margin: 1rem;
   border-radius: 15px;
