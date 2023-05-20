@@ -30,6 +30,10 @@ import { CitiesCountriesViewerColumnComponent } from './components/cities-countr
 import { BookingsViewerColumnDataBookingsComponent } from './components/bookings/bookings-viewer-column-data-bookings/bookings-viewer-column-data-bookings.component';
 import { CustomerViewerColumnComponent } from './components/customer/customer-viewer-column/customer-viewer-column.component';
 import { CustomerViewerColumnCustomerComponent } from './components/customer/customer-viewer-column-customer/customer-viewer-column-customer.component';
+import { CitiesCountriesCreateComponent } from './components/cities-countries/edit/cities-countries-create/cities-countries-create.component';
+import { CitiesCountriesEditComponent } from './components/cities-countries/edit/cities-countries-edit/cities-countries-edit.component';
+import { CitiesCountriesDeleteComponent } from './components/cities-countries/edit/cities-countries-delete/cities-countries-delete.component';
+import { CitiesCountriesCreateColumnComponent } from './components/cities-countries/edit/cities-countries-create-column/cities-countries-create-column.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +66,10 @@ import { CustomerViewerColumnCustomerComponent } from './components/customer/cus
     BookingsViewerColumnDataBookingsComponent,
     CustomerViewerColumnComponent,
     CustomerViewerColumnCustomerComponent,
+    CitiesCountriesCreateComponent,
+    CitiesCountriesEditComponent,
+    CitiesCountriesDeleteComponent,
+    CitiesCountriesCreateColumnComponent,
 
   ],
   imports: [
