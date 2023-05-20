@@ -1,0 +1,161 @@
+<!------------- Form to create a city or country------------------>
+<!-----------------------------------------------------------------
+            CITY EXAMPLE:
+            "latitude": 37.7749,
+            "longitude": -122.4194,
+            "name": "Albania",
+            "country": {
+            "id": 1
+            }
+------------------------------------------------------------------->
+
+
+<div class="d-flex flex-column m-3 col col-12 justify-content-center align-items-right">
+    <!--       Create a city/country -->
+    <form class="d-flex flex-column m-3 row justify-content-center align-items-center ">
+        <h3 class="mb-1">Create a city/country</h3>
+
+        <div class="row">
+            <!-- Create a City -->
+            <div class="col col-5 g-1 mt-3 mb-3">
+
+                <h6 class="mt-1 g-0 ps-3 text-light bg-dark col-6 rounded">Add a City</h6>
+                <!-- LATITUDE -->
+                <div class="row g-3 mb-1 align-items-center">
+                    <div class="col-3 col-sm-5">
+                        <label for="inputLatitude" class="col-form-label">Latitude: </label>
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="inputLatitude" class="form-control" #ccLatitude>
+                    </div>
+                </div>
+
+                <!-- LONGITUDE -->
+                <div class="row g-3 mb-1 align-items-center">
+                    <div class="col-3 col-sm-5">
+                        <label for="inputLongitude" class="col-form-label">Longitude: </label>
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="inputLongitude" class="form-control" #ccLongitude>
+                    </div>
+                </div>
+
+
+                <!-- NAME OF THE CITY  -->
+                <div class="row g-3 mb-1 align-items-center">
+                    <div class="col-6 col-sm-5">
+                        <label for="inputCityName" class="col-form-label">City Name: </label>
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="inputCityName" class="form-control" #ccName>
+                    </div>
+                </div>
+                <!-- COUNTRY NAME  -->
+                <div class="row g-3 mb-1 align-items-center">
+                    <div class="col-6 col-sm-5">
+                        <label for="selectCountry" class="col-form-label">Country</label>
+                    </div>
+                    <div class="col-10">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" #countryname>
+                            <option selected>Select the country name</option>
+                            <option value="1">name Country 1</option>
+                            <option value="2">name Country 1</option>
+                            <option value="3">name Country 1</option>
+                        </select>
+                    </div>
+                </div>
+                <!--     BUTTOM to add a city -->
+                <div class="row g-3 mb-3 align-items-center">
+                    <div class="col-9 col-sm-12">
+                        <button type="button" class="btn btn-secondary btn-lg button_1">Save City</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-1 g-1 mt-3 mb-3"></div>
+
+
+            <!-- ------------------------------------------------------------------------
+        COUNTRY EXAMPLE
+        {
+            "countryCode": "BT",
+            "countryName": "Bhutan",
+            "latitude": 49,
+            "longitude": 32,
+            "situation": "War"
+          } 
+---------------------------------------------------------------------------->
+            <!-- Create a Country -->
+            <div class="col col-6 g-1 mb-3">
+
+                <h6 class="mt-3 ps-3 g-0 text-light bg-dark col-6 rounded">Add a Country</h6>
+
+
+            <!-- NAME OF THE COUNTRY  -->
+            <div class="row g-3 mb-1 align-items-center">
+                <div class="col-6 col-sm-5">
+                    <label for="inputCountryName" class="col-form-label">Country Name: </label>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="inputinputCountryName" class="form-control" #countryName>
+                </div>
+            </div>
+
+            <!-- CODE OF THE COUNTRY  -->
+            <div class="row g-3 mb-1 align-items-center">
+                <div class="col-6 col-sm-5">
+                    <label for="inputCountryCode" class="col-form-label">Country Code: </label>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="inputinputCountryCode" class="form-control" #countryCode>
+                </div>
+            </div>
+
+                <!-- SITUATION OF THE COUNTRY  -->
+                <div class="row g-3 mb-1 align-items-center">
+                    <div class="col-6 col-sm-6">
+                        <label for="inputSituation" class="col-form-label">Country Situation:</label>
+                    </div>
+                    <div class="col-10">
+                        <select class="form-select form-select-sm" id="inputSituation"
+                            aria-label=".form-select-sm example" #countrySituation>
+                            <option selected>Select situation of the contry: </option>
+                            <option value="1">Human Crisis</option>
+                            <option value="2">War</option>
+                            <option value="3">Clima crisis</option>
+                            <option value="4">Peace</option>
+                        </select>
+                    </div>
+                </div>
+
+                 <!-- LATITUDE -->
+                 <div class="row g-3 mb-1 align-items-center">
+                    <div class="col-3 col-sm-5">
+                        <label for="inputcoLatitude" class="col-form-label">Latitude: </label>
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="inputcoLatitude" class="form-control" #cccoLatitude>
+                    </div>
+                </div>
+
+                <!-- LONGITUDE -->
+                <div class="row g-3 mb-1 align-items-center">
+                    <div class="col-3 col-sm-5">
+                        <label for="inputLongitude" class="col-form-label">Longitude: </label>
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="inputcoLongitude" class="form-control" #cccoLongitude>
+                    </div>
+                </div>
+
+
+                <!--     BUTTON to add a handle -->
+                <div class="row g-2 mb-1 align-items-center">
+                    <div class="col-auto col-sm-12">
+                        <button type="button" class="btn btn-secondary btn-lg button_1">Save Country</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
