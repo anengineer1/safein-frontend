@@ -31,6 +31,8 @@ import { RoomHotelsCreateComponent } from './components/rooms-hotels/edit/room-h
 import { RoomHotelsDeleteComponent } from './components/rooms-hotels/edit/room-hotels-delete/room-hotels-delete.component';
 import { RoomHotelsEditComponent } from './components/rooms-hotels/edit/room-hotels-edit/room-hotels-edit.component';
 import { RoomHotelsColumncreationComponent } from './components/rooms-hotels/edit/room-hotels-columncreation/room-hotels-columncreation.component';
+import { RoomHotelsViewerColumnComponent } from './components/rooms-hotels/room-hotels-viewer-column/room-hotels-viewer-column.component';
+import { RoomHotelsTableViewComponent } from './components/rooms-hotels/room-hotels-table-view/room-hotels-table-view.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { RoomHotelsColumncreationComponent } from './components/rooms-hotels/edi
     RoomHotelsCreateComponent,
     RoomHotelsDeleteComponent,
     RoomHotelsEditComponent,
-    RoomHotelsColumncreationComponent
+    RoomHotelsColumncreationComponent,
+    RoomHotelsViewerColumnComponent,
+    RoomHotelsTableViewComponent
 
   ],
   imports: [
