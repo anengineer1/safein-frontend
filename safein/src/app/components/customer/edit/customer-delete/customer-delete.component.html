@@ -1,1 +1,140 @@
-<p>customer-delete works!</p>
+<!---------------------------------------------------------------------
+    CUSTOMER EXAMPLE DATA JSON
+    
+    {
+    "name": "Maks Gara",
+    "email": "mklevis@gmail.com",
+    "pressMedia": "LB.ua",
+    "docIdentifier": "DNI",
+    "numIdentifier": "5263383944",
+    "country": {
+        "id": 1,
+        "countryCode": "UA",
+        "countryName": "Ukraine",
+        "latitude": 49.0,
+        "longitude": 32.0,
+        "situation": "War"
+    },
+    "phonenumber": "+341725923"
+} -->
+
+<!------------- FORM TO Delete A CUSTOMER  ------------------>
+<div class="d-flex flex-column m-3 col col-12 justify-content-center align-items-right">
+    <!--       Delete a Customer -->
+    <form class="d-flex flex-column m-3 row justify-content-center align-items-center ">
+        <h3 class="row mb-4">Delete a Customer</h3>
+        <h4 class="row mt-1 ps-3 text-light bg-dark text-sm-3 col-6 rounded ">Delete a Customer</h4>
+        <div class="row">
+
+            <!-- Select a  CUSTOMER -->
+            <div class="row g-1 mb-0 mt-1 me-0 align-items-center">
+                <div class="col-6 col-sm-2">
+                    <label for="selectCustomerEmail" class="col-form-label">Customer:</label>
+                </div>
+                <div class="col-8">
+                    <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
+                        #customercontry>
+                        <option selected>Select a Customer Email</option>
+                        <option value="1">Email 1</option>
+                        <option value="2">Email 2</option>
+                        <option value="3">Email 3</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Delete a Customer: Column 1 -->
+            <div class="col col-5 g-1 mt-3 mb-6">
+
+
+                <!-- NAME CUSTOMER -->
+                <div class="row g-1 mb-1 align-items-center">
+                    <div class="col-5 col-sm-3">
+                        <label for="inputCustomerName" class="col-form-label">Name: </label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="inputCustomerName" class="form-control" #CustomerName disabled>
+                    </div>
+                </div>
+                <!-- EMAIL CUSTOMER  -->
+                <div class="row g-1 mb-1 align-items-center">
+                    <div class="col-5 col-sm-3">
+                        <label for="inputCustomerEmail" class="col-form-label">Email: </label>
+                    </div>
+                    <div class="col-9">
+                        <input type="email" id="inputCustomerEmail" class="form-control" #CustomerEmail disabled>
+                    </div>
+                </div>
+
+                <!-- PHONE CUSTOMER  -->
+                <div class="row g-1 mb-1 align-items-center">
+                    <div class="col-5 col-sm-3">
+                        <label for="inputCustomerPhone" class="col-form-label">Phone: </label>
+                    </div>
+                    <div class="col-9">
+                        <input type="tel" id="inputCustomerPhone" class="form-control" #CustomerPhone disabled>
+                    </div>
+                </div>
+
+                <!-- PRESS MEDIA CUSTOMER -->
+                <div class="row g-1 mb-1 align-items-center">
+                    <div class="col-3 col-sm-3">
+                        <label for="inputCustomerPressMedia" class="col-form-label">Press Media: </label>
+                    </div>
+                    <div class="col-9">
+                        <input type="text" id="inputCustomerPressMedia" class="form-control" #CustomerPressMedia
+                            disabled>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col col-1 g-1 mt-3 mb-1">
+            </div>
+            <!-- Delete a Customer: Column 2  -->
+            <div class="col col-5 g-1 mb-5">
+                <div class="row col-12"></div>
+
+                <!-- TYPE DOC IDENTIFIER CUSTOMER -->
+                <div class="row g-1 mt-2 mb-1 align-items-center">
+                    <div class="col-12 col-sm-4">
+                        <label for="inputCustomerDoc" class="col-form-label">Document Identifier: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="inputCustomerDoc" class="form-control" #CustomerDocIdentifier disabled>
+                    </div>
+                </div>
+
+                <!-- NUMBER DOC IDENTIFIER CUSTOMER -->
+                <div class="row g-0 mb-1 align-items-center">
+                    <div class="col-6 col-sm-4">
+                        <label for="inputCustomerNumber" class="col-form-label">Number Identifier: </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="text" id="inputCustomerDocNumber" class="form-control" #CustomerDocIdentifierNumber
+                            disabled>
+                    </div>
+                </div>
+
+
+                <!-- COUNTRY CUSTOMER -->
+                <div class="row g-1 mb-0 mt-1 me-0 align-items-center">
+                    <div class="col-6 col-sm-4">
+                        <label for="selectCustomerCountry" class="col-form-label">Country:</label>
+                    </div>
+                    <div class="col-8">
+                        <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
+                            #customercontry disabled>
+                            <option selected>Select a country</option>
+                            <option value="1">Country 1</option>
+                            <option value="2">Country 2</option>
+                            <option value="3">Country 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!--     BUTTOM to Delete a handle -->
+            <div class="row g-3 mb-3 align-items-center">
+                <div class="col-12 col-sm-12">
+                    <button type="button" class="btn btn-secondary btn-lg button_1">Delete Customer</button>
+                </div>
+            </div>
+        </div>
+    </form>
