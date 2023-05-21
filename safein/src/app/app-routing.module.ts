@@ -11,7 +11,7 @@ import { CustomersComponent } from './pages/customers/customers.component';
 
 
 const routes: Routes = [
-	{ path: '', redirectTo: '/home', pathMatch: 'full' },
+	{ path: '', redirectTo: '/account', pathMatch: 'full' },
 	{ path: "signin", component: SigninComponent }, //User Account: Signin
 	{ path: "account", component: AccountComponent },//User Account
 	//{ path: "profile", component: UserReadComponent}, User Profile
