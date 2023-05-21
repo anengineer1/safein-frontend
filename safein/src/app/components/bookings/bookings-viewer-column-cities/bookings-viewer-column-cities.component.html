@@ -19,8 +19,8 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<th scope="row">1</th>
+		<tr  *ngFor="let city of cityList">
+			<th scope="row">{{city.id}}</th>
 			<td>Kirtze</td>
 			<td>Bhutan</td>
 			<td>49</td>
