@@ -21,7 +21,7 @@ export class CountriesService {
 	}
 
 	// Get a single item
-    getCountryById(id: any): Observable<any> {
+	getCountryById(id: any): Observable<any> {
 		console.log(`${this.baseApiUrl}/id/${id}`);
 		return this.httpClient.get(`${this.baseApiUrl}/id/${id}`).pipe(
 			catchError(this.handleError)
