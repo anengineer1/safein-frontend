@@ -11,14 +11,11 @@ import { CustomersComponent } from './pages/customers/customers.component';
 
 
 const routes: Routes = [
-	{ path: '', redirectTo: '/account', pathMatch: 'full' },
-	{//User Account: Signin
-		path: "signin",
-		component: SigninComponent
-	}, {
-		path: "account",
-		component: AccountComponent
-	}, {
+	{ path: '', redirectTo: '/home', pathMatch: 'full' },
+	{ path: "signin", component: SigninComponent }, //User Account: Signin
+	{ path: "account", component: AccountComponent },//User Account
+	//{ path: "profile", component: UserReadComponent}, User Profile
+	{
 		path: "workingspace",
 		component: WorkingspaceComponent, children: [
 
@@ -51,4 +48,4 @@ const routes: Routes = [
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
