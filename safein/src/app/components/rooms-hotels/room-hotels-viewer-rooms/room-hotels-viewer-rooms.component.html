@@ -1,0 +1,82 @@
+<div class="input-group mb-3">
+	<button class="btn btn-primary" type="button">By room id</button>
+	<button class="btn btn-primary" type="button">By room code</button>
+	<button class="btn btn-primary" type="button">By hotel id</button>
+	<button class="btn btn-primary" type="button">By number of people</button>
+	<button class="btn btn-primary" type="button">By internet type</button>
+	<button class="btn btn-primary" type="button">By smoker</button>
+	<button class="btn btn-primary" type="button">By has terrace</button>
+	<button class="btn btn-primary" type="button">By hotel id/num people</button>
+	<input type="text" class="form-control md-7" placeholder="Search">
+</div>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Hotel name</th>
+			<th scope="col">Room code</th>
+			<th scope="col">Internet type</th>
+			<th scope="col">Terrace</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-bs-toggle="modal" data-bs-target="#myModal">
+			<th scope="row">1</th>
+			<td>Hotel Palace</td>
+			<td>103</td>
+			<td>Fiber</td>
+			<td>True</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content bubble shadow">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h3 class="modal-title">Hotel</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				<p>Id: 1</p>
+				<p>Num People: 1</p>
+				<p>Price per night: 59.99</p>
+				<p>Internet Type: Fiber</p>
+				<p>Has Terrace: true</p>
+				<h4>Belongs to hotel:</h4>
+				<p>Id: 1</p>
+				<p>Name: Hotel Palace</p>
+				<p>Phone number: +34555555555</p>
+				<p>Email: reboca@gmail.com</p>
+				<p>Address: Arbeitzer street 5</p>
+				<p>Latitude: 0</p>
+				<p>Longitude: 0</p>
+				<p>Security level: Diplomatic coverage and private security</p>
+				<p>Energy sufficient: True</p>
+				<h4>City:</h4>
+				<p>id: 1</p>
+				<p>Name: Kirtze</p>
+				<p>Latitude: 37.7749</p>
+				<p>Longitude: -122.4194</p>
+				<h4>Country:</h4>
+				<p>Id: 1</p>
+				<p>Country code: UA</p>
+				<p>Country name: Ukraine</p>
+				<p>Latitude: 49</p>
+				<p>Longitude: 32</p>
+				<p>Situation: War</p>
+			</div>
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
