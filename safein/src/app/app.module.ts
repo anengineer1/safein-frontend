@@ -34,7 +34,13 @@ import { CitiesCountriesCreateComponent } from './components/cities-countries/ed
 import { CitiesCountriesEditComponent } from './components/cities-countries/edit/cities-countries-edit/cities-countries-edit.component';
 import { CitiesCountriesDeleteComponent } from './components/cities-countries/edit/cities-countries-delete/cities-countries-delete.component';
 import { CitiesCountriesCreateColumnComponent } from './components/cities-countries/edit/cities-countries-create-column/cities-countries-create-column.component';
+import { CustomerCreateColumnComponent } from './components/customer/edit/customer-create-column/customer-create-column.component';
+import { CustomerCreateComponent } from './components/customer/edit/customer-create/customer-create.component';
+import { CustomerEditComponent } from './components/customer/edit/customer-edit/customer-edit.component';
+import { CustomerDeleteComponent } from './components/customer/edit/customer-delete/customer-delete.component';
 import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 @NgModule({
@@ -72,6 +78,10 @@ import { HttpClientModule } from '@angular/common/http';
 		CitiesCountriesEditComponent,
 		CitiesCountriesDeleteComponent,
 		CitiesCountriesCreateColumnComponent,
+    CustomerCreateColumnComponent,
+    CustomerCreateComponent,
+    CustomerEditComponent,
+    CustomerDeleteComponent,
 
 	],
 	imports: [
