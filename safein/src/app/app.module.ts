@@ -38,6 +38,7 @@ import { CustomerCreateColumnComponent } from './components/customer/edit/custom
 import { CustomerCreateComponent } from './components/customer/edit/customer-create/customer-create.component';
 import { CustomerEditComponent } from './components/customer/edit/customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './components/customer/edit/customer-delete/customer-delete.component';
+import { UserReadComponent } from './components/user-account/user-read/user-read.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,7 @@ import { CustomerDeleteComponent } from './components/customer/edit/customer-del
     CustomerCreateComponent,
     CustomerEditComponent,
     CustomerDeleteComponent,
-
+    UserReadComponent,
   ],
   imports: [
     BrowserModule,
