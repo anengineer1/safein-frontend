@@ -17,33 +17,55 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr data-bs-toggle="collapse" data-bs-target="#demo">
-			<th scope="row">1</th>
-			<td>Fernando Herrera</td>
-			<td>Cosa</td>
-			<td>DNI 324082367</td>
-			<td>ES</td>
-		</tr>
-		<tr id="demo" class="collapse">
-			<td colspan=5>
-				<h3>Customer</h3>
-				<hr>
-				<p>Id: 1</p>
-				<p>Name: 1</p>
-				<p>Phone number: 92834567</p>
-				<p>Email: Yes</p>
-				<p>Press media: Cosa</p>
-				<p>Doc identifier: DNI</p>
-				<p>Num Identifyer: 03432945876 </p>
-				<h4>Country:</h4>
-				<p>Id: 1</p>
-				<p>Country code: UA</p>
-				<p>Country name: Ukraine</p>
-				<p>Latitude: 49</p>
-				<p>Longitude: 32</p>
-				<p>Situation: War</p>
-			</td>
+		<tr data-bs-toggle="modal" data-bs-target="#customerModal" *ngFor="let customr of customerList"
+			(click)="assignCustomer(customr)">
+			<th scope="row">{{customr.id}}</th>
+			<td>{{customr.name}}</td>
+			<td>{{customr.pressMedia}}</td>
+			<td>{{customr.docIdentifier}} {{customr.numIdentifier}}</td>
+			<td>{{customr.country.countryCode}}</td>
 		</tr>
 
 	</tbody>
 </table>
+
+
+<!-- The Modal -->
+<div class="modal" id="customerModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content bubble shadow">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h3 class="modal-title">Customer</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				<ng-container *ngIf="customer">
+					<h3>Customer</h3>
+					<hr>
+					<p>Id: {{customer.id}}</p>
+					<p>Name: {{customer.name}}</p>
+					<p>Phone number: {{customer.phonenumber}}</p>
+					<p>Email: {{customer.email}}</p>
+					<p>Press media: {{customer.pressMedia}}</p>
+					<p>Doc identifier: {{customer.docIdentifier}}</p>
+					<p>Num Identifyer: {{customer.numIdentifier}} </p>
+					<h4>Country:</h4>
+					<p>Id: {{customer.country.id}}</p>
+					<p>Country code: {{customer.country.countryCode}}</p>
+					<p>Country name: {{customer.country.countryName}}</p>
+					<p>Longitude: {{customer.country.longitude}}</p>
+					<p>Latitude: {{customer.country.latitude}}</p>
+					<p>Situation: {{customer.country.situation}}</p>
+				</ng-container>
+			</div>
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
