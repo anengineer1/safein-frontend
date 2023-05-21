@@ -1,12 +1,30 @@
-<div class="col">
-	<div class="bubble text-center mb-2">
-		<nav class="nav">
-			<a class="nav-link" aria-current="page" href="/rooms-hotels/hotels">Hotels</a>
-			<a class="nav-link" href="/rooms-hotels/rooms">Rooms</a>
-			<a class="nav-link" href="/rooms-hotels/bookings">Bookings</a>
-		</nav>
+<!-- Component that contains all the block relative the booking edition: create-edit-delete -->
+<div class="container bg-success rounded">
+	<h2>Data viewer</h2>
+</div>
+
+<nav>
+	<div class="nav nav-tabs bg-light navbar-expand-lg box__container " id="nav-tab" role="tablist">
+		<button class="nav-link active rounded text-dark" id="nav-bookings-tab" data-bs-toggle="tab"
+			data-bs-target="#nav-bookings" type="button" role="tab" aria-controls="nav-bookings"
+			aria-selected="true">Bookings</button>
+		<button class="nav-link rounded text-dark" id="nav-data-bookings-tab" data-bs-toggle="tab"
+			data-bs-target="#nav-data-bookings" type="button" role="tab" aria-controls="nav-data-bookings"
+			aria-selected="false">Bookings data</button>
+		<button class="nav-link rounded text-dark" id="nav-rooms-tab" data-bs-toggle="tab" data-bs-target="#nav-rooms"
+			type="button" role="tab" aria-controls="nav-rooms" aria-selected="false">Rooms</button>
 	</div>
-	<div class="bubble shadow">
-		<router-outlet></router-outlet>
+</nav>
+<div class="tab-content bg-light rounded mt-0" id="nav-tabContent">
+	<div class="tab-pane fade show active" id="nav-bookings" role="tabpanel" aria-labelledby="nav-bookings-tab"
+		tabindex="0">
+<app-room-hotels-viewer-bookings></app-room-hotels-viewer-bookings>
 	</div>
+	<div class="tab-pane fade" id="nav-data-bookings" role="tabpanel" aria-labelledby="nav-data-bookings-tab"
+		tabindex="1">
+        <app-room-hotels-viewer-rooms></app-room-hotels-viewer-rooms>	
+	</div>
+	<div class="tab-pane fade" id="nav-rooms" role="tabpanel" aria-labelledby="nav-rooms-tab" tabindex="2">
+<app-room-hotels-viewer-rooms></app-room-hotels-viewer-rooms>	
+</div>
 </div>
