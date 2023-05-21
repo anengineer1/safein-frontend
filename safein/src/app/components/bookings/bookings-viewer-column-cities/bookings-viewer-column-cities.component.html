@@ -1,11 +1,11 @@
 <div class="input-group mb-3 m-3">
-	<button class="btn btn-primary" type="button">By city
+	<button class="btn btn-primary" type="button" (click)="getCityById(cityid.value)">By city
 		id</button>
-	<button class="btn btn-primary" type="button">By city
+	<button class="btn btn-primary" type="button" (click)="getCityByName(cityid.value)">By city
 		name</button>
-	<button class="btn btn-primary" type="button">By country
+	<button class="btn btn-primary" type="button" (click)="getCityByCountryCode(cityid.value)">By country
 		code</button>
-	<input type="text" class="form-control md-7" placeholder="Search">
+	<input type="text" class="form-control md-7" placeholder="Search" #cityid>
 </div>
 
 <table class="table table-borderless">
@@ -19,12 +19,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr  *ngFor="let city of cityList">
+		<tr *ngFor="let city of cityList">
 			<th scope="row">{{city.id}}</th>
-			<td>Kirtze</td>
-			<td>Bhutan</td>
-			<td>49</td>
-			<td>10</td>
+			<td>{{city.name}}</td>
+			<ng-container *ngIf="city.country">
+				<td>{{city.country.countryName}}</td>
+			</ng-container>
+			<td>{{city.longitude}}</td>
+			<td>{{city.latitude}}</td>
 		</tr>
 	</tbody>
 </table>

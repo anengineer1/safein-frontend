@@ -16,13 +16,21 @@ export class CountriesService {
 
 	listAllCountries(): Observable<any> {
 		return this.httpClient.get(this.baseApiUrl).pipe(
-		    catchError(this.handleError)
+			catchError(this.handleError)
 		);
 	}
 
 	// Get a single item
-	getCountryById(id: any): Observable<any> {
-		return this.httpClient.get(`${this.baseApiUrl}/${id}`).pipe(
+    getCountryById(id: any): Observable<any> {
+		console.log(`${this.baseApiUrl}/id/${id}`);
+		return this.httpClient.get(`${this.baseApiUrl}/id/${id}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getCountryByCountryCode(code: any): Observable<any> {
+		console.log(`${this.baseApiUrl}/country/${code}`);
+		return this.httpClient.get(`${this.baseApiUrl}/countrycode/${code}`).pipe(
 			catchError(this.handleError)
 		);
 	}

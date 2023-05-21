@@ -21,6 +21,27 @@ export class CitiesService {
 		);
 	}
 
+	getCityById(id: String): Observable<any> {
+		return this.httpClient.get(`${this.baseApiUrl}/id/${id}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getCityByName(name: String): Observable<any> {
+		console.log(`${this.baseApiUrl}/name/${name}`);
+		return this.httpClient.get(`${this.baseApiUrl}/name/${name}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+    	getCityByCountryCode(countryCode: String): Observable<any> {
+		console.log(`${this.baseApiUrl}/country/${countryCode}`);
+		return this.httpClient.get(`${this.baseApiUrl}/country/${countryCode}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+
 	handleError(error: HttpErrorResponse) {
 		if (error.error instanceof ErrorEvent) {
 			console.error('An error occurred:', error.error.message);

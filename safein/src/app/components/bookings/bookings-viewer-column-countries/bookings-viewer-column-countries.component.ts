@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from 'src/app/entityclasses/country';
-import { CountriesService } from 'src/services/countries.service';
+import { CountriesService } from 'src/app/services/countries.service';
 
 @Component({
 	selector: 'app-bookings-viewer-column-countries',
@@ -36,6 +36,23 @@ export class BookingsViewerColumnCountriesComponent implements OnInit {
 			this.countriesService.getCountryById(id).subscribe(
 				(countries: Country): void => {
 					this.countryList = [countries];
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllCountries();
+		}
+	}
+
+    getCountryByCountryCode(countryCode: string): void {
+		if (countryCode) {
+
+			parseInt(countryCode);
+			this.countriesService.getCountryByCountryCode(countryCode).subscribe(
+				(countries: Country[]): void => {
+					this.countryList = countries;
 				},
 				(error: any): void => {
 					console.log(error);

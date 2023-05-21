@@ -1,6 +1,6 @@
 <div class="input-group mb-3 m-3">
 	<button class="btn btn-primary" type="button" (click)="getCountryById(countriesInput.value)">By country Id</button>
-	<button class="btn btn-primary" type="button">By country code</button>
+	<button class="btn btn-primary" type="button" (click)="getCountryByCountryCode(countriesInput.value)">By country code</button>
 	<input type="text" class="form-control md-7" placeholder="Search" #countriesInput>
 </div>
 
