@@ -1,9 +1,9 @@
 <div class="input-group mb-3 m-3">
-	<button class="btn btn-primary" type="button">By customer id</button>
-	<button class="btn btn-primary" type="button">By media</button>
-	<button class="btn btn-primary" type="button">By email</button>
-	<button class="btn btn-primary" type="button">By doctype/num</button>
-	<input type="text" class="form-control md-7" placeholder="Search">
+	<button class="btn btn-primary" type="button" (click)="listCustomerById(customerInput.value)">By customer id</button>
+	<button class="btn btn-primary" type="button" (click)="listCustomerByMedia(customerInput.value)">By media</button>
+	<button class="btn btn-primary" type="button" (click)="listCustomerByEmail(customerInput.value)">By email</button>
+	<button class="btn btn-primary" type="button" (click)="listCustomerByDoc(customerInput.value)">By doctype/num</button>
+	<input type="text" class="form-control md-7" placeholder="Search" #customerInput>
 </div>
 
 <table class="table table-hover table-borderless">
