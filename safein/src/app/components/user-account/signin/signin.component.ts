@@ -7,10 +7,10 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss']
 })
-export class SigninComponent implements OnInit{
+export class SigninComponent implements OnInit {
 
-  
-  form: any ={
+
+  form: any = {
     username: null,
     password: null
   };
@@ -21,39 +21,42 @@ export class SigninComponent implements OnInit{
   roles: String[] = [];
 
   /* Constructor with Auth and TokenStorage services as params */
-  constructor(private authService: AuthService, private ts: TokenStorageService){  }
-  
-  
-  
+  constructor(private authService: AuthService, private ts: TokenStorageService) { }
+
+
+
   /* Oninit */
   ngOnInit(): void {
 
     //if get the token then change state of isLoggegIn and roles
-    if(this.ts.getToken()){
+    if (this.ts.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.ts.getUser().roles;
     }
   }
 
   /* OnSubmit Form */
-  onSumbit(): void {
-    const {username, password} = this.form;
+  onSubmit(): void {
+    const { username, password } = this.form;
 
-    this.authService.login(username, password).subscribe(data => {
-      this.ts.saveToken(data.accessToken);
-      this.ts.saveUser(data);
+    this.authService.login(username, password).subscribe({
+      next: (data) => {
+        this.ts.saveToken(data.accessToken);
+        this.ts.saveUser(data);
 
-      this.isLoggedFailed = false;
-      this.isLoggedIn = true;
-      this.roles = this.ts.getUser().roles;
-      this.reloadPage();
-    },
-    err =>{
-      this.errorMessage = err.error.message;
-      this.isLoggedFailed = true;
+        this.isLoggedFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.ts.getUser().roles;
+        this.reloadPage();
+      },
+      error: (err) => {
+        this.errorMessage = err.error.message;
+        this.isLoggedFailed = true;
+      }
     });
+
   }
-  
+
   reloadPage() {
     throw new Error('Method not implemented.');
   }

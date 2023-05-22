@@ -38,6 +38,8 @@ import { CustomerCreateColumnComponent } from './components/customer/edit/custom
 import { CustomerCreateComponent } from './components/customer/edit/customer-create/customer-create.component';
 import { CustomerEditComponent } from './components/customer/edit/customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './components/customer/edit/customer-delete/customer-delete.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -81,9 +83,10 @@ import { CustomerDeleteComponent } from './components/customer/edit/customer-del
 
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-  
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

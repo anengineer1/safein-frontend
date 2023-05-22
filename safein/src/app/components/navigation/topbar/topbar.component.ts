@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
   templateUrl: './topbar.component.html',
   styleUrls: ['./topbar.component.scss']
 })
-export class TopbarComponent {
+export class TopbarComponent implements OnInit {
   
   //JWT
   private roles: string[] = [];

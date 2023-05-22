@@ -10,14 +10,14 @@ export class AppComponent {
   title = 'safein';
 
   //JWT
-  private roles: string[] = [];
+/*   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
-  username?: string;
+  username?: string; */
 
   //Constructor with TokenStorageService as a parameter
-  constructor(private tss: TokenStorageService) { }
+/*   constructor(private tss: TokenStorageService) { }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tss.getToken();
@@ -36,5 +36,5 @@ export class AppComponent {
   logout(): void {
     this.tss.signOut();
     window.location.reload();    
-  }
+  } */
 }
