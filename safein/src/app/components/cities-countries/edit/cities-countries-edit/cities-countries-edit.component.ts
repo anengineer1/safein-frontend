@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./cities-countries-edit.component.scss']
 })
 export class CitiesCountriesEditComponent {
-
 }
