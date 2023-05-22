@@ -26,6 +26,27 @@ export class CustomersService {
 		);
 	}
 
+	getCustomerByMedia(media: any): Observable<any> {
+		console.log(`${this.baseApiUrl}/media/${media}`);
+		return this.httpClient.get(`${this.baseApiUrl}/media/${media}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getCustomerByEmail(email: any): Observable<any> {
+		console.log(`${this.baseApiUrl}/email/${email}`);
+		return this.httpClient.get(`${this.baseApiUrl}/email/${email}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getCustomerByDoc(doctype: any, docnumber: any): Observable<any> {
+		console.log(`${this.baseApiUrl}/doc/${doctype}/${docnumber}`);
+		return this.httpClient.get(`${this.baseApiUrl}/doc/${doctype}/${docnumber}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
 	handleError(error: HttpErrorResponse) {
 		if (error.error instanceof ErrorEvent) {
 			console.error('An error occurred:', error.error.message);
