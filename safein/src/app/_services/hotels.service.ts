@@ -38,4 +38,25 @@ export class HotelsService {
 			catchError(this.handleError)
 		);
 	}
+
+	getHotelByCityId(id: any): Observable<any> {
+		console.log(`${this.baseApiUrl}/cities/${id}`);
+		return this.httpClient.get(`${this.baseApiUrl}/cities/${id}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getHotelBySecurityLevel(secLevel: any): Observable<any> {
+		console.log(`${this.baseApiUrl}/security_level/${secLevel}`);
+		return this.httpClient.get(`${this.baseApiUrl}/security_level/${secLevel}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	getHotelByEnergySuficient(enerSuficiency: any): Observable<any> {
+		console.log(`${this.baseApiUrl}/energy_suficient/${enerSuficiency}`);
+		return this.httpClient.get(`${this.baseApiUrl}/energy_suficient/${enerSuficiency}`).pipe(
+			catchError(this.handleError)
+		);
+	}
 }
