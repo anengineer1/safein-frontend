@@ -14,7 +14,6 @@ export class CountriesService {
 	headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     constructor(private httpClient: HttpClient) {
-	this.headers.append('Authorization', 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NDI2MzQ1MSwiZXhwIjoxNjg1MTI3NDUxfQ.M9iD4XQFh1qOijbLA0bFlWHo-GLRZEgiw0lEyKXX5L9O6GXJUBhga95m8eIXvqybTJDyIGBsQvd7jssUndYKmg');
     }
 
 	listAllCountries(): Observable<any> {
