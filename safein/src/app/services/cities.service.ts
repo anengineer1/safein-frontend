@@ -4,6 +4,7 @@ import { BASE_API_URL } from '../global-config';
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/internal/operators/catchError';
 import { throwError } from 'rxjs';
+import { City } from '../entityclasses/city';
 
 @Injectable({
 	providedIn: 'root'
@@ -54,4 +55,19 @@ export class CitiesService {
 			'Something bad happened; please try again later.');
 	};
 
+	create(code:City): Observable<any>{
+		console.log(`${this.baseApiUrl}/cities`,code);
+		return this.httpClient.post(`${this.baseApiUrl}/cities`,code).pipe(
+			catchError(this.handleError)
+		);
+	  }
+
+	  delete():Observable<any>{
+		console.log(`${this.baseApiUrl}/cities`);
+		return this.httpClient.delete(`${this.baseApiUrl}/cities`).pipe(
+			catchError(this.handleError)
+)
+	  }
+
+	
 }

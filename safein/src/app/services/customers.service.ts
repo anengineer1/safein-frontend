@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BASE_API_URL } from '../global-config';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
+import { Customer } from '../entityclasses/customer';
 
 @Injectable({
 	providedIn: 'root'
@@ -18,6 +19,12 @@ export class CustomersService {
 			catchError(this.handleError)
 		);
 	}
+	create(code:Customer): Observable<any>{
+		console.log(`${this.baseApiUrl}/customers`,code);
+		return this.httpClient.post(`${this.baseApiUrl}/customers`,code).pipe(
+			catchError(this.handleError)
+		);
+	  }
 
 	getCustomerById(id: any): Observable<any> {
 		console.log(`${this.baseApiUrl}/${id}`);
@@ -37,4 +44,11 @@ export class CustomersService {
 		return throwError(
 			'Something bad happened; please try again later.');
 	};
+	
+	delete(): Observable<any>{
+		console.log(`${this.baseApiUrl}/customers`);
+		return this.httpClient.delete(`${this.baseApiUrl}/customers`).pipe(
+			catchError(this.handleError)
+)
+	  }
 }

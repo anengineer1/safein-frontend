@@ -50,6 +50,7 @@ import { CustomerCreateComponent } from './components/customer/edit/customer-cre
 import { CustomerEditComponent } from './components/customer/edit/customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './components/customer/edit/customer-delete/customer-delete.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -113,6 +114,7 @@ import { HttpClientModule } from '@angular/common/http';
 		BrowserModule,
 		HttpClientModule,
 		AppRoutingModule,
+		FormsModule
 
 	],
 	providers: [],

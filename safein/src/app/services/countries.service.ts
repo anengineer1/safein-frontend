@@ -4,6 +4,7 @@ import { throwError } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/operators';
 import { BASE_API_URL } from 'src/app/global-config';
+import { Country } from '../entityclasses/country';
 
 @Injectable({
 	providedIn: 'root'
@@ -34,6 +35,7 @@ export class CountriesService {
 			catchError(this.handleError)
 		);
 	}
+	
 
 	handleError(error: HttpErrorResponse) {
 		if (error.error instanceof ErrorEvent) {
@@ -47,4 +49,17 @@ export class CountriesService {
 			'Something bad happened; please try again later.');
 	};
 
+	create(code:Country): Observable<any>{
+		console.log(`${this.baseApiUrl}/countries`,code);
+		return this.httpClient.post(`${this.baseApiUrl}/countries`,code).pipe(
+			catchError(this.handleError)
+		);
+	  }
+	  delete(): Observable<any>{
+		console.log(`${this.baseApiUrl}/cities`);
+		return this.httpClient.delete(`${this.baseApiUrl}/cities`).pipe(
+			catchError(this.handleError)
+)
+	  }
+	  
 }

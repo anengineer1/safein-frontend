@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Customer } from 'src/app/entityclasses/customer';
+import { CustomersService } from 'src/app/services/customers.service';
 
 @Component({
   selector: 'app-customer-delete',
@@ -7,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class CustomerDeleteComponent {
 
+
+  constructor(private customers:CustomersService) {}
+
+  deleteCustomers(){
+    this.customers.delete().subscribe((customers: Customer[]): void => {
+      this.customers = this.customers;
+    },
+    (error: any): void => {
+      console.log(error);
+    })
+  }  
+  
 }

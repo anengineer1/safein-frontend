@@ -47,7 +47,7 @@
                         <label for="inputCityName" class="col-form-label">City Name: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputCityName" class="form-control" #ccName>
+                        <input type="text" id="inputCityName" class="form-control" #ccName>
                     </div>
                 </div>
                 <!-- COUNTRY NAME  -->
@@ -58,16 +58,15 @@
                     <div class="col-10">
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example" #countryname>
                             <option selected>Select the country name</option>
-                            <option value="1">name Country 1</option>
-                            <option value="2">name Country 1</option>
-                            <option value="3">name Country 1</option>
+                            <option value="1" *ngFor="let contry of countrylist">{{contry.countryName}}</option>
+                           
                         </select>
                     </div>
                 </div>
                 <!--     BUTTOM to add a city -->
                 <div class="row g-3 mb-3 align-items-center">
                     <div class="col-9 col-sm-12">
-                        <button type="button" class="btn btn-secondary btn-lg button_1">Save City</button>
+                        <button type="button" class="btn btn-secondary btn-lg button_1" (click)="saveCity()">Save City</button>
                     </div>
                 </div>
             </div>
