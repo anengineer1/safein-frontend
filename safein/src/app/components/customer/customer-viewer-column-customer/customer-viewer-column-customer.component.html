@@ -1,0 +1,71 @@
+<div class="input-group mb-3 m-3">
+	<button class="btn btn-primary" type="button">By customer id</button>
+	<button class="btn btn-primary" type="button">By media</button>
+	<button class="btn btn-primary" type="button">By email</button>
+	<button class="btn btn-primary" type="button">By doctype/num</button>
+	<input type="text" class="form-control md-7" placeholder="Search">
+</div>
+
+<table class="table table-hover table-borderless">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Name</th>
+			<th scope="col">Press Media</th>
+			<th scope="col">Identifier</th>
+			<th scope="col">Country code</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-bs-toggle="modal" data-bs-target="#customerModal" *ngFor="let customr of customerList"
+			(click)="assignCustomer(customr)">
+			<th scope="row">{{customr.id}}</th>
+			<td>{{customr.name}}</td>
+			<td>{{customr.pressMedia}}</td>
+			<td>{{customr.docIdentifier}} {{customr.numIdentifier}}</td>
+			<td>{{customr.country.countryCode}}</td>
+		</tr>
+
+	</tbody>
+</table>
+
+
+<!-- The Modal -->
+<div class="modal" id="customerModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content bubble shadow">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h3 class="modal-title">Customer</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				<ng-container *ngIf="customer">
+					<h3>Customer</h3>
+					<hr>
+					<p>Id: {{customer.id}}</p>
+					<p>Name: {{customer.name}}</p>
+					<p>Phone number: {{customer.phonenumber}}</p>
+					<p>Email: {{customer.email}}</p>
+					<p>Press media: {{customer.pressMedia}}</p>
+					<p>Doc identifier: {{customer.docIdentifier}}</p>
+					<p>Num Identifyer: {{customer.numIdentifier}} </p>
+					<h4>Country:</h4>
+					<p>Id: {{customer.country.id}}</p>
+					<p>Country code: {{customer.country.countryCode}}</p>
+					<p>Country name: {{customer.country.countryName}}</p>
+					<p>Longitude: {{customer.country.longitude}}</p>
+					<p>Latitude: {{customer.country.latitude}}</p>
+					<p>Situation: {{customer.country.situation}}</p>
+				</ng-container>
+			</div>
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

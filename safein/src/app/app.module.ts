@@ -12,7 +12,6 @@ import { NavbarComponent } from './components/navigation/navbar/navbar.component
 import { HomeComponent } from './pages/home/home.component';
 import { BookingsViewerColumnRoomsComponent } from './components/bookings/bookings-viewer-column-rooms/bookings-viewer-column-rooms.component';
 import { StyleTestComponent } from './components/style-test/style-test.component';
-import { ExpandedSidebarComponent } from './components/expanded-sidebar/expanded-sidebar.component';
 import { TopbarComponent } from './components/navigation/topbar/topbar.component';
 import { DatebarComponent } from './components/navigation/topbar/datebar/datebar.component';
 import { BookingsComponent } from './pages/bookings/bookings.component';
@@ -38,36 +37,66 @@ import { RoomHotelsViewerCitiesComponent } from './components/rooms-hotels/room-
 import { RoomHotelsViewerCountriesComponent } from './components/rooms-hotels/room-hotels-viewer-countries/room-hotels-viewer-countries.component';
 import { RoomHotelsViewerHotelsComponent } from './components/rooms-hotels/room-hotels-viewer-hotels/room-hotels-viewer-hotels.component';
 import { RoomHotelsViewerRoomsComponent } from './components/rooms-hotels/room-hotels-viewer-rooms/room-hotels-viewer-rooms.component';
+import { CitiesCountriesViewerColumnComponent } from './components/cities-countries/cities-countries-viewer-column/cities-countries-viewer-column.component';
+import { BookingsViewerColumnDataBookingsComponent } from './components/bookings/bookings-viewer-column-data-bookings/bookings-viewer-column-data-bookings.component';
+import { CustomerViewerColumnComponent } from './components/customer/customer-viewer-column/customer-viewer-column.component';
+import { CustomerViewerColumnCustomerComponent } from './components/customer/customer-viewer-column-customer/customer-viewer-column-customer.component';
+import { CitiesCountriesCreateComponent } from './components/cities-countries/edit/cities-countries-create/cities-countries-create.component';
+import { CitiesCountriesEditComponent } from './components/cities-countries/edit/cities-countries-edit/cities-countries-edit.component';
+import { CitiesCountriesDeleteComponent } from './components/cities-countries/edit/cities-countries-delete/cities-countries-delete.component';
+import { CitiesCountriesCreateColumnComponent } from './components/cities-countries/edit/cities-countries-create-column/cities-countries-create-column.component';
+import { CustomerCreateColumnComponent } from './components/customer/edit/customer-create-column/customer-create-column.component';
+import { CustomerCreateComponent } from './components/customer/edit/customer-create/customer-create.component';
+import { CustomerEditComponent } from './components/customer/edit/customer-edit/customer-edit.component';
+import { CustomerDeleteComponent } from './components/customer/edit/customer-delete/customer-delete.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
+
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeLatestBookingsComponent,
-    BookingsViewerColumnComponent,
-    BookingsViewerColumnBookingsComponent,
-    BookingsViewerColumnCountriesComponent,
-    BookingsViewerColumnCitiesComponent,
-    BookingsViewerColumnHotelsComponent,
-    NavbarComponent,
-    HomeComponent,
-    BookingsViewerColumnRoomsComponent,
-    StyleTestComponent,
-    ExpandedSidebarComponent,
-    TopbarComponent,
-    DatebarComponent,
-    BookingsComponent,
-    BookingsCreateColumnComponent,
-    BookingCreateComponent,
-    BookingEditComponent,
-    BookingDeleteComponent,
-    SigninComponent,
-    AccountComponent,
-    WorkingspaceComponent,
-    LatestBookingperuserComponent,
-    RoomsHotelsComponent,
-    CitiesCountriesComponent,
-    CustomersComponent,
-    RoomHotelsCreateComponent,
+	declarations: [
+		AppComponent,
+		HomeLatestBookingsComponent,
+		BookingsViewerColumnComponent,
+		BookingsViewerColumnBookingsComponent,
+		BookingsViewerColumnCountriesComponent,
+		BookingsViewerColumnCitiesComponent,
+		BookingsViewerColumnHotelsComponent,
+		NavbarComponent,
+		HomeComponent,
+		BookingsViewerColumnRoomsComponent,
+		StyleTestComponent,
+		TopbarComponent,
+		DatebarComponent,
+		BookingsComponent,
+		BookingsCreateColumnComponent,
+		BookingCreateComponent,
+		BookingEditComponent,
+		BookingDeleteComponent,
+		SigninComponent,
+		AccountComponent,
+		WorkingspaceComponent,
+		LatestBookingperuserComponent,
+		RoomsHotelsComponent,
+		CitiesCountriesComponent,
+		CustomersComponent,
+		CitiesCountriesViewerColumnComponent,
+		BookingsViewerColumnDataBookingsComponent,
+		CustomerViewerColumnComponent,
+		CustomerViewerColumnCustomerComponent,
+		CitiesCountriesCreateComponent,
+		CitiesCountriesEditComponent,
+		CitiesCountriesDeleteComponent,
+		CitiesCountriesCreateColumnComponent,
+    CustomerCreateColumnComponent,
+    CustomerCreateComponent,
+    CustomerEditComponent,
+    CustomerDeleteComponent,
+     RoomHotelsCreateComponent,
     RoomHotelsDeleteComponent,
     RoomHotelsEditComponent,
     RoomHotelsColumncreationComponent,
@@ -79,13 +108,14 @@ import { RoomHotelsViewerRoomsComponent } from './components/rooms-hotels/room-h
     RoomHotelsViewerHotelsComponent,
     RoomHotelsViewerRoomsComponent
 
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		AppRoutingModule,
+
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
