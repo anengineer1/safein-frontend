@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/_services/auth.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
@@ -21,7 +22,7 @@ export class SigninComponent implements OnInit {
   roles: String[] = [];
 
   /* Constructor with Auth and TokenStorage services as params */
-  constructor(private authService: AuthService, private ts: TokenStorageService) { }
+  constructor(private authService: AuthService, private ts: TokenStorageService, private router: Router) { }
 
 
 
@@ -47,7 +48,12 @@ export class SigninComponent implements OnInit {
         this.isLoggedFailed = false;
         this.isLoggedIn = true;
         this.roles = this.ts.getUser().roles;
-        this.reloadPage();
+        //If user is logged correctly redirect to the home page, else reload account page
+        if (this.isLoggedIn){
+          this.router.navigate(['/workingspace/home']);
+        }else{
+          this.reloadPage();
+        }
       },
       error: (err) => {
         this.errorMessage = err.error.message;
@@ -58,7 +64,7 @@ export class SigninComponent implements OnInit {
   }
 
   reloadPage() {
-    throw new Error('Method not implemented.');
+    window.location.reload();
   }
 
 }

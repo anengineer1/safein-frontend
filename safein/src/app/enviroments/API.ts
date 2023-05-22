@@ -1,4 +1,4 @@
 export const API_URL = {
-  server: 'localhost:8181/',
-  signin: 'localhost:8181/login'
+  server: 'http://localhost:8181/',
+  signin: 'http://localhost:8181/login'
 }
