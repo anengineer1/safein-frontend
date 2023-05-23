@@ -81,8 +81,8 @@ export class CustomerViewerColumnCustomerComponent implements OnInit {
 	}
 
 	listCustomerByDoc(doc: string): void {
-	    if (doc) {
-		let splittedDoc:string[] = doc.split("/") ;
+		if (doc) {
+			let splittedDoc: string[] = doc.split("/");
 			this.customerService.getCustomerByDoc(splittedDoc[0], splittedDoc[1]).subscribe(
 				(customers: Customer[]): void => {
 					this.customerList = customers;

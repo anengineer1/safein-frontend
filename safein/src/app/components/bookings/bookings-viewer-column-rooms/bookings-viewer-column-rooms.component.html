@@ -1,12 +1,14 @@
 <div class="input-group mb-3 m-3">
 	<button class="btn btn-primary" type="button" (click)="listRoomsById(inputRoom.value)">By room id</button>
-	<button class="btn btn-primary" type="button">By room code</button>
-	<button class="btn btn-primary" type="button">By hotel id</button>
-	<button class="btn btn-primary" type="button">By number of people</button>
-	<button class="btn btn-primary" type="button">By internet type</button>
-	<button class="btn btn-primary" type="button">By smoker</button>
-	<button class="btn btn-primary" type="button">By has terrace</button>
-	<button class="btn btn-primary" type="button">By hotel id/num people</button>
+	<button class="btn btn-primary" type="button" (click)="listRoomsByHotelId(inputRoom.value)">By hotel id</button>
+	<button class="btn btn-primary" type="button" (click)="listRoomsByNumPeople(inputRoom.value)">By number of
+		people</button>
+	<button class="btn btn-primary" type="button" (click)="listRoomsByInternetType(inputRoom.value)">By internet
+		type</button>
+	<button class="btn btn-primary" type="button" (click)="listRoomsBySmoker(inputRoom.value)">By smoker</button>
+	<button class="btn btn-primary" type="button" (click)="listRoomsByHasTerrace(inputRoom.value)">By has terrace</button>
+	<button class="btn btn-primary" type="button" (click)="listRoomsByNumpeopleAndHotelId(inputRoom.value)">By hotel
+		id/num people</button>
 	<input type="text" class="form-control md-7" placeholder="Search" #inputRoom>
 </div>
 
@@ -22,11 +24,15 @@
 	</thead>
 	<tbody>
 		<tr data-bs-toggle="modal" data-bs-target="#roomsModal" *ngFor="let hroom of roomList" (click)="assignRoom(hroom)">
-			<th scope="row">{{hroom.id}}</th>
-			<td>{{hroom.hotel.name}}</td>
-			<td>{{hroom.code}}</td>
-			<td>{{hroom.internetType}}</td>
-			<td>{{hroom.hasTerrace}}</td>
+			<ng-container *ngIf="hroom">
+				<th scope="row">{{hroom.id}}</th>
+				<ng-container *ngIf="hroom.hotel">
+					<td>{{hroom.hotel.name}}</td>
+				</ng-container>
+				<td>{{hroom.code}}</td>
+				<td>{{hroom.internetType}}</td>
+				<td>{{hroom.hasTerrace}}</td>
+			</ng-container>
 		</tr>
 
 	</tbody>

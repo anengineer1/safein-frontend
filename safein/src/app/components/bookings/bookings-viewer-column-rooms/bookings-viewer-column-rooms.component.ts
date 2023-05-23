@@ -51,8 +51,84 @@ export class BookingsViewerColumnRoomsComponent implements OnInit {
 	listRoomsByHotelId(id: string): void {
 		if (id) {
 			this.roomsService.getRoomsByHotelId(id).subscribe(
-				(room: Room): void => {
-					this.roomList = [room];
+				(room: Room[]): void => {
+					this.roomList = room;
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllRooms();
+		}
+	}
+
+	listRoomsByNumPeople(numPeople: string): void {
+		if (numPeople) {
+			this.roomsService.getRoomsByNumberOfPeople(numPeople).subscribe(
+				(room: Room[]): void => {
+					this.roomList = room;
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllRooms();
+		}
+	}
+
+	listRoomsByInternetType(internetType: string): void {
+		if (internetType) {
+			this.roomsService.getRoomsByInternetType(internetType).subscribe(
+				(room: Room[]): void => {
+					this.roomList = room;
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllRooms();
+		}
+	}
+
+	listRoomsBySmoker(smoker: string): void {
+		if (smoker) {
+			this.roomsService.getRoomsByIsSmoker(smoker).subscribe(
+				(room: Room[]): void => {
+					this.roomList = room;
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllRooms();
+		}
+	}
+
+	listRoomsByHasTerrace(hasTerrace: string): void {
+		if (hasTerrace) {
+			this.roomsService.getRoomsByHasTerrace(hasTerrace).subscribe(
+				(room: Room[]): void => {
+					this.roomList = room;
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllRooms();
+		}
+	}
+
+	listRoomsByNumpeopleAndHotelId(hotelid_numpeople: string): void {
+		let splittedHotelIdNumpeople: string[] = hotelid_numpeople.split("/");
+		if (hotelid_numpeople) {
+			this.roomsService.getRoomsByHotelIdAndNumPeople(splittedHotelIdNumpeople[0], splittedHotelIdNumpeople[1]).subscribe(
+				(room: Room[]): void => {
+					this.roomList = room;
 				},
 				(error: any): void => {
 					console.log(error);
