@@ -30,7 +30,7 @@ export class TopbarComponent implements OnInit {
 	ngOnInit(): void {
 
 		//MODAL
-		this.showModal=false;
+		this.showModal = false;
 		this.modalService.$modal.subscribe((value) => { this.showModal = value });
 
 		//SIGNIN
@@ -46,7 +46,6 @@ export class TopbarComponent implements OnInit {
 			//this.showModeratorBoard = this.roles.includes('ROLE_EDITOR');
 
 			this.username = user.username;
-			console.log(user.username);
 		}
 	}
 
@@ -62,7 +61,7 @@ export class TopbarComponent implements OnInit {
 	openModal() {
 		this.showModal = true;
 	}
-
+	/* Function to Close a Modal as a component */
 	closeModal() {
 		this.showModal = false;
 	}

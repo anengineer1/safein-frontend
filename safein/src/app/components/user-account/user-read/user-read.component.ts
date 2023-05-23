@@ -11,27 +11,14 @@ import { TokenStorageService } from 'src/app/_services/auth/token-storage.servic
 //Class Profile of User
 export class UserReadComponent implements OnInit {
 
-  /* Atributes */
-  username: String = '';
-  email: String = '';
-  rol: String = '';
-  token: String = '';
-  tokenType: String = '';
-
-
+  /* Atributes object user */
+ user:any = {};
 
   constructor(private ts: TokenStorageService, private modalService: SwitchModalService) {
 
-
-    //if get the token then change state of isLoggegIn and roles
-      this.username = this.ts.getUser().username;
-      console.log(this.ts.getUser().username);
-      this.rol = this.ts.getUser().rol;
-      this.email = this.ts.getUser().email;
-      this.token = this.ts.getUser().token;
-      this.tokenType = this.ts.getUser().tokenType;
-
-
+      //Get the user from the sessionStorage  
+      this.user = this.ts.getUser();
+      console.log(this.user.accessToken);
   }
 
   ngOnInit(): void {

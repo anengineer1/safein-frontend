@@ -18,7 +18,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="userProfileModal">Your Profile Settings</h5>
+        <h5 class="modal-title fw-bold" id="userProfileModal">Your Profile Settings</h5>
         <button
           type="button"
           class="btn-close"
@@ -37,16 +37,16 @@
 
         <!-- USERNAME -->
         <div class="row g-3 mb-1 align-items-center">
-          <div class="col-3 col-sm-5">
-            <label for="inputUsername" class="col-form-label">Username: </label>
+          <div class="col-3 col-sm-3 ms-3">
+            <label for="inputUsername" class="col-form-label fw-bold">Username: </label>
           </div>
           <div class="col-6">
             <input
-              type="number"
+              type="text"
               id="inputUsername"
               class="form-control"
               #userProfileUsername
-              value={{username}}
+              value={{user.username}}
               disabled
             />
           </div>
@@ -54,8 +54,8 @@
 
         <!-- ROL -->
         <div class="row g-3 mb-1 align-items-center">
-          <div class="col-3 col-sm-5">
-            <label for="inputUserRol" class="col-form-label">ID: </label>
+          <div class="col-3 col-sm3 ms-3">
+            <label for="inputUserRol" class="col-form-label fw-bold">Rol: </label>
           </div>
           <div class="col-6">
             <input
@@ -63,24 +63,7 @@
               id="inputUserRol"
               class="form-control"
               #userRolId
-              disabled
-            />
-          </div>
-        </div>
-
-        <!-- NOMAPELS -->
-        <div class="row g-3 mb-1 align-items-center">
-          <div class="col-3 col-sm-5">
-            <label for="inputNomApels" class="col-form-label"
-              >Firstname and Lastname:
-            </label>
-          </div>
-          <div class="col-6">
-            <input
-              type="number"
-              id="inputNomApels"
-              class="form-control"
-              #userProfileNomApels
+              value={{user.role}}
               disabled
             />
           </div>
@@ -88,8 +71,8 @@
 
         <!-- EMAIL -->
         <div class="row g-3 mb-1 align-items-center">
-          <div class="col-3 col-sm-5">
-            <label for="inputEmail" class="col-form-label">Email: </label>
+          <div class="col-3 col-sm-3 ms-3">
+            <label for="inputEmail" class="col-form-label fw-bold">Email: </label>
           </div>
           <div class="col-6">
             <input
@@ -97,24 +80,44 @@
               id="inputEmail"
               class="form-control"
               #userProfileEmail
+              value={{user.email}}
               disabled
             />
           </div>
         </div>
 
+        
+        <!-- TYPETOKEN -->
+        <div class="row g-3 mb-1 align-items-center">
+            <div class="col-3 col-sm3 ms-3">
+              <label for="inputTypeToken" class="col-form-label fw-bold">Type Token: </label>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                id="inputTypeToken"
+                class="form-control"
+                #userRolId
+                value={{user.tokenType}}
+                disabled
+              />
+            </div>
+          </div>
+
         <!-- TOKEN -->
         <div class="row g-3 mb-1 align-items-center">
-          <div class="col-3 col-sm-5">
-            <label for="inputToken" class="col-form-label">Token: </label>
+          <div class="col-3 col-sm-3 ms-3">
+            <label for="inputToken" class="col-form-label fw-bold">Token: </label>
           </div>
-          <div class="col-6">
-            <input
-              type="number"
+          <div class="col-6 ms-3">
+            <textarea
+              ng-model="inputToken"
+              type="text"
               id="inputToken"
-              class="form-control"
+              class="form-control textarea__custom md-textarea"
               #userProfileToken
-              disabled
-            />
+              value={{user.accessToken}}
+              disabled></textarea>
           </div>
         </div>
       </div>
@@ -123,10 +126,11 @@
           type="button"
           class="btn btn-secondary"
           data-mdb-dismiss="modal"
+          (click)="closeModal()"
         >
           Close
         </button>
-        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-primary" disabled>Save</button>
       </div>
     </div>
   </div>
