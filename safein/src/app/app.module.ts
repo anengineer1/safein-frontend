@@ -39,6 +39,9 @@ import { CustomerCreateComponent } from './components/customer/edit/customer-cre
 import { CustomerEditComponent } from './components/customer/edit/customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './components/customer/edit/customer-delete/customer-delete.component';
 import { UserReadComponent } from './components/user-account/user-read/user-read.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { authInterceptorProvider } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -82,11 +85,14 @@ import { UserReadComponent } from './components/user-account/user-read/user-read
     UserReadComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-  
+    FormsModule,
   ],
-  providers: [],
+ providers: [
+  { provide: authInterceptorProvider, useValue: authInterceptorProvider}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

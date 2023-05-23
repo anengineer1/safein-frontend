@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand  navbar-light col-12 navbar_2 bg-light g-0 py-0 navbar-custom">
     <div class="container-fluid g-0">
         <a class="navbar-brand d-block g-0 ms-1 py-0" type="button" data-bs-toggle="collapse"
@@ -21,14 +20,15 @@
                 <div class="ms-3 me-3"><span>Number of Clients: {{'Number'}}</span></div>
             </div>
         </div>
+        <!--  Shows date in real time format -->
         <div class="navbar-nav float-center">
             <div class="me-3 mt-4 me-3"><app-datebar></app-datebar></div>
         </div>
         <div class="navbar-nav flex-row mt-1 ms-3 me-3">
             <span class="ms-3 me-3">Notifications</span>
-            <span class="ms-3 me-3">Hello {{'User'}},({{'rol'}})</span>
+            <!--    Shows Welcome to user and her role -->
+            <span class="ms-3 me-3" *ngIf="isLoggedIn">Hello {{username}},({{role}})</span>
         </div>
-        <!--    <a class="navbar-brand ms-5" href="#">SafeIn</a> -->
 
         <ul class="navbar-nav d-flex flex-row">
 
@@ -38,18 +38,15 @@
                     aria-expanded="false">
                     <i class="bi bi-person-square text-success fs-2"></i>
                 </a>
-                <ul class="dropdown-menu me-3 bg-success ">
+                <ul class="dropdown-menu me-3 bg-success nav-dark">
                     <li>
-                        <a class="dropdown-item text-light" href="#">My account</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item text-light" href="#">Settings</a>
+                        <a class="dropdown-item text-light" href="/profile" routerLink="profile">My Profile</a>
                     </li>
                     <li>
                         <hr class="dropdown-divider text-light" />
                     </li>
                     <li>
-                        <a class="dropdown-item text-light" href="#">Sign Out</a>
+                        <a href class="dropdown-item text-light" (click)="logout()">Sign Out</a>
                     </li>
                 </ul>
             </li>

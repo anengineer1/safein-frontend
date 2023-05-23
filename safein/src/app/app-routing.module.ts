@@ -12,18 +12,11 @@ import { UserReadComponent } from './components/user-account/user-read/user-read
 
 
 const routes: Routes = [
-	{ path: '', redirectTo: '/account', pathMatch: 'full' },
-	{//User Account: Signin
-		path: "signin",
-		component: SigninComponent
-	}, {
-		path: "account",
-		component: AccountComponent
-	},{
-		path: "profile",
-		component: UserReadComponent
-	}
-	, {
+	{ path: '', redirectTo: 'account', pathMatch: 'full' },
+	{ path: "signin", component: SigninComponent }, //User Account: Signin
+	{ path: "account", component: AccountComponent },//User Account
+	//{ path: "profile", component: UserReadComponent}, User Profile
+	{
 		path: "workingspace",
 		component: WorkingspaceComponent, children: [
 
@@ -56,4 +49,4 @@ const routes: Routes = [
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
