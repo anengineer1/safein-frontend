@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/_services/auth.service';
-import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import { AuthService } from 'src/app/_services/auth/auth.service';
+import { TokenStorageService } from 'src/app/_services/auth/token-storage.service';
 
 @Component({
   selector: 'app-signin',
@@ -36,9 +36,7 @@ export class SigninComponent implements OnInit {
     if (this.ts.getToken()) {
       this.isLoggedIn = true;
       this.userName = this.ts.getUser().username;
-      console.log(this.userName);
       this.roles = this.ts.getUser().roles;
-      console.log(this.roles);
     }
   }
 
@@ -56,7 +54,7 @@ export class SigninComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.ts.getUser().roles;
         this.userName = this.ts.getUser().userName;
-        console.log(this.userName);
+        
         //If user is logged correctly redirect to the home page, else reload account page
         if (this.isLoggedIn){
           this.router.navigate(['/workingspace/home']);

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { API_URL } from '../enviroments/API';
+import { API_URL } from '../../enviroments/API';
 
 const httpOptions ={
   headers: new HttpHeaders({'Content-Type': 'application/json'})

@@ -39,8 +39,8 @@
                     <i class="bi bi-person-square text-success fs-2"></i>
                 </a>
                 <ul class="dropdown-menu me-3 bg-success nav-dark">
-                    <li>
-                        <a class="dropdown-item text-light" href="/profile" routerLink="profile">My Profile</a>
+                    <li (click)="openModal()">
+                        <a class="dropdown-item text-light">My Profile<app-user-read *ngIf="showModal" (onCloseModal)="closeModal()"></app-user-read></a>     
                     </li>
                     <li>
                         <hr class="dropdown-divider text-light" />

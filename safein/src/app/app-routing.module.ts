@@ -40,7 +40,8 @@ const routes: Routes = [
 			{ // Bookings route
 				path: "bookings",
 				component: BookingsComponent
-			}
+			},
+			{path: "profile", component: UserReadComponent},//User Profile
 		]
 	}
 ];

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { KEYS } from '../enviroments/KEYS';
+import { KEYS } from '../../enviroments/KEYS';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,6 @@ export class TokenStorageService {
 
   /*    Get the token in the sessionStorage */
   public getToken(): string | null {
-    console.log(window.sessionStorage.getItem(KEYS.TOKEN_KEY));
     return window.sessionStorage.getItem(KEYS.TOKEN_KEY);
   }
 
@@ -35,7 +34,6 @@ export class TokenStorageService {
   public getUser(): any {
     /*Get the key from the sessionStorage */
     const user = window.sessionStorage.getItem(KEYS.USER_KEY);
-    console.log(user);
 
     //If is not empty, return the user object in Json format
     if (user) {

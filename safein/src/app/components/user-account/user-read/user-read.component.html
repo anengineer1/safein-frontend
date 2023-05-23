@@ -6,88 +6,128 @@
 "nomApels": "Maria Raices" 
 ----------------------------------------------------------------------------->
 
-
-<div class="modal fade show" id="userProfileModal" tabindex="-1" aria-labelledby="userProfileModal"
-    style="display: block;" aria-modal="true" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="userProfileModal">Your Profile Settings</h5>
-                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-
-                <!-- ID -->
-                <div class="row g-3 mb-1 ">
-                    <div class="col-3 col-sm-12 text-end">
-                        <i class="bi bi-pencil-square fs-2 "></i>
-                    </div>
-                </div>
-
-
-                <!-- ID -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputUserProfile" class="col-form-label">ID: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputUserProfile" class="form-control" #userProfileId disabled>
-                    </div>
-                </div>
-
-
-
-                <!-- NOMAPELS -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputNomApels" class="col-form-label">Firstname and Lastname: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputNomApels" class="form-control" #userProfileNomApels disabled>
-                    </div>
-                </div>
-
-
-                <!-- EMAIL -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputEmail" class="col-form-label">Email: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="email" id="inputEmail" class="form-control" #userProfileEmail disabled>
-                    </div>
-                </div>
-
-
-                <!-- USERNAME -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputUsername" class="col-form-label">Username: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputUsername" class="form-control" #userProfileUsername disabled>
-                    </div>
-                </div>
-
-
-                <!-- PASSWORD -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputPassword" class="col-form-label">Password: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputPassword" class="form-control" #userProfilePassword disabled>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-                    Close
-                </button>
-                <button type="button" class="btn btn-primary">Checkout</button>
-            </div>
+<div
+  class="modal fade show bg-dark text-primary modal__custom p-3"
+  id="userProfileModal"
+  tabindex="-1"
+  aria-labelledby="userProfileModal"
+  style="display: block"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="userProfileModal">Your Profile Settings</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-mdb-dismiss="modal"
+          aria-label="Close"
+          (click)="closeModal()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- EDIT USER (PUT) -->
+        <div class="row g-3 mb-1">
+          <div class="col-3 col-sm-12 text-end">
+            <i class="bi bi-pencil-square fs-2"></i>
+          </div>
         </div>
+
+        <!-- USERNAME -->
+        <div class="row g-3 mb-1 align-items-center">
+          <div class="col-3 col-sm-5">
+            <label for="inputUsername" class="col-form-label">Username: </label>
+          </div>
+          <div class="col-6">
+            <input
+              type="number"
+              id="inputUsername"
+              class="form-control"
+              #userProfileUsername
+              value={{username}}
+              disabled
+            />
+          </div>
+        </div>
+
+        <!-- ROL -->
+        <div class="row g-3 mb-1 align-items-center">
+          <div class="col-3 col-sm-5">
+            <label for="inputUserRol" class="col-form-label">ID: </label>
+          </div>
+          <div class="col-6">
+            <input
+              type="text"
+              id="inputUserRol"
+              class="form-control"
+              #userRolId
+              disabled
+            />
+          </div>
+        </div>
+
+        <!-- NOMAPELS -->
+        <div class="row g-3 mb-1 align-items-center">
+          <div class="col-3 col-sm-5">
+            <label for="inputNomApels" class="col-form-label"
+              >Firstname and Lastname:
+            </label>
+          </div>
+          <div class="col-6">
+            <input
+              type="number"
+              id="inputNomApels"
+              class="form-control"
+              #userProfileNomApels
+              disabled
+            />
+          </div>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="row g-3 mb-1 align-items-center">
+          <div class="col-3 col-sm-5">
+            <label for="inputEmail" class="col-form-label">Email: </label>
+          </div>
+          <div class="col-6">
+            <input
+              type="email"
+              id="inputEmail"
+              class="form-control"
+              #userProfileEmail
+              disabled
+            />
+          </div>
+        </div>
+
+        <!-- TOKEN -->
+        <div class="row g-3 mb-1 align-items-center">
+          <div class="col-3 col-sm-5">
+            <label for="inputToken" class="col-form-label">Token: </label>
+          </div>
+          <div class="col-6">
+            <input
+              type="number"
+              id="inputToken"
+              class="form-control"
+              #userProfileToken
+              disabled
+            />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-mdb-dismiss="modal"
+        >
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
     </div>
+  </div>
 </div>

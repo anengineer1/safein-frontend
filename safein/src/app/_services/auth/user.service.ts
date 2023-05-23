@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { API_URL } from '../enviroments/API';
+import { API_URL } from '../../enviroments/API';
 
 @Injectable({
   providedIn: 'root'
