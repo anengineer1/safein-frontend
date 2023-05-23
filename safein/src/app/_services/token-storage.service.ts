@@ -8,7 +8,7 @@ export class TokenStorageService {
 
   constructor() { }
 
-  /*   Sign Out the token in the sessionStorage */
+  /*   Sign Out: clear the token in the sessionStorage */
   signOut(): void {
     window.sessionStorage.clear();
   }
@@ -21,6 +21,7 @@ export class TokenStorageService {
 
   /*    Get the token in the sessionStorage */
   public getToken(): string | null {
+    console.log(window.sessionStorage.getItem(KEYS.TOKEN_KEY));
     return window.sessionStorage.getItem(KEYS.TOKEN_KEY);
   }
 
@@ -32,8 +33,13 @@ export class TokenStorageService {
 
   /*  Get the user  in the sessionStorage */
   public getUser(): any {
+    /*Get the key from the sessionStorage */
     const user = window.sessionStorage.getItem(KEYS.USER_KEY);
+    console.log(user);
+
+    //If is not empty, return the user object in Json format
     if (user) {
+      console.log(JSON.parse(user));
       return JSON.parse(user);
     }
     return {};

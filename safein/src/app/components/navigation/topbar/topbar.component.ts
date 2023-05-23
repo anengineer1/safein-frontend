@@ -19,6 +19,7 @@ export class TopbarComponent implements OnInit {
   //Constructor with TokenStorageService as a parameter
   constructor(private tss: TokenStorageService) { }
 
+  /* When load the component check the token and if user is logged assign boards. */
   ngOnInit(): void {
     this.isLoggedIn = !!this.tss.getToken();
 
@@ -26,17 +27,21 @@ export class TopbarComponent implements OnInit {
       const user = this.tss.getUser();
       this.roles = user.roles;
       this.role = user.role;
-
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+     
+//TODO: load data info in profile
+      //this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      //this.showModeratorBoard = this.roles.includes('ROLE_EDITOR');
 
       this.username = user.username;
+      console.log(user.username);
     }
   }
 
   logout(): void {
+    //Clear the session storage
     this.tss.signOut();
-    window.location.reload();    
+    //Reload the site but how is not signed redirect to account login
+    window.location.reload();
   }
 
 }

@@ -40,6 +40,7 @@ import { CustomerEditComponent } from './components/customer/edit/customer-edit/
 import { CustomerDeleteComponent } from './components/customer/edit/customer-delete/customer-delete.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { authInterceptorProvider } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,10 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+ providers: [
+  { provide: authInterceptorProvider, useValue: authInterceptorProvider}
+],
+ //providers:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

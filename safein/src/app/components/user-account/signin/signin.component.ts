@@ -8,6 +8,10 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss']
 })
+
+
+
+
 export class SigninComponent implements OnInit {
 
 
@@ -20,11 +24,10 @@ export class SigninComponent implements OnInit {
   isLoggedFailed: boolean = false;
   errorMessage: string = '';
   roles: String[] = [];
+  userName: String = '';
 
   /* Constructor with Auth and TokenStorage services as params */
   constructor(private authService: AuthService, private ts: TokenStorageService, private router: Router) { }
-
-
 
   /* Oninit */
   ngOnInit(): void {
@@ -32,7 +35,10 @@ export class SigninComponent implements OnInit {
     //if get the token then change state of isLoggegIn and roles
     if (this.ts.getToken()) {
       this.isLoggedIn = true;
+      this.userName = this.ts.getUser().username;
+      console.log(this.userName);
       this.roles = this.ts.getUser().roles;
+      console.log(this.roles);
     }
   }
 
@@ -45,9 +51,12 @@ export class SigninComponent implements OnInit {
         this.ts.saveToken(data.accessToken);
         this.ts.saveUser(data);
 
+        console.log("User logged successfully!");
         this.isLoggedFailed = false;
         this.isLoggedIn = true;
         this.roles = this.ts.getUser().roles;
+        this.userName = this.ts.getUser().userName;
+        console.log(this.userName);
         //If user is logged correctly redirect to the home page, else reload account page
         if (this.isLoggedIn){
           this.router.navigate(['/workingspace/home']);
