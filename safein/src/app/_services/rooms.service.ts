@@ -86,6 +86,6 @@ export class RoomsService {
 		}
 		return throwError(
 			'Something bad happened; please try again later.');
-	};
+	}
 
 }
