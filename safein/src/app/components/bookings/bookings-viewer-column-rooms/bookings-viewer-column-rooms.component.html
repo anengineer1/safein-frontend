@@ -1,5 +1,5 @@
 <div class="input-group mb-3 m-3">
-	<button class="btn btn-primary" type="button">By room id</button>
+	<button class="btn btn-primary" type="button" (click)="listRoomsById(inputRoom.value)">By room id</button>
 	<button class="btn btn-primary" type="button">By room code</button>
 	<button class="btn btn-primary" type="button">By hotel id</button>
 	<button class="btn btn-primary" type="button">By number of people</button>
@@ -7,7 +7,7 @@
 	<button class="btn btn-primary" type="button">By smoker</button>
 	<button class="btn btn-primary" type="button">By has terrace</button>
 	<button class="btn btn-primary" type="button">By hotel id/num people</button>
-	<input type="text" class="form-control md-7" placeholder="Search">
+	<input type="text" class="form-control md-7" placeholder="Search" #inputRoom>
 </div>
 
 <table class="table table-hover table-borderless">
@@ -21,45 +21,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr data-bs-toggle="collapse" data-bs-target="#demo">
-			<th scope="row">1</th>
-			<td>Hotel Palace</td>
-			<td>103</td>
-			<td>Fiber</td>
-			<td>True</td>
-		</tr>
-		<tr id="demo" class="collapse">
-			<td colspan=5>
-				<h3>Rooms</h3>
-				<hr>
-				<p>Id: 1</p>
-				<p>Num People: 1</p>
-				<p>Price per night: 59.99</p>
-				<p>Internet Type: Fiber</p>
-				<p>Has Terrace: true</p>
-				<h4>Belongs to hotel:</h4>
-				<p>Id: 1</p>
-				<p>Name: Hotel Palace</p>
-				<p>Phone number: +34555555555</p>
-				<p>Email: reboca@gmail.com</p>
-				<p>Address: Arbeitzer street 5</p>
-				<p>Latitude: 0</p>
-				<p>Longitude: 0</p>
-				<p>Security level: Diplomatic coverage and private security</p>
-				<p>Energy sufficient: True</p>
-				<h4>City:</h4>
-				<p>id: 1</p>
-				<p>Name: Kirtze</p>
-				<p>Latitude: 37.7749</p>
-				<p>Longitude: -122.4194</p>
-				<h4>Country:</h4>
-				<p>Id: 1</p>
-				<p>Country code: UA</p>
-				<p>Country name: Ukraine</p>
-				<p>Latitude: 49</p>
-				<p>Longitude: 32</p>
-				<p>Situation: War</p>
-			</td>
+		<tr data-bs-toggle="modal" data-bs-target="#roomsModal" *ngFor="let hroom of roomList" (click)="assignRoom(hroom)">
+			<th scope="row">{{hroom.id}}</th>
+			<td>{{hroom.hotel.name}}</td>
+			<td>{{hroom.code}}</td>
+			<td>{{hroom.internetType}}</td>
+			<td>{{hroom.hasTerrace}}</td>
 		</tr>
 
 	</tbody>
@@ -73,39 +40,41 @@
 
 			<!-- Modal Header -->
 			<div class="modal-header">
-				<h3 class="modal-title">Hotel</h3>
+				<h3 class="modal-title">Room</h3>
 				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 			</div>
 
 			<!-- Modal body -->
 			<div class="modal-body">
-				<p>Id: 1</p>
-				<p>Num People: 1</p>
-				<p>Price per night: 59.99</p>
-				<p>Internet Type: Fiber</p>
-				<p>Has Terrace: true</p>
-				<h4>Belongs to hotel:</h4>
-				<p>Id: 1</p>
-				<p>Name: Hotel Palace</p>
-				<p>Phone number: +34555555555</p>
-				<p>Email: reboca@gmail.com</p>
-				<p>Address: Arbeitzer street 5</p>
-				<p>Latitude: 0</p>
-				<p>Longitude: 0</p>
-				<p>Security level: Diplomatic coverage and private security</p>
-				<p>Energy sufficient: True</p>
-				<h4>City:</h4>
-				<p>id: 1</p>
-				<p>Name: Kirtze</p>
-				<p>Latitude: 37.7749</p>
-				<p>Longitude: -122.4194</p>
-				<h4>Country:</h4>
-				<p>Id: 1</p>
-				<p>Country code: UA</p>
-				<p>Country name: Ukraine</p>
-				<p>Latitude: 49</p>
-				<p>Longitude: 32</p>
-				<p>Situation: War</p>
+				<ng-container *ngIf="room">
+					<p>Id: {{room.id}}</p>
+					<p>Num People: {{room.numPeople}}</p>
+					<p>Price per night: {{room.pricePerNight}}</p>
+					<p>Internet Type: {{room.internetType}}</p>
+					<p>Has Terrace: {{room.hasTerrace}}</p>
+					<h4>Belongs to hotel:</h4>
+					<p>Id: {{room.hotel.id}}</p>
+					<p>Name: {{room.hotel.name}}</p>
+					<p>Phone number: {{room.hotel.phonenumber}}</p>
+					<p>Email: {{room.hotel.email}}</p>
+					<p>Address: {{room.hotel.address}}</p>
+					<p>Latitude: {{room.hotel.latitude}}</p>
+					<p>Longitude: {{room.hotel.longitude}}</p>
+					<p>Security level: {{room.hotel.securityLevel}}</p>
+					<p>Energy sufficient: {{room.hotel.energySuficient}}</p>
+					<h4>City:</h4>
+					<p>id: {{room.hotel.city.id}}</p>
+					<p>Name: {{room.hotel.city.name}}</p>
+					<p>Latitude: {{room.hotel.city.latitude}}</p>
+					<p>Longitude: {{room.hotel.city.longitude}}</p>
+					<h4>Country:</h4>
+					<p>Id: {{room.hotel.city.country.id}}</p>
+					<p>Country code: {{room.hotel.city.country.countryCode}}</p>
+					<p>Country name: {{room.hotel.city.country.countryName}}</p>
+					<p>Latitude: {{room.hotel.city.country.latitude}}</p>
+					<p>Longitude: {{room.hotel.city.country.longitude}}</p>
+					<p>Situation: {{room.hotel.city.country.situation}}</p>
+				</ng-container>
 			</div>
 			<!-- Modal footer -->
 			<div class="modal-footer">
