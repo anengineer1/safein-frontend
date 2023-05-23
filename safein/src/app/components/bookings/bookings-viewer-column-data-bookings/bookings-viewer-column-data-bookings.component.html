@@ -16,28 +16,47 @@
 
 	</thead>
 	<tbody>
-		<tr data-bs-toggle="collapse" data-bs-target="#demo">
-			<th scope="row">1</th>
-			<td>129,99</td>
-			<td>3</td>
-			<td>False</td>
-			<td>True</td>
-			<td>1</td>
-		</tr>
-		<tr id="demo" class="collapse">
-			<td colspan=6>
-				<h3>Booking</h3>
-				<hr>
-				<p>Id: 1</p>
-				<p>Ammount:</p>
-				<p>Pending Pay:</p>
-				<p>Is payed</p>
-				<p>Id customer</p>
-				<h4>Customer:</h4>
-				<p>Name: </p>
-				<p>Press media: </p>
-				<p>Identification: </p>
-			</td>
+		<tr data-bs-toggle="modal" data-bs-target="#bookingsDataModal" *ngFor="let hbookgingData of bookingDataList"
+			(click)="assignBookingData(hbookgingData)">
+			<th scope="row">{{hbookgingData.id}}</th>
+			<td>{{hbookgingData.amount}}</td>
+			<td>{{hbookgingData.numPeople}}</td>
+			<td>{{hbookgingData.pendingPay}}</td>
+			<td>{{hbookgingData.payed}}</td>
+			<td>{{hbookgingData.customers.id}}</td>
 		</tr>
 	</tbody>
 </table>
+
+<!-- The Modal -->
+<div class="modal" id="bookingsDataModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content bubble shadow">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h3 class="modal-title">Bookings Data</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				<ng-container *ngIf="bookingData">
+					<p>Id: {{bookingData.id}}</p>
+					<p>Ammount: {{bookingData.amount}}</p>
+					<p>Pending Pay: {{bookingData.pendingPay}}</p>
+					<p>Is Payed: {{bookingData.payed}}</p>
+					<h4>Customer:</h4>
+					<p>Id Customer: {{bookingData.customers.id}}</p>
+					<p>Name: {{bookingData.customers.name}}</p>
+					<p>Press media: {{bookingData.customers.pressMedia}}</p>
+					<p>Identification: {{bookingData.customers.docIdentifier}} {{bookingData.customers.numIdentifier}}</p>
+				</ng-container>
+			</div>
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
