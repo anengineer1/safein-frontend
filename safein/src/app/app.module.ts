@@ -38,6 +38,7 @@ import { CustomerCreateColumnComponent } from './components/customer/edit/custom
 import { CustomerCreateComponent } from './components/customer/edit/customer-create/customer-create.component';
 import { CustomerEditComponent } from './components/customer/edit/customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './components/customer/edit/customer-delete/customer-delete.component';
+import { UserReadComponent } from './components/user-account/user-read/user-read.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { authInterceptorProvider } from './_helpers/auth.interceptor';
@@ -81,7 +82,7 @@ import { authInterceptorProvider } from './_helpers/auth.interceptor';
     CustomerCreateComponent,
     CustomerEditComponent,
     CustomerDeleteComponent,
-
+    UserReadComponent,
   ],
   imports: [
     HttpClientModule,
@@ -91,8 +92,7 @@ import { authInterceptorProvider } from './_helpers/auth.interceptor';
   ],
  providers: [
   { provide: authInterceptorProvider, useValue: authInterceptorProvider}
-],
- //providers:[],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
