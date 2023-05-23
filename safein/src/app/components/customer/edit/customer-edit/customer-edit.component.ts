@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Country } from "src/app/entityclasses/country";
 import { Customer } from "src/app/entityclasses/customer";
 import { CustomersService } from "src/app/services/customers.service";
 
@@ -9,7 +10,8 @@ import { CustomersService } from "src/app/services/customers.service";
 })
 export class CustomerEditComponent implements OnInit {
   customerli: Customer[] = [];
-
+  country: Country = new Country;
+  countrylist : Country [] = [];
   ngOnInit(): void {}
   constructor(private customer: CustomersService) {}
 

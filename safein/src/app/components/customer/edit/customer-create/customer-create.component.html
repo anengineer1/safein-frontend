@@ -158,10 +158,9 @@
               #customercontry
               [(ngModel)]="customer.country"
             >
-              <option selected>Select the country name</option>
-
-              <option value="1" *ngFor="let contry of countrylist">
+            <option value="1" *ngFor="let contry of countrylist">
                 {{ contry.countryName }}
+              
               </option>
             </select>
           </div>

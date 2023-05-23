@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Country } from 'src/app/entityclasses/country';
 import { Customer } from 'src/app/entityclasses/customer';
 import { CustomersService } from 'src/app/services/customers.service';
 
@@ -10,6 +11,8 @@ import { CustomersService } from 'src/app/services/customers.service';
 export class CustomerDeleteComponent {
 
   customerslist: Customer[] = [];
+  countrylist: Country[]=[];
+  country:Country = new Country;
   customer: Customer = new Customer;
   constructor(private customers:CustomersService) {}
 

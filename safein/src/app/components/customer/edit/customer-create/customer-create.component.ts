@@ -28,4 +28,15 @@ export class CustomerCreateComponent implements OnInit {
       }
     );
   }
+    //Obtain full lista of customer
+    getAllCustomers(){
+      this.customers.listAllCustomers().subscribe(
+        (customers: Customer[]): void => {
+          this.customerslist = customers;
+        },
+        (error: any): void => {
+          console.log(error);
+        }
+      )
+    }
 }
