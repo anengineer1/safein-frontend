@@ -55,11 +55,17 @@ export class CountriesService {
 			catchError(this.handleError)
 		);
 	  }
-	  delete(): Observable<any>{
+	  delete(id:any): Observable<any>{
 		console.log(`${this.baseApiUrl}/cities`);
 		return this.httpClient.delete(`${this.baseApiUrl}/cities`).pipe(
 			catchError(this.handleError)
 )
 	  }
-	  
+	  update(code: Country,id:any): Observable<any> {
+		console.log(`${this.baseApiUrl}/countries`);
+		return this.httpClient
+		  .put(`${this.baseApiUrl}/countries`, code)
+		  .pipe(catchError(this.handleError));
+	  }
+	 
 }

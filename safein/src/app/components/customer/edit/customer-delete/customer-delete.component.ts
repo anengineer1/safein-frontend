@@ -12,9 +12,9 @@ export class CustomerDeleteComponent {
 
   constructor(private customers:CustomersService) {}
 
-  deleteCustomers(){
-    this.customers.delete().subscribe((customers: Customer[]): void => {
-      this.customers = this.customers;
+  deleteCustomers(id:any){
+    this.customers.delete(id).subscribe((customers: Customer[]): void => {
+
     },
     (error: any): void => {
       console.log(error);

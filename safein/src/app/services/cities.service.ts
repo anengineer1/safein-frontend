@@ -62,11 +62,17 @@ export class CitiesService {
 		);
 	  }
 
-	  delete():Observable<any>{
+	  delete(id:any):Observable<any>{
 		console.log(`${this.baseApiUrl}/cities`);
-		return this.httpClient.delete(`${this.baseApiUrl}/cities`).pipe(
+		return this.httpClient.delete(`${this.baseApiUrl}/cities`,id).pipe(
 			catchError(this.handleError)
 )
+	  }
+	  update(code: City,id:any): Observable<any> {
+		console.log(`${this.baseApiUrl}/cities`);
+		return this.httpClient
+		  .put(`${this.baseApiUrl}/cities`, code,id)
+		  .pipe(catchError(this.handleError));
 	  }
 
 	

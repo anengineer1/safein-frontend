@@ -8,6 +8,7 @@ import { WorkingspaceComponent } from './pages/workingspace/workingspace.compone
 import { RoomsHotelsComponent } from './pages/rooms-hotels/rooms-hotels.component';
 import { CitiesCountriesComponent } from './pages/cities-countries/cities-countries.component';
 import { CustomersComponent } from './pages/customers/customers.component';
+import { StyleTestComponent } from './components/style-test/style-test.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
 			{ // Bookings route
 				path: "bookings",
 				component: BookingsComponent
+			},
+			{ // Bookings route
+				path: "stylesheet",
+				component: StyleTestComponent
 			}
 		]
 	}

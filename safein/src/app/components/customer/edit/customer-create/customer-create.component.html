@@ -34,7 +34,7 @@
                         <label for="inputCustomerName" class="col-form-label">Name: </label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="inputCustomerName" class="form-control" #CustomerName>
+                        <input type="text" id="inputCustomerName" class="form-control" #CustomerName [(ngModel)]="Customer.name">
                     </div>
                 </div>
                 <!-- EMAIL CUSTOMER  -->
@@ -43,7 +43,7 @@
                         <label for="inputCustomerEmail" class="col-form-label">Email: </label>
                     </div>
                     <div class="col-9">
-                        <input type="email" id="inputCustomerEmail" class="form-control" #CustomerEmail>
+                        <input type="email" id="inputCustomerEmail" class="form-control" #CustomerEmail [(ngModel)]="Customer.email">
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                         <label for="inputCustomerPhone" class="col-form-label">Phone: </label>
                     </div>
                     <div class="col-9">
-                        <input type="tel" id="inputCustomerPhone" class="form-control" #CustomerPhone>
+                        <input type="tel" id="inputCustomerPhone" class="form-control" #CustomerPhone [(ngModel)]="Customer.phonenumber">
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
                         <label for="inputCustomerPressMedia" class="col-form-label">Press Media: </label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="inputCustomerPressMedia" class="form-control" #CustomerPressMedia>
+                        <input type="text" id="inputCustomerPressMedia" class="form-control" #CustomerPressMedia [(ngModel)]="Customer.pressMedia">
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                         <label for="inputCustomerDoc" class="col-form-label">Document Identifier: </label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="inputCustomerDoc" class="form-control" #CustomerDocIdentifier>
+                        <input type="text" id="inputCustomerDoc" class="form-control" #CustomerDocIdentifier [(ngModel)]="Customer.docIdentifier">
                     </div>
                 </div>
               
@@ -91,7 +91,7 @@
                     </div>
                     <div class="col-8">
                         <input type="text" id="inputCustomerDocNumber" class="form-control"
-                            #CustomerDocIdentifierNumber>
+                            #CustomerDocIdentifierNumber [(ngModel)]="Customer.numIdentifier">
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-8">
                         <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
-                            #customercontry>
+                            #customercontry [(ngModel)]="Customer.country">
                             <option selected>Select a country</option>
                             <option value="1">Country 1</option>
                             <option value="2">Country 2</option>

@@ -13,12 +13,13 @@ export class CustomerCreateComponent implements OnInit{
   constructor(private customers:CustomersService) {}
 
 ngOnInit(): void {
-  this.saveCustomer();
+
     
 }
-saveCustomer(){
-  this.customers.create(this.customers).subscribe((customers: Customer[]): void => {
-    this.customerslist = customers;
+saveCustomer(code:Customer){
+  this.customers.create(code).subscribe((customers: Customer[]): void => {
+   this.customerslist = customers;
+console.log(code);
   },
   (error: any): void => {
     console.log(error);

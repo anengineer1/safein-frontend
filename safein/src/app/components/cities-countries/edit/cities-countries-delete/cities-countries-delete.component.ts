@@ -3,6 +3,7 @@ import { City } from 'src/app/entityclasses/city';
 import { Country } from 'src/app/entityclasses/country';
 import { CitiesService } from 'src/app/services/cities.service';
 import { CountriesService } from 'src/app/services/countries.service';
+
 @Component({
   selector: 'app-cities-countries-delete',
   templateUrl: './cities-countries-delete.component.html',
@@ -10,27 +11,27 @@ import { CountriesService } from 'src/app/services/countries.service';
 })
 export class CitiesCountriesDeleteComponent implements OnInit{
   ngOnInit(): void {
-    this.deleteCity();
-    this.deleteCountry();
+    
   }
   constructor(private countries: CountriesService,private citiesserv: CitiesService) {}
 
+  cities : City = new City;
   country: Country = new Country;
   countrylist : Country [] = [];
   citieslist: City [] = [];
 
-  //Delete country 
-  deleteCountry(){
-    this.countries.delete().subscribe((countries: Country[]): void => {
-      this.countrylist = countries;
+
+  deleteCity(id:any){
+    this.citiesserv.delete(id).subscribe((citiesserv: City[]): void => {
+      
     },
     (error: any): void => {
       console.log(error);
     })
   }  
-  deleteCity(){
-    this.citiesserv.delete().subscribe((countries: Country[]): void => {
-      this.citiesserv = this.citiesserv;
+  
+  deleteCountry(id:any){
+    this.countries.delete(id).subscribe((countries: Country[]): void => {
     },
     (error: any): void => {
       console.log(error);
