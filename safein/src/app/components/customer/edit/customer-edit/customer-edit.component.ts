@@ -13,6 +13,7 @@ export class CustomerEditComponent implements OnInit {
   country: Country = new Country;
   countrylist : Country [] = [];
   ngOnInit(): void {}
+
   constructor(private customer: CustomersService) {}
 
 
@@ -25,5 +26,16 @@ export class CustomerEditComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  getAllCustomers(){
+    this.customer.listAllCustomers().subscribe(
+      (customers: Customer[]): void => {
+        this.customerli = customers;
+      },
+      (error: any): void => {
+        console.log(error);
+      }
+    )
   }
 }

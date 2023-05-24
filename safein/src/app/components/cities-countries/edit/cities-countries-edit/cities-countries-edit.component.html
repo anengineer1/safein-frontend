@@ -28,9 +28,8 @@
                     <div class="col-8">
                         <select class="form-select form-select-sm" id="inputcityNumber"
                             aria-label="form-select-sm example" #cityNumber>
-                            <option selected>Select City name</option>
-                            <option value="1">City 1</option>
-                            <option value="2">City 3</option>
+                            <option [value]="city.name" *ngFor="let city of citieslist">{{city.name}}</option>
+
                         </select>
                     </div>
                 </div>
@@ -73,10 +72,9 @@
                     <div class="col-10">
                         <select class="form-select form-select-sm" aria-label=".form-select-sm example" #countryname
                             disabled>
-                            <option selected>Select the country name</option>
-                            <option value="1">name Country 1</option>
-                            <option value="2">name Country 1</option>
-                            <option value="3">name Country 1</option>
+                            <option [value]="contry.countryName" *ngFor="let contry of countrylist">
+                                {{ contry.countryName }}
+                              </option>
                         </select>
                     </div>
                 </div>

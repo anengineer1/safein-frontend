@@ -24,7 +24,7 @@
 >
   <!--       Create a Customer -->
   <form
-    class="d-flex flex-column m-3 row justify-content-center align-items-center"
+    class="d-flex flex-column m-3 row justify-content-center align-items-center" 
   >
     <h3 class="row mb-4">Create a Customer</h3>
     <h4 class="row mt-1 ps-3 text-light bg-dark text-sm-3 col-6 rounded">
@@ -61,7 +61,7 @@
               id="inputCustomerEmail"
               class="form-control"
               #CustomerEmail
-              [(ngModel)]="customer.email" name="customeremail"
+          [(ngModel)]="customer.email" [ngModelOptions]="{standalone: true}"
             />
           </div>
         </div>
@@ -79,7 +79,7 @@
               id="inputCustomerPhone"
               class="form-control"
               #CustomerPhone
-              [(ngModel)]="customer.phonenumber" name="customerphonenumber"
+              [(ngModel)]="customer.phonenumber" [ngModelOptions]="{standalone: true}"
             />
           </div>
         </div>
@@ -97,7 +97,7 @@
               id="inputCustomerPressMedia"
               class="form-control"
               #CustomerPressMedia
-              [(ngModel)]="customer.pressMedia" name="customerpressmedia"
+              [(ngModel)]="customer.pressMedia"[ngModelOptions]="{standalone: true}"
             />
           </div>
         </div>
@@ -121,7 +121,7 @@
               id="inputCustomerDoc"
               class="form-control"
               #CustomerDocIdentifier
-              [(ngModel)]="customer.docIdentifier" name="customerdocidentifier"
+              [(ngModel)]="customer.docIdentifier" [ngModelOptions]="{standalone: true}"
             />
           </div>
         </div>
@@ -139,7 +139,7 @@
               id="inputCustomerDocNumber"
               class="form-control"
               #CustomerDocIdentifierNumber
-              [(ngModel)]="customer.numIdentifier" name="customernumidentifier"
+              [(ngModel)]="customer.numIdentifier" [ngModelOptions]="{standalone: true}"
             />
           </div>
         </div>
@@ -156,11 +156,10 @@
               class="m-3 form-select form-select-sm"
               aria-label=".form-select-sm example"
               #customercontry
-              [(ngModel)]="customer.country" name="customercountry" 
+              [(ngModel)]="customer.country" [ngModelOptions]="{standalone: true}"
             >
-            <option value="1" *ngFor="let contry of countrylist">
+            <option [value]="contry.countryName" *ngFor="let contry of countrylist">
                 {{ contry.countryName }}
-              
               </option>
             </select>
           </div>

@@ -14,6 +14,7 @@ export class CustomerDeleteComponent {
   countrylist: Country[]=[];
   country:Country = new Country;
   customer: Customer = new Customer;
+
   constructor(private customers:CustomersService) {}
 
   deleteCustomers(){
@@ -23,5 +24,16 @@ export class CustomerDeleteComponent {
       console.log(error);
     })
   }  
+  
+  getAllCustomers(){
+    this.customers.listAllCustomers().subscribe(
+      (customers: Customer[]): void => {
+        this.customerslist = customers;
+      },
+      (error: any): void => {
+        console.log(error);
+      }
+    )
+  }
   
 }

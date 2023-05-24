@@ -22,7 +22,7 @@ export class CitiesCountriesCreateComponent implements  OnInit{
   constructor(private countries: CountriesService,private citieserv: CitiesService) {}
 
   ngOnInit(): void {
-     
+    
   }
   //Obtain full lista of countries
   getAllCountries(){

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Country } from "src/app/entityclasses/country";
 import { Customer } from "src/app/entityclasses/customer";
+import { CountriesService } from "src/app/services/countries.service";
 import { CustomersService } from "src/app/services/customers.service";
 
 @Component({
@@ -14,10 +15,11 @@ export class CustomerCreateComponent implements OnInit {
   country: Country = new Country();
   countrylist: Country[] = [];
 
-  constructor(private customers: CustomersService) {}
+  constructor(private customers: CustomersService,private countries: CountriesService ) {}
 
   ngOnInit(): void {
     this.getAllCustomers();
+    this.getAllCountries();
   }
   saveCustomer() {
     this.customers.create(this.customer).subscribe(
@@ -41,4 +43,15 @@ export class CustomerCreateComponent implements OnInit {
         }
       )
     }
-}
+    getAllCountries(){
+      this.countries.listAllCountries().subscribe(
+        (countries: Country[]): void => {
+          this.countrylist = countries;
+          console.log(this.countrylist)
+        },
+        (error: any): void => {
+          console.log(error);
+        }
+      )
+    }
+  }

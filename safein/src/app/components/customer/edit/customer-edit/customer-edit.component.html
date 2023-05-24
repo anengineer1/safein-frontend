@@ -34,10 +34,10 @@
                 <div class="col-8">
                     <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
                         #customercontry>
-                        <option selected>Select a Customer Email</option>
-                        <option value="1">Email 1</option>
-                        <option value="2">Email 2</option>
-                        <option value="3">Email 3</option>
+                        <option [value]="customer.email" *ngFor="let customer of customerli">
+                            {{customer.email}}
+                        </option>
+                       
                     </select>
                 </div>
             </div>
