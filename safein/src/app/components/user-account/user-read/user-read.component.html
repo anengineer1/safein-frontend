@@ -11,12 +11,13 @@
   id="userProfileModal"
   tabindex="-1"
   aria-labelledby="userProfileModal"
-  style="display: block"
-  aria-modal="true"
+  aria-hidden="true"
+  style="display: flex"
+  aria-modal="false"
   role="dialog"
 >
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content ">
       <div class="modal-header">
         <h5 class="modal-title fw-bold" id="userProfileModal">Your Profile Settings</h5>
         <button
@@ -47,7 +48,7 @@
               class="form-control"
               #userProfileUsername
               value={{user.username}}
-              disabled
+              [disabled]="disabledValue"
             />
           </div>
         </div>
@@ -64,7 +65,7 @@
               class="form-control"
               #userRolId
               value={{user.role}}
-              disabled
+              [disabled]="disabledValue"
             />
           </div>
         </div>
@@ -81,7 +82,7 @@
               class="form-control"
               #userProfileEmail
               value={{user.email}}
-              disabled
+              [disabled]="disabledValue"
             />
           </div>
         </div>
@@ -117,7 +118,8 @@
               class="form-control textarea__custom md-textarea"
               #userProfileToken
               value={{user.accessToken}}
-              disabled></textarea>
+              disabled
+              ></textarea>
           </div>
         </div>
       </div>
@@ -130,7 +132,7 @@
         >
           Close
         </button> -->
-        <button type="button" class="btn btn-primary"  disabled>Save</button>
+        <button type="button" class="btn btn-primary"  [disabled]="disabledValue">Save</button>
         <button type="button" id="userlogout" class="btn btn-dark" (click)="logout()">Sign Out</button>
       </div>
     </div>

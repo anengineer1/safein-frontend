@@ -36,20 +36,24 @@
                     aria-expanded="false">
                     <i class="bi bi-person-square text-success fs-2"></i>
                 </a>
+            
                 <ul class="dropdown-menu me-3 bg-success nav-dark">
-                    <li>
-                        <a tabindex="1" id="userprofile" class=" nav-link dropdown-item text-light"  (click)="openModal()"  >My Profile<app-user-read *ngIf="showModal" (onCloseModal)="closeModal()"></app-user-read></a>
+                    <li >
+                        <a tabindex="1" id="userprofile" class=" nav-link dropdown-item text-light"  (click)="openModal()">My Profile</a>
                       <!--   routerLink="/workingspace/profile" -->
                     </li>
                     <li>
                         <hr class="dropdown-divider text-light" />
                     </li>
                     <li>
-                        <a tabindex="2" id="userlogout" class="dropdown-item text-light" (click)="logout()" routerLink="account">Sign Out</a>
+                        <a tabindex="1" id="userlogout" class="dropdown-item text-light" (click)="logout()" routerLink="account">Sign Out</a>
                     </li>
                 </ul>
             </li>
         </ul>
+        <div class="" *ngIf="showModal==true" >
+            <app-user-read   (onCloseModal)="closeModal()"></app-user-read>
+        </div>
 
     </div>
 </nav>

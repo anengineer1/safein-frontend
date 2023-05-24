@@ -7,6 +7,7 @@ export class SwitchModalService {
 
   constructor() { }
 
-
+//observable object
   $modal = new EventEmitter<any>();
+
 }

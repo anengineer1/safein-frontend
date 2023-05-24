@@ -15,6 +15,9 @@ export class UserReadComponent implements OnInit {
   /* Atributes object user */
  user:any = {};
 
+  disabledValue: boolean= true;
+
+
   constructor(private ts: TokenStorageService, private modalService: SwitchModalService, private router: Router) {
 
       //Get the user from the sessionStorage  
@@ -22,7 +25,7 @@ export class UserReadComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.modalService.$modal.emit(true);
   }
 
   /* Close Modal emit false to service --> topbar*/
@@ -40,7 +43,8 @@ export class UserReadComponent implements OnInit {
 	}
 
   editProfile(): void {
-
+    this.disabledValue == true;
+    //window.location.reload();
   }
 
 }
