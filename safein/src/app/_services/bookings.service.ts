@@ -31,4 +31,20 @@ export class BookingsService {
 		);
 	}
 
+	getBookingDataById(id: any): Observable<any> {
+		let fullUrl: string = `${this.baseApiUrl}/${id}`;
+		console.log(fullUrl);
+		return this.httpClient.get(fullUrl).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+    	getBookingDataByCustomerId(id: any): Observable<any> {
+		let fullUrl: string = `${this.baseApiUrl}/customer/${id}`;
+		console.log(fullUrl);
+		return this.httpClient.get(fullUrl).pipe(
+			catchError(this.handleError)
+		);
+	}
+
 }
