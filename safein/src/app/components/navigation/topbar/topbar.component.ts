@@ -24,13 +24,15 @@ export class TopbarComponent implements OnInit {
 	role?: string;
 
 	//Constructor with TokenStorageService as a parameter
-	constructor(private tss: TokenStorageService, private modalService: SwitchModalService) { }
+	constructor(private tss: TokenStorageService, private modalService: SwitchModalService) { 
+		
+		//MODAL
+		this.showModal = false;
+	}
 
 	/* When load the component check the token and if user is logged assign boards. */
 	ngOnInit(): void {
 
-		//MODAL
-		this.showModal = false;
 		this.modalService.$modal.subscribe((value) => { this.showModal = value });
 
 		//SIGNIN

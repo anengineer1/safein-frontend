@@ -37,7 +37,6 @@ export class TokenStorageService {
 
     //If is not empty, return the user object in Json format
     if (user) {
-      console.log(JSON.parse(user));
       return JSON.parse(user);
     }
     return {};

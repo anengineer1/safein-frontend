@@ -18,7 +18,6 @@ export class UserReadComponent implements OnInit {
 
       //Get the user from the sessionStorage  
       this.user = this.ts.getUser();
-      console.log(this.user.accessToken);
   }
 
   ngOnInit(): void {

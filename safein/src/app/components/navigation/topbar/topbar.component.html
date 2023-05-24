@@ -11,9 +11,7 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/workingspace/home" routerLinkActive="activate">Home</a>
                 </li>
-                <!--                     <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li> -->
+
             </ul>
             <div class="navbar-nav">
                 <div class="ms-3 me-3"><span>Active Bookings: {{'Number'}}</span></div>
@@ -34,13 +32,13 @@
 
             <!-- User Icon dropdown -->
             <li class="nav-item me-lg-3 dropdown dropstart">
-                <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     <i class="bi bi-person-square text-success fs-2"></i>
                 </a>
                 <ul class="dropdown-menu me-3 bg-success nav-dark">
-                    <li (click)="openModal()">
-                        <a class="dropdown-item text-light">My Profile<app-user-read *ngIf="showModal" (onCloseModal)="closeModal()"></app-user-read></a>     
+                    <li>
+                        <a class="dropdown-item text-light"  (click)="openModal()">My Profile<app-user-read *ngIf="showModal" (onCloseModal)="closeModal()"></app-user-read></a>
                     </li>
                     <li>
                         <hr class="dropdown-divider text-light" />
