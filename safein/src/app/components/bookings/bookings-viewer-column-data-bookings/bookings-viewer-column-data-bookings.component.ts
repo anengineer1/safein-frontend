@@ -15,14 +15,14 @@ export class BookingsViewerColumnDataBookingsComponent implements OnInit {
 	constructor(private bookingsService: BookingsService) {}
 
 	ngOnInit(): void {
-	    this.getAllBookingData()
+		this.getAllBookingData()
 	}
 
 	assignBookingData(booking_data: BookingData): void {
 		this.bookingData = booking_data;
 	}
 
-	getAllBookingData() {
+	getAllBookingData(): void {
 		this.bookingsService.listAllBookingDatas().subscribe(
 			(countries: BookingData[]): void => {
 				this.bookingDataList = countries;
@@ -33,4 +33,33 @@ export class BookingsViewerColumnDataBookingsComponent implements OnInit {
 		)
 	}
 
+	listBookingsDataById(id: any) {
+		if (id) {
+			this.bookingsService.getBookingDataById(id).subscribe(
+				(booking_data: BookingData): void => {
+					this.bookingDataList = [booking_data];
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllBookingData();
+		}
+	}
+
+	listBookingsDataByCustomerId(id: any) {
+		if (id) {
+			this.bookingsService.getBookingDataByCustomerId(id).subscribe(
+				(booking_data: BookingData[]): void => {
+					this.bookingDataList = booking_data;
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllBookingData();
+		}
+	}
 }
