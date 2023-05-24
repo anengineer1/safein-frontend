@@ -15,6 +15,8 @@ export class UserReadComponent implements OnInit {
   /* Atributes object user */
  user:any = {};
 
+ //Control elements readonly or edit
+  isEditable:boolean =true;
   disabledValue: boolean= true;
 
 
@@ -25,7 +27,13 @@ export class UserReadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+    //Modal emit true(visible)
     this.modalService.$modal.emit(true);
+
+    //Check the status od editable field
+    (this.isEditable) ? this.disabledValue==false : this.disabledValue==true;
+
   }
 
   /* Close Modal emit false to service --> topbar*/
@@ -43,7 +51,7 @@ export class UserReadComponent implements OnInit {
 	}
 
   editProfile(): void {
-    this.disabledValue == true;
+    this.isEditable == true;
     //window.location.reload();
   }
 
