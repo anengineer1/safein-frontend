@@ -44,7 +44,7 @@
               id="inputCustomerName"
               class="form-control"
               #CustomerName
-              [(ngModel)]="customer.name"
+              [(ngModel)]="customer.name" name="customername"
             />
           </div>
         </div>
@@ -61,7 +61,7 @@
               id="inputCustomerEmail"
               class="form-control"
               #CustomerEmail
-              [(ngModel)]="customer.email"
+              [(ngModel)]="customer.email" name="customeremail"
             />
           </div>
         </div>
@@ -79,7 +79,7 @@
               id="inputCustomerPhone"
               class="form-control"
               #CustomerPhone
-              [(ngModel)]="customer.phonenumber"
+              [(ngModel)]="customer.phonenumber" name="customerphonenumber"
             />
           </div>
         </div>
@@ -97,7 +97,7 @@
               id="inputCustomerPressMedia"
               class="form-control"
               #CustomerPressMedia
-              [(ngModel)]="customer.pressMedia"
+              [(ngModel)]="customer.pressMedia" name="customerpressmedia"
             />
           </div>
         </div>
@@ -121,7 +121,7 @@
               id="inputCustomerDoc"
               class="form-control"
               #CustomerDocIdentifier
-              [(ngModel)]="customer.docIdentifier"
+              [(ngModel)]="customer.docIdentifier" name="customerdocidentifier"
             />
           </div>
         </div>
@@ -139,7 +139,7 @@
               id="inputCustomerDocNumber"
               class="form-control"
               #CustomerDocIdentifierNumber
-              [(ngModel)]="customer.numIdentifier"
+              [(ngModel)]="customer.numIdentifier" name="customernumidentifier"
             />
           </div>
         </div>
@@ -156,7 +156,7 @@
               class="m-3 form-select form-select-sm"
               aria-label=".form-select-sm example"
               #customercontry
-              [(ngModel)]="customer.country"
+              [(ngModel)]="customer.country" name="customercountry" 
             >
             <option value="1" *ngFor="let contry of countrylist">
                 {{ contry.countryName }}
