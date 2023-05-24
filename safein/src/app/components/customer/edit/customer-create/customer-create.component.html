@@ -34,7 +34,7 @@
                         <label for="inputCustomerName" class="col-form-label">Name: </label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="inputCustomerName" class="form-control" #CustomerName>
+                        <input type="text" id="inputCustomerName" class="form-control" name="dos" [(ngModel)]="customer.name">
                     </div>
                 </div>
                 <!-- EMAIL CUSTOMER  -->
@@ -105,9 +105,7 @@
                         <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
                             #customercontry>
                             <option selected>Select a country</option>
-                            <option value="1">Country 1</option>
-                            <option value="2">Country 2</option>
-                            <option value="3">Country 3</option>
+                            <option value="1" *ngFor="let countr of countryList">{{countr.countryCode}}</option>
                         </select>
                     </div>
                 </div>
