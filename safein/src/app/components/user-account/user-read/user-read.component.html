@@ -30,8 +30,8 @@
       <div class="modal-body">
         <!-- EDIT USER (PUT) -->
         <div class="row g-3 mb-1">
-          <div class="col-3 col-sm-12 text-end">
-            <i class="bi bi-pencil-square fs-2"></i>
+          <div class="col-3 col-sm-12 text-end" (click)="editProfile()">
+            <i class="bi bi-pencil-square fs-2" ></i>
           </div>
         </div>
 
@@ -122,15 +122,16 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button
+<!--         <button
           type="button"
           class="btn btn-secondary"
           data-mdb-dismiss="modal"
           (click)="closeModal()"
         >
           Close
-        </button>
-        <button type="button" class="btn btn-primary" disabled>Save</button>
+        </button> -->
+        <button type="button" class="btn btn-primary"  disabled>Save</button>
+        <button type="button" id="userlogout" class="btn btn-dark" (click)="logout()">Sign Out</button>
       </div>
     </div>
   </div>

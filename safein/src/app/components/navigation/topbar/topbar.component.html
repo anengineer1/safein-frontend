@@ -38,13 +38,14 @@
                 </a>
                 <ul class="dropdown-menu me-3 bg-success nav-dark">
                     <li>
-                        <a class="dropdown-item text-light"  (click)="openModal()">My Profile<app-user-read *ngIf="showModal" (onCloseModal)="closeModal()"></app-user-read></a>
+                        <a tabindex="1" id="userprofile" class=" nav-link dropdown-item text-light"  (click)="openModal()"  >My Profile<app-user-read *ngIf="showModal" (onCloseModal)="closeModal()"></app-user-read></a>
+                      <!--   routerLink="/workingspace/profile" -->
                     </li>
                     <li>
                         <hr class="dropdown-divider text-light" />
                     </li>
                     <li>
-                        <a href class="dropdown-item text-light" (click)="logout()">Sign Out</a>
+                        <a tabindex="2" id="userlogout" class="dropdown-item text-light" (click)="logout()" routerLink="account">Sign Out</a>
                     </li>
                 </ul>
             </li>

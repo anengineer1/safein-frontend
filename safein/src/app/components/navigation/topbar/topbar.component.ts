@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/_services/auth/token-storage.service';
 import { UserReadComponent } from '../../user-account/user-read/user-read.component';
 import { SwitchModalService } from 'src/app/_services/switch-modal.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class TopbarComponent implements OnInit {
 	role?: string;
 
 	//Constructor with TokenStorageService as a parameter
-	constructor(private tss: TokenStorageService, private modalService: SwitchModalService) { 
+	constructor(private tss: TokenStorageService, private modalService: SwitchModalService, private router:Router) { 
 		
 		//MODAL
 		this.showModal = false;
@@ -56,7 +57,8 @@ export class TopbarComponent implements OnInit {
 		//Clear the session storage
 		this.tss.signOut();
 		//Reload the site but how is not signed redirect to account login
-		window.location.reload();
+		this.router.navigate(['account']);
+		//window.location.reload();
 	}
 
 	/* Function to Open a Modal as a component */
