@@ -22,6 +22,8 @@ import { BookingDeleteComponent } from './components/bookings/edit/booking-delet
 import { SigninComponent } from './components/user-account/signin/signin.component';
 import { AccountComponent } from './pages/account/account.component';
 import { WorkingspaceComponent } from './pages/workingspace/workingspace.component';
+
+
 import { LatestBookingperuserComponent } from './components/bookings/latest-bookingperuser/latest-bookingperuser.component';
 import { RoomsHotelsComponent } from './pages/rooms-hotels/rooms-hotels.component';
 import { CitiesCountriesComponent } from './pages/cities-countries/cities-countries.component';
@@ -51,12 +53,6 @@ import { CustomerEditComponent } from './components/customer/edit/customer-edit/
 import { CustomerDeleteComponent } from './components/customer/edit/customer-delete/customer-delete.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
-
-
-
-
-
 
 @NgModule({
 	declarations: [
@@ -93,22 +89,21 @@ import { FormsModule } from '@angular/forms';
 		CitiesCountriesEditComponent,
 		CitiesCountriesDeleteComponent,
 		CitiesCountriesCreateColumnComponent,
-    CustomerCreateColumnComponent,
-    CustomerCreateComponent,
-    CustomerEditComponent,
-    CustomerDeleteComponent,
-     RoomHotelsCreateComponent,
-    RoomHotelsDeleteComponent,
-    RoomHotelsEditComponent,
-    RoomHotelsColumncreationComponent,
-    RoomHotelsViewerColumnComponent,
-    RoomHotelsTableViewComponent,
-    RoomHotelsViewerBookingsComponent,
-    RoomHotelsViewerCitiesComponent,
-    RoomHotelsViewerCountriesComponent,
-    RoomHotelsViewerHotelsComponent,
-    RoomHotelsViewerRoomsComponent
-
+		CustomerCreateColumnComponent,
+		CustomerCreateComponent,
+		CustomerEditComponent,
+		CustomerDeleteComponent,
+		RoomHotelsCreateComponent,
+		RoomHotelsDeleteComponent,
+		RoomHotelsEditComponent,
+		RoomHotelsColumncreationComponent,
+		RoomHotelsViewerColumnComponent,
+		RoomHotelsTableViewComponent,
+		RoomHotelsViewerBookingsComponent,
+		RoomHotelsViewerCitiesComponent,
+		RoomHotelsViewerCountriesComponent,
+		RoomHotelsViewerHotelsComponent,
+		RoomHotelsViewerRoomsComponent,
 	],
 	imports: [
 		BrowserModule,

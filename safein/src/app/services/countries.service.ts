@@ -13,7 +13,9 @@ export class CountriesService {
 
 	baseApiUrl: string = BASE_API_URL + 'countries'; // global bar located in app/config.ts
 	headers = new HttpHeaders().set('Content-Type', 'application/json');
-	constructor(private httpClient: HttpClient) {}
+
+    constructor(private httpClient: HttpClient) {
+    }
 
 	listAllCountries(): Observable<any> {
 		return this.httpClient.get(this.baseApiUrl).pipe(

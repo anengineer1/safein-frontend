@@ -16,9 +16,9 @@ export class CustomerViewerColumnCustomerComponent implements OnInit {
 
 	}
 
-    assignCustomer(customer: Customer): void {
-	this.customer = customer;
-    }
+	assignCustomer(customer: Customer): void {
+		this.customer = customer;
+	}
 
 	ngOnInit(): void {
 		this.getAllCustomers();
@@ -35,4 +35,64 @@ export class CustomerViewerColumnCustomerComponent implements OnInit {
 		)
 	}
 
+	listCustomerById(id: any) {
+		if (id) {
+			this.customerService.getCustomerById(id).subscribe(
+				(customers: Customer): void => {
+					this.customerList = [customers];
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllCustomers();
+		}
+	}
+
+	listCustomerByMedia(media: any): void {
+		if (media) {
+			this.customerService.getCustomerByMedia(media).subscribe(
+				(customers: Customer[]): void => {
+					this.customerList = customers;
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllCustomers();
+		}
+	}
+
+	listCustomerByEmail(email: any): void {
+		if (email) {
+			this.customerService.getCustomerByEmail(email).subscribe(
+				(customers: Customer[]): void => {
+					this.customerList = customers;
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllCustomers();
+		}
+	}
+
+	listCustomerByDoc(doc: string): void {
+		if (doc) {
+			let splittedDoc: string[] = doc.split("/");
+			this.customerService.getCustomerByDoc(splittedDoc[0], splittedDoc[1]).subscribe(
+				(customers: Customer[]): void => {
+					this.customerList = customers;
+				},
+				(error: any): void => {
+					console.log(error);
+				}
+			)
+		} else {
+			this.getAllCustomers();
+		}
+	}
 }

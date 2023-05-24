@@ -10,7 +10,7 @@
 			aria-selected="true">Bookings</button>
 		<button class="nav-link rounded text-dark" id="nav-data-bookings-tab" data-bs-toggle="tab"
 			data-bs-target="#nav-data-bookings" type="button" role="tab" aria-controls="nav-data-bookings"
-			aria-selected="false">Bookings data</button>
+			aria-selected="false">Hotels</button>
 		<button class="nav-link rounded text-dark" id="nav-rooms-tab" data-bs-toggle="tab" data-bs-target="#nav-rooms"
 			type="button" role="tab" aria-controls="nav-rooms" aria-selected="false">Rooms</button>
 	</div>
@@ -18,13 +18,13 @@
 <div class="tab-content bg-light rounded mt-0" id="nav-tabContent">
 	<div class="tab-pane fade show active" id="nav-bookings" role="tabpanel" aria-labelledby="nav-bookings-tab"
 		tabindex="0">
-<app-room-hotels-viewer-bookings></app-room-hotels-viewer-bookings>
+		<app-bookings-viewer-column-bookings></app-bookings-viewer-column-bookings>
 	</div>
 	<div class="tab-pane fade" id="nav-data-bookings" role="tabpanel" aria-labelledby="nav-data-bookings-tab"
 		tabindex="1">
-        <app-room-hotels-viewer-rooms></app-room-hotels-viewer-rooms>	
+		<app-bookings-viewer-column-hotels></app-bookings-viewer-column-hotels>
 	</div>
 	<div class="tab-pane fade" id="nav-rooms" role="tabpanel" aria-labelledby="nav-rooms-tab" tabindex="2">
-<app-room-hotels-viewer-rooms></app-room-hotels-viewer-rooms>	
-</div>
+		<app-bookings-viewer-column-rooms></app-bookings-viewer-column-rooms>
+	</div>
 </div>
