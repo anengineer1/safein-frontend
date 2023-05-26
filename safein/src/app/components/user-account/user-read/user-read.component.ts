@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SwitchModalService } from 'src/app/_services/switch-modal.service';
 import { TokenStorageService } from 'src/app/_services/auth/token-storage.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user-read',
@@ -18,7 +19,8 @@ export class UserReadComponent implements OnInit {
  //Control elements readonly or edit
   isEditable:boolean =true;
   disabledValue: boolean= true;
-
+  @ViewChild('profileForm')
+  public profileForm!: NgForm;
 
   constructor(private ts: TokenStorageService, private modalService: SwitchModalService, private router: Router) {
 
@@ -51,7 +53,10 @@ export class UserReadComponent implements OnInit {
 	}
 
   editProfile(): void {
-    this.isEditable == true;
+    console.log('Hola');
+    //this.isEditable == true;
+    //this.profileForm.reset();
+    this.router.navigate(['user-profile-update']);
     //window.location.reload();
   }
 

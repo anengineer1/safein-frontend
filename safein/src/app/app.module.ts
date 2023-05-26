@@ -42,6 +42,7 @@ import { UserReadComponent } from './components/user-account/user-read/user-read
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { authInterceptorProvider } from './_helpers/auth.interceptor';
+import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { authInterceptorProvider } from './_helpers/auth.interceptor';
     CustomerEditComponent,
     CustomerDeleteComponent,
     UserReadComponent,
+    UserUpdateComponent,
   ],
   imports: [
     HttpClientModule,
