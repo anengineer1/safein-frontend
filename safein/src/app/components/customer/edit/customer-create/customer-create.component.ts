@@ -10,6 +10,7 @@ import { CustomersService } from "src/app/services/customers.service";
   styleUrls: ["./customer-create.component.scss"],
 })
 export class CustomerCreateComponent implements OnInit {
+  
   customerslist: Customer[] = [];
   customer: Customer = new Customer();
   country: Country = new Country();

@@ -123,10 +123,8 @@
                         <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
                             #customercontry disabled [(ngModel)]="customer.country">
                             
-                            <option selected>Select a country</option>
                             <option value="1" *ngFor="let contry of countrylist">
                                 {{ contry.countryName }}
-                              
                               </option>
                         </select>
                     </div>

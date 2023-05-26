@@ -36,5 +36,27 @@ export class CitiesCountriesDeleteComponent implements OnInit{
     (error: any): void => {
       console.log(error);
     })
-  }  
+  }
+  
+listAllCites(){
+  this.citiesserv.listAllCites().subscribe(
+    (citiesserv: City[]): void => {
+      this.citieslist = citiesserv;
+    },
+    (error: any): void => {
+      console.log(error);
+    }
+  )
+}
+  getAllCountries(){
+    this.countries.listAllCountries().subscribe(
+      (countries: Country[]): void => {
+        this.countrylist = countries;
+        console.log(this.countrylist)
+      },
+      (error: any): void => {
+        console.log(error);
+      }
+    )
+  }
 }

@@ -115,9 +115,9 @@
                     <div class="col-6">
                         <select class="form-select form-select-sm" id="inputCountryName"
                             aria-label="form-select-sm example" #countryName>
-                            <option selected>Select Country name</option>
-                            <option value="1">Country name 1</option>
-                            <option value="2">Country name 2</option>
+                            <option [value]="contry.countryName" *ngFor="let contry of countrylist">
+                                {{ contry.countryName }}
+                              </option>
                         </select>
                     </div>
                 </div>
