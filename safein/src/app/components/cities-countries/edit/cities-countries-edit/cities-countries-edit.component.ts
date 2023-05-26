@@ -12,7 +12,8 @@ import { CountriesService } from 'src/app/services/countries.service';
 export class CitiesCountriesEditComponent implements OnInit{
 
   ngOnInit(): void {
-   
+    this.getAllCountries();
+    this.getAllCity();
   }
   
   constructor(private countries: CountriesService,private citiesserv: CitiesService) {}
@@ -48,11 +49,23 @@ listAllCites(){
     }
   )
 }
+
 getAllCountries(){
   this.countries.listAllCountries().subscribe(
     (countries: Country[]): void => {
       this.countrylist = countries;
       console.log(this.countrylist)
+    },
+    (error: any): void => {
+      console.log(error);
+    }
+  )
+}
+
+getAllCity(){
+  this.citiesserv.listAllCites().subscribe(
+    (citiesserv: City[]): void => {
+      this.citieslist = citiesserv;
     },
     (error: any): void => {
       console.log(error);

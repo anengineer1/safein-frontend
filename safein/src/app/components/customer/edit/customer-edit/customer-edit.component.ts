@@ -13,7 +13,11 @@ export class CustomerEditComponent implements OnInit {
   customerli: Customer[] = [];
   country: Country = new Country;
   countrylist : Country [] = [];
-  ngOnInit(): void {}
+  
+  ngOnInit(): void {
+    this.getAllCountries();
+    this.getAllCustomers();
+  }
 
   constructor(private customer: CustomersService,private countries: CountriesService) {}
 

@@ -56,8 +56,8 @@ export class CitiesService {
 	};
 
 	create(code:City): Observable<any>{
-		console.log(`${this.baseApiUrl}/cities`,code);
-		return this.httpClient.post(`${this.baseApiUrl}/cities`,code).pipe(
+		console.log(`${this.baseApiUrl}`,code);
+		return this.httpClient.post(`${this.baseApiUrl}`,code).pipe(
 			catchError(this.handleError)
 		);
 	  }

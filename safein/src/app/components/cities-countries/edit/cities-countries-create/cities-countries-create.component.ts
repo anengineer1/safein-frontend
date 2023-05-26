@@ -22,17 +22,18 @@ export class CitiesCountriesCreateComponent implements  OnInit{
   constructor(private countries: CountriesService,private citieserv: CitiesService) {}
 
   ngOnInit(): void {
-    
+    this.getAllCountries();
   }
   //Obtain full lista of countries
   getAllCountries(){
     this.countries.listAllCountries().subscribe(
       (countries: Country[]): void => {
-				this.countrylist = countries;
-			},
-			(error: any): void => {
-				console.log(error);
-			}
+        this.countrylist = countries;
+        console.log(this.countrylist)
+      },
+      (error: any): void => {
+        console.log(error);
+      }
     )
   }
 
@@ -54,6 +55,6 @@ export class CitiesCountriesCreateComponent implements  OnInit{
       console.log(error);
     })
   }
-  
 
+  
 }

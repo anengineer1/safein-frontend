@@ -23,9 +23,9 @@ export class CustomersService {
       .pipe(catchError(this.handleError));
   }
   create(code: Customer): Observable<any> {
-    console.log(`${this.baseApiUrl}/customers`, code);
+    console.log(`${this.baseApiUrl}`, code);
     return this.httpClient
-      .post(`${this.baseApiUrl}/customers`, code)
+      .post(`${this.baseApiUrl}`, code)
       .pipe(catchError(this.handleError));
   }
 

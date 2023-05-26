@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Country } from 'src/app/entityclasses/country';
 import { Customer } from 'src/app/entityclasses/customer';
 import { CountriesService } from 'src/app/services/countries.service';
@@ -9,8 +9,12 @@ import { CustomersService } from 'src/app/services/customers.service';
   templateUrl: './customer-delete.component.html',
   styleUrls: ['./customer-delete.component.scss']
 })
-export class CustomerDeleteComponent {
+export class CustomerDeleteComponent implements OnInit{
 
+  ngOnInit(): void {
+      this.getAllCountries();
+      this.getAllCustomers();
+  }
   customerslist: Customer[] = [];
   countrylist: Country[]=[];
   country:Country = new Country;
