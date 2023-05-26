@@ -53,7 +53,6 @@ export class UserReadComponent implements OnInit {
 	}
 
   editProfile(): void {
-    console.log('Hola');
     //this.isEditable == true;
     //this.profileForm.reset();
     this.router.navigate(['user-profile-update']);

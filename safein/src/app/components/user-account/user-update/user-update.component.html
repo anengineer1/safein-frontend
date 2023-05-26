@@ -50,6 +50,9 @@
               #userProfileUsername
               value={{user.username}}
               [disabled]="disabledValue"
+              required
+              name="username"
+              (ngValue) = "suser.username"
             />
           </div>
         </div>
@@ -67,6 +70,9 @@
               #userRolId
               value={{user.role}}
               [disabled]="disabledValue"
+              required
+              name="rol"
+              (ngValue) = "suser.role"
             />
           </div>
         </div>
@@ -84,6 +90,9 @@
               #userProfileEmail
               value={{user.email}}
               [disabled]="disabledValue"
+              required
+              name="email"
+              (ngValue) = "suser.email"
             />
           </div>
         </div>
@@ -133,7 +142,7 @@
         >
           Close
         </button>
-        <button type="button" class="btn btn-primary"  [disabled]="disabledValue">Save</button>
+        <button type="button" class="btn btn-primary"  [disabled]="disabledValue" (click)="updateUser()">Save</button>
         <button type="button" id="userlogout" class="btn btn-dark" (click)="logout()">Sign Out</button>
       </div>
     </form>
