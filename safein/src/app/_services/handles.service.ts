@@ -26,6 +26,7 @@ export class HandlesService {
 
 	listAllHandles(): Observable<any> {
 		let completeUrl = this.baseApiUrl + '/handles';
+		console.log(completeUrl);
 		return this.httpClient.get(completeUrl).pipe(
 			catchError(this.handleError));
 	}
@@ -43,21 +44,21 @@ export class HandlesService {
 			catchError(this.handleError));
 	}
 
-    	getHandleByCustomerId(id: any): Observable<any> {
+	getHandleByCustomerId(id: any): Observable<any> {
 		let fullUrl = `${this.baseApiUrl}/customer/${id}`;
 		console.log(fullUrl)
 		return this.httpClient.get(fullUrl).pipe(
 			catchError(this.handleError));
 	}
 
-       	getHandleByRoomId(id: any): Observable<any> {
+	getHandleByRoomId(id: any): Observable<any> {
 		let fullUrl = `${this.baseApiUrl}/rooms/${id}`;
 		console.log(fullUrl)
 		return this.httpClient.get(fullUrl).pipe(
 			catchError(this.handleError));
 	}
 
-    	getHandleByHotelId(id: any): Observable<any> {
+	getHandleByHotelId(id: any): Observable<any> {
 		let fullUrl = `${this.baseApiUrl}/hotel/${id}`;
 		console.log(fullUrl)
 		return this.httpClient.get(fullUrl).pipe(

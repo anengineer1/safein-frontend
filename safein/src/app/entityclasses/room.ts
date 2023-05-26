@@ -8,6 +8,7 @@ export class Room {
     pricePerNight: number;
     internetType: string;
     hasTerrace: boolean;
+    smoker: boolean;
     hotel: Hotel;
 
     constructor() {
@@ -17,6 +18,7 @@ export class Room {
 	this.pricePerNight = 0;
 	this.internetType = '';
 	this.hasTerrace = false;
+	this.smoker = false;
 	this.hotel = new Hotel;
     }    
 }
