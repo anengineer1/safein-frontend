@@ -44,7 +44,8 @@ export class RoomHotelsEditComponent implements OnInit {
 				next: (rooms: Room[]) => {
 					this.roomsList = rooms;
 					console.log(this.roomsList);
-				}
+				},
+				error: error => { console.log(error) }
 			}
 		)
 	}

@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { BASE_API_URL } from '../global-config';
 import { Observable, catchError, throwError } from 'rxjs';
+import { BookingData } from '../entityclasses/booking-data';
 
 @Injectable({
 	providedIn: 'root'
@@ -39,7 +40,7 @@ export class BookingsService {
 		);
 	}
 
-    	getBookingDataByCustomerId(id: any): Observable<any> {
+	getBookingDataByCustomerId(id: any): Observable<any> {
 		let fullUrl: string = `${this.baseApiUrl}/customer/${id}`;
 		console.log(fullUrl);
 		return this.httpClient.get(fullUrl).pipe(
@@ -47,4 +48,9 @@ export class BookingsService {
 		);
 	}
 
+	updateBookingData(id: any, data: BookingData): Observable<any> {
+		let fullUrl: string = `${this.baseApiUrl}/${id}`;
+		console.log(fullUrl);
+		return this.httpClient.put(fullUrl, data).pipe(catchError(this.handleError));
+	}
 }
