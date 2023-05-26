@@ -12,6 +12,7 @@ import { CustomersService } from "src/app/services/customers.service";
 export class CustomerEditComponent implements OnInit {
   customerli: Customer[] = [];
   country: Country = new Country;
+  customerobj: Customer = new Customer;
   countrylist : Country [] = [];
   
   ngOnInit(): void {

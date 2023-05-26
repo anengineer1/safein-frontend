@@ -27,9 +27,8 @@
                     </div>
                     <div class="col-8">
                         <select class="form-select form-select-sm" id="inputcityNumber"
-                            aria-label="form-select-sm example" #cityNumber>
-                            <option [value]="city.name" *ngFor="let city of citieslist">{{city.name}}</option>
-
+                            aria-label="form-select-sm example" #cityNumber >
+                            <option [ngValue]="city" *ngFor="let city of citieslist">{{city.name}}</option>
                         </select>
                     </div>
                 </div>
@@ -40,7 +39,7 @@
                         <label for="inputLatitude" class="col-form-label">Latitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputLatitude" class="form-control" #ccLatitude disabled>
+                        <input type="number" id="inputLatitude" class="form-control" #ccLatitude disabled [(ngModel)]="cities.latitude">
                     </div>
                 </div>
 
@@ -50,7 +49,7 @@
                         <label for="inputLongitude" class="col-form-label">Longitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputLongitude" class="form-control" #ccLongitude disabled>
+                        <input type="number" id="inputLongitude" class="form-control" #ccLongitude disabled [(ngModel)]="cities.longitude">
                     </div>
                 </div>
 
@@ -61,7 +60,7 @@
                         <label for="inputCityName" class="col-form-label">City Name: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputCityName" class="form-control" #ccName disabled>
+                        <input type="number" id="inputCityName" class="form-control" #ccName disabled [(ngModel)]="cities.name">
                     </div>
                 </div>
                 <!-- COUNTRY NAME  -->
@@ -70,12 +69,16 @@
                         <label for="selectCountry" class="col-form-label">Country</label>
                     </div>
                     <div class="col-10">
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" #countryname
-                            disabled>
-                            <option [value]="contry.countryName" *ngFor="let contry of countrylist">
-                                {{ contry.countryName }}
-                              </option>
-                        </select>
+                        <select
+              class="m-3 form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              #customercontry
+              [(ngModel)]="country.countryName" [ngModelOptions]="{standalone: true}"
+            required name="countryname">
+            <option [ngValue]="contry" *ngFor="let contry of countrylist">
+                {{ contry.countryName }}
+              </option>
+            </select>
                     </div>
                 </div>
 
@@ -115,7 +118,7 @@
                     <div class="col-6">
                         <select class="form-select form-select-sm" id="inputCountryName"
                             aria-label="form-select-sm example" #countryName>
-                            <option [value]="contry.countryName" *ngFor="let contry of countrylist">
+                            <option [ngValue]="contry.countryName" *ngFor="let contry of countrylist">
                                 {{ contry.countryName }}
                               </option>
                         </select>
@@ -129,7 +132,7 @@
                         <label for="inputCountryName" class="col-form-label">Country Name: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputinputCountryName" class="form-control" #countryName disabled>
+                        <input type="text" id="inputinputCountryName" class="form-control" #countryName disabled [(ngModel)]="country.countryName">
                     </div>
                 </div>
 
@@ -139,7 +142,7 @@
                         <label for="inputCountryCode" class="col-form-label">Country Code: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputinputCountryCode" class="form-control" #countryCode disabled>
+                        <input type="text" id="inputinputCountryCode" class="form-control" #countryCode disabled [(ngModel)]="country.countryCode">
                     </div>
                 </div>
 
@@ -152,10 +155,10 @@
                         <select class="form-select form-select-sm" id="inputSituation"
                             aria-label=".form-select-sm example" #countrySituation disabled>
                             <option selected>Select situation of the contry: </option>
-                            <option value="1">Human Crisis</option>
-                            <option value="2">War</option>
-                            <option value="3">Clima crisis</option>
-                            <option value="4">Peace</option>
+                            <option value="cities.situation">Human Crisis</option>
+                            <option value="cities.situation">War</option>
+                            <option value="cities.situation">Clima crisis</option>
+                            <option value="cities.situation">Peace</option>
                         </select>
                     </div>
                 </div>
@@ -166,7 +169,7 @@
                         <label for="inputcoLatitude" class="col-form-label">Latitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputcoLatitude" class="form-control" #cccoLatitude disabled>
+                        <input type="number" id="inputcoLatitude" class="form-control" #cccoLatitude disabled [(ngModel)]="country.latitude">
                     </div>
                 </div>
 
@@ -176,7 +179,7 @@
                         <label for="inputLongitude" class="col-form-label">Longitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputcoLongitude" class="form-control" #cccoLongitude disabled>
+                        <input type="number" id="inputcoLongitude" class="form-control" #cccoLongitude disabled [(ngModel)]="country.longitude">
                     </div>
                 </div>
 

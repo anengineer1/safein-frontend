@@ -12,7 +12,7 @@ import { Customer } from "../entityclasses/customer";
   providedIn: "root",
 })
 export class CustomersService {
-  baseApiUrl: string = BASE_API_URL + "customers"; // global bar located in app/config.ts
+  baseApiUrl: string = BASE_API_URL + "customers/"; // global bar located in app/config.ts
   headers = new HttpHeaders().set("Content-Type", "application/json");
 
   constructor(private httpClient: HttpClient) {}
@@ -48,16 +48,16 @@ export class CustomersService {
   }
 
   delete(id:any): Observable<any> {
-    console.log(`${this.baseApiUrl}/customers`);
+    console.log(`${this.baseApiUrl}`);
     return this.httpClient
-      .delete(`${this.baseApiUrl}/customers`,id)
+      .delete(`${this.baseApiUrl}`,id)
       .pipe(catchError(this.handleError));
   }
   
   update(code: Customer,id:any): Observable<any> {
-    console.log(`${this.baseApiUrl}/customers`);
+    console.log(`${this.baseApiUrl}`);
     return this.httpClient
-      .put(`${this.baseApiUrl}/customers`, code,id)
+      .put(`${this.baseApiUrl}`, code,id)
       .pipe(catchError(this.handleError));
   }
 }

@@ -44,7 +44,7 @@
               id="inputCustomerName"
               class="form-control"
               #CustomerName
-              [ngModel]="customer.name" name="customername"
+              [(ngModel)]="customer.name" name="customername"
             />
           </div>
         </div>
@@ -61,8 +61,8 @@
               id="inputCustomerEmail"
               class="form-control"
               #CustomerEmail
-          [ngModel]="customer.email" [ngModelOptions]="{standalone: true}"
-            />
+          [(ngModel)]="customer.email" [ngModelOptions]="{standalone: true}"
+          name="customeremail"  />
           </div>
         </div>
 
@@ -79,8 +79,8 @@
               id="inputCustomerPhone"
               class="form-control"
               #CustomerPhone
-              [ngModel]="customer.phonenumber" [ngModelOptions]="{standalone: true}"
-            />
+              [(ngModel)]="customer.phonenumber" [ngModelOptions]="{standalone: true}"
+            name ="customerphonenumber"/>
           </div>
         </div>
 
@@ -97,8 +97,8 @@
               id="inputCustomerPressMedia"
               class="form-control"
               #CustomerPressMedia
-              [ngModel]="customer.pressMedia"[ngModelOptions]="{standalone: true}"
-            />
+              [(ngModel)]="customer.pressMedia" [ngModelOptions]="{standalone: true}"
+           name="customerpressmedia" />
           </div>
         </div>
       </div>
@@ -121,8 +121,8 @@
               id="inputCustomerDoc"
               class="form-control"
               #CustomerDocIdentifier
-              [ngModel]="customer.docIdentifier" [ngModelOptions]="{standalone: true}"
-            />
+              [(ngModel)]="customer.docIdentifier" [ngModelOptions]="{standalone: true}"
+        name="customerdocidentifier"    />
           </div>
         </div>
 
@@ -138,9 +138,9 @@
               type="text"
               id="inputCustomerDocNumber"
               class="form-control"
-              #CustomerDocIdentifierNumber
-              [ngModel]="customer.numIdentifier" [ngModelOptions]="{standalone: true}"
-            />
+              #CustomerDocIdentifierNumber 
+              [(ngModel)]="customer.numIdentifier" [ngModelOptions]="{standalone: true}"
+          name="customernumidentifier" />
           </div>
         </div>
 
@@ -156,9 +156,9 @@
               class="m-3 form-select form-select-sm"
               aria-label=".form-select-sm example"
               #customercontry
-              [ngModel]="customer.country" [ngModelOptions]="{standalone: true}"
-            required>
-            <option [value]="contry.countryName" *ngFor="let contry of countrylist">
+              [(ngModel)]="customer.country" [ngModelOptions]="{standalone: true}"
+            required name="customercountry">
+            <option [ngValue]="contry" *ngFor="let contry of countrylist">
                 {{ contry.countryName }}
               </option>
             </select>

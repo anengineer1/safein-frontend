@@ -22,7 +22,7 @@ export class CustomerCreateComponent implements OnInit {
     this.getAllCustomers();
     this.getAllCountries();
   }
-  
+
   saveCustomer() {
     this.customers.create(this.customer).subscribe(
       (customers: Customer[]): void => {
@@ -33,6 +33,7 @@ export class CustomerCreateComponent implements OnInit {
         console.log(error);
       }
     );
+    console.log(this.customer);
   }
     //Obtain full lista of customer
     getAllCustomers(){

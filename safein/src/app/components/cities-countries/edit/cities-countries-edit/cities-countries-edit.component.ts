@@ -21,6 +21,7 @@ export class CitiesCountriesEditComponent implements OnInit{
   country: Country = new Country;
   countrylist : Country [] = [];
   citieslist: City [] = [];
+  cities: City = new City;
 
 updateCity(code:City,id:any){
   this.citiesserv.update(code,id).subscribe((citieserv: Country[]): void => {
@@ -29,7 +30,6 @@ updateCity(code:City,id:any){
     console.log(error);
   })
 }
-
 updateCountry(code:Country,id:any){
   this.countries.update(code,id).subscribe((countries: Country[]): void => {
     console.log(City,id);    
