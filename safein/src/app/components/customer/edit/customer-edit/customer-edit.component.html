@@ -50,7 +50,7 @@
                         <label for="inputCustomerName" class="col-form-label">Name: </label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="inputCustomerName" class="form-control" name="customername"   #CustomerName disabled [(ngModel)]="customerobj.name" >
+                        <input type="text" id="inputCustomerName" class="form-control" name="customername"   #CustomerName  [(ngModel)]="customerobj.name" >
                     </div>
                 </div>
                 <!-- EMAIL CUSTOMER  -->
@@ -59,7 +59,7 @@
                         <label for="inputCustomerEmail" class="col-form-label">Email: </label>
                     </div>
                     <div class="col-9">
-                        <input type="email" id="inputCustomerEmail" class="form-control" name="customeremail" #CustomerEmail disabled [(ngModel)]="customerobj.email">
+                        <input type="email" id="inputCustomerEmail" class="form-control" name="customeremail" #CustomerEmail  [(ngModel)]="customerobj.email">
                     </div>
                 </div>
                 <!-- PHONE CUSTOMER  -->
@@ -68,7 +68,7 @@
                         <label for="inputCustomerPhone" class="col-form-label">Phone: </label>
                     </div>
                     <div class="col-9">
-                        <input type="tel" id="inputCustomerPhone" class="form-control" #CustomerPhone name="customerphonenumber"disabled [(ngModel)]="customerobj.phonenumber">
+                        <input type="tel" id="inputCustomerPhone" class="form-control" #CustomerPhone name="customerphonenumber" [(ngModel)]="customerobj.phonenumber">
                     </div>
                 </div>
 
@@ -79,7 +79,7 @@
                     </div>
                     <div class="col-9">
                         <input type="text" id="inputCustomerPressMedia" class="form-control" #CustomerPressMedia name="customerpressmedia"
-                            disabled [(ngModel)]="customerobj.pressMedia">
+                             [(ngModel)]="customerobj.pressMedia">
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                         <label for="inputCustomerDoc" class="col-form-label">Document Identifier: </label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="inputCustomerDoc" class="form-control" #CustomerDocIdentifier name="customernumidentifier" disabled [(ngModel)]="customerobj.docIdentifier">
+                        <input type="text" id="inputCustomerDoc" class="form-control" #CustomerDocIdentifier name="customernumidentifier"  [(ngModel)]="customerobj.docIdentifier">
                     </div>
                 </div>
 
@@ -107,7 +107,7 @@
                     </div>
                     <div class="col-8">
                         <input type="text" id="inputCustomerDocNumber" class="form-control" #CustomerDocIdentifierNumber
-                            disabled name="customernumidentifier" [(ngModel)]="customerobj.numIdentifier">
+                             name="customernumidentifier" [(ngModel)]="customerobj.numIdentifier">
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@
                     </div>
                     <div class="col-8">
                         <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
-                            #customercontry disabled>
+                            #customercontry >
                             <option [ngValue]="contry" *ngFor="let contry of countrylist">{{contry.countryName}}</option>
                         </select>
                     </div>
@@ -128,7 +128,7 @@
             <!--     BUTTOM to Update a handle -->
             <div class="row g-3 mb-3 align-items-center">
                 <div class="col-12 col-sm-12">
-                    <button type="button" class="btn btn-secondary btn-lg button_1">Update Customer</button>
+                    <button type="button" class="btn btn-secondary btn-lg button_1"(click)="updateCustomer(this.customerobj,customerobj.id)">Update Customer</button>
                 </div>
             </div>
         </div>

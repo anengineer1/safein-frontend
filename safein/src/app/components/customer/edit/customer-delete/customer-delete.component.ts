@@ -22,8 +22,8 @@ export class CustomerDeleteComponent implements OnInit{
 
   constructor(private customers:CustomersService,private countries: CountriesService) {}
 
-  deleteCustomers(){
-    this.customers.delete(this.customer).subscribe((customers: Customer[]): void => {
+  deleteCustomers(id:any){
+    this.customers.delete(id).subscribe((customers: Customer[]): void => {
     },
     (error: any): void => {
       console.log(error);
