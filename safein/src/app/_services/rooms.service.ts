@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BASE_API_URL } from '../global-config';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
+import { Room } from '../entityclasses/room';
 
 @Injectable({
 	providedIn: 'root'
@@ -88,4 +89,15 @@ export class RoomsService {
 			'Something bad happened; please try again later.');
 	}
 
+	createRoom(data: any): Observable<any> {
+		return this.httpClient.post(this.baseApiUrl, data).pipe(catchError(this.handleError));
+	}
+
+	updateRoom(id: any, data: Room): Observable<any> {
+		let completeUrl: string = `${this.baseApiUrl}/${id}`;
+		console.log(completeUrl);
+		return this.httpClient.put(completeUrl, data).pipe(
+			catchError(this.handleError)
+		);
+	}
 }

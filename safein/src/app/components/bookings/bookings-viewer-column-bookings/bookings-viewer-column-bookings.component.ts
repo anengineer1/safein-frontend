@@ -26,7 +26,8 @@ export class BookingsViewerColumnBookingsComponent implements OnInit {
 		this.handleService.listAllHandles().subscribe(
 			{
 				next: (handles: Handles[]): void => {
-					this.handleList = handles;
+				    this.handleList = handles;
+				    console.log(this.handleList);
 				},
 				error: (error: any): void => { console.log(error) }
 			}
