@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { BASE_API_URL } from '../global-config';
 import { Observable, catchError, throwError } from 'rxjs';
+import { Handles } from '../entityclasses/handles';
 
 @Injectable({
 	providedIn: 'root'
@@ -9,6 +10,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 export class HandlesService {
 
 	baseApiUrl: string = BASE_API_URL + 'booking'; // global bar located in app/config.ts
+	baseApiHandles: string = BASE_API_URL + 'handle'; // For Put and delete handle endpoints
 	headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 	constructor(private httpClient: HttpClient) {}
@@ -63,6 +65,12 @@ export class HandlesService {
 		console.log(fullUrl)
 		return this.httpClient.get(fullUrl).pipe(
 			catchError(this.handleError));
+	}
+
+	updateHandle(id: any, data: Handles): Observable<any> {
+		let fullUrl: string = `${this.baseApiHandles}/${id}`;
+		console.log(fullUrl);
+		return this.httpClient.put(fullUrl, data).pipe(catchError(this.handleError));
 	}
 }
 
