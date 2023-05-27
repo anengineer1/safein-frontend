@@ -53,6 +53,7 @@ export class BookingsService {
 	createBooking(code: BookingData): Observable<any>{
 		let fullUrl : string = BASE_API_URL_BOOKINGS_CREATE;
 		console.log(fullUrl);
+		console.log('CODE:'+code);
 		return this.httpClient.post(fullUrl, code ).pipe(
 			catchError(this.handleError)
 		);

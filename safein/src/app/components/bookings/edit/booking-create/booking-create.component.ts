@@ -89,11 +89,12 @@ getAllRooms(){
 
 // Create a new Booking
 saveBooking(){
+
   this.bookingService.createBooking(this.booking).subscribe(
-    (bks: BookingData[]):void => {
-     
-      this.bookingsList = bks;
-      console.log(this.bookingsList);
+    response => {
+    
+      console.log('Esto es saving Booking');
+      console.log(response);
     }),
   (error:any):void => {
     console.log(error);
@@ -103,10 +104,10 @@ saveBooking(){
 //Create a new Handle
 saveHandle(){
   this.handleService.createHandle(this.handle).subscribe(
-    (hand: Handles[]):void => {
+    response => {
      
-      this.handlesList = hand;
-      console.log(this.handlesList);
+      console.log('Esto es saving Booking');
+      console.log(response);
     }),
   (error:any):void => {
     console.log(error);
