@@ -66,7 +66,8 @@
 						<label for="inputhotelemail" class="col-form-label">Email: </label>
 					</div>
 					<div class="col-6">
-						<input type="text" id="inputhotelemail" class="form-control" #inputhotelemail name="inputhotelemail" />
+						<input type="text" id="inputhotelemail" class="form-control" #inputhotelemail
+							name="inputhotelemail" />
 					</div>
 				</div>
 				<!-- SECURITY LEVEL  -->
@@ -75,7 +76,8 @@
 						<label for="inputhotelsecurity" class="col-form-label">Security Level:</label>
 					</div>
 					<div class="col-12">
-						<select class="form-select form-select-sm" aria-label="form-select-sm example" #inputhotelsecurity name="inputhotelsecurity">
+						<select class="form-select form-select-sm" aria-label="form-select-sm example"
+							#inputhotelsecurity name="inputhotelsecurity">
 							<option selected>Select a security level</option>
 							<option value="1">Diplomatic coverage and private security</option>
 							<option value="2">Private security</option>
@@ -90,7 +92,8 @@
 						</label>
 					</div>
 					<div class="col-6 form-check">
-						<input type="checkbox" id="inputhotelenergysuficient" name="inputhotelenergysuficient"	class="form-control form-check-input " #inputhotelenergysuficient />
+						<input type="checkbox" id="inputhotelenergysuficient" name="inputhotelenergysuficient"
+							class="form-control form-check-input " #inputhotelenergysuficient />
 					</div>
 				</div>
 
@@ -110,17 +113,20 @@
 				<div class="row g-3 mb-1 align-items-center">
 					<div class="col-sm-12">
 						<label for="inputHotelId" class="col-form-label">Hotel:</label>
-						<select class="form-select form-select-sm" id="inputHotelId" aria-label="form-select-sm example" name="inputHotelId" [(ngModel)]="currentHotel.name" #inputHotelId>
+						<select class="form-select form-select-sm" id="inputHotelId" aria-label="form-select-sm example"
+							name="inputHotelId" [(ngModel)]="currentHotel.name" #inputHotelId>
 							<option *ngFor="let hotel of hotelList" [ngValue]="hotel">{{hotel.name}}</option>
 						</select>
 					</div>
 				</div>
 				<div class="row mb-1 align-items-center">
 					<div class="col-sm-4">
-						<label for="inputroomcode" class="col-form-label" >Select a room: </label>
+						<label for="inputroomcode" class="col-form-label">Select a room: </label>
 					</div>
 					<div class=" col-sm-8">
-						<select class="form-select form-select-sm" id="inputroomcode" Aria-Label="form-select-sm example" #inputroomcode name="inputroomcode" [(ngModel)]="currentRoom">
+						<select class="form-select form-select-sm" id="inputroomcode"
+							Aria-Label="form-select-sm example" #inputroomcode name="inputroomcode"
+							[(ngModel)]="currentRoom">
 							<option *ngFor="let room of roomsList" [ngValue]="room">{{room.code}}</option>
 						</select>
 					</div>
@@ -173,15 +179,14 @@
 						</select>
 					</div>
 				</div>
-				<!-- ROOM DATE  -->
 				<!-- IS SMOKER  -->
 				<div class="row g-3 mb-1">
 					<div class="col-sm-6">
 						<label for="inputIsSmoker" class="col-form-label">Is smoker? </label>
 					</div>
 					<div class="col-sm-6 form-check">
-						<input type="checkbox" id="inputIsSmoker" class="form-control form-check-input"
-							#inputIsSmoker name="inputIsSmoker" [(ngModel)]="currentRoom.smoker">
+						<input type="checkbox" id="inputIsSmoker" class="form-control form-check-input" #inputIsSmoker
+							name="inputIsSmoker" [(ngModel)]="currentRoom.smoker">
 					</div>
 				</div>
 				<!-- HAS TERRACE -->
@@ -194,9 +199,6 @@
 							#inputHasTerrace name="inputHasTerrace" [(ngModel)]="currentRoom.hasTerrace">
 					</div>
 				</div>
-
-
-
 				<!--     BUTTOM to update a Room -->
 				<div class="row g-3 mb-3 align-items-center">
 					<div class="col-9 col-sm-12">
@@ -207,7 +209,5 @@
 				</div>
 			</div>
 		</div>
-
-
 	</form>
 </div>
