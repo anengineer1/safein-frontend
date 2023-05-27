@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BASE_API_URL, BASE_API_URL_BOOKINGS_CREATE} from '../global-config';
+import { BASE_API_URL, BASE_API_URL_BOOKINGS_CREATE, BASE_API_URL_BOOKINGS_DELETE} from '../global-config';
 import { Observable, catchError, throwError } from 'rxjs';
 import { BookingData } from '../entityclasses/booking-data';
 import { Handles } from '../entityclasses/handles';
@@ -59,4 +59,12 @@ export class BookingsService {
 		);
 	}
 
+	/* Deleting a booking*/
+	deleteBooking(code:BookingData, id:any): Observable<any>{
+		let fullUrl : string = BASE_API_URL_BOOKINGS_DELETE+'/'+id;
+		console.log(fullUrl, code);
+		return this.httpClient.delete(fullUrl).pipe(
+			catchError(this.handleError)
+		);
+	}
 }

@@ -76,5 +76,7 @@ export class HandlesService {
 			catchError(this.handleError)
 		);
 	}
+
+	/* Delete a handle: its no necessary*/
 }
 

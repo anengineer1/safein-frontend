@@ -87,7 +87,7 @@ getAllRooms(){
 
 
 
-// Create a new Booking
+/* Create a new Booking */
 saveBooking(){
 
   this.bookingService.createBooking(this.booking).subscribe(
@@ -101,7 +101,7 @@ saveBooking(){
   }
 }
 
-//Create a new Handle
+/* Create a new Handle */
 saveHandle(){
   this.handleService.createHandle(this.handle).subscribe(
     response => {
@@ -113,5 +113,6 @@ saveHandle(){
     console.log(error);
   }
 }
+
 
 }
