@@ -20,7 +20,7 @@ export class CitiesCountriesDeleteComponent implements OnInit{
   constructor(private countries: CountriesService,private citiesserv: CitiesService,private customers: CustomersService) {}
 
   cities : City = new City;
-  country: Country = new Country;
+  countryobj: Country = new Country;
   countrylist : Country [] = [];
   citieslist: City [] = [];
   customerslist: Customer [] = [];
@@ -35,7 +35,8 @@ export class CitiesCountriesDeleteComponent implements OnInit{
   }  
   
   deleteCountry(){
-    this.countries.delete(this.country,this.cities.id).subscribe((countries: Country[]): void => {
+    this.countries.delete(this.countryobj.id)
+    .subscribe((countries: Country[]): void => {
     },
     (error: any): void => {
       console.log(error);

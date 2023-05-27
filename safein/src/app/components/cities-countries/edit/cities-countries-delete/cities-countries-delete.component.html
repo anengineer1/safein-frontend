@@ -30,7 +30,7 @@
                         class="m-3 form-select form-select-sm"
                         aria-label=".form-select-sm example"
                         #customercontry
-                        [(ngModel)]="country" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="countryobj" [ngModelOptions]="{standalone: true}"
                       required name="countryname">
                       <option [ngValue]="contry" *ngFor="let contry of countrylist">
                           {{ contry.countryName }}
@@ -68,7 +68,7 @@
                         <label for="inputCityName" class="col-form-label">City Name: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputCityName" class="form-control" #ccName  required [(ngModel)]="cities.name">
+                        <input type="text" id="inputCityName" class="form-control" #ccName required [(ngModel)]="cities.name">
                     </div>
                 </div>
                 <!-- COUNTRY NAME  -->
@@ -81,7 +81,7 @@
                         class="m-3 form-select form-select-sm"
                         aria-label=".form-select-sm example"
                         #customercontry
-                        [(ngModel)]="country.countryName" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="countryobj.countryName" [ngModelOptions]="{standalone: true}"
                       required name="countryname">
                       <option [ngValue]="contry" *ngFor="let contry of countrylist">
                           {{ contry.countryName }}
@@ -130,10 +130,10 @@
                         <select
                         class="m-3 form-select form-select-sm"
                         aria-label=".form-select-sm example"
-                        #customercontry
-                        [(ngModel)]="country.countryName" [ngModelOptions]="{standalone: true}"
+                        #customercontry id="inputCountryName"
+                        [(ngModel)]="countryobj.countryName"
                       required name="countryname">
-                      <option [ngValue]="contry" *ngFor="let contry of countrylist">
+                      <option [ngValue]="countryobj" *ngFor="let contry of countrylist">
                           {{ contry.countryName }}
                         </option>
                       </select>
@@ -147,7 +147,7 @@
                         <label for="inputCountryName" class="col-form-label">Country Name: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputinputCountryName" class="form-control" #countryName  required [(ngModel)]="country.countryName">
+                        <input type="text" id="inputinputCountryName" class="form-control" #countryName  required [(ngModel)]="countryobj.countryName">
                     </div>
                 </div>
 
@@ -157,7 +157,7 @@
                         <label for="inputCountryCode" class="col-form-label">Country Code: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputinputCountryCode" class="form-control" #countryCode  required [(ngModel)]="country.countryCode">
+                        <input type="text" id="inputinputCountryCode" class="form-control" #countryCode  required [(ngModel)]="countryobj.countryCode">
                     </div>
                 </div>
 
@@ -184,7 +184,7 @@
                         <label for="inputcoLatitude" class="col-form-label">Latitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputcoLatitude" class="form-control" #cccoLatitude  required [(ngModel)]="country.latitude">
+                        <input type="number" id="inputcoLatitude" class="form-control" #cccoLatitude  required [(ngModel)]="countryobj.latitude">
                     </div>
                 </div>
 
@@ -194,7 +194,7 @@
                         <label for="inputLongitude" class="col-form-label">Longitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputcoLongitude" class="form-control" #cccoLongitude  required [(ngModel)]="country.longitude">
+                        <input type="number" id="inputcoLongitude" class="form-control" #cccoLongitude  required [(ngModel)]="countryobj.longitude">
                     </div>
                 </div>
 

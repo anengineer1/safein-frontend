@@ -24,7 +24,7 @@ export class CustomerEditComponent implements OnInit {
 
 
   updateCustomer() {
-    console.log(this.customerobj);
+   console.log(this.customerobj);
     this.customer.update(this.customerobj,this.customerobj.id).subscribe(
       (customers: Customer[]): void => {
         console.log(this.customerobj);

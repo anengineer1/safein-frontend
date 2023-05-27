@@ -54,7 +54,6 @@ export class CitiesService {
 		return throwError(
 			'Something bad happened; please try again later.');
 	};
-
 	create(code:City): Observable<any>{
 		console.log(`${this.baseApiUrl}`,code);
 		return this.httpClient.post(`${this.baseApiUrl}`,code).pipe(
@@ -65,15 +64,14 @@ export class CitiesService {
 	  delete(code:City,id:any):Observable<any>{
 		console.log(`${this.baseApiUrl}/${id}`,code);
 		return this.httpClient.delete(`${this.baseApiUrl}/${id}`).pipe(
-			catchError(this.handleError)
-)
+			catchError(this.handleError))
 	  }
+
 	  update(code: City,id:any): Observable<any> {
-		console.log(`${this.baseApiUrl}`,code,id);
+		console.log(`${this.baseApiUrl}/${id}`,code);
 		return this.httpClient
 		  .put(`${this.baseApiUrl}/${id}`, code)
 		  .pipe(catchError(this.handleError));
 	  }
 
-	
 }

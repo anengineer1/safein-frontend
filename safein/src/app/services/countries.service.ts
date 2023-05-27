@@ -55,7 +55,7 @@ export class CountriesService {
 			catchError(this.handleError)
 		);
 	  }
-	  delete(code:Country,id:any): Observable<any>{
+	  delete(id:any): Observable<any>{
 		console.log(`${this.baseApiUrl}`);
 		return this.httpClient.delete(`${this.baseApiUrl}/${id}`).pipe(
 			catchError(this.handleError)
@@ -64,7 +64,7 @@ export class CountriesService {
 	  update(code: Country,id:any): Observable<any> {
 		console.log(`${this.baseApiUrl}`);
 		return this.httpClient
-		  .put(`${this.baseApiUrl}`, code,id)
+		  .put(`${this.baseApiUrl}/${id}` ,code)
 		  .pipe(catchError(this.handleError));
 	  }
 	 
