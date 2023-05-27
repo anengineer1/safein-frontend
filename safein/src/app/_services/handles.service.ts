@@ -33,6 +33,20 @@ export class HandlesService {
 			catchError(this.handleError));
 	}
 
+	listLatestsHandles(): Observable<any> {
+		let completeUrl = this.baseApiUrl + '/handle/latests';
+		console.log(completeUrl);
+		return this.httpClient.get(completeUrl).pipe(
+			catchError(this.handleError));
+	}
+
+	listLatestsHandlesByUserEmail(email: string): Observable<any> {
+		let completeUrl = this.baseApiUrl + '/handle/latests/' + `${email}`;
+		console.log(completeUrl);
+		return this.httpClient.get(completeUrl).pipe(
+			catchError(this.handleError));
+	}
+
 	getHandleById(id: any): Observable<any> {
 		let fullUrl = `${this.baseApiUrl}/handle/${id}`;
 		return this.httpClient.get(fullUrl).pipe(
