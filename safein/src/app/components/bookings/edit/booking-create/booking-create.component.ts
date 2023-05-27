@@ -84,9 +84,6 @@ getAllRooms(){
   )
 }
 
-
-
-
 /* Create a new Booking */
 saveBooking(){
 

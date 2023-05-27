@@ -68,7 +68,7 @@ getAllCustomers(){
   )
 }
 
-  //Delete Booking
+  //Delete Booking: not implemented in backend/not necessary
   deleteBooking():void{
   this.bookingService.deleteBooking(this.booking, this.booking.id).subscribe(
     response => {
@@ -78,4 +78,16 @@ getAllCustomers(){
     (error: any): void => { console.log(error); }
   );
   }
+
+  //Delete Handle
+  deleteHandle():void{
+    this.handlesService.deleteHandle(this.handle, this.handle.id).subscribe(
+      response => {
+        console.log(response);
+        alert('Booking deleted successfully');
+      },
+      (error: any): void => { console.log(error); }
+    );
+    }
+
 }
