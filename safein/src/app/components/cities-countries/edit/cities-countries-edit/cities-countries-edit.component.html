@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-8">
                         <select class="form-select form-select-sm" id="inputcityNumber"
-                            aria-label="form-select-sm example" #cityNumber [(ngModel)]="citiesobj" name="citiesname">
+                            aria-label="form-select-sm example" #cityNumber [(ngModel)]="citiesobj" name="citiesnameselect">
                             <option [ngValue]="city" *ngFor="let city of citieslist">{{city.name}}</option>
                         </select>
                     </div>
@@ -39,7 +39,8 @@
                         <label for="inputLatitude" class="col-form-label">Latitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputLatitude" class="form-control" #ccLatitude name="citieslatitude" [(ngModel)]="citiesobj.latitude" value="{{citiesobj.latitude}}">
+                        <input type="number" id="inputLatitude" class="form-control" #ccLatitude name="citieslatitude"
+                            [(ngModel)]="citiesobj.latitude" value="{{citiesobj.latitude}}">
                     </div>
                 </div>
 
@@ -49,7 +50,8 @@
                         <label for="inputLongitude" class="col-form-label">Longitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputLongitude" class="form-control" #ccLongitude name="citieslongitude" [(ngModel)]="citiesobj.longitude" value="{{citiesobj.longitude}}">
+                        <input type="number" id="inputLongitude" class="form-control" #ccLongitude
+                            name="citieslongitude" [(ngModel)]="citiesobj.longitude" value="{{citiesobj.longitude}}">
                     </div>
                 </div>
 
@@ -60,35 +62,31 @@
                         <label for="inputCityName" class="col-form-label">City Name: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputCityName" class="form-control" #ccName  name="citiesname" [(ngModel)]="citiesobj.name" value="{{citiesobj.name}}"> 
+                        <input type="text" id="inputCityName" class="form-control" #ccName name="citiesname"
+                            [(ngModel)]="citiesobj.name" value="{{citiesobj.name}}">
                     </div>
                 </div>
                 <!-- COUNTRY NAME  -->
                 <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-6 col-sm-5">
-                        <label for="selectCountry" class="col-form-label">Country</label>
+                    <div class="row g-3 mb-1 align-items-center">
+                        <div class="col-3 col-sm-4">
+                            <label for="inputBookingNumber" class="col-form-label">Country Name:</label>
+                        </div>
                     </div>
-                    <!-- Select a booking number  -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-4">
-                        <label for="inputBookingNumber" class="col-form-label">Country Name:</label>
-                    </div>
-                   
-                </div>
                     <div class="col-10">
-
-                        <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
-                        #customercontry [(ngModel)]="citiesobj.country"  name="citiescountryname"  [ngModelOptions]="{standalone:true}">
-                        <option [ngValue]="countryelem" *ngFor="let countryelem of countrylist">{{countryelem.countryName}}</option>
-                    </select>
-
+                        <select class=" m-3 form-select form-select-sm" aria-label="form-select-sm example"
+                            #customercontry name="citiescountryname" [(ngModel)]="citiesobj"
+                            [ngModelOptions]="{standalone:true}">
+                            <option [ngValue]="citiesobj" *ngFor="let countryelem of countrylist">{{citiesobj.country.countryName}}</option>
+                        </select>
                     </div>
                 </div>
 
                 <!--     BUTTON to update a City -->
                 <div class="row g-2 mb-1 align-items-center">
                     <div class="col-auto col-sm-12">
-                        <button type="button" class="btn btn-secondary btn-lg button_1" (click)="updateCity(this.citiesobj,citiesobj.id)">Update City</button>
+                        <button type="button" class="btn btn-secondary btn-lg button_1"
+                            (click)="updateCity(this.citiesobj,citiesobj.id)">Update City</button>
                     </div>
                 </div>
 
@@ -96,7 +94,7 @@
 
             <div class="col col-1 g-1 mt-3 mb-3"></div>
 
-<!-- ------------------------------------------------------------------------
+            <!-- ------------------------------------------------------------------------
         COUNTRY EXAMPLE
         {
             "countryCode": "BT",
@@ -120,13 +118,14 @@
                     </div>
                     <div class="col-6">
                         <select class="form-select form-select-sm" id="inputCountryName"
-                            aria-label="form-select-sm example" name="countryname" #countryName [(ngModel)]="countryobj">
+                            aria-label="form-select-sm example" name="countryname" #countryName
+                            [(ngModel)]="countryobj">
                             <option [ngValue]="contry" *ngFor="let contry of countrylist">
                                 {{ contry.countryName }}
-                              </option>
+                            </option>
                         </select>
 
-                       
+
                     </div>
                 </div>
 
@@ -137,7 +136,8 @@
                         <label for="inputCountryName" class="col-form-label">Country Name: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputinputCountryName" class="form-control" #countryName  [(ngModel)]="countryobj.countryName" value="{{countryobj.countryName}}">
+                        <input type="text" id="inputinputCountryName" class="form-control" #countryName
+                            [(ngModel)]="countryobj.countryName" value="{{countryobj.countryName}}">
                     </div>
                 </div>
 
@@ -147,26 +147,29 @@
                         <label for="inputCountryCode" class="col-form-label">Country Code: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputinputCountryCode" class="form-control" #countryCode  [(ngModel)]="countryobj.countryCode" value="{{countryobj.countryCode}}">
+                        <input type="text" id="inputinputCountryCode" class="form-control" #countryCode
+                            [(ngModel)]="countryobj.countryCode" value="{{countryobj.countryCode}}">
                     </div>
                 </div>
 
                 <!-- SITUATION OF THE COUNTRY  -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-6 col-sm-6">
-                        <label for="inputSituation" class="col-form-label">Country Situation:</label>
+
+                <div class="row mb-1 align-items-center">
+                    <div class="row mb-1 align-items-center">
+                        <div class="col-3 col-sm-4">
+                            <label for="inputSituation" class="col-form-label">Country Situation:</label>
+                        </div>
                     </div>
                     <div class="col-10">
-                        <select class="form-select form-select-sm" id="inputSituation"
-                            aria-label=".form-select-sm example" #countrySituation >
-                            <option >Select situation of the country: </option>
-                            <option value="cities.situation" [(ngModel)]="countryobj.situation">Human Crisis</option>
-                            <option value="cities.situation"  [(ngModel)]="countryobj.situation">War</option>
-                            <option value="cities.situation" [(ngModel)]="countryobj.situation">Clima crisis</option>
-                            <option value="cities.situation" [(ngModel)]="countryobj.situation">Peace</option>
+                        <select class=" m-3 form-select form-select-sm" aria-label="form-select-sm example"
+                            #countrysituation name="countrysituation" [(ngModel)]="countryobj"
+                            [ngModelOptions]="{standalone:true}">
+                            <option [ngValue]="countryobj" *ngFor="let countryelem of countrylist">{{countryelem.situation}}</option>
                         </select>
                     </div>
                 </div>
+
+
 
                 <!-- LATITUDE -->
                 <div class="row g-3 mb-1 align-items-center">
@@ -174,7 +177,8 @@
                         <label for="inputcoLatitude" class="col-form-label">Latitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputcoLatitude" class="form-control" #cccoLatitude  [(ngModel)]="countryobj.latitude" value="{{countryobj.latitude}}">
+                        <input type="number" id="inputcoLatitude" class="form-control" #cccoLatitude
+                            [(ngModel)]="countryobj.latitude" value="{{countryobj.latitude}}">
                     </div>
                 </div>
 
@@ -184,7 +188,8 @@
                         <label for="inputLongitude" class="col-form-label">Longitude: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputcoLongitude" class="form-control" #cccoLongitude  [(ngModel)]="countryobj.longitude" value="{{countryobj.longitude}}">
+                        <input type="number" id="inputcoLongitude" class="form-control" #cccoLongitude
+                            [(ngModel)]="countryobj.longitude" value="{{countryobj.longitude}}">
                     </div>
                 </div>
 
@@ -192,7 +197,8 @@
                 <!--     BUTTOM to update a Country -->
                 <div class="row g-3 mb-3 align-items-center">
                     <div class="col-9 col-sm-2">
-                        <button type="button" class="btn btn-secondary btn-lg button_1" (click)="updateCountry(this.countryobj,this.countryobj.id)">Update Country</button>
+                        <button type="button" class="btn btn-secondary btn-lg button_1"
+                            (click)="updateCountry(this.countryobj,this.countryobj.id)">Update Country</button>
                     </div>
                 </div>
             </div>
