@@ -68,10 +68,17 @@
                     <div class="col-6 col-sm-5">
                         <label for="selectCountry" class="col-form-label">Country</label>
                     </div>
+                    <!-- Select a booking number  -->
+                <div class="row g-3 mb-1 align-items-center">
+                    <div class="col-3 col-sm-4">
+                        <label for="inputBookingNumber" class="col-form-label">Country Name:</label>
+                    </div>
+                   
+                </div>
                     <div class="col-10">
 
                         <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
-                        #customercontry [(ngModel)]="citiesobj.country"  name="citiescountryname">
+                        #customercontry [(ngModel)]="citiesobj.country"  name="citiescountryname"  [ngModelOptions]="{standalone:true}">
                         <option [ngValue]="countryelem" *ngFor="let countryelem of countrylist">{{countryelem.countryName}}</option>
                     </select>
 
