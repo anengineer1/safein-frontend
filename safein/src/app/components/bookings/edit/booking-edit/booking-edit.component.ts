@@ -15,12 +15,16 @@ import { CustomersService } from 'src/app/services/customers.service';
 })
 export class BookingEditComponent implements OnInit {
 
+	// Bookings main treatment
 	currentBookingForUpdate: BookingData = new BookingData;
 	bookingListUpdate: BookingData[] = [];
+	// Handles main treatment
 	currentHandleForUpdate: Handles = new Handles;
 	handleListUpdate: Handles[] = [];
+	//Customers component of bookings
 	currentCustomerForUpdate: Customer = new Customer;
 	customerListForUpdate: Customer[] = [];
+	// Rooms component of Handles
 	currentRoomForUpdate: Room = new Room;
 	roomListForUpdate: Room[] = [];
 
@@ -106,8 +110,8 @@ export class BookingEditComponent implements OnInit {
 	}
 
 	updateHandles(): void {
-		this.currentHandleForUpdate.booking = this.currentBookingForUpdate;
-		this.currentHandleForUpdate.room = this.currentRoomForUpdate;
+		// this.currentHandleForUpdate.booking = this.currentBookingForUpdate;
+		// this.currentHandleForUpdate.room = this.currentRoomForUpdate;
 		console.log(this.currentHandleForUpdate);
 		this.handlesService.updateHandle(this.currentHandleForUpdate.id, this.currentHandleForUpdate).subscribe({
 			next: response => {

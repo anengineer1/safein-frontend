@@ -14,14 +14,12 @@
 				<!-- Select a handle number  -->
 				<div class="row g-3 mb-1 align-items-center">
 					<div class="col-4 col-sm-4">
-						<label for="inputBookingNumber" class="col-form-label">Handle Number:</label>
+						<label for="inputHandleNumberUpdate" class="col-form-label">Handle Number:</label>
 					</div>
 					<div class="col-8">
-						<select class="form-select form-select-sm" id="inputBookingNumber" aria-label="form-select-sm example"
-							#bookingNumber>
-							<option selected>Select handle number</option>
-							<option value="1">handle 1</option>
-							<option value="2">handle 3</option>
+						<select class="form-select form-select-sm" id="inputHandleNumberUpdate" name="inputHandleNumberUpdate"
+							aria-label="form-select-sm example" [(ngModel)]="currentHandleForUpdate" #inputHandleNumberUpdate>
+							<option *ngFor="let handle of handleListUpdate" [ngValue]="handle">{{handle.id}}</option>
 						</select>
 					</div>
 				</div>
@@ -29,33 +27,34 @@
 				<!-- ARRIVAL DATE  -->
 				<div class="row g-3 mb-1 align-items-center">
 					<div class="col-3 col-sm-5">
-						<label for="inputarrival" class="col-form-label">Arrival Date: </label>
+						<label for="inputarrivalUpdate" class="col-form-label">Arrival Date: </label>
 					</div>
 					<div class="col-7">
-						<input type="date" id="inputarrival" class="form-control" #arrivalDate disabled>
+						<input type="date" id="inputarrivalUpdate" name="inputarrivalUpdate"
+							[ngModel]="currentHandleForUpdate.arrivalDate | date:'yyyy-MM-dd'"
+							(ngModelChange)="currentHandleForUpdate.arrivalDate = $event" class="form-control" #arrivalDate>
 					</div>
 				</div>
 				<!-- DEPARTURE DATE  -->
 				<div class="row g-3 mb-1 align-items-center">
 					<div class="col-3 col-sm-5">
-						<label for="inputdeparture" class="col-form-label">Departure Date: </label>
+						<label for="inputdepartureUpdate" class="col-form-label">Departure Date: </label>
 					</div>
 					<div class="col-7">
-						<input type="date" id="inputdeparture" class="form-control" #departureDate disabled>
+						<input type="date" id="inputdepartureUpdate" class="form-control" name="inputdepartureUpdate"
+							[ngModel]="currentHandleForUpdate.departureDate | date:'yyyy-MM-dd'"
+							(ngModelChange)="currentHandleForUpdate.departureDate = $event" #departureDate>
 					</div>
 				</div>
 				<!-- BOOKING NUMBER  -->
 				<div class="row g-3 mb-1 align-items-center">
 					<div class="col-3 col-sm-12">
-						<label for="inputBookingNumber" class="col-form-label">Booking Number:</label>
+						<label for="inputBookingNumberUpdate" class="col-form-label">Booking Number:</label>
 					</div>
 					<div class="col-12">
-						<select class="form-select form-select-sm" id="inputBookingNumber" aria-label="form-select-sm example"
-							#bookingNumber disabled>
-							<option selected>Select booking number</option>
-							<option value="1">booking 1</option>
-							<option value="2">booking 2</option>
-							<option value="3">booking 3</option>
+						<select class="form-select form-select-sm" id="inputBookingNumberUpdate" aria-label="form-select-sm example"
+							name="inputBookingNumberUpdate" [(ngModel)]="currentHandleForUpdate.booking" #bookingNumber>
+							<option *ngFor="let booking of bookingListUpdate" [ngValue]="booking" [selected]="currentHandleForUpdate.booking === booking">{{booking.id}}</option>
 						</select>
 					</div>
 				</div>
@@ -66,11 +65,8 @@
 					</div>
 					<div class="col-auto">
 						<select class="form-select form-select-sm" id="inputRoomNumber" aria-label="form-select-sm example"
-							#roomNumber disabled>
-							<option selected>Select a room number</option>
-							<option value="1">Room id 1</option>
-							<option value="2">Room id 2</option>
-							<option value="3">Room id 3</option>
+							name="inputRoomNumber" [(ngModel)]="currentHandleForUpdate.room" #roomNumber>
+							<option *ngFor="let room of roomListForUpdate" [ngValue]="room">{{room.id}} ({{room.code}})</option>
 						</select>
 					</div>
 				</div>
@@ -78,7 +74,7 @@
 				<!--     BUTTON to update a handle -->
 				<div class="row g-2 mb-1 align-items-center">
 					<div class="col-auto col-sm-12">
-						<button type="button" class="btn btn-secondary btn-lg button_1">Update Handle</button>
+						<button type="button" class="btn btn-secondary btn-lg button_1" (click)="updateHandles()">Update Handle</button>
 					</div>
 				</div>
 
@@ -162,7 +158,8 @@
 				<!--     BUTTOM to update a handle -->
 				<div class="row g-3 mb-1 align-items-center">
 					<div class="col-9 col-sm-12">
-						<button type="button" class="btn btn-secondary btn-lg button_1" name="buttonBookingUpdate" (click)="updateBooking()">Update
+						<button type="button" class="btn btn-secondary btn-lg button_1" name="buttonBookingUpdate"
+							(click)="updateBooking()">Update
 							Handle</button>
 					</div>
 				</div>
