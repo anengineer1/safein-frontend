@@ -11,32 +11,44 @@ import { CustomersService } from 'src/app/services/customers.service';
   templateUrl: './cities-countries-delete.component.html',
   styleUrls: ['./cities-countries-delete.component.scss']
 })
+
+
 export class CitiesCountriesDeleteComponent implements OnInit{
+
+  //Attributes
+  cities : City = new City;
+  country: Country = new Country;
+  countrylist : Country [] = [];
+  citieslist: City [] = [];
+  customerslist: Customer [] = [];
+
+  //Constructor
+  constructor(private countries: CountriesService,private citiesserv: CitiesService,private customers: CustomersService) {}
+
+  //cycle phase ngOnInit
   ngOnInit(): void {
     this.getAllCountries();
     this.getAllCustomers();
     this.getAllCity();
   }
-  constructor(private countries: CountriesService,private citiesserv: CitiesService,private customers: CustomersService) {}
 
-  cities : City = new City;
-  countryobj: Country = new Country;
-  countrylist : Country [] = [];
-  citieslist: City [] = [];
-  customerslist: Customer [] = [];
-
-  deleteCity(){
-    this.citiesserv.delete(this.cities,this.cities.id).subscribe((citiesserv: City[]): void => {
-      
+  //delete city by id
+  deleteCity(): void{
+    this.citiesserv.deleteCity(this.cities,this.cities.id).subscribe(
+      response => {
+        console.log(response);
+        alert("City deleted successfully");
     },
-    (error: any): void => {
-      console.log(error);
-    })
+    (error: any): void => {console.log(error);}
+    );
   }  
   
+  //delete country by id
   deleteCountry(){
-    this.countries.delete(this.countryobj.id)
-    .subscribe((countries: Country[]): void => {
+    this.countries.deleteCountry(this.country, this.country.id).subscribe(
+      response => {
+        console.log(response);
+        alert("Country deleted successfully");
     },
     (error: any): void => {
       console.log(error);

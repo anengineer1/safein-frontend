@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BASE_API_URL } from '../global-config';
+import { BASE_API_URL, BASE_API_URL_CITIES_DELETE } from '../global-config';
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/internal/operators/catchError';
 import { throwError } from 'rxjs';
@@ -61,11 +61,23 @@ export class CitiesService {
 		);
 	  }
 
-	  delete(code:City,id:any):Observable<any>{
+/* 	  delete(code:City,id:any):Observable<any>{
 		console.log(`${this.baseApiUrl}/${id}`,code);
 		return this.httpClient.delete(`${this.baseApiUrl}/${id}`).pipe(
 			catchError(this.handleError))
-	  }
+	  } */
+
+	  	/* Delete a City*/
+	deleteCity(code:City, id:any): Observable<any>{
+		let fullUrl : string = BASE_API_URL_CITIES_DELETE+'/'+id;
+		console.log(fullUrl, code);
+		return this.httpClient.delete(fullUrl).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+
+
 
 	  update(code: City,id:any): Observable<any> {
 		console.log(`${this.baseApiUrl}/${id}`,code);
