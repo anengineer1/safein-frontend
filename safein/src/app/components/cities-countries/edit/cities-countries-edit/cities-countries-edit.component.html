@@ -69,16 +69,20 @@
                         <label for="selectCountry" class="col-form-label">Country</label>
                     </div>
                     <div class="col-10">
+
                         <select
               class="m-3 form-select form-select-sm"
               aria-label=".form-select-sm example"
               #customercontry
-              [(ngModel)]="country.countryName" [ngModelOptions]="{standalone: true}"
-            required name="countryname">
+              [(ngModel)]="country" 
+             name="countryname">
             <option [ngValue]="contry" *ngFor="let contry of countrylist">
                 {{ contry.countryName }}
               </option>
             </select>
+            
+
+           
                     </div>
                 </div>
 

@@ -30,12 +30,14 @@
                         class="m-3 form-select form-select-sm"
                         aria-label=".form-select-sm example"
                         #customercontry
-                        [(ngModel)]="country.countryName" [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="country" [ngModelOptions]="{standalone: true}"
                       required name="countryname">
                       <option [ngValue]="contry" *ngFor="let contry of countrylist">
                           {{ contry.countryName }}
                         </option>
                       </select>
+
+
                     </div>
                 </div>
 
@@ -85,13 +87,16 @@
                           {{ contry.countryName }}
                         </option>
                       </select>
+
+
+                     
                     </div>
                 </div>
 
                 <!--     BUTTON to update a City -->
                 <div class="row g-2 mb-1 align-items-center">
                     <div class="col-auto col-sm-12">
-                        <button type="button" class="btn btn-secondary btn-lg button_1" (click)="deleteCity(cities.id)">Delete City</button>
+                        <button type="button" class="btn btn-secondary btn-lg button_1" (click)="deleteCity()">Delete City</button>
                     </div>
                 </div>
 
@@ -197,7 +202,7 @@
                 <!--     BUTTOM to update a Country -->
                 <div class="row g-3 mb-3 align-items-center">
                     <div class="col-9 col-sm-2">
-                        <button type="button" class="btn btn-secondary btn-lg button_1" (click)="deleteCountry(country.id)" >Delete Country</button>
+                        <button type="button" class="btn btn-secondary btn-lg button_1" (click)="deleteCountry()" >Delete Country</button>
                     </div>
                 </div>
             </div>

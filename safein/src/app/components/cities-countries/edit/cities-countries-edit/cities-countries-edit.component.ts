@@ -23,6 +23,7 @@ export class CitiesCountriesEditComponent implements OnInit{
   citieslist: City [] = [];
   cities: City = new City;
 
+
 updateCity(code:City,id:any){
   this.citiesserv.update(code,id).subscribe((citieserv: Country[]): void => {
   },

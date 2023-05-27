@@ -23,10 +23,11 @@ export class CustomerEditComponent implements OnInit {
   constructor(private customer: CustomersService,private countries: CountriesService) {}
 
 
-  updateCustomer(code: Customer, id: any) {
-    this.customer.update(code, id).subscribe(
-      (customer: Customer[]): void => {
-        console.log(code, id);
+  updateCustomer() {
+    console.log(this.customerobj);
+    this.customer.update(this.customerobj,this.customerobj.id).subscribe(
+      (customers: Customer[]): void => {
+        console.log(this.customerobj);
       },
       (error: any): void => {
         console.log(error);

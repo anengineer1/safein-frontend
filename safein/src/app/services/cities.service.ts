@@ -11,8 +11,8 @@ import { City } from '../entityclasses/city';
 })
 export class CitiesService {
 
-	baseApiUrl: string = BASE_API_URL + 'cities/'; // global bar located in app/config.ts
-	headers = new HttpHeaders().set('Content-Type', 'application/json')
+	baseApiUrl: string = BASE_API_URL + 'cities'; // global bar located in app/config.ts
+	headers = new HttpHeaders().set("Content-Type", "application/json");
 
 	constructor(private httpClient: HttpClient) {}
 
@@ -62,16 +62,16 @@ export class CitiesService {
 		);
 	  }
 
-	  delete(id:any):Observable<any>{
-		console.log(`${this.baseApiUrl}`);
-		return this.httpClient.delete(`${this.baseApiUrl}`,id).pipe(
+	  delete(code:City,id:any):Observable<any>{
+		console.log(`${this.baseApiUrl}/${id}`,code);
+		return this.httpClient.delete(`${this.baseApiUrl}/${id}`).pipe(
 			catchError(this.handleError)
 )
 	  }
 	  update(code: City,id:any): Observable<any> {
-		console.log(`${this.baseApiUrl}`);
+		console.log(`${this.baseApiUrl}`,code,id);
 		return this.httpClient
-		  .put(`${this.baseApiUrl}`, code,id)
+		  .put(`${this.baseApiUrl}/${id}`, code)
 		  .pipe(catchError(this.handleError));
 	  }
 

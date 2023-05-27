@@ -15,15 +15,16 @@ export class CustomerDeleteComponent implements OnInit{
       this.getAllCountries();
       this.getAllCustomers();
   }
-  customerslist: Customer[] = [];
+  customerli: Customer[] = [];
   countrylist: Country[]=[];
   country:Country = new Country;
-  customer: Customer = new Customer;
+  customerobj: Customer = new Customer;
 
   constructor(private customers:CustomersService,private countries: CountriesService) {}
 
-  deleteCustomers(id:any){
-    this.customers.delete(id).subscribe((customers: Customer[]): void => {
+  deleteCustomers(){
+    console.log("delete "+this.customerobj,this.customerobj.id);
+    this.customers.delete(this.customerobj,this.customerobj.id).subscribe((customers: Customer[]): void => {
     },
     (error: any): void => {
       console.log(error);
@@ -33,7 +34,7 @@ export class CustomerDeleteComponent implements OnInit{
   getAllCustomers(){
     this.customers.listAllCustomers().subscribe(
       (customers: Customer[]): void => {
-        this.customerslist = customers;
+        this.customerli = customers;
       },
       (error: any): void => {
         console.log(error);

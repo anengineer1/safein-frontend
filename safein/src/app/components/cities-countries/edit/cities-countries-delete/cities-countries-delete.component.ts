@@ -14,8 +14,8 @@ import { CustomersService } from 'src/app/services/customers.service';
 export class CitiesCountriesDeleteComponent implements OnInit{
   ngOnInit(): void {
     this.getAllCountries();
-this.getAllCustomers();
-this.getAllCity();
+    this.getAllCustomers();
+    this.getAllCity();
   }
   constructor(private countries: CountriesService,private citiesserv: CitiesService,private customers: CustomersService) {}
 
@@ -25,10 +25,8 @@ this.getAllCity();
   citieslist: City [] = [];
   customerslist: Customer [] = [];
 
-
-
-  deleteCity(id:any){
-    this.citiesserv.delete(id).subscribe((citiesserv: City[]): void => {
+  deleteCity(){
+    this.citiesserv.delete(this.cities,this.cities.id).subscribe((citiesserv: City[]): void => {
       
     },
     (error: any): void => {
@@ -36,8 +34,8 @@ this.getAllCity();
     })
   }  
   
-  deleteCountry(id:any){
-    this.countries.delete(id).subscribe((countries: Country[]): void => {
+  deleteCountry(){
+    this.countries.delete(this.country,this.cities.id).subscribe((countries: Country[]): void => {
     },
     (error: any): void => {
       console.log(error);
