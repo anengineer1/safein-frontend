@@ -60,7 +60,7 @@
                         <label for="inputCityName" class="col-form-label">City Name: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputCityName" class="form-control" #ccName  name="citiesname"[(ngModel)]="citiesobj.name" value="{{citiesobj.name}}"> 
+                        <input type="text" id="inputCityName" class="form-control" #ccName  name="citiesname" [(ngModel)]="citiesobj.name" value="{{citiesobj.name}}"> 
                     </div>
                 </div>
                 <!-- COUNTRY NAME  -->
@@ -74,7 +74,7 @@
                         #customercontry [(ngModel)]="citiesobj.country"  name="citiescountryname">
                         <option [ngValue]="countryelem" *ngFor="let countryelem of countrylist">{{countryelem.countryName}}</option>
                     </select>
-                    
+
                     </div>
                 </div>
 

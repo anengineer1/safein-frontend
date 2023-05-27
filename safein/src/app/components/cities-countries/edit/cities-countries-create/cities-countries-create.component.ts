@@ -14,10 +14,11 @@ import { CountriesService } from 'src/app/services/countries.service';
 
 export class CitiesCountriesCreateComponent implements  OnInit{
 
-  country: Country = new Country;
+  countryobj: Country = new Country;
   countrylist : Country [] = [];
   citieslist: City [] = [];
-  cities: City = new City;
+  citiesobj: City = new City;
+
 
   constructor(private countries: CountriesService,private citieserv: CitiesService) {}
 
@@ -39,7 +40,7 @@ export class CitiesCountriesCreateComponent implements  OnInit{
 
   //Create cities and countries
   saveCity(){
-    this.citieserv.create(this.cities).subscribe((cities: City[]): void => {
+    this.citieserv.create(this.citiesobj).subscribe((cities: City[]): void => {
       this.citieslist = cities;
     },
     (error: any): void => {
@@ -48,7 +49,7 @@ export class CitiesCountriesCreateComponent implements  OnInit{
   }
 
   saveCountry(){
-    this.countries.create(this.country).subscribe((countries: Country[]): void => {
+    this.countries.create(this.countryobj).subscribe((countries: Country[]): void => {
       this.countrylist = countries;
     },
     (error: any): void => {
