@@ -1,10 +1,14 @@
-
-html{
+html {
   //background: url('../assets/images/mapamundi_background.png') no-repeat;
-  background: url('../assets/images/image_big.png') repeat;
+  background: url("../assets/images/image_big.png") repeat;
   background-size: 95%;
-  height:100vh;
-  }
+  height: 100vh;
+}
+
+//Deshabilitar scrolls
+body::-webkit-scrollbar {
+  display: none;
+}
 
 /* Font for titles */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
@@ -76,8 +80,6 @@ h3 {
   font-size: 1.7rem;
 }
 
-
-
 /* ------------Elements----------------*/
 body,
 input[text] {
@@ -93,8 +95,8 @@ button {
   color: #f5efdf;
   border: #aaa 1px solid;
   font-size: 1.2rem;
-   // padding: 1rem;
-   // margin-right: 1rem;
+  // padding: 1rem;
+  // margin-right: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
   border-radius: 15px;
@@ -114,7 +116,7 @@ button:disabled {
 .btn-primary {
   background-color: #564b14;
   color: #f5efdf;
-  border:1px solid #f5efdf;
+  border: 1px solid #f5efdf;
 }
 
 .btn-primary:hover {
@@ -193,18 +195,17 @@ hr {
 
 // table styles
 .table-hover tbody tr:hover {
-    background-color: #f5f5f5;
-    cursor: pointer;
-    background-color: #f5efdf;
-    color: #564b14;
-    border: #564b14 2px solid;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  background-color: #f5efdf;
+  color: #564b14;
+  border: #564b14 2px solid;
 }
 
 /* Label styles */
-label{
+label {
   font-size: smaller;
 }
-
 
 /* Inputs styles */
 input {
@@ -226,19 +227,18 @@ input[type="text"] {
 
 // Extra classes
 .bubble {
-    color: #BCA162;
-    border: solid #BCA162 1px;
-    border-radius: 10px;
-    background-color: #F6EEDF;
+  color: #bca162;
+  border: solid #bca162 1px;
+  border-radius: 10px;
+  background-color: #f6eedf;
 }
 
 .bubble-heading {
-    color: #BCA162;
-    border: solid #BCA162 1px;
-    border-radius: 5px;
-    background-color: #F6EEDF;
+  color: #bca162;
+  border: solid #bca162 1px;
+  border-radius: 5px;
+  background-color: #f6eedf;
 }
-
 
 /*
   Copyright Google LLC. All Rights Reserved.
