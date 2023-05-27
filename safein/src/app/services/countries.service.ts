@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/operators';
 import { BASE_API_URL, BASE_API_URL_COUNTRIES_DELETE } from 'src/app/global-config';
 import { Country } from '../entityclasses/country';
+import { BASE_API_URL_COUNTRIES_GET_ALL } from '../global-config';
 
 @Injectable({
 	providedIn: 'root'
@@ -17,7 +18,7 @@ export class CountriesService {
 
 	/* Get a list all countries*/
 	listAllCountries(): Observable<any> {
-		return this.httpClient.get(this.baseApiUrl).pipe(
+		return this.httpClient.get(BASE_API_URL_COUNTRIES_GET_ALL).pipe(
 			catchError(this.handleError)
 		);
 	}

@@ -13,89 +13,79 @@ import { CustomersService } from 'src/app/services/customers.service';
 })
 
 
-export class CitiesCountriesDeleteComponent implements OnInit{
+export class CitiesCountriesDeleteComponent implements OnInit {
 
   //Attributes
-  cities : City = new City;
+  cities: City = new City;
   country: Country = new Country;
-  countrylist : Country [] = [];
-  citieslist: City [] = [];
-  customerslist: Customer [] = [];
+  countrylist: Country[] = [];
+  citieslist: City[] = [];
+
 
   //Constructor
-  constructor(private countries: CountriesService,private citiesserv: CitiesService,private customers: CustomersService) {}
+  constructor(private countriesService: CountriesService, private citiesService: CitiesService, private customersService: CustomersService) { }
 
   //cycle phase ngOnInit
   ngOnInit(): void {
     this.getAllCountries();
-    this.getAllCustomers();
-    this.getAllCity();
+    this.getAllCities();
   }
 
+
+  /*   listAllCites() {
+      this.citiesService.listAllCites().subscribe(
+        (citiesserv: City[]): void => {
+          this.citieslist = citiesserv;
+        },
+        (error: any): void => {
+          console.log(error);
+        }
+      )
+    } */
+  getAllCountries() {
+    this.countriesService.listAllCountries().subscribe(
+      (countriesService: Country[]): void => {
+        this.countrylist = countriesService;
+        console.log(this.countrylist)
+      },
+      (error: any): void => {console.log(error);
+      }
+    )
+  }
+
+  getAllCities() {
+    this.citiesService.listAllCites().subscribe(
+      (citiesService: City[]): void => {
+        this.citieslist = citiesService;
+      },
+      (error: any): void => {
+        console.log(error);
+      }
+    )
+  }
+
+
   //delete city by id
-  deleteCity(): void{
-    this.citiesserv.deleteCity(this.cities,this.cities.id).subscribe(
+  deleteCity(): void {
+    this.citiesService.deleteCity(this.cities, this.cities.id).subscribe(
       response => {
         console.log(response);
         alert("City deleted successfully");
-    },
-    (error: any): void => {console.log(error);}
+      },
+      (error: any): void => { console.log(error); }
     );
-  }  
-  
+  }
+
   //delete country by id
-  deleteCountry(){
-    this.countries.deleteCountry(this.country, this.country.id).subscribe(
+  deleteCountry() {
+    this.countriesService.deleteCountry(this.country, this.country.id).subscribe(
       response => {
         console.log(response);
-        alert("Country deleted successfully");
-    },
-    (error: any): void => {
-      console.log(error);
-    })
-  }
-  
-listAllCites(){
-  this.citiesserv.listAllCites().subscribe(
-    (citiesserv: City[]): void => {
-      this.citieslist = citiesserv;
-    },
-    (error: any): void => {
-      console.log(error);
-    }
-  )
-}
-  getAllCountries(){
-    this.countries.listAllCountries().subscribe(
-      (countries: Country[]): void => {
-        this.countrylist = countries;
-        console.log(this.countrylist)
+        alert("Country  "+ this.country.countryName +" deleted successfully");
       },
       (error: any): void => {
         console.log(error);
-      }
-    )
+      })
   }
-  
-  getAllCustomers(){
-    this.customers.listAllCustomers().subscribe(
-      (customers: Customer[]): void => {
-        this.customerslist = customers;
-      },
-      (error: any): void => {
-        console.log(error);
-      }
-    )
-  }
-  
-  getAllCity(){
-    this.citiesserv.listAllCites().subscribe(
-      (citiesserv: City[]): void => {
-        this.citieslist = citiesserv;
-      },
-      (error: any): void => {
-        console.log(error);
-      }
-    )
-  }
+
 }
