@@ -15,7 +15,7 @@
                         <label for="inputAmount" class="col-form-label">Amount: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputAmount" class="form-control" #bookingAmount>
+                        <input type="number" id="inputAmount" class="form-control" #bookingAmount name="bookingamount" [(ngModel)] = "booking.amount">
                     </div>
                 </div>
                 <!-- NUM PEOPLE IN BOOKING  -->
@@ -24,49 +24,58 @@
                         <label for="inputpeoplenumber" class="col-form-label">People number: </label>
                     </div>
                     <div class="col-6">
-                        <input type="number" id="inputpeoplenumber" class="form-control" #bookingpeoplenumber>
+                        <input type="number" id="inputpeoplenumber" class="form-control" #bookingpeoplenumber  name="bookingpeoplenumber" [(ngModel)] = "booking.numPeople">
                     </div>
                 </div>
                 <!-- CUSTOMER EMAIL  -->
                 <div class="row g-3 mb-1 me-0 align-items-center">
                     <div class="col-4 col-sm-12">
-                        <label for="selectCustomer" class="col-form-label">Customer email:</label>
+                        <label for="selectCustomer" class="col-form-label ">Customer name and email:</label>
                     </div>
                     <div class="col-12">
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" #customeremail>
-                            <option selected>Select a customer email</option>
-                            <option value="1">email 1</option>
-                            <option value="2">email 2</option>
-                            <option value="3">email 3</option>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" #customeremail name="bookingcustomer" [(ngModel)] = "booking.customers" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="customer" *ngFor="let customer of customersList">{{customer.name}}</option>
+                        </select>
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" #customeremail name="bookingcustomer" [(ngModel)] = "booking.customers" [ngModelOptions]="{standalone:true}" required disabled>
+                            <option [ngValue]="customer" *ngFor="let customer of customersList" >{{customer.email}}</option>
                         </select>
                     </div>
 
                     <!-- IS PAYED  -->
-                    <div class="row g-3 mb-1">
-                        <div class="col-6 col-sm-8">
+                    <div class="row mb-1 mt-2">
+                        <div class="col-6 col-sm-8 mb-2">
                             <label for="inputispayed" class="col-form-label">IsPayed? </label>
                         </div>
-                        <div class="col-1 mt-2">
-                            <input type="checkbox" id="inputispayed" class="form-control checkbox-input float-right"
-                                #bookingpayed>
+                        <div class="col-sm-3 col-4 mt-2  form-check">
+                            <input type="checkbox" id="inputispayed" class="form-control form-check-input"  #bookingpayed name="bookingpayed" [(ngModel)] = "booking.payed">
                         </div>
                     </div>
 
                     <!-- IS PENDING PAY  -->
-                    <div class="row g-3 mb-1 align-items-right">
-                        <div class="col-6 col-sm-8">
+                    <div class="row  mb-1 mt-2">
+                        <div class="col-6 col-sm-8 mb-2">
                             <label for="inputispending" class="col-form-label">Is Pending Pay? </label>
                         </div>
-                        <div class="col-sm-1 mt-2">
-                            <input type="checkbox" id="inputispending" class="form-control checkbox-input"
-                                #bookingpending>
+                        <div class="col-sm-3 col-4 mt-2  form-check">
+                            <input type="checkbox" id="inputispending" class="form-control form-check-input" #bookingpending name="bookingpendingpay" [(ngModel)] = "booking.pendingPay">
                         </div>
+                    </div>
+                </div>
+                
+                  <!-- USER  -->
+                  <div class="row g-3 mb-1 align-items-center">
+                    <div class="col-6 col-sm-6">
+                        <label for="inputUser" class="col-form-label">User agent: </label>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" id="inputUser" class="form-control" #bookingUser name="bookinguser" [(ngModel)] = "booking.suser"  disabled>
+                    <!--     //TODO: Aqui traer el usurio del sessionStorage en merge-->
                     </div>
                 </div>
                 <!--     BUTTOM to add a handle -->
                 <div class="row g-3 mb-2 align-items-center">
                     <div class="col-6 col-sm-12">
-                        <button type="button" class="btn btn-secondary btn-lg button_1">Save Booking</button>
+                        <button type="button" class="btn btn-secondary btn-lg button_1" (click)="saveBooking()">Save Booking</button>
                     </div>
                 </div>
             </div>
@@ -78,58 +87,82 @@
 
                 <h4 class="mt-3 ps-3 g-0 text-light bg-dark col-11 rounded">Add a Handle</h4>
                 <!-- ARRIVAL DATE  -->
-                <div class="row g-6 mb-1 align-items-center">
+                <div class="row mb-1 align-items-center">
                     <div class="col-6 col-sm-6">
                         <label for="inputarrival" class="col-form-label">Arrival Date: </label>
                     </div>
                     <div class="col-6">
-                        <input type="date" id="inputarrival" class="form-control" #arrivalDate>
+                        <input type="date" id="inputarrival" class="form-control" #arrivalDate name="handlearrivaldate" [(ngModel)] = "handle.arrivalDate">
                     </div>
                 </div>
                 <!-- DEPARTURE DATE  -->
-                <div class="row g-3 mb-1 align-items-center">
+                <div class="row mb-1 align-items-center">
                     <div class="col-6 col-sm-6">
                         <label for="inputdeparture" class="col-form-label">Departure Date: </label>
                     </div>
                     <div class="col-6">
-                        <input type="date" id="inputdeparture" class="form-control" #departureDate>
+                        <input type="date" id="inputdeparture" class="form-control" #departureDate  name="handledeparturedate" [(ngModel)] = "handle.departureDate">
                     </div>
                 </div>
                 <!-- BOOKING NUMBER  -->
-                <div class="row g-3 mb-1 align-items-center">
+                <div class="row mb-1 align-items-center">
                     <div class="col-6 col-sm-6">
-                        <label for="inputBookingNumber" class="col-form-label">Booking Number:</label>
+                        <label for="inputBookingNumber" class="col-form-label  fw-bold">Booking Number:</label>
                     </div>
                     <div class="col-12">
-                        <select class="form-select form-select-sm" id="inputBookingNumber"
-                            aria-label="form-select-sm example" #bookingNumber>
-                            <option selected>Select booking number</option>
-                            <option value="1">booking 1</option>
-                            <option value="2">booking 2</option>
-                            <option value="3">booking 3</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- ROOM DATE  -->
-                <div class="row g-3 mb-1 mt-2 align-items-center">
-                    <div class="col-6 col-sm-6">
-                        <label for="inputroomnumber" class="col-form-label">Room Number:</label>
-                    </div>
-                    <div class="col-12">
-                        <select class="form-select form-select-sm" id="inputRoomNumber"
-                            aria-label=".form-select-sm example" #roomNumber>
-                            <option selected>Select a room number</option>
-                            <option value="1">Room id 1</option>
-                            <option value="2">Room id 2</option>
-                            <option value="3">Room id 3</option>
+                        <select class="form-select form-select-sm" id="inputBookingNumber" aria-label="form-select-sm example" #bookingNumber name="handlebookingnumber" [(ngModel)] = "handle.booking" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="booking" *ngFor="let booking of bookingsList" >{{booking.id}}</option>
                         </select>
                     </div>
                 </div>
 
+                <!-- Destiny  -->
+                <div class="row mb-1 mt-2 align-items-center rounded">
+                    <div class="col-6 col-sm-6">
+                        <label for="inputroomnumber" class="col-form-label fw-bold">Destiny:</label>
+                    </div>
+                    <div class="col-12">
+                        <label for="hotelname">Country:</label>
+                        <select class="form-select form-select-sm" id="inputcountry" aria-label=".form-select-sm example" #roomCountry  name="handlecountry" [(ngModel)] = "handle.room" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="room" *ngFor="let roomL of roomList">{{roomL.hotel.city.country.countryName}}</option>
+                        </select>
+                        <label for="roomcode">City:</label>
+                        <select class="form-select form-select-sm mb-2" id="inputRoomCode" aria-label=".form-select-sm example" #roomNumber  name="handleroomcode" [(ngModel)] = "handle.room" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="room" *ngFor="let roomL of roomList">{{roomL.hotel.city.name}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- HOTEL INFOEMATION: ROOM CODE  -->
+                <div class="row mb-1 mt-2 align-items-center rounded">
+                    <div class="col-6 col-sm-6">
+                        <label for="inputroomnumber" class="col-form-label fw-bold">Hotel Information:</label>
+                    </div>
+                    <div class="col-12">
+                        <label for="hotelname">Hotel name:</label>
+                        <select class="form-select form-select-sm" id="inputRoomNumber" aria-label=".form-select-sm example" #roomNumber  name="handleroomnumber" [(ngModel)] = "handle.room" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="room" *ngFor="let roomL of roomList">{{roomL.hotel.name}}</option>
+                        </select>
+                        <label for="roomcode">Room:</label>
+                        <select class="form-select form-select-sm" id="inputRoomCode" aria-label=".form-select-sm example" #roomNumber  name="handleroomcode" [(ngModel)] = "handle.room" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="room" *ngFor="let roomL of roomList">{{roomL.code}}</option>
+                        </select>
+                        <label for="securityLevel">Security Level:</label>
+                        <select class="form-select form-select-sm mb-2" id="inputRoomSecurityLevel" aria-label=".form-select-sm example" #roomNumber  name="handlesecuritylevel" [(ngModel)] = "handle.room" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="room" *ngFor="let roomL of roomList">{{roomL.hotel.securityLevel}}</option>
+                        </select>
+                        <label for="energy">Sufficient Energy:</label>
+                        <select class="form-select form-select-sm mb-2" id="inputRoomenergy" aria-label=".form-select-sm example" #roomNumber  name="handleenergy" [(ngModel)] = "handle.room" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="room" *ngFor="let roomL of roomList">{{roomL.hotel.energySuficient}}</option>
+                        </select>
+                    </div>
+                </div>
+
+
                 <!--     BUTTON to add a handle -->
-                <div class="row g-2 mb-1 mt-3 align-items-center">
+                <div class="row mb-1 mt-1 align-items-center">
                     <div class="col-auto col-sm-12">
-                        <button type="button" class="btn btn-secondary btn-lg button_1">Save Handle</button>
+                        <button type="button" class="btn btn-secondary btn-lg button_1" (click)="saveHandle()">Save Handle</button>
                     </div>
                 </div>
 
