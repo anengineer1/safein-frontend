@@ -22,3 +22,29 @@ export class Room {
 	this.hotel = new Hotel;
     }    
 }
+
+
+/*---------------------------------ROOM EXAMPLE -------------------------------------
+
+{
+    "id": 4,
+    "numPeople": 2,
+    "code": "145",
+    "pricePerNight": 59.99,
+    "internetType": "Fiber",
+    "hasTerrace": true,
+    "hotel": {
+        "id": 1,
+        "name": null,
+        "phonenumber": null,
+        "email": null,
+        "address": null,
+        "latitude": 0.0,
+        "longitude": 0.0,
+        "securityLevel": null,
+        "energySuficient": false,
+        "city": null
+    },
+    "smoker": true
+}
+-------------------------------------------------------------------------------------*/

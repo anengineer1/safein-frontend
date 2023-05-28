@@ -10,6 +10,15 @@ form {
     clear: both;
   }
 
+  .form-checkbox-input{
+    float: center !important;
+  }
+
+  .form-checkbox-input:checked{
+    float: center !important;
+    background-color: black;
+  }
+
   label{
     float: left;
   }

@@ -21,3 +21,36 @@ export class BookingData {
 	this.suser = new Suser;
     }
 }
+
+/*-----------------------------------------BOOKING EXAMPLE-----------------------
+"id": 3,
+  "amount": 454.9,
+  "numPeople": 2,
+  "customers": {
+    "id": 3,
+    "name": "Frédéric Leclerc-Imhoff",
+    "email": "freddy@gmail.com",
+    "pressMedia": "BFMTV",
+    "docIdentifier": "DNI",
+    "numIdentifier": "5263374744",
+    "country": {
+      "id": 3,
+      "countryCode": "ID",
+      "countryName": "Indonesia",
+      "latitude": -5,
+      "longitude": 120,
+      "situation": "Natural Disaster"
+    },
+    "phonenumber": "+341445623"
+  },
+  "user": {
+    "id": 3,
+    "username": "NicoGico",
+    "password": "Ni#$Gii",
+    "email": "nicogi@gmail.com",
+    "nomApels": "Nicolas Gimenez"
+  },
+  "payed": true,
+  "pendingPay": false
+}
+---------------------------------------------------------------------------------*/

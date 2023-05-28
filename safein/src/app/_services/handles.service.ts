@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BASE_API_URL } from '../global-config';
+import { BASE_API_URL,BASE_API_URL_BOOKINGS_DELETE,BASE_API_URL_HANDLES_CREATE  } from '../global-config';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Handles } from '../entityclasses/handles';
 
@@ -81,10 +81,28 @@ export class HandlesService {
 			catchError(this.handleError));
 	}
 
-	updateHandle(id: any, data: Handles): Observable<any> {
+  updateHandle(id: any, data: Handles): Observable<any> {
 		let fullUrl: string = `${this.baseApiHandles}/${id}`;
 		console.log(fullUrl);
 		return this.httpClient.put(fullUrl, data).pipe(catchError(this.handleError));
+	}
+	
+	/* Create a handle*/
+	createHandle(code: Handles): Observable<any>{
+		let fullUrl : string = BASE_API_URL_HANDLES_CREATE;
+		console.log(fullUrl);
+		return this.httpClient.post(fullUrl, code ).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	/* Delete a handle*/
+	deleteHandle(code:Handles, id:any): Observable<any>{
+		let fullUrl : string = BASE_API_URL_BOOKINGS_DELETE+'/'+id;
+		console.log(fullUrl, code);
+		return this.httpClient.delete(fullUrl).pipe(
+			catchError(this.handleError)
+		);
 	}
 }
 
