@@ -117,7 +117,7 @@ import { UserUpdateComponent } from './components/user-account/user-update/user-
     FormsModule,
   ],
  providers: [
-  { provide: authInterceptorProvider, useValue: authInterceptorProvider}
+    authInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })
