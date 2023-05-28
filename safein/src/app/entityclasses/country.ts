@@ -12,7 +12,7 @@ export class Country {
 		this.countryName = "";
 		this.latitude = 0;
 		this.longitude = 0;
-		this.situation = "War";
+		this.situation = "Peace";
 	}
 }
 
