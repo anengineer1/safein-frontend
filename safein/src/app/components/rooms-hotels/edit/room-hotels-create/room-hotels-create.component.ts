@@ -42,11 +42,11 @@ export class RoomHotelsCreateComponent implements OnInit {
 			}
 		)
 
-		this.citiesService.listAllCites().subscribe(
+		this.citiservice.listAllCites().subscribe(
 			{
 				next: (cities: City[]): void => {
-					this.citiesList = cities;
-					console.log(this.citiesList);
+					this.citieslist = cities;
+					console.log(this.citieslist);
 				},
 				error: (error: any): void => { console.log(error) }
 			}
