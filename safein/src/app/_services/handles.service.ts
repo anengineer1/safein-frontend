@@ -10,6 +10,7 @@ import { Handles } from '../entityclasses/handles';
 export class HandlesService {
 
 	baseApiUrl: string = BASE_API_URL + 'booking'; // global bar located in app/config.ts
+	baseApiHandles: string = BASE_API_URL + 'handle'; // For Put and delete handle endpoints
 	headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 	constructor(private httpClient: HttpClient) {}
@@ -27,6 +28,20 @@ export class HandlesService {
 
 	listAllHandles(): Observable<any> {
 		let completeUrl = this.baseApiUrl + '/handles';
+		console.log(completeUrl);
+		return this.httpClient.get(completeUrl).pipe(
+			catchError(this.handleError));
+	}
+
+	listLatestsHandles(): Observable<any> {
+		let completeUrl = this.baseApiUrl + '/handle/latests';
+		console.log(completeUrl);
+		return this.httpClient.get(completeUrl).pipe(
+			catchError(this.handleError));
+	}
+
+	listLatestsHandlesByUserEmail(email: string): Observable<any> {
+		let completeUrl = this.baseApiUrl + '/handle/latests/' + `${email}`;
 		console.log(completeUrl);
 		return this.httpClient.get(completeUrl).pipe(
 			catchError(this.handleError));
@@ -66,7 +81,11 @@ export class HandlesService {
 			catchError(this.handleError));
 	}
 
-
+  updateHandle(id: any, data: Handles): Observable<any> {
+		let fullUrl: string = `${this.baseApiHandles}/${id}`;
+		console.log(fullUrl);
+		return this.httpClient.put(fullUrl, data).pipe(catchError(this.handleError));
+	}
 	
 	/* Create a handle*/
 	createHandle(code: Handles): Observable<any>{
@@ -85,6 +104,5 @@ export class HandlesService {
 			catchError(this.handleError)
 		);
 	}
-
 }
 

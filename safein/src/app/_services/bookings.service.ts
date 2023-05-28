@@ -41,7 +41,7 @@ export class BookingsService {
 		);
 	}
 
-    getBookingDataByCustomerId(id: any): Observable<any> {
+	getBookingDataByCustomerId(id: any): Observable<any> {
 		let fullUrl: string = `${this.baseApiUrl}/customer/${id}`;
 		console.log(fullUrl);
 		return this.httpClient.get(fullUrl).pipe(
@@ -49,6 +49,12 @@ export class BookingsService {
 		);
 	}
 
+	updateBookingData(id: any, data: BookingData): Observable<any> {
+		let fullUrl: string = `${this.baseApiUrl}/${id}`;
+		console.log(fullUrl);
+		return this.httpClient.put(fullUrl, data).pipe(catchError(this.handleError));
+  }
+  
 	/* Create a booking*/
 	createBooking(code: BookingData): Observable<any>{
 		let fullUrl : string = BASE_API_URL_BOOKINGS_CREATE;
