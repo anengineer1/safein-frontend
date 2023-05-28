@@ -119,16 +119,16 @@
                 <!-- Destiny  -->
                 <div class="row mb-1 mt-2 align-items-center rounded">
                     <div class="col-6 col-sm-6">
-                        <label for="inputroomnumber" class="col-form-label fw-bold">Destiny:</label>
+                        <label for="inputlocation" class="col-form-label fw-bold">Location:</label>
                     </div>
                     <div class="col-12">
                         <label for="hotelname">Country:</label>
-                        <select class="form-select form-select-sm" id="inputcountry" aria-label=".form-select-sm example" #roomCountry  name="handlecountry" [(ngModel)] = "handle.room" [ngModelOptions]="{standalone:true}" required>
-                            <option [ngValue]="room" *ngFor="let roomL of roomList">{{roomL.hotel.city.country.countryName}}</option>
+                        <select class="form-select form-select-sm" id="inputcountry" aria-label=".form-select-sm example" #handlecountry  name="handlecountry" [(ngModel)] = "city" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="cityL" *ngFor="let cityL of cityList" >{{cityL.country.countryName}}</option>
                         </select>
                         <label for="roomcode">City:</label>
-                        <select class="form-select form-select-sm mb-2" id="inputRoomCode" aria-label=".form-select-sm example" #roomNumber  name="handleroomcode" [(ngModel)] = "handle.room" [ngModelOptions]="{standalone:true}" required>
-                            <option [ngValue]="room" *ngFor="let roomL of roomList">{{roomL.hotel.city.name}}</option>
+                        <select class="form-select form-select-sm mb-2" id="inputRoomCode" aria-label=".form-select-sm example" #handlecity  name="handlecity" [(ngModel)] = "city" [ngModelOptions]="{standalone:true}" required>
+                            <option [ngValue]="cityL" *ngFor="let cityL of cityList">{{cityL.name}}</option>
                         </select>
                     </div>
                 </div>

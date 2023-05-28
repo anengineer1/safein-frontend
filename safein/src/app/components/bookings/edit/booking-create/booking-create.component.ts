@@ -8,6 +8,9 @@ import { Customer } from 'src/app/entityclasses/customer';
 import { CustomersService } from 'src/app/services/customers.service';
 import { Room } from 'src/app/entityclasses/room';
 import { RoomsService } from 'src/app/_services/rooms.service';
+import { Country } from 'src/app/entityclasses/country';
+import { CitiesService } from 'src/app/services/cities.service';
+import { CountriesService } from '../../../../services/countries.service';
 
 @Component({
   selector: 'app-booking-create',
@@ -18,6 +21,7 @@ export class BookingCreateComponent {
 
 
   //Attributes
+  //current booking and handle  to create
   booking: BookingData = new BookingData();
   handle: Handles = new Handles();
   bookingsList: BookingData[] = [];
@@ -28,9 +32,13 @@ export class BookingCreateComponent {
   customersList: Customer[] = [];
   room: Room = new Room();
   roomList: Room[] = [];
+  city: City = new City();
+  cityList: City[] = [];
+  country: Country = new Country();
+  countriesList: Country[] = [];
 
   //constructor
-  constructor(private bookingService: BookingsService, private handleService: HandlesService, private customersService:CustomersService, private roomsService:RoomsService) {}
+  constructor(private bookingService: BookingsService, private handleService: HandlesService, private customersService:CustomersService, private roomsService:RoomsService, private citiesService: CitiesService, private countriesService:CountriesService) {}
 
   ngOnInit(): void {
     this.getAllBookings();
@@ -38,6 +46,9 @@ export class BookingCreateComponent {
     //For selects
     this.getAllCustomers();
     this.getAllRooms();
+    this.getAllCities();
+    this.getAllCountries();
+  console.log(this.city);
   }
 
 //Get All Bookings
@@ -84,6 +95,29 @@ getAllRooms(){
   )
 }
 
+//Get All Cities
+getAllCities(){
+  this.citiesService.listAllCites().subscribe(
+    (citiesService: City[]):void => {
+      this.cityList = citiesService;
+      console.log(this.cityList);
+    },
+     (error:any):void => {console.log(error);}
+  )
+}
+
+//Get All Countries
+getAllCountries(){
+  this.countriesService.listAllCountries().subscribe(
+    (countriesService: Country[]):void => {
+      this.countriesList = countriesService;
+      console.log(this.countriesList);
+    },
+     (error:any):void => {console.log(error);}
+  )
+}
+
+
 /* Create a new Booking */
 saveBooking(){
 
@@ -110,6 +144,5 @@ saveHandle(){
     console.log(error);
   }
 }
-
 
 }
