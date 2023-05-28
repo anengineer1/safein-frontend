@@ -65,4 +65,15 @@ export class HotelsService {
 		return this.httpClient.post(`${this.baseApiUrl}`, code).pipe(
 			catchError(this.handleError)
 		);
-	}}
+	}
+	updateHotel(id: any, data: Hotel) {
+		let completeUrl = `${this.baseApiUrl}/${id}`;
+		console.log(completeUrl);
+		return this.httpClient.put(completeUrl, data).pipe(
+			catchError(this.handleError)
+		);
+	}
+}
+
+	
+
