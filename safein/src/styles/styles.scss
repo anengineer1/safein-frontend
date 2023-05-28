@@ -129,6 +129,12 @@ button:disabled {
   border: #564b14 2px solid;
 }
 
+.btn-primary:disabled {
+  background-color: #f5efdf;
+  color: #86847d;
+  border: #564b14 2px solid;
+}
+
 .btn-secondary {
   background-color: #b8a464;
   color: #f5efdf;

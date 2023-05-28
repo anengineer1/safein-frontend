@@ -8,18 +8,18 @@ import { WorkingspaceComponent } from './pages/workingspace/workingspace.compone
 import { RoomsHotelsComponent } from './pages/rooms-hotels/rooms-hotels.component';
 import { CitiesCountriesComponent } from './pages/cities-countries/cities-countries.component';
 import { CustomersComponent } from './pages/customers/customers.component';
+import { UserReadComponent } from './components/user-account/user-read/user-read.component';
+import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
 import { StyleTestComponent } from './components/style-test/style-test.component';
 
 
 const routes: Routes = [
-	{ path: '', redirectTo: '/account', pathMatch: 'full' },
-	{//User Account: Signin
-		path: "signin",
-		component: SigninComponent
-	}, {
-		path: "account",
-		component: AccountComponent
-	}, {
+	{ path: '', redirectTo: 'account', pathMatch: 'full' },
+	{ path: "signin", component: SigninComponent }, //User Account: Signin
+	{ path: "account", component: AccountComponent, children:[] },//User Account
+	{ path: "user-profile", component: UserReadComponent}, //User Profile read
+	{path: "user-profile-update", component: UserUpdateComponent}, //User Profile update
+	{
 		path: "workingspace",
 		component: WorkingspaceComponent, children: [
 
@@ -44,6 +44,7 @@ const routes: Routes = [
 				path: "bookings",
 				component: BookingsComponent
 			},
+			{path: "profile", component: UserReadComponent},//User Profile
 			{ // Bookings route
 				path: "stylesheet",
 				component: StyleTestComponent
@@ -56,4 +57,4 @@ const routes: Routes = [
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
