@@ -32,11 +32,8 @@
                     <label for="selectCustomerEmail" class="col-form-label">Customer Email:</label>
                 </div>
                 <div class="col-8">
-                    <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
-                        #customercontry [(ngModel)]="customerobj" name="customeremail">
-                        <option [ngValue]="customer" *ngFor="let customer of customerli">
-                            {{customer.email}}
-                        </option>
+                    <select class=" m-3 form-select-sm"  id="selectCustomerEmail" aria-label="form-select-sm " #customeremail [(ngModel)]="customerobj" name="customeremail" [ngModelOptions]="{standalone:true}">
+                        <option [ngValue]="customer" *ngFor="let customer of customerli">{{customer.email}}</option>
                     </select>
                 </div>
             </div>

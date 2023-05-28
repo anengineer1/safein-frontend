@@ -6,6 +6,7 @@ import { Hotel } from 'src/app/entityclasses/hotel';
 import { Room } from 'src/app/entityclasses/room';
 import { CitiesService } from 'src/app/services/cities.service';
 
+
 @Component({
 	selector: 'app-room-hotels-create',
 	templateUrl: './room-hotels-create.component.html',
@@ -24,7 +25,6 @@ export class RoomHotelsCreateComponent implements OnInit {
 	constructor(private roomsService: RoomsService, private hotelService: HotelsService,private citiservice: CitiesService ) {
 	}
 
-
 	assignHotel(hotel: Hotel) {
 
 		this.currentHotelForInsertion = hotel;
@@ -41,6 +41,17 @@ export class RoomHotelsCreateComponent implements OnInit {
 				error: (error: any): void => { console.log(error) }
 			}
 		)
+
+		this.citiesService.listAllCites().subscribe(
+			{
+				next: (cities: City[]): void => {
+					this.citiesList = cities;
+					console.log(this.citiesList);
+				},
+				error: (error: any): void => { console.log(error) }
+			}
+		)
+
 	}
 
 	getHotelById(id: any) {

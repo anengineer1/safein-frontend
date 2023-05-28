@@ -132,7 +132,8 @@
 						<label for="inputRoomCode" class="col-form-label">Code of room: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="text" id="inputRoomCode" class="form-control" #inputRoomCode name="codeInput" [(ngModel)]="currentRoom.code" required>
+						<input type="text" id="inputRoomCode" class="form-control" #inputRoomCode name="codeInput"
+							[(ngModel)]="currentRoom.code" required>
 					</div>
 				</div>
 
@@ -142,7 +143,8 @@
 						<label for="inputRoomNumPeople" class="col-form-label">Number of people: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputRoomNumPeople" class="form-control" #inputRoomNumPeople name="NumPeopleRoom" [(ngModel)]="currentRoom.numPeople" required>
+						<input type="number" id="inputRoomNumPeople" class="form-control" #inputRoomNumPeople
+							name="NumPeopleRoom" [(ngModel)]="currentRoom.numPeople" required>
 					</div>
 				</div>
 
@@ -152,7 +154,8 @@
 						<label for="inputPricePerNight" class="col-form-label">Price per night: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputPricePerNight" class="form-control" #pricePerNight name="inputPricePerNight" [(ngModel)]="currentRoom.pricePerNight" required>
+						<input type="number" id="inputPricePerNight" class="form-control" #pricePerNight
+							name="inputPricePerNight" [(ngModel)]="currentRoom.pricePerNight" required>
 					</div>
 				</div>
 				<!-- INTERNET TYPE  -->
@@ -161,7 +164,9 @@
 						<label for="inputInternetType" class="col-form-label">Internet type:</label>
 					</div>
 					<div class="col-sm-6">
-						<select class="form-select form-select-sm" id="inputInternetType" aria-label="form-select-sm example"  #inputInternetType name="inputInternetType" [(ngModel)]="currentRoom.internetType" required>
+						<select class="form-select form-select-sm" id="inputInternetType"
+							aria-label="form-select-sm example" #inputInternetType name="inputInternetType"
+							[(ngModel)]="currentRoom.internetType" required>
 							<option value="Fiber">Fiber</option>
 							<option value="Cable">Cable</option>
 							<option value="Satellite">Satellite</option>
@@ -175,7 +180,8 @@
 						<label for="inputIsSmoker" class="col-form-label">Is smoker? </label>
 					</div>
 					<div class="col-sm-6 form-check">
-						<input type="checkbox" id="inputIsSmoker" class="form-control form-check-input " #inputIsSmoker name="inputIsSmoker" [(ngModel)]="currentRoom.smoker" required>
+						<input type="checkbox" id="inputIsSmoker" class="form-control form-check-input " #inputIsSmoker
+							name="inputIsSmoker" [(ngModel)]="currentRoom.smoker" required>
 					</div>
 				</div>
 				<!-- HAS TERRACE -->
@@ -184,7 +190,8 @@
 						<label for="inputHasTerrace" class="col-form-label">Has terrace? </label>
 					</div>
 					<div class="col-sm-6  form-check">
-						<input type="checkbox" id="inputHasTerrace" class="form-control form-check-input" #inputHasTerrace name="inputHasTerrace" [(ngModel)]="currentRoom.hasTerrace" required>
+						<input type="checkbox" id="inputHasTerrace" class="form-control form-check-input"
+							#inputHasTerrace name="inputHasTerrace" [(ngModel)]="currentRoom.hasTerrace" required>
 					</div>
 				</div>
 
