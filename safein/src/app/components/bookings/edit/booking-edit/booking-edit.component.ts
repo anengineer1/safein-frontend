@@ -100,7 +100,11 @@ export class BookingEditComponent implements OnInit {
 	}
 
 	updateBooking(): void {
-		this.currentBookingForUpdate.customers = this.currentCustomerForUpdate;
+
+		if (this.currentCustomerForUpdate.id !== 0) {
+			this.currentBookingForUpdate.customers = this.currentCustomerForUpdate;
+		}
+
 		console.log(this.currentBookingForUpdate);
 		this.bookingService.updateBookingData(this.currentBookingForUpdate.id, this.currentBookingForUpdate).subscribe({
 			next: response => {
@@ -114,8 +118,14 @@ export class BookingEditComponent implements OnInit {
 	}
 
 	updateHandles(): void {
-		this.currentHandleForUpdate.booking = this.bookingForHandleSelector;
-		this.currentHandleForUpdate.room = this.roomForHandleSelector;
+		if (this.bookingForHandleSelector.id !== 0) {
+			this.currentHandleForUpdate.booking = this.bookingForHandleSelector;
+
+		}
+
+		if (this.roomForHandleSelector.id !== 0) {
+			this.currentHandleForUpdate.room = this.roomForHandleSelector;
+		}
 		console.log(this.currentHandleForUpdate);
 		this.handlesService.updateHandle(this.currentHandleForUpdate.id, this.currentHandleForUpdate).subscribe({
 			next: response => {
