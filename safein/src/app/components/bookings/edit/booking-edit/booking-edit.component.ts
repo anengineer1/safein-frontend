@@ -25,8 +25,12 @@ export class BookingEditComponent implements OnInit {
 	currentCustomerForUpdate: Customer = new Customer;
 	customerListForUpdate: Customer[] = [];
 	// Rooms component of Handles
-	currentRoomForUpdate: Room = new Room;
 	roomListForUpdate: Room[] = [];
+
+	// Extra Booking for Handle selector
+	bookingForHandleSelector: BookingData = new BookingData;
+	// Room For Handle selector
+	roomForHandleSelector: Room = new Room;
 
 
 	constructor(private bookingService: BookingsService,
@@ -110,8 +114,8 @@ export class BookingEditComponent implements OnInit {
 	}
 
 	updateHandles(): void {
-		// this.currentHandleForUpdate.booking = this.currentBookingForUpdate;
-		// this.currentHandleForUpdate.room = this.currentRoomForUpdate;
+		this.currentHandleForUpdate.booking = this.bookingForHandleSelector;
+		this.currentHandleForUpdate.room = this.roomForHandleSelector;
 		console.log(this.currentHandleForUpdate);
 		this.handlesService.updateHandle(this.currentHandleForUpdate.id, this.currentHandleForUpdate).subscribe({
 			next: response => {

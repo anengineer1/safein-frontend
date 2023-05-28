@@ -53,8 +53,8 @@
 					</div>
 					<div class="col-12">
 						<select class="form-select form-select-sm" id="inputBookingNumberUpdate" aria-label="form-select-sm example"
-							name="inputBookingNumberUpdate" [(ngModel)]="currentHandleForUpdate.booking" #bookingNumber>
-							<option *ngFor="let booking of bookingListUpdate" [ngValue]="booking" [selected]="currentHandleForUpdate.booking === booking">{{booking.id}}</option>
+							name="inputBookingNumberUpdate" [(ngModel)]="bookingForHandleSelector" #bookingNumber>
+							<option *ngFor="let booking of bookingListUpdate" [ngValue]="booking" [selected]="currentHandleForUpdate.booking.id === booking.id">{{booking.id}}</option>
 						</select>
 					</div>
 				</div>
@@ -65,8 +65,8 @@
 					</div>
 					<div class="col-auto">
 						<select class="form-select form-select-sm" id="inputRoomNumber" aria-label="form-select-sm example"
-							name="inputRoomNumber" [(ngModel)]="currentHandleForUpdate.room" #roomNumber>
-							<option *ngFor="let room of roomListForUpdate" [ngValue]="room">{{room.id}} ({{room.code}})</option>
+							name="inputRoomNumber" [(ngModel)]="roomForHandleSelector" #roomNumber>
+							<option *ngFor="let room of roomListForUpdate" [ngValue]="room" [selected]="currentHandleForUpdate.room.id === room.id">{{room.id}} ({{room.code}})</option>
 						</select>
 					</div>
 				</div>
