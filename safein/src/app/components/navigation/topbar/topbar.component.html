@@ -13,18 +13,18 @@
                 </li>
             </ul>
             <div class="navbar-nav">
-                <div class="ms-3 me-3"><span>Active Bookings: {{'Number'}}</span></div>
-                <div class="ms-3 me-3"><span>Number of Clients: {{'Number'}}</span></div>
+                <div class="ms-3 me-3  fw-bold"><span>Active Bookings: {{numberHandles}}</span></div>
+                <div class="ms-3 me-3  fw-bold"><span>Number of Clients: {{numberCustomers}}</span></div>
             </div>
         </div>
         <!--  Shows date in real time format -->
         <div class="navbar-nav float-center">
-            <div class="me-3 mt-4 me-3"><app-datebar></app-datebar></div>
+            <div class="me-3 mt-4 me-3 fw-bold"><app-datebar></app-datebar></div>
         </div>
         <div class="navbar-nav flex-row mt-1 ms-3 me-3">
-            <span class="ms-3 me-3">Notifications</span>
+            <span class="ms-3 me-3  text-success"><i class="bi bi-bell-fill"></i></span>
             <!--    Shows Welcome to user and her role -->
-            <span class="ms-3 me-3" *ngIf="isLoggedIn">Hello {{username}},({{role}})</span>
+            <span class="ms-3 me-3 fw-bold" *ngIf="isLoggedIn">Hello {{username}},({{role}})</span>
         </div>
 
         <ul class="navbar-nav d-flex flex-row">
