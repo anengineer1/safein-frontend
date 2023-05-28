@@ -6,6 +6,12 @@ html{
   height:100vh;
   }
 
+//Deshabilitar scrolls
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
 /* Font for titles */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 
