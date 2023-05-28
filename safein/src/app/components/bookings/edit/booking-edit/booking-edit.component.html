@@ -128,7 +128,7 @@
 					<div class="col-6">
 						<select class="form-select form-select-sm" aria-label=".form-select-sm example" id="selectCustomerUpdate"
 							name="selectCustomerUpdate" [(ngModel)]="currentCustomerForUpdate" #selectCustomerUpdate>
-							<option *ngFor="let customer of customerListForUpdate" [ngValue]="customer">{{customer.email}}</option>
+							<option *ngFor="let customer of customerListForUpdate" [ngValue]="customer" [selected]="currentBookingForUpdate.customers.id === customer.id">{{customer.email}}</option>
 						</select>
 					</div>
 
