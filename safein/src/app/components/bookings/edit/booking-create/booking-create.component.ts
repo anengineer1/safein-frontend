@@ -11,6 +11,8 @@ import { RoomsService } from 'src/app/_services/rooms.service';
 import { Country } from 'src/app/entityclasses/country';
 import { CitiesService } from 'src/app/services/cities.service';
 import { CountriesService } from '../../../../services/countries.service';
+import { Hotel } from 'src/app/entityclasses/hotel';
+import { HotelsService } from 'src/app/_services/hotels.service';
 
 @Component({
   selector: 'app-booking-create',
@@ -36,9 +38,11 @@ export class BookingCreateComponent {
   cityList: City[] = [];
   country: Country = new Country();
   countriesList: Country[] = [];
+  hotel: Hotel = new Hotel();
+  hotelsList: Hotel[] = [];
 
   //constructor
-  constructor(private bookingService: BookingsService, private handleService: HandlesService, private customersService:CustomersService, private roomsService:RoomsService, private citiesService: CitiesService, private countriesService:CountriesService) {}
+  constructor(private bookingService: BookingsService, private handleService: HandlesService, private customersService:CustomersService, private roomsService:RoomsService, private citiesService: CitiesService, private countriesService:CountriesService, private hotelsService:HotelsService) {}
 
   ngOnInit(): void {
     this.getAllBookings();
@@ -48,6 +52,7 @@ export class BookingCreateComponent {
     this.getAllRooms();
     this.getAllCities();
     this.getAllCountries();
+    this.getAllHotels();
   console.log(this.city);
   }
 
@@ -117,6 +122,16 @@ getAllCountries(){
   )
 }
 
+//Get All Hotels
+getAllHotels(){
+  this.hotelsService.listAllHotels().subscribe(
+    (hotelsService: Hotel[]):void => {
+      this.hotelsList = hotelsService;
+      console.log(this.hotelsList);
+    },
+     (error:any):void => {console.log(error);}
+  )
+}
 
 /* Create a new Booking */
 saveBooking(){
@@ -124,7 +139,7 @@ saveBooking(){
   this.bookingService.createBooking(this.booking).subscribe(
     response => {
     
-      console.log('Esto es saving Booking');
+      alert('Booking : '+ this.booking.id +'registered successfully');
       console.log(response);
     }),
   (error:any):void => {
@@ -134,10 +149,13 @@ saveBooking(){
 
 /* Create a new Handle */
 saveHandle(){
+
+  console.log(this.handle);
+
   this.handleService.createHandle(this.handle).subscribe(
     response => {
      
-      console.log('Esto es saving Booking');
+      alert('Handle :'+ this.handle.id +'registered successfully');
       console.log(response);
     }),
   (error:any):void => {
