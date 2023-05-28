@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelsService } from 'src/app/_services/hotels.service';
 import { RoomsService } from 'src/app/_services/rooms.service';
+import { City } from 'src/app/entityclasses/city';
 import { Hotel } from 'src/app/entityclasses/hotel';
 import { Room } from 'src/app/entityclasses/room';
+import { CitiesService } from '../../../../services/cities.service';
 
 @Component({
 	selector: 'app-room-hotels-create',
@@ -16,7 +18,11 @@ export class RoomHotelsCreateComponent implements OnInit {
 	hotelId: any = 0;
 	currentHotel: Hotel = new Hotel;
 
-	constructor(private roomsService: RoomsService, private hotelService: HotelsService) {
+	//Select
+	city: City = new City;
+	citiesList: City[] = [];
+
+	constructor(private roomsService: RoomsService, private hotelService: HotelsService, private citiesService:CitiesService) {
 	}
 
 
@@ -35,6 +41,17 @@ export class RoomHotelsCreateComponent implements OnInit {
 				error: (error: any): void => { console.log(error) }
 			}
 		)
+
+		this.citiesService.listAllCites().subscribe(
+			{
+				next: (cities: City[]): void => {
+					this.citiesList = cities;
+					console.log(this.citiesList);
+				},
+				error: (error: any): void => { console.log(error) }
+			}
+		)
+
 	}
 
 	getHotelById(id: any) {

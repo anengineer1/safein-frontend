@@ -14,7 +14,26 @@
 						<label for="inputhotelname" class="col-form-label">Name: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="text" id="inputhotelname" name="inputhotelname" class="form-control" #inputhotelname>
+						<input type="text" id="inputhotelname" name="inputhotelname" class="form-control"
+							#inputhotelname>
+					</div>
+				</div>
+				<!-- Destiny  -->
+				<div class="row mb-1 mt-2 align-items-center rounded">
+					<div class="col-12">
+						<label for="inputhotelcity">City:</label>
+						<select class="form-select form-select-sm mb-2" id="inputhotelcity"
+							aria-label=".form-select-sm example" #hotelcity name="hotelcity"
+							[(ngModel)]="city" [ngModelOptions]="{standalone:true}" required>
+							<option [ngValue]="city" *ngFor="let citieL of citiesList">{{citieL.name}}</option>
+						</select>
+						<label for="inputhotelcitycountry">Country:</label>
+						<select class="form-select form-select-sm" id="inputcountry"
+							aria-label=".form-select-sm example" #inputhotelcitycountry name="inputhotelcitycountry"
+							[(ngModel)]="city.country" [ngModelOptions]="{standalone:true}" disabled>
+							<option [ngValue]="city" *ngFor="let cityL of citiesList">
+								{{cityL.country.countryName}}</option>
+						</select>
 					</div>
 				</div>
 				<!-- NUM PEOPLE IN HOTEL  -->
@@ -23,7 +42,8 @@
 						<label for="inputhotelphone" class="col-form-label">Phone Number: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputhotelphone" name="inputhotelphone" class="form-control" #inputhotelphone>
+						<input type="number" id="inputhotelphone" name="inputhotelphone" class="form-control"
+							#inputhotelphone>
 					</div>
 				</div>
 				<!-- LATITUDE  -->
@@ -32,7 +52,8 @@
 						<label for="inputhotellatitude" class="col-form-label">Latitude: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputhotellatitude" name="inputhotellatitude" class="form-control" #inputhotellatitude>
+						<input type="number" id="inputhotellatitude" name="inputhotellatitude" class="form-control"
+							#inputhotellatitude>
 					</div>
 				</div>
 				<!-- LONGITUDE  -->
@@ -41,7 +62,8 @@
 						<label for="inputhotellongitude" class="col-form-label">Longitude: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputhotellongitude" name="inputhotellongitude" class="form-control" #inputhotellongitude>
+						<input type="number" id="inputhotellongitude" name="inputhotellongitude" class="form-control"
+							#inputhotellongitude>
 					</div>
 				</div>
 				<!-- ADDRESS  -->
@@ -50,7 +72,8 @@
 						<label for="inputhoteladdress" class="col-form-label">Address: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="text" id="inputhoteladdress" name= "inputhoteladdress" class="form-control" #inputhoteladdress>
+						<input type="text" id="inputhoteladdress" name="inputhoteladdress" class="form-control"
+							#inputhoteladdress>
 					</div>
 				</div>
 				<!-- EMAIL  -->
@@ -59,7 +82,8 @@
 						<label for="inputhotelemail" class="col-form-label">Email: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="text" id="inputhotelemail" name="inputhotelemail" class="form-control" #inputhotelemail>
+						<input type="text" id="inputhotelemail" name="inputhotelemail" class="form-control"
+							#inputhotelemail>
 					</div>
 				</div>
 				<!-- SECURITY LEVEL-->
@@ -68,7 +92,8 @@
 						<label for="inputhotelsecurity" class="col-form-label">Security Level:</label>
 					</div>
 					<div class="col-sm-12">
-						<select class="form-select form-select-sm" aria-label="form-select-sm example" #inputhotelsecurity name="inputhotelsecurity">
+						<select class="form-select form-select-sm" aria-label="form-select-sm example"
+							#inputhotelsecurity name="inputhotelsecurity">
 							<option selected>Select one level</option>
 							<option value="1">Diplomatic coverage and private security</option>
 							<option value="2">Private security</option>
@@ -82,14 +107,15 @@
 							<label for="inputhotelenergy" class="col-form-label">Energy suficiency? </label>
 						</div>
 						<div class="col-sm-6 form-check">
-							<input type="checkbox" id="inputhotelenergy" name="inputhotelenergy" class="form-control form-check-input" #inputhotelenergy>
+							<input type="checkbox" id="inputhotelenergy" name="inputhotelenergy"
+								class="form-control form-check-input" #inputhotelenergy>
 						</div>
 					</div>
 
 					<!--     BUTTOM to add a handle -->
 					<div class="row   align-items-center">
 						<div class="col-9 col-sm-10">
-							<button type="button" class="btn btn-secondary btn-lg button_1" >Save a new Hotel</button>
+							<button type="button" class="btn btn-secondary btn-lg button_1">Save a new Hotel</button>
 						</div>
 					</div>
 				</div>
@@ -122,7 +148,8 @@
 						<label for="inputRoomCode" class="col-form-label">Code of room: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="text" id="inputRoomCode" class="form-control" #inputRoomCode name="codeInput" [(ngModel)]="currentRoom.code" required>
+						<input type="text" id="inputRoomCode" class="form-control" #inputRoomCode name="codeInput"
+							[(ngModel)]="currentRoom.code" required>
 					</div>
 				</div>
 
@@ -132,7 +159,8 @@
 						<label for="inputRoomNumPeople" class="col-form-label">Number of people: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputRoomNumPeople" class="form-control" #inputRoomNumPeople name="NumPeopleRoom" [(ngModel)]="currentRoom.numPeople" required>
+						<input type="number" id="inputRoomNumPeople" class="form-control" #inputRoomNumPeople
+							name="NumPeopleRoom" [(ngModel)]="currentRoom.numPeople" required>
 					</div>
 				</div>
 
@@ -142,7 +170,8 @@
 						<label for="inputPricePerNight" class="col-form-label">Price per night: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputPricePerNight" class="form-control" #pricePerNight name="inputPricePerNight" [(ngModel)]="currentRoom.pricePerNight" required>
+						<input type="number" id="inputPricePerNight" class="form-control" #pricePerNight
+							name="inputPricePerNight" [(ngModel)]="currentRoom.pricePerNight" required>
 					</div>
 				</div>
 				<!-- INTERNET TYPE  -->
@@ -151,7 +180,9 @@
 						<label for="inputInternetType" class="col-form-label">Internet type:</label>
 					</div>
 					<div class="col-sm-6">
-						<select class="form-select form-select-sm" id="inputInternetType" aria-label="form-select-sm example"  #inputInternetType name="inputInternetType" [(ngModel)]="currentRoom.internetType" required>
+						<select class="form-select form-select-sm" id="inputInternetType"
+							aria-label="form-select-sm example" #inputInternetType name="inputInternetType"
+							[(ngModel)]="currentRoom.internetType" required>
 							<option value="Fiber">Fiber</option>
 							<option value="Cable">Cable</option>
 							<option value="Satellite">Satellite</option>
@@ -165,7 +196,8 @@
 						<label for="inputIsSmoker" class="col-form-label">Is smoker? </label>
 					</div>
 					<div class="col-sm-6 form-check">
-						<input type="checkbox" id="inputIsSmoker" class="form-control form-check-input " #inputIsSmoker name="inputIsSmoker" [(ngModel)]="currentRoom.smoker" required>
+						<input type="checkbox" id="inputIsSmoker" class="form-control form-check-input " #inputIsSmoker
+							name="inputIsSmoker" [(ngModel)]="currentRoom.smoker" required>
 					</div>
 				</div>
 				<!-- HAS TERRACE -->
@@ -174,7 +206,8 @@
 						<label for="inputHasTerrace" class="col-form-label">Has terrace? </label>
 					</div>
 					<div class="col-sm-6  form-check">
-						<input type="checkbox" id="inputHasTerrace" class="form-control form-check-input" #inputHasTerrace name="inputHasTerrace" [(ngModel)]="currentRoom.hasTerrace" required>
+						<input type="checkbox" id="inputHasTerrace" class="form-control form-check-input"
+							#inputHasTerrace name="inputHasTerrace" [(ngModel)]="currentRoom.hasTerrace" required>
 					</div>
 				</div>
 
