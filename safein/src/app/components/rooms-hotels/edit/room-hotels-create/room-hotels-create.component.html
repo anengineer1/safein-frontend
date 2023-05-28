@@ -1,5 +1,5 @@
 <!------------- Formulario: Alta Hotel ------------------>
-<div class="d-flex flex-column mt-3 col col-12 justify-content-center align-items-right">
+<div class="d-flex flex-column mt-3 col col-12 justify-content-center align-items-right ">
 	<!--       Create a handle/booking -->
 	<form class="d-flex flex-column m-3 row justify-content-center align-items-center ">
 		<h3 class="mb-1">Create a Hotel or Room</h3>
@@ -14,7 +14,7 @@
 						<label for="inputhotelname" class="col-form-label">Name: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="text" id="inputhotelname" name="inputhotelname" class="form-control" #inputhotelname>
+						<input type="text" id="inputhotelname" name="inputcurrhotelname" class="form-control" #inputhotel [(ngModel)]="currentHotelForInsertion.name">
 					</div>
 				</div>
 				<!-- NUM PEOPLE IN HOTEL  -->
@@ -23,7 +23,7 @@
 						<label for="inputhotelphone" class="col-form-label">Phone Number: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputhotelphone" name="inputhotelphone" class="form-control" #inputhotelphone>
+						<input type="number" id="inputhotelphone" name="inputhotelphone" class="form-control" #inputhotelphone [(ngModel)]="currentHotelForInsertion.phonenumber">
 					</div>
 				</div>
 				<!-- LATITUDE  -->
@@ -32,7 +32,7 @@
 						<label for="inputhotellatitude" class="col-form-label">Latitude: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputhotellatitude" name="inputhotellatitude" class="form-control" #inputhotellatitude>
+						<input type="number" id="inputhotellatitude" name="inputhotellatitude" class="form-control" #inputhotellatitude [(ngModel)]="currentHotelForInsertion.latitude">
 					</div>
 				</div>
 				<!-- LONGITUDE  -->
@@ -41,7 +41,7 @@
 						<label for="inputhotellongitude" class="col-form-label">Longitude: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="number" id="inputhotellongitude" name="inputhotellongitude" class="form-control" #inputhotellongitude>
+						<input type="number" id="inputhotellongitude" name="inputhotellongitude" class="form-control" #inputhotellongitude [(ngModel)]="currentHotelForInsertion.longitude">
 					</div>
 				</div>
 				<!-- ADDRESS  -->
@@ -50,7 +50,7 @@
 						<label for="inputhoteladdress" class="col-form-label">Address: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="text" id="inputhoteladdress" name= "inputhoteladdress" class="form-control" #inputhoteladdress>
+						<input type="text" id="inputhoteladdress" name= "inputhoteladdress" class="form-control" #inputhoteladdress [(ngModel)]="currentHotelForInsertion.address">
 					</div>
 				</div>
 				<!-- EMAIL  -->
@@ -59,8 +59,18 @@
 						<label for="inputhotelemail" class="col-form-label">Email: </label>
 					</div>
 					<div class="col-sm-6">
-						<input type="text" id="inputhotelemail" name="inputhotelemail" class="form-control" #inputhotelemail>
+						<input type="text" id="inputhotelemail" name="inputhotelemail" class="form-control" #inputhotelemail [(ngModel)]="currentHotelForInsertion.email">
 					</div>
+				</div>
+				<div class="col-sm-6">
+					<label for="citiescountryname" class="col-form-label">City Name: </label>
+				</div>
+				<div class="col-10">
+					<select class=" m-3 form-select form-select-sm" aria-label="form-select-sm example"
+						#customercontry name="citiescountryname" [(ngModel)]="citiesobj"
+						[ngModelOptions]="{standalone:true}">
+						<option [ngValue]="citieselem" *ngFor="let citieselem of citieslist">{{citieselem.name}}</option>
+					</select>
 				</div>
 				<!-- SECURITY LEVEL-->
 				<div class="row mb-1 me-0 align-items-center">
@@ -68,7 +78,7 @@
 						<label for="inputhotelsecurity" class="col-form-label">Security Level:</label>
 					</div>
 					<div class="col-sm-12">
-						<select class="form-select form-select-sm" aria-label="form-select-sm example" #inputhotelsecurity name="inputhotelsecurity">
+						<select class="form-select form-select-sm" aria-label="form-select-sm example" #inputhotelsecurity name="inputhotelsecurity" [(ngModel)]="currentHotelForInsertion.securityLevel">
 							<option selected>Select one level</option>
 							<option value="1">Diplomatic coverage and private security</option>
 							<option value="2">Private security</option>
@@ -82,14 +92,14 @@
 							<label for="inputhotelenergy" class="col-form-label">Energy suficiency? </label>
 						</div>
 						<div class="col-sm-6 form-check">
-							<input type="checkbox" id="inputhotelenergy" name="inputhotelenergy" class="form-control form-check-input" #inputhotelenergy>
+							<input type="checkbox" id="inputhotelenergy" name="inputhotelenergy" class="form-control form-check-input" #inputhotelenergy [(ngModel)]="currentHotelForInsertion.energySuficient">
 						</div>
 					</div>
 
 					<!--     BUTTOM to add a handle -->
 					<div class="row   align-items-center">
 						<div class="col-9 col-sm-10">
-							<button type="button" class="btn btn-secondary btn-lg button_1" >Save a new Hotel</button>
+							<button type="button" class="btn btn-secondary btn-lg button_1" (click)="saveHotel()">Save a new Hotel</button>
 						</div>
 					</div>
 				</div>
@@ -103,17 +113,17 @@
 				<h4 class="mt-3 ps-3 g-0 text-light bg-dark col-12 rounded">Add a Room</h4>
 
 
-				<!-- HOTEL   -->
+				<!-- HOTEL -->
 				<div class="row mt-3 mb-1 align-items-center fw-bold">
 					<div class="col-sm-3">
-						<label for="inputHotelId" class="col-form-label">Hotel:</label>
+						<label for="inputHotelIdForm" class="col-form-label">Hotel:</label>
 					</div>
-					<div class="col-sm-9">
-						<select class="form-select form-select-sm" id="inputHotelId" aria-label="form-select-sm example"
-							name="inputHotelId" [(ngModel)]="currentHotel" #inputHotelId required>
-							<option *ngFor="let hotel of hotelList" [ngValue]="hotel">{{hotel.name}}</option>
+					 <div class="col-sm-9">
+						<select class="form-select form-select-sm" id="inputHotelIdForm" aria-label="form-select-sm example"
+							name="inputHotelIdname" [(ngModel)]="currentHotelForRoom" #inputHotelIdForm required>
+ 							 <option *ngFor="let hotel of hotelList" [ngValue]="hotel">{{hotel.name}}</option>
 						</select>
-					</div>
+					</div> 
 				</div>
 
 				<!-- CODE  -->

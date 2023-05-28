@@ -161,15 +161,25 @@
                         </div>
                     </div>
                     <div class="col-10">
+                        
+                        <select class="form-select form-select-sm" id="inputSituation"
+                        aria-label=".form-select-sm example" #countrySituation name="countrysit">
+                        <option >Select situation of the country: </option>
+                        <option value="{{countryobj.situation}}" [(ngModel)]="countryobj.situation" name="countrysituation"></option>
+                        </select>
+                           
                         <select class=" m-3 form-select form-select-sm" aria-label="form-select-sm example"
                             #countrysituation name="countrysituation" [(ngModel)]="countryobj"
                             [ngModelOptions]="{standalone:true}">
-                            <option [ngValue]="countryobj" *ngFor="let countryelem of countrylist">{{countryelem.situation}}</option>
+                            <option [ngValue]="countryobj" *ngFor="let countryelem of countrylist" name="countrysituation1">{{countryelem.situation}}</option>
+                        </select>
+                        <select class=" m-3 form-select form-select-sm" aria-label="form-select-sm example"
+                            #countrysituation name="countrysituation" [(ngModel)]="countryobj"
+                            [ngModelOptions]="{standalone:true}">
+                            <option [ngValue]="countryobj" *ngFor="let countryelem of countrylist" name="countrysituation2">{{countryelem.situation}}</option>
                         </select>
                     </div>
                 </div>
-
-
 
                 <!-- LATITUDE -->
                 <div class="row g-3 mb-1 align-items-center">
