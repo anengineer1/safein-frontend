@@ -29,15 +29,11 @@
             <!-- Select a  CUSTOMER -->
             <div class="row g-1 mb-0 mt-1 me-0 align-items-center">
                 <div class="col-6 col-sm-2">
-                    <label for="selectCustomerEmail" class="col-form-label">Customer:</label>
+                    <label for="selectCustomerEmail" class="col-form-label">Customer Email:</label>
                 </div>
                 <div class="col-8">
-                    <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
-                        #customercontry>
-                        <option selected>Select a Customer Email</option>
-                        <option value="1">Email 1</option>
-                        <option value="2">Email 2</option>
-                        <option value="3">Email 3</option>
+                    <select class=" m-3 form-select-sm"  id="selectCustomerEmail" aria-label="form-select-sm " #customeremail [(ngModel)]="customerobj" name="customeremail" [ngModelOptions]="{standalone:true}">
+                        <option [ngValue]="customer" *ngFor="let customer of customerli">{{customer.email}}</option>
                     </select>
                 </div>
             </div>
@@ -51,7 +47,7 @@
                         <label for="inputCustomerName" class="col-form-label">Name: </label>
                     </div>
                     <div class="col-9">
-                        <input type="text" id="inputCustomerName" class="form-control" #CustomerName disabled>
+                        <input type="text" id="inputCustomerName" class="form-control" #CustomerName  [(ngModel)]="customerobj.name" name="customername" disabled>
                     </div>
                 </div>
                 <!-- EMAIL CUSTOMER  -->
@@ -60,7 +56,7 @@
                         <label for="inputCustomerEmail" class="col-form-label">Email: </label>
                     </div>
                     <div class="col-9">
-                        <input type="email" id="inputCustomerEmail" class="form-control" #CustomerEmail disabled>
+                        <input type="email" id="inputCustomerEmail" class="form-control" #CustomerEmail  [(ngModel)]="customerobj.email"  name="customeremail" disabled>
                     </div>
                 </div>
 
@@ -70,7 +66,7 @@
                         <label for="inputCustomerPhone" class="col-form-label">Phone: </label>
                     </div>
                     <div class="col-9">
-                        <input type="tel" id="inputCustomerPhone" class="form-control" #CustomerPhone disabled>
+                        <input type="tel" id="inputCustomerPhone" class="form-control" #CustomerPhone  [(ngModel)]="customerobj.phonenumber" name="customerphonenumber" disabled>
                     </div>
                 </div>
 
@@ -81,7 +77,7 @@
                     </div>
                     <div class="col-9">
                         <input type="text" id="inputCustomerPressMedia" class="form-control" #CustomerPressMedia
-                            disabled>
+                             [(ngModel)]="customerobj.pressMedia" name="customerpressmedia" disabled>
                     </div>
                 </div>
             </div>
@@ -98,7 +94,7 @@
                         <label for="inputCustomerDoc" class="col-form-label">Document Identifier: </label>
                     </div>
                     <div class="col-8">
-                        <input type="text" id="inputCustomerDoc" class="form-control" #CustomerDocIdentifier disabled>
+                        <input type="text" id="inputCustomerDoc" class="form-control" #CustomerDocIdentifier  [(ngModel)]="customerobj.docIdentifier" name="customerdocidentifier" disabled>
                     </div>
                 </div>
 
@@ -109,11 +105,9 @@
                     </div>
                     <div class="col-8">
                         <input type="text" id="inputCustomerDocNumber" class="form-control" #CustomerDocIdentifierNumber
-                            disabled>
+                             [(ngModel)]="customerobj.numIdentifier" name="customernumidentifier" disabled>
                     </div>
                 </div>
-
-
                 <!-- COUNTRY CUSTOMER -->
                 <div class="row g-1 mb-0 mt-1 me-0 align-items-center">
                     <div class="col-6 col-sm-4">
@@ -121,11 +115,10 @@
                     </div>
                     <div class="col-8">
                         <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
-                            #customercontry disabled>
-                            <option selected>Select a country</option>
-                            <option value="1">Country 1</option>
-                            <option value="2">Country 2</option>
-                            <option value="3">Country 3</option>
+                            #customercontry  [(ngModel)]="customerobj.country" disabled>
+                            <option [ngValue]="contry" *ngFor="let contry of countrylist">
+                                {{contry.countryName}}
+                              </option>
                         </select>
                     </div>
                 </div>
@@ -133,7 +126,7 @@
             <!--     BUTTOM to Delete a handle -->
             <div class="row g-3 mb-3 align-items-center">
                 <div class="col-12 col-sm-12">
-                    <button type="button" class="btn btn-secondary btn-lg button_1">Delete Customer</button>
+                    <button type="button" class="btn btn-secondary btn-lg button_1" (click)="deleteCustomers()" >Delete Customer</button>
                 </div>
             </div>
         </div>

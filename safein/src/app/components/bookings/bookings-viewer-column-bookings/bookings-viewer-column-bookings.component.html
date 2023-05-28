@@ -1,13 +1,12 @@
 <!-- <div class="d-flex flex-column m-3 col col-12 justify-content-center align-items-right"> -->
 <div class="input-group mb-3 m-3">
-	<button class="btn btn-primary" type="button">By bookings Id</button>
-	<button class="btn btn-primary" type="button">by user Id</button>
-	<button class="btn btn-primary" type="button">by customer Id</button>
-	<button class="btn btn-primary" type="button">by rooms id Id</button>
-	<button class="btn btn-primary" type="button">by hotel Id</button>
-	<button class="btn btn-primary" type="button">by hotel Id</button>
-	<button class="btn btn-primary" type="button">by complete booking Id</button>
-	<input type="text" class="form-control md-7" placeholder="Search">
+	<button class="btn btn-primary" type="button" (click)="listHandleById(inputHandles.value)">By bookings Id</button>
+	<button class="btn btn-primary" type="button" (click)="listHandleByUserId(inputHandles.value)">by user Id</button>
+	<button class="btn btn-primary" type="button" (click)="listHandleByCustomerId(inputHandles.value)">by customer Id</button>
+	<button class="btn btn-primary" type="button" (click)="listHandleByRoomId(inputHandles.value)">by rooms Id</button>
+	<button class="btn btn-primary" type="button" (click)="listHandleByHotelId(inputHandles.value)">by hotel Id</button>
+	<!-- <button class="btn btn-primary" type="button">by complete booking Id</button> -->
+	<input type="text" class="form-control md-7" placeholder="Search" #inputHandles>
 </div>
 <table class="table table-hover table-borderless">
 	<thead>
@@ -21,72 +20,15 @@
 
 	</thead>
 	<tbody>
-		<tr data-bs-toggle="collapse" data-bs-target="#demo">
-			<th scope="row">1</th>
-			<td>2023-09-14T12:00:00</td>
-			<td>2023-09-16T12:00:00</td>
-			<td>False</td>
-			<td>Bhutan</td>
+		<tr data-bs-toggle="modal" data-bs-target="#bookingsModal" *ngFor="let booking of handleList"
+			(click)="assignHandle(booking)">
+			<!-- <ng-container *ngIf="booking.booking"> -->
+			<th scope="row">{{booking.id}}</th>
+			<td>{{booking.arrivalDate}}</td>
+			<td>{{booking.departureDate}}</td>
+			<td>{{booking.booking.pendingPay}}</td>
+			<td>{{booking.room.hotel.city.country.countryName}}</td>
 		</tr>
-		<tr id="demo" class="collapse">
-			<td colspan=5>
-				<h3>Booking</h3>
-				<hr>
-				<p>Id: 1</p>
-				<p>Date of arrival: 2023-09-14T12:00:00</p>
-				<p>Departure date: 2023-09-16T12:00:00</p>
-				<h4>Booking data:</h4>
-				<p>Id: 1</p>
-				<p>Ammount: 0</p>
-				<p>Number of people: 0</p>
-				<p>Payed: False</p>
-				<p>Payment pending: True</p>
-				<h4>Customer:</h4>
-				<p>Id: 2</p>
-				<p>Name: Robert Kappa</p>
-				<p>Email: rcopa@gmail.com</p>
-				<p>Press Media: Freelancer</p>
-				<p>Doc Identifier: DNI</p>
-				<p>Num Identifier: 20394826</p>
-				<p>Phonenumber: +34183564784</p>
-				<h5>Customer county:</h5>
-				<p>Country code: SO</p>
-				<p>Country name: Somalia</p>
-				<p>Situation: War</p>
-				<p>Longitude: 10</p>
-				<p>Latitude: 49</p>
-				<h4>Hotel</h4>
-				<p>Id: 1</p>
-				<p>Name: Hotel Palace</p>
-				<p>Phonenumber: +34555555555</p>
-				<p>Email: reboca@gmail.com</p>
-				<p>Address: Arbeitzer street 5</p>
-				<p>Latitude: 37.7749</p>
-				<p>Longitude: -122.4194</p>
-				<p>Security level: Diplomatic coverage and private security</p>
-				<p>Energy Suficient: True</p>
-				<h5>Room:</h5>
-				<p>Id: 1</p>
-				<p>Code: 103</p>
-				<p>Number of people: 1</p>
-				<p>Price per night: 59.99</p>
-				<p>Internet Type: Fiber</p>
-				<p>Has terrace: True</p>
-				<h5>Hotel's City:</h5>
-				<p>id: 1</p>
-				<p>Name: Kirtze</p>
-				<p>Latitude: 37.7749</p>
-				<p>Longitude: -122.4194</p>
-				<h5>Hotel's Country</h5>
-				<p>Country code: BU</p>
-				<p>Country name: Bhutan</p>
-				<p>Situation: War</p>
-				<p>Longitude: 10</p>
-				<p>Latitude: 49</p>
-
-			</td>
-		</tr>
-
 	</tbody>
 </table>
 
@@ -104,57 +46,64 @@
 
 			<!-- Modal body -->
 			<div class="modal-body">
-				<p>Id: 1</p>
-				<p>Date of arrival: 2023-09-14T12:00:00</p>
-				<p>Departure date: 2023-09-16T12:00:00</p>
-				<h4>Booking data:</h4>
-				<p>Id: 1</p>
-				<p>Ammount: 0</p>
-				<p>Number of people: 0</p>
-				<p>Payed: False</p>
-				<p>Payment pending: True</p>
-				<h4>Customer:</h4>
-				<p>Id: 2</p>
-				<p>Name: Robert Kappa</p>
-				<p>Email: rcopa@gmail.com</p>
-				<p>Press Media: Freelancer</p>
-				<p>Doc Identifier: DNI</p>
-				<p>Num Identifier: 20394826</p>
-				<p>Phonenumber: +34183564784</p>
-				<h5>Customer county:</h5>
-				<p>Country code: SO</p>
-				<p>Country name: Somalia</p>
-				<p>Situation: War</p>
-				<p>Longitude: 10</p>
-				<p>Latitude: 49</p>
-				<h4>Hotel</h4>
-				<p>Id: 1</p>
-				<p>Name: Hotel Palace</p>
-				<p>Phonenumber: +34555555555</p>
-				<p>Email: reboca@gmail.com</p>
-				<p>Address: Arbeitzer street 5</p>
-				<p>Latitude: 37.7749</p>
-				<p>Longitude: -122.4194</p>
-				<p>Security level: Diplomatic coverage and private security</p>
-				<p>Energy Suficient: True</p>
-				<h5>Room:</h5>
-				<p>Id: 1</p>
-				<p>Code: 103</p>
-				<p>Number of people: 1</p>
-				<p>Price per night: 59.99</p>
-				<p>Internet Type: Fiber</p>
-				<p>Has terrace: True</p>
-				<h5>Hotel's City:</h5>
-				<p>id: 1</p>
-				<p>Name: Kirtze</p>
-				<p>Latitude: 37.7749</p>
-				<p>Longitude: -122.4194</p>
-				<h5>Hotel's Country</h5>
-				<p>Country code: BU</p>
-				<p>Country name: Bhutan</p>
-				<p>Situation: War</p>
-				<p>Longitude: 10</p>
-				<p>Latitude: 49</p>
+				<ng-container *ngIf="handle">
+					<p>Id: {{handle.id}}</p>
+					<p>Date of arrival: {{handle.arrivalDate}}</p>
+					<p>Departure date: {{handle.departureDate}}</p>
+					<h4>Booking data:</h4>
+					<p>Id: {{handle.booking.id}}</p>
+					<p>Ammount: {{handle.booking.amount}}</p>
+					<p>Number of people: {{handle.booking.numPeople}}</p>
+					<p>Payed: {{handle.booking.payed}}</p>
+					<p>Payment pending: {{handle.booking.pendingPay}}</p>
+					<h4>Customer:</h4>
+					<ng-container *ngIf="handle.booking.customers">
+						<p>Id: {{handle.booking.customers.id}}</p>
+						<p>Name: {{handle.booking.customers.name}}</p>
+						<p>Email: {{handle.booking.customers.email}}</p>
+						<p>Press Media: {{handle.booking.customers.pressMedia}}</p>
+						<p>Doc Identifier: {{handle.booking.customers.docIdentifier}}</p>
+						<p>Num Identifier: {{handle.booking.customers.numIdentifier}}</p>
+						<p>Phonenumber: {{handle.booking.customers.phonenumber}}</p>
+						<h5>Customer county:</h5>
+						<p>Country code: {{handle.booking.customers.country.countryCode}}</p>
+						<p>Country name: {{handle.booking.customers.country.countryName}}</p>
+						<p>Situation: {{handle.booking.customers.country.situation}}</p>
+						<p>Longitude: {{handle.booking.customers.country.longitude}}</p>
+						<p>Latitude: {{handle.booking.customers.country.latitude}}</p>
+					</ng-container>
+					<ng-container *ngIf="!handle.booking.customers">
+						<p>No customer introduced</p>
+					</ng-container>
+					<h4>Hotel</h4>
+					<p>Id: {{handle.room.hotel.id}}</p>
+					<p>Name: {{handle.room.hotel.name}}</p>
+					<p>Phonenumber: {{handle.room.hotel.phonenumber}}</p>
+					<p>Email: {{handle.room.hotel.email}}</p>
+					<p>Address: {{handle.room.hotel.email}}</p>
+					<p>Latitude: {{handle.room.hotel.latitude}}</p>
+					<p>Longitude: {{handle.room.hotel.longitude}}</p>
+					<p>Security level: {{handle.room.hotel.securityLevel}}</p>
+					<p>Energy Suficient: {{handle.room.hotel.energySuficient}}</p>
+					<h5>Room:</h5>
+					<p>Id: {{handle.room.id}}</p>
+					<p>Code: {{handle.room.code}}</p>
+					<p>Number of people: {{handle.room.numPeople}}</p>
+					<p>Price per night: {{handle.room.pricePerNight}}</p>
+					<p>Internet Type: {{handle.room.internetType}}</p>
+					<p>Has terrace: {{handle.room.hasTerrace}}</p>
+					<h5>Hotel's City:</h5>
+					<p>id: {{handle.room.hotel.city.id}}</p>
+					<p>Name: {{handle.room.hotel.city.name}}</p>
+					<p>Latitude: {{handle.room.hotel.city.latitude}}</p>
+					<p>Longitude: {{handle.room.hotel.city.longitude}}</p>
+					<h5>Hotel's Country</h5>
+					<p>Country code: {{handle.room.hotel.city.country.countryCode}}</p>
+					<p>Country name: {{handle.room.hotel.city.country.countryName}}</p>
+					<p>Situation: {{handle.room.hotel.city.country.situation}}</p>
+					<p>Longitude: {{handle.room.hotel.city.country.longitude}}</p>
+					<p>Latitude: {{handle.room.hotel.city.country.latitude}}</p>
+				</ng-container>
 			</div>
 			<!-- Modal footer -->
 			<div class="modal-footer">

@@ -1,7 +1,7 @@
 <div class="input-group mb-3 m-3">
-	<button class="btn btn-primary" type="button">By country Id</button>
-	<button class="btn btn-primary" type="button">By country code</button>
-	<input type="text" class="form-control md-7" placeholder="Search">
+	<button class="btn btn-primary" type="button" (click)="getCountryById(countriesInput.value)">By country Id</button>
+	<button class="btn btn-primary" type="button" (click)="getCountryByCountryCode(countriesInput.value)">By country code</button>
+	<input type="text" class="form-control md-7" placeholder="Search" #countriesInput>
 </div>
 
 <table class="table table-borderless">
@@ -16,12 +16,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<th scope="row">1</th>
-			<td>BU</td>
-			<td>Bhutan</td>
-			<td>War</td>
-			<td>10</td>
-			<td>War</td>
+		<tr *ngFor="let country of countryList">
+			<th scope="row">{{country.id}}</th>
+			<td>{{country.countryCode}}</td>
+			<td>{{country.countryName}}</td>
+			<td>{{country.longitude}}</td>
+			<td>{{country.latitude}}</td>
+			<td>{{country.situation}}</td>
 	</tbody>
 </table>

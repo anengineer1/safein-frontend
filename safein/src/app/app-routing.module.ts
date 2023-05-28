@@ -10,6 +10,7 @@ import { CitiesCountriesComponent } from './pages/cities-countries/cities-countr
 import { CustomersComponent } from './pages/customers/customers.component';
 import { UserReadComponent } from './components/user-account/user-read/user-read.component';
 import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
+import { StyleTestComponent } from './components/style-test/style-test.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,10 @@ const routes: Routes = [
 				component: BookingsComponent
 			},
 			{path: "profile", component: UserReadComponent},//User Profile
+			{ // Bookings route
+				path: "stylesheet",
+				component: StyleTestComponent
+			}
 		]
 	}
 ];

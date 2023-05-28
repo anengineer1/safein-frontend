@@ -22,10 +22,23 @@ import { BookingDeleteComponent } from './components/bookings/edit/booking-delet
 import { SigninComponent } from './components/user-account/signin/signin.component';
 import { AccountComponent } from './pages/account/account.component';
 import { WorkingspaceComponent } from './pages/workingspace/workingspace.component';
+
+
 import { LatestBookingperuserComponent } from './components/bookings/latest-bookingperuser/latest-bookingperuser.component';
 import { RoomsHotelsComponent } from './pages/rooms-hotels/rooms-hotels.component';
 import { CitiesCountriesComponent } from './pages/cities-countries/cities-countries.component';
 import { CustomersComponent } from './pages/customers/customers.component';
+import { RoomHotelsCreateComponent } from './components/rooms-hotels/edit/room-hotels-create/room-hotels-create.component';
+import { RoomHotelsDeleteComponent } from './components/rooms-hotels/edit/room-hotels-delete/room-hotels-delete.component';
+import { RoomHotelsEditComponent } from './components/rooms-hotels/edit/room-hotels-edit/room-hotels-edit.component';
+import { RoomHotelsColumncreationComponent } from './components/rooms-hotels/edit/room-hotels-columncreation/room-hotels-columncreation.component';
+import { RoomHotelsViewerColumnComponent } from './components/rooms-hotels/room-hotels-viewer-column/room-hotels-viewer-column.component';
+import { RoomHotelsTableViewComponent } from './components/rooms-hotels/room-hotels-table-view/room-hotels-table-view.component';
+import { RoomHotelsViewerBookingsComponent } from './components/rooms-hotels/room-hotels-viewer-bookings/room-hotels-viewer-bookings.component';
+import { RoomHotelsViewerCitiesComponent } from './components/rooms-hotels/room-hotels-viewer-cities/room-hotels-viewer-cities.component';
+import { RoomHotelsViewerCountriesComponent } from './components/rooms-hotels/room-hotels-viewer-countries/room-hotels-viewer-countries.component';
+import { RoomHotelsViewerHotelsComponent } from './components/rooms-hotels/room-hotels-viewer-hotels/room-hotels-viewer-hotels.component';
+import { RoomHotelsViewerRoomsComponent } from './components/rooms-hotels/room-hotels-viewer-rooms/room-hotels-viewer-rooms.component';
 import { CitiesCountriesViewerColumnComponent } from './components/cities-countries/cities-countries-viewer-column/cities-countries-viewer-column.component';
 import { BookingsViewerColumnDataBookingsComponent } from './components/bookings/bookings-viewer-column-data-bookings/bookings-viewer-column-data-bookings.component';
 import { CustomerViewerColumnComponent } from './components/customer/customer-viewer-column/customer-viewer-column.component';
@@ -85,6 +98,17 @@ import { UserUpdateComponent } from './components/user-account/user-update/user-
     CustomerDeleteComponent,
     UserReadComponent,
     UserUpdateComponent,
+	RoomHotelsCreateComponent,
+	RoomHotelsDeleteComponent,
+	RoomHotelsEditComponent,
+	RoomHotelsColumncreationComponent,
+	RoomHotelsViewerColumnComponent,
+	RoomHotelsTableViewComponent,
+	RoomHotelsViewerBookingsComponent,
+	RoomHotelsViewerCitiesComponent,
+	RoomHotelsViewerCountriesComponent,
+	RoomHotelsViewerHotelsComponent,
+	RoomHotelsViewerRoomsComponent,
   ],
   imports: [
     HttpClientModule,
@@ -97,4 +121,5 @@ import { UserUpdateComponent } from './components/user-account/user-update/user-
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+

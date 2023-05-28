@@ -1,0 +1,72 @@
+<div class="input-group mb-3">
+	<button class="btn btn-primary" type="button">By hotel id</button>
+	<button class="btn btn-primary" type="button">By city id</button>
+	<button class="btn btn-primary" type="button">By security level</button>
+	<button class="btn btn-primary" type="button">By energy sufficiency</button>
+	<input type="text" class="form-control md-7" placeholder="Search">
+</div>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th scope="col">Id</th>
+			<th scope="col">Hotel name</th>
+			<th scope="col">Country</th>
+			<th scope="col">City</th>
+			<th scope="col">Security level</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-bs-toggle="modal" data-bs-target="#myModal">
+			<th scope="row">1</th>
+			<td>Hotel Palace</td>
+			<td>UA</td> <!-- country code -->
+			<td>Kirtze</td> <!-- city name -->
+			<td>Diplomatic coverage and private security</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content bubble shadow">
+
+			<!-- Modal Header -->
+			<div class="modal-header">
+				<h3 class="modal-title">Hotel</h3>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<!-- Modal body -->
+			<div class="modal-body">
+				<p>Id: 1</p>
+				<p>Name: Hotel Palace</p>
+				<p>Phone number: +34555555555</p>
+				<p>Email: reboca@gmail.com</p>
+				<p>Address: Arbeitzer street 5</p>
+				<p>Latitude: 0</p>
+				<p>Longitude: 0</p>
+				<p>Security level: Diplomatic coverage and private security</p>
+				<p>Energy sufficient: True</p>
+				<h4>City:</h4>
+				<p>id: 1</p>
+				<p>Name: Kirtze</p>
+				<p>Latitude: 37.7749</p>
+				<p>Longitude: -122.4194</p>
+				<h4>Country:</h4>
+				<p>Id: 1</p>
+				<p>Country code: UA</p>
+				<p>Country name: Ukraine</p>
+				<p>Latitude: 49</p>
+				<p>Longitude: 32</p>
+				<p>Situation: War</p>
+			</div>
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
