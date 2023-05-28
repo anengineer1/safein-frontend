@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BASE_API_URL } from '../global-config';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
+import { Hotel } from '../entityclasses/hotel';
 
 @Injectable({
 	providedIn: 'root'
@@ -56,6 +57,14 @@ export class HotelsService {
 	getHotelByEnergySuficient(enerSuficiency: any): Observable<any> {
 		console.log(`${this.baseApiUrl}/energy_suficient/${enerSuficiency}`);
 		return this.httpClient.get(`${this.baseApiUrl}/energy_suficient/${enerSuficiency}`).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	updateHotel(id: any, data: Hotel) {
+		let completeUrl = `${this.baseApiUrl}/${id}`;
+		console.log(completeUrl);
+		return this.httpClient.put(completeUrl, data).pipe(
 			catchError(this.handleError)
 		);
 	}

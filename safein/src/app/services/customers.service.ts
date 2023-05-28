@@ -36,7 +36,6 @@ export class CustomersService {
 			.pipe(catchError(this.handleError));
 	}
 
-
 	delete(code: Customer, id: any): Observable<any> {
 		console.log(`${this.baseApiUrl}/${id}`, code);
 		return this.httpClient
