@@ -12,9 +12,9 @@
 				<!-- HOTEL  -->
 				<div class="row g-3 mb-1 align-items-center">
 					<div class="col-sm-12">
-						<label for="inputHotelId" class="col-form-label">Hotel:</label>
-						<select class="form-select form-select-sm" id="inputUpdateHotel" aria-label="form-select-sm example"
-							name="inputUpdateHotel" [(ngModel)]="currentHotel" #inputHotelId>
+						<label for="inputHotelIdMaster" class="col-form-label">Hotel:</label>
+						<select class="form-select form-select-sm" id="inputUpdateHotelMaster" aria-label="form-select-sm example"
+							name="inputUpdateHotelMaster" [(ngModel)]="currentHotel" #inputHotelId>
 							<option *ngFor="let hotel of hotelList" [ngValue]="hotel">{{hotel.name}}</option>
 						</select>
 					</div>

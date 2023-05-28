@@ -22,6 +22,7 @@ export class RoomHotelsEditComponent implements OnInit {
 	// City for update
 	cityList: City[] = [];
 	currentCityForHotelUpdate: City = new City;
+	// Current Hotel for Room
 
 
 	constructor(private roomsService: RoomsService,
@@ -73,7 +74,10 @@ export class RoomHotelsEditComponent implements OnInit {
 	}
 
 	updateExistingRoom(): void {
-		this.currentRoom.hotel = this.currentHotelForRoom;
+		if (this.currentHotelForRoom.id !== 0) {
+			this.currentRoom.hotel = this.currentHotelForRoom;
+		}
+
 		console.log(this.currentRoom);
 		this.roomsService.updateRoom(this.currentRoom.id, this.currentRoom).subscribe({
 			next: response => {
@@ -85,8 +89,11 @@ export class RoomHotelsEditComponent implements OnInit {
 		)
 	}
 
-	updateExistingHotel(): void { // TODO
-		this.currentHotel.city = this.currentCityForHotelUpdate;
+	updateExistingHotel(): void {
+		if (this.currentCityForHotelUpdate.id !== 0) {
+			this.currentHotel.city = this.currentCityForHotelUpdate;
+		}
+
 		console.log(this.currentHotel);
 		this.hotelsService.updateHotel(this.currentHotel.id, this.currentHotel).subscribe({
 			next: response => {
