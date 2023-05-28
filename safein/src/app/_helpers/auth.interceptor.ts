@@ -20,7 +20,6 @@ export class AuthInterceptor implements HttpInterceptor {
     let authReq = req;
     const token = this.token.getToken();
 
-    console.log("Hola");
     if (token != null) {
       //for backend spring
       authReq = req.clone({

@@ -29,10 +29,10 @@
             <!-- Select a  CUSTOMER -->
             <div class="row g-1 mb-0 mt-1 me-0 align-items-center">
                 <div class="col-6 col-sm-2">
-                    <label for="selectCustomerEmail" class="col-form-label">Customer Email:</label>
+                    <label for="select" class="col-form-label">Customer Email:</label>
                 </div>
                 <div class="col-8">
-                    <select class=" m-3 form-select-sm"  id="selectCustomerEmail" aria-label="form-select-sm " #customeremail [(ngModel)]="customerobj" name="customeremail" [ngModelOptions]="{standalone:true}">
+                    <select class=" m-3 form-select-sm"  id="select" aria-label="form-select-sm " #name [(ngModel)]="customerobj" name="nameselect">
                         <option [ngValue]="customer" *ngFor="let customer of customerli">{{customer.email}}</option>
                     </select>
                 </div>
@@ -53,10 +53,10 @@
                 <!-- EMAIL CUSTOMER  -->
                 <div class="row g-1 mb-1 align-items-center">
                     <div class="col-5 col-sm-3">
-                        <label for="inputCustomerEmail" class="col-form-label">Email: </label>
+                        <label for="input" class="col-form-label">Email: </label>
                     </div>
                     <div class="col-9">
-                        <input type="email" id="inputCustomerEmail" class="form-control" #CustomerEmail  [(ngModel)]="customerobj.email"  name="customeremail" disabled>
+                        <input type="email" id="input" class="form-control" #customeremail  [(ngModel)]="customerobj.email"  name="inputnname" disabled>
                     </div>
                 </div>
 
@@ -114,8 +114,8 @@
                         <label for="selectCustomerCountry" class="col-form-label">Country:</label>
                     </div>
                     <div class="col-8">
-                        <select class=" m-3 form-select form-select-sm" aria-label=".form-select-sm example"
-                            #customercontry  [(ngModel)]="customerobj.country" disabled>
+                        <select class=" m-3 form-select form-select-sm" aria-label="form-select-sm example"
+                            #customercontry  [(ngModel)]="customerobj.country"  name="selectCustomerCountry" disabled>
                             <option [ngValue]="contry" *ngFor="let contry of countrylist">
                                 {{contry.countryName}}
                               </option>
