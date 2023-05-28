@@ -1,0 +1,152 @@
+<!---------------------------------- USER EXAMPLE ------
+    "id": 1,
+"username": "marraya",
+"password": "Ma@ara",
+"email": "mrraynet@gmail.com",
+"nomApels": "Maria Raices" 
+----------------------------------------------------------------------------->
+
+<div
+  class="modal fade show bg-dark text-primary modal__custom p-3"
+  id="userProfileModal"
+  tabindex="-1"
+  aria-labelledby="userProfileModal"
+  aria-hidden="true"
+  style="display: flex"
+  aria-modal="false"
+  role="dialog"
+>
+  <div class="modal-dialog">
+    <div class="modal-content ">
+      <form   (ngSubmit)="editProfile()" #profileForm="ngForm">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="userProfileModal">Your Profile Settings</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-mdb-dismiss="modal"
+          aria-label="Close"
+          (click)="closeModal()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- EDIT USER (PUT) -->
+        <div class="row g-3 mb-1">
+          <div class="col-3 col-sm-12 text-end"   (click)="editProfile()">
+            <i class="bi bi-pencil-square fs-2" ></i>
+          </div>
+        </div>
+
+        <!-- USERNAME -->
+        <div class="row g-3 mb-1 align-items-center">
+          <div class="col-3 col-sm-3 ms-3">
+            <label for="inputUsername" class="col-form-label fw-bold">Username: </label>
+          </div>
+          <div class="col-6">
+            <input
+              type="text"
+              id="inputUsername"
+              class="form-control"
+              #userProfileUsername
+              value={{user.username}}
+              [disabled]="disabledValue"
+              required
+              name="username"
+              (ngValue) = "suser.username"
+            />
+          </div>
+        </div>
+
+        <!-- ROL -->
+        <div class="row g-3 mb-1 align-items-center">
+          <div class="col-3 col-sm3 ms-3">
+            <label for="inputUserRol" class="col-form-label fw-bold">Rol: </label>
+          </div>
+          <div class="col-6">
+            <input
+              type="text"
+              id="inputUserRol"
+              class="form-control"
+              #userRolId
+              value={{user.role}}
+              [disabled]="disabledValue"
+              required
+              name="rol"
+              (ngValue) = "suser.role"
+            />
+          </div>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="row g-3 mb-1 align-items-center">
+          <div class="col-3 col-sm-3 ms-3">
+            <label for="inputEmail" class="col-form-label fw-bold">Email: </label>
+          </div>
+          <div class="col-6">
+            <input
+              type="email"
+              id="inputEmail"
+              class="form-control"
+              #userProfileEmail
+              value={{user.email}}
+              [disabled]="disabledValue"
+              required
+              name="email"
+              (ngValue) = "suser.email"
+            />
+          </div>
+        </div>
+
+        
+        <!-- TYPETOKEN -->
+        <div class="row g-3 mb-1 align-items-center">
+            <div class="col-3 col-sm3 ms-3">
+              <label for="inputTypeToken" class="col-form-label fw-bold">Type Token: </label>
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                id="inputTypeToken"
+                class="form-control"
+                #userRolId
+                value={{user.tokenType}}
+                disabled
+              />
+            </div>
+          </div>
+
+        <!-- TOKEN -->
+        <div class="row g-3 mb-1 align-items-center">
+          <div class="col-3 col-sm-3 ms-3">
+            <label for="inputToken" class="col-form-label fw-bold">Token: </label>
+          </div>
+          <div class="col-6 ms-3">
+            <textarea
+              ng-model="inputToken"
+              type="text"
+              id="inputToken"
+              class="form-control textarea__custom md-textarea"
+              #userProfileToken
+              value={{user.accessToken}}
+              disabled
+              ></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-mdb-dismiss="modal"
+          (click)="closeModal()"
+        >
+          Close
+        </button>
+        <button type="button" class="btn btn-primary"  [disabled]="disabledValue" (click)="updateUser()">Save</button>
+        <button type="button" id="userlogout" class="btn btn-dark" (click)="logout()">Sign Out</button>
+      </div>
+    </form>
+    </div>
+    
+  </div>
+</div>
