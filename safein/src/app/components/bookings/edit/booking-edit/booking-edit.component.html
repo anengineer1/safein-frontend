@@ -54,7 +54,7 @@
 					<div class="col-12">
 						<select class="form-select form-select-sm" id="inputBookingNumberUpdate" aria-label="form-select-sm example"
 							name="inputBookingNumberUpdate" [(ngModel)]="bookingForHandleSelector" #bookingNumber>
-							<option *ngFor="let booking of bookingListUpdate" [ngValue]="booking" [selected]="currentHandleForUpdate.booking.id === booking.id">{{booking.id}}</option>
+							<option *ngFor="let ubooking of bookingListUpdate" [ngValue]="ubooking" [selected]="currentHandleForUpdate.booking.id === ubooking.id">{{ubooking.id}}</option>
 						</select>
 					</div>
 				</div>
@@ -94,7 +94,7 @@
 					<div class="col-7">
 						<select class="form-select form-select-sm" id="inputUpdateBooking" aria-label="form-select-sm example"
 							name="inputUpdateBooking" [(ngModel)]="currentBookingForUpdate" #bookingNumber>
-							<option *ngFor="let booking of bookingListUpdate" [ngValue]="booking">{{booking.id}}</option>
+							<option *ngFor="let cubooking of bookingListUpdate" [ngValue]="cubooking">{{cubooking.id}}</option>
 						</select>
 					</div>
 				</div>
@@ -155,12 +155,12 @@
 						</div>
 					</div>
 				</div>
-				<!--     BUTTOM to update a handle -->
+				<!--     BUTTOM to update a booking -->
 				<div class="row g-3 mb-1 align-items-center">
 					<div class="col-9 col-sm-12">
 						<button type="button" class="btn btn-secondary btn-lg button_1" name="buttonBookingUpdate"
 							(click)="updateBooking()">Update
-							Handle</button>
+							Booking</button>
 					</div>
 				</div>
 			</div>
