@@ -17,6 +17,7 @@ export class CitiesService {
 	constructor(private httpClient: HttpClient) {}
 
 	listAllCites(): Observable<any> {
+		console.log(this.headers);
 		return this.httpClient.get(this.baseApiUrl).pipe(
 			catchError(this.handleError)
 		);
@@ -35,7 +36,7 @@ export class CitiesService {
 		);
 	}
 
-    	getCityByCountryCode(countryCode: String): Observable<any> {
+	getCityByCountryCode(countryCode: String): Observable<any> {
 		console.log(`${this.baseApiUrl}/country/${countryCode}`);
 		return this.httpClient.get(`${this.baseApiUrl}/country/${countryCode}`).pipe(
 			catchError(this.handleError)

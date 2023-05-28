@@ -202,7 +202,9 @@ hr {
 
 /* Label styles */
 label{
-  font-size: smaller;
+  font-size:x-small;
+  font-weight: bold;
+  color: #564b14;
 }
 
 
@@ -237,6 +239,16 @@ input[type="text"] {
     border: solid #BCA162 1px;
     border-radius: 5px;
     background-color: #F6EEDF;
+}
+
+.form-check-input{
+  float: center !important;
+}
+
+
+.form-check-input:checked{
+  float: center !important;
+  background-color: #b8186a;
 }
 
 
