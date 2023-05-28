@@ -53,7 +53,6 @@ export class BookingCreateComponent {
     this.getAllCities();
     this.getAllCountries();
     this.getAllHotels();
-  console.log(this.city);
   }
 
 //Get All Bookings
@@ -150,6 +149,7 @@ saveBooking(){
 /* Create a new Handle */
 saveHandle(){
 
+  this.handle.room = this.room;
   console.log(this.handle);
 
   this.handleService.createHandle(this.handle).subscribe(
