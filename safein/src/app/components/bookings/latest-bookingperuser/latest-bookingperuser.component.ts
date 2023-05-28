@@ -22,7 +22,7 @@ export class LatestBookingperuserComponent {
 	}
 
 	listLatestsHandles() {
-		this.handleService.listLatestsHandlesByUserEmail('nomail@gmail.com').subscribe(
+		this.handleService.listLatestsHandlesByUserEmail('mrraynet@gmail.com').subscribe(
 			{
 				next: (handles: Handles[]): void => {
 					this.handleList = handles;
