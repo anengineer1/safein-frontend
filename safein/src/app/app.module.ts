@@ -54,6 +54,7 @@ import { CustomerDeleteComponent } from './components/customer/edit/customer-del
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
 	declarations: [
 		AppComponent,

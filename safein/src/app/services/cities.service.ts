@@ -1,9 +1,10 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BASE_API_URL } from '../global-config';
+import { BASE_API_URL, BASE_API_URL_CITIES_DELETE } from '../global-config';
 import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/internal/operators/catchError';
 import { throwError } from 'rxjs';
+import { City } from '../entityclasses/city';
 
 @Injectable({
 	providedIn: 'root'
@@ -11,7 +12,7 @@ import { throwError } from 'rxjs';
 export class CitiesService {
 
 	baseApiUrl: string = BASE_API_URL + 'cities'; // global bar located in app/config.ts
-	headers = new HttpHeaders().set('Content-Type', 'application/json')
+	headers = new HttpHeaders().set("Content-Type", "application/json");
 
 	constructor(private httpClient: HttpClient) {}
 
@@ -54,5 +55,36 @@ export class CitiesService {
 		return throwError(
 			'Something bad happened; please try again later.');
 	};
+	create(code:City): Observable<any>{
+		console.log(`${this.baseApiUrl}`,code);
+		return this.httpClient.post(`${this.baseApiUrl}`,code).pipe(
+			catchError(this.handleError)
+		);
+	  }
+
+/* 	  delete(code:City,id:any):Observable<any>{
+		console.log(`${this.baseApiUrl}/${id}`,code);
+		return this.httpClient.delete(`${this.baseApiUrl}/${id}`).pipe(
+			catchError(this.handleError))
+	  } */
+
+	  	/* Delete a City*/
+	deleteCity(code:City, id:any): Observable<any>{
+		let fullUrl : string = BASE_API_URL_CITIES_DELETE+'/'+id;
+		console.log(fullUrl, code);
+		return this.httpClient.delete(fullUrl).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+
+
+
+	  update(code: City,id:any): Observable<any> {
+		console.log(`${this.baseApiUrl}/${id}`,code);
+		return this.httpClient
+		  .put(`${this.baseApiUrl}/${id}`, code)
+		  .pipe(catchError(this.handleError));
+	  }
 
 }
