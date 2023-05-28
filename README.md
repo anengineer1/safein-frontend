@@ -1,4 +1,4 @@
-# safein-frontend
+# safein Project (Frontend)
 Safein's frontend
 ## Technology Stack 🖥
 We used: 
