@@ -13,8 +13,8 @@ export class LatestBookingperuserComponent {
 	handle: Handles | undefined | null = null;
 	handleList: Handles[] = [];
 
-    constructor(private handleService: HandlesService,
-		private ts:TokenStorageService) {}
+	constructor(private handleService: HandlesService,
+		private ts: TokenStorageService) {}
 
 	assignHandle(hhandle: Handles): void {
 		this.handle = hhandle;
@@ -23,9 +23,9 @@ export class LatestBookingperuserComponent {
 		this.listLatestsHandles();
 	}
 
-    listLatestsHandles() {
-	    let ruser = this.ts.getUser();
-	    this.handleService.listLatestsHandlesByUserEmail(ruser.email).subscribe(
+	listLatestsHandles() {
+		let ruser = this.ts.getUser();
+		this.handleService.listLatestsHandlesByUserEmail(ruser.email).subscribe(
 			{
 				next: (handles: Handles[]): void => {
 					this.handleList = handles;
