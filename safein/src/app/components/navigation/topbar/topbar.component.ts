@@ -89,7 +89,7 @@ export class TopbarComponent implements OnInit {
 	getAllCustomers(): void {
 		this.customersService.listAllCustomers().subscribe(
 			(customers: Customer[]): void => {
-				console.log(customers.length);
+				 //console.log(customers.length);
 				this.numberCustomers = customers.length;
 			},
 			(error: any): void => {

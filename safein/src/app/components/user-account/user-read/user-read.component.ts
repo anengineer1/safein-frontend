@@ -40,7 +40,9 @@ export class UserReadComponent implements OnInit {
 
   /* Close Modal emit false to service --> topbar*/
   closeModal() {
+       
     this.modalService.$modal.emit(false);
+
   }
 
 

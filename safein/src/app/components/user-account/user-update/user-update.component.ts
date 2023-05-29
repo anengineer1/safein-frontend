@@ -54,6 +54,7 @@ export class UserUpdateComponent implements OnInit {
   /* Close Modal emit false to service --> topbar*/
   closeModal() {
     this.modalService.$modal.emit(false);
+    this.router.navigate(['workingspace/home']);
   }
 
 

@@ -19,6 +19,12 @@ export class UserService {
      return this.http.get<User>(`${API_URL.server}susers/$id`).pipe(catchError(this.handleError));
   }
 
+    /*Get an user by id */
+  getUserByUsername(username:any): Observable<User> {
+      console.log(`${API_URL.server}/susers/username/$username`);
+       return this.http.get<User>(`${API_URL.server}susers/$id`).pipe(catchError(this.handleError));
+  }
+
  /* Create an user */
   create(data:any): Observable<any> {
     console.log(`${API_URL.server}register`);
