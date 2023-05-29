@@ -58,6 +58,7 @@ import { authInterceptorProvider } from './_helpers/auth.interceptor';
 import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
 import { DatePipe } from '@angular/common';
 import { AuthImplementationService } from './_services/auth-implementation.service';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -111,6 +112,7 @@ import { AuthImplementationService } from './_services/auth-implementation.servi
 	RoomHotelsViewerCountriesComponent,
 	RoomHotelsViewerHotelsComponent,
 	RoomHotelsViewerRoomsComponent,
+  AboutUsComponent,
   ],
   imports: [
     HttpClientModule,

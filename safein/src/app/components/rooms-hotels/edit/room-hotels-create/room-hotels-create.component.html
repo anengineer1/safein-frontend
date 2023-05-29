@@ -26,32 +26,7 @@
 						<input type="number" id="inputhotelphone" name="inputhotelphone" class="form-control" #inputhotelphone [(ngModel)]="currentHotelForInsertion.phonenumber">
 					</div>
 				</div>
-				<!-- LATITUDE  -->
-				<div class="row mb-1 align-items-center">
-					<div class="col-sm-6">
-						<label for="inputhotellatitude" class="col-form-label">Latitude: </label>
-					</div>
-					<div class="col-sm-6">
-						<input type="number" id="inputhotellatitude" name="inputhotellatitude" class="form-control" #inputhotellatitude [(ngModel)]="currentHotelForInsertion.latitude">
-					</div>
-				</div>
-				<!-- LONGITUDE  -->
-				<div class="row mb-1 align-items-center">
-					<div class="col-sm-6">
-						<label for="inputhotellongitude" class="col-form-label">Longitude: </label>
-					</div>
-					<div class="col-sm-6">
-						<input type="number" id="inputhotellongitude" name="inputhotellongitude" class="form-control" #inputhotellongitude [(ngModel)]="currentHotelForInsertion.longitude">
-					</div>
-				</div>
-				<!-- ADDRESS  -->
-				<div class="row mb-1 align-items-center">
-					<div class="col-sm-6">
-						<label for="inputhoteladdress" class="col-form-label">Address: </label>
-					</div>
-					<div class="col-sm-6">
-						<input type="text" id="inputhoteladdress" name= "inputhoteladdress" class="form-control" #inputhoteladdress [(ngModel)]="currentHotelForInsertion.address">
-					</div>
+				
 				</div>
 				<!-- EMAIL  -->
 				<div class="row mb-1 align-items-center">
@@ -102,7 +77,6 @@
 							<button type="button" class="btn btn-secondary btn-lg button_1" (click)="saveHotel()">Save a new Hotel</button>
 						</div>
 					</div>
-				</div>
 
 
 			</div>

@@ -12,6 +12,8 @@ import { UserReadComponent } from './components/user-account/user-read/user-read
 import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
 import { StyleTestComponent } from './components/style-test/style-test.component';
 import { AuthImplementationService } from './_services/auth-implementation.service';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+
 
 
 const routes: Routes = [
@@ -50,6 +52,10 @@ const routes: Routes = [
 			{ // Bookings route
 				path: "stylesheet",
 				component: StyleTestComponent
+			},
+			{ // Home
+				path: "aboutus",
+				component: AboutUsComponent
 			}
 		],
 		canActivate: [AuthImplementationService]
