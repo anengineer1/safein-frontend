@@ -16,6 +16,7 @@ import { HotelsService } from 'src/app/_services/hotels.service';
 import { TokenStorageService } from 'src/app/_services/auth/token-storage.service';
 import { Suser } from 'src/app/entityclasses/suser';
 import { UserService } from 'src/app/_services/user.service';
+import { NavbarComponent } from '../../../../../../../../eilmadc-c5-ud35-components/src/app/navbar/navbar.component';
 
 @Component({
   selector: 'app-booking-create',
@@ -151,7 +152,11 @@ saveBooking(){
     response => {
     
       console.log(response);
-      alert('Booking : '+ this.booking +'registered successfully');
+      alert('Booking id: '+ JSON.stringify(response.id) +' was registered successfully!'
+      +'\nAmount :' + response.amount
+       +'\nPending Pay : ' + response.pendingPay
+       +'\nCreated by User agent: ' + this.user.username );
+
       this.ngOnInit();
        //console.log(response);
     }),
@@ -169,8 +174,13 @@ saveHandle(){
 
   this.handleService.createHandle(this.handle).subscribe(
     response => {
-     
-      alert('Handle :'+ this.handle +'registered successfully');
+      alert('Handle id: '+ JSON.stringify(response.id) +' was registered successfully!' +'\nArrival Date: ' + response.arrivalDate
+      +'\nDeparture Date: ' + response.departureDate
+      +'\nBooking id: ' + response.booking.id
+      +'\nCustomer name: ' + response.booking.customers.name 
+      +'\nDestiny City: ' + response.room.hotel.city.name 
+      +'\nDestiny Country: ' + response.room.hotel.city.country.countryName 
+      +'\nCreated by User agent: ' + response.booking.suser.username);
       this.ngOnInit();
       console.log(response);
     }),
