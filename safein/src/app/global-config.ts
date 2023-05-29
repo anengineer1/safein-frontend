@@ -5,3 +5,6 @@ export const BASE_API_URL_COUNTRIES_GET_ALL = BASE_API_URL+'countries';
 export const BASE_API_URL_BOOKINGS_CREATE = BASE_API_URL+'booking';
 export const BASE_API_URL_HANDLES_CREATE = BASE_API_URL+'handle';
 export const BASE_API_URL_BOOKINGS_DELETE = BASE_API_URL+'booking/handle';
+export const BASE_API_URL_HOTELS_DELETE = BASE_API_URL+'booking/handle';
+export const BASE_API_URL_ROOMS_DELETE = BASE_API_URL+'booking/rooms';
+export const BASE_API_URL_SUSERS_UPDATE = BASE_API_URL+'susers/handle';

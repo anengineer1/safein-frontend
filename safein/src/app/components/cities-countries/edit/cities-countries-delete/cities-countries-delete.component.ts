@@ -69,7 +69,7 @@ export class CitiesCountriesDeleteComponent implements OnInit {
   deleteCity(): void {
     this.citiesService.deleteCity(this.cities, this.cities.id).subscribe(
       response => {
-        console.log(response);
+        //console.log(response);
         alert("City deleted successfully");
       },
       (error: any): void => { console.log(error); }
@@ -80,7 +80,7 @@ export class CitiesCountriesDeleteComponent implements OnInit {
   deleteCountry() {
     this.countriesService.deleteCountry(this.country, this.country.id).subscribe(
       response => {
-        console.log(response);
+        //console.log(response);
         alert("Country  "+ this.country.countryName +" deleted successfully");
       },
       (error: any): void => {

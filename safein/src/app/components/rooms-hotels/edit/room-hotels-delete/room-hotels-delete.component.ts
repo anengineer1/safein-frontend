@@ -5,9 +5,9 @@ import { Hotel } from 'src/app/entityclasses/hotel';
 import { Room } from 'src/app/entityclasses/room';
 
 @Component({
-  selector: 'app-room-hotels-delete',
-  templateUrl: './room-hotels-delete.component.html',
-  styleUrls: ['./room-hotels-delete.component.scss']
+	selector: 'app-room-hotels-delete',
+	templateUrl: './room-hotels-delete.component.html',
+	styleUrls: ['./room-hotels-delete.component.scss']
 })
 export class RoomHotelsDeleteComponent implements OnInit {
 
@@ -49,5 +49,26 @@ export class RoomHotelsDeleteComponent implements OnInit {
 		)
 	}
 
+	/* Delete Hotel*/
+	deleteHotel() {
+		console.log("delete " + this.currentHotel, this.currentHotel.id);
+		this.hotelsService.deleteHotel(this.currentHotel, this.currentHotel.id).subscribe((hotel: Hotel[]): void => {
+			alert("Hotel : "+ this.currentHotel.name +" deleted successfully");
+		},
+			(error: any): void => {
+				console.log(error);
+			})
+	}
+
+	/* Delete Hotel*/
+	deleteRoom() {
+		console.log("delete " + this.currentRoom, this.currentRoom.id);
+		this.roomsService.deleteRoom(this.currentRoom, this.currentRoom.id).subscribe((room: Room[]): void => {
+			alert("Room  :"+ this.currentRoom.code +" deleted successfully");
+		},
+			(error: any): void => {
+				console.log(error);
+			})
+	}
 
 }

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BASE_API_URL } from '../global-config';
+import { BASE_API_URL, BASE_API_URL_HOTELS_DELETE, BASE_API_URL_ROOMS_DELETE } from '../global-config';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Hotel } from '../entityclasses/hotel';
+import { Room } from '../entityclasses/room';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,7 +13,7 @@ export class HotelsService {
 	baseApiUrl: string = BASE_API_URL + 'hotels'; // global bar located in app/config.ts
 	headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-	constructor(private httpClient: HttpClient) {}
+	constructor(private httpClient: HttpClient) { }
 
 	handleError(error: HttpErrorResponse) {
 		if (error.error instanceof ErrorEvent) {
@@ -73,7 +74,16 @@ export class HotelsService {
 			catchError(this.handleError)
 		);
 	}
+
+	/* Delete a Hotel*/
+	deleteHotel(code: Hotel, id: any): Observable<any> {
+		let fullUrl: string = BASE_API_URL_HOTELS_DELETE + '/' + id;
+		console.log(fullUrl, code);
+		return this.httpClient.delete(fullUrl).pipe(
+			catchError(this.handleError)
+		);
+	}
 }
 
-	
+
 

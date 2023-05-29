@@ -13,6 +13,10 @@ import { CitiesService } from 'src/app/services/cities.service';
 import { CountriesService } from '../../../../services/countries.service';
 import { Hotel } from 'src/app/entityclasses/hotel';
 import { HotelsService } from 'src/app/_services/hotels.service';
+import { TokenStorageService } from 'src/app/_services/auth/token-storage.service';
+import { Suser } from 'src/app/entityclasses/suser';
+import { UserService } from 'src/app/_services/user.service';
+import { NavbarComponent } from '../../../../../../../../eilmadc-c5-ud35-components/src/app/navbar/navbar.component';
 
 @Component({
   selector: 'app-booking-create',
@@ -23,6 +27,7 @@ export class BookingCreateComponent {
 
 
   //Attributes
+  user: any = [];
   //current booking and handle  to create
   booking: BookingData = new BookingData();
   handle: Handles = new Handles();
@@ -42,9 +47,14 @@ export class BookingCreateComponent {
   hotelsList: Hotel[] = [];
 
   //constructor
-  constructor(private bookingService: BookingsService, private handleService: HandlesService, private customersService:CustomersService, private roomsService:RoomsService, private citiesService: CitiesService, private countriesService:CountriesService, private hotelsService:HotelsService) {}
+  constructor(private tss: TokenStorageService,private bookingService: BookingsService, private handleService: HandlesService, private customersService:CustomersService, private roomsService:RoomsService, private citiesService: CitiesService, private countriesService:CountriesService, private hotelsService:HotelsService, private userService:UserService) {}
 
   ngOnInit(): void {
+
+    //SIGNIN
+		this.user = this.tss.getUser();
+    console.log(this.user);
+
     this.getAllBookings();
     this.getAllHandles();
     //For selects
@@ -60,7 +70,7 @@ getAllBookings(){
   this.bookingService.listAllBookingDatas().subscribe(
     (bookingService: BookingData[]):void => {
       this.bookingsList = bookingService;
-      console.log(this.bookingsList);
+      //console.log(this.bookingsList);
     },
      (error:any):void => {console.log(error);}
   )
@@ -71,7 +81,7 @@ getAllHandles(){
   this.handleService.listAllHandles().subscribe(
     (handleService: Handles[]):void => {
       this.handlesList = handleService;
-      console.log(this.handlesList);
+       //console.log(this.handlesList);
     },
      (error:any):void => {console.log(error);}
   )
@@ -82,7 +92,7 @@ getAllCustomers(){
   this.customersService.listAllCustomers().subscribe(
     (customersService: Customer[]):void => {
       this.customersList = customersService;
-      console.log(this.customersList);
+       //console.log(this.customersList);
     },
      (error:any):void => {console.log(error);}
   )
@@ -93,7 +103,7 @@ getAllRooms(){
   this.roomsService.listAllRooms().subscribe(
     (roomsService: Room[]):void => {
       this.roomList = roomsService;
-      console.log(this.roomList);
+       //console.log(this.roomList);
     },
      (error:any):void => {console.log(error);}
   )
@@ -104,7 +114,7 @@ getAllCities(){
   this.citiesService.listAllCites().subscribe(
     (citiesService: City[]):void => {
       this.cityList = citiesService;
-      console.log(this.cityList);
+       //console.log(this.cityList);
     },
      (error:any):void => {console.log(error);}
   )
@@ -115,7 +125,7 @@ getAllCountries(){
   this.countriesService.listAllCountries().subscribe(
     (countriesService: Country[]):void => {
       this.countriesList = countriesService;
-      console.log(this.countriesList);
+       //console.log(this.countriesList);
     },
      (error:any):void => {console.log(error);}
   )
@@ -126,7 +136,7 @@ getAllHotels(){
   this.hotelsService.listAllHotels().subscribe(
     (hotelsService: Hotel[]):void => {
       this.hotelsList = hotelsService;
-      console.log(this.hotelsList);
+       //console.log(this.hotelsList);
     },
      (error:any):void => {console.log(error);}
   )
@@ -135,14 +145,23 @@ getAllHotels(){
 /* Create a new Booking */
 saveBooking(){
 
+  this.booking.customers.id = this.customer.id;
+  this.booking.suser.id = this.user.userId;
+
   this.bookingService.createBooking(this.booking).subscribe(
     response => {
     
-      alert('Booking : '+ this.booking.id +'registered successfully');
       console.log(response);
+      alert('Booking id: '+ JSON.stringify(response.id) +' was registered successfully!'
+      +'\nAmount :' + response.amount
+       +'\nPending Pay : ' + response.pendingPay
+       +'\nCreated by User agent: ' + this.user.username );
+
+      this.ngOnInit();
+       //console.log(response);
     }),
   (error:any):void => {
-    console.log(error);
+     console.log(error);
   }
 }
 
@@ -150,12 +169,19 @@ saveBooking(){
 saveHandle(){
 
   this.handle.room = this.room;
+  //this.handle.arrivalDate = this.handle.arrivalDate.getDate();
   console.log(this.handle);
 
   this.handleService.createHandle(this.handle).subscribe(
     response => {
-     
-      alert('Handle :'+ this.handle.id +'registered successfully');
+      alert('Handle id: '+ JSON.stringify(response.id) +' was registered successfully!' +'\nArrival Date: ' + response.arrivalDate
+      +'\nDeparture Date: ' + response.departureDate
+      +'\nBooking id: ' + response.booking.id
+      +'\nCustomer name: ' + response.booking.customers.name 
+      +'\nDestiny City: ' + response.room.hotel.city.name 
+      +'\nDestiny Country: ' + response.room.hotel.city.country.countryName 
+      +'\nCreated by User agent: ' + response.booking.suser.username);
+      this.ngOnInit();
       console.log(response);
     }),
   (error:any):void => {

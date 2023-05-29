@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BASE_API_URL } from '../global-config';
+import { BASE_API_URL, BASE_API_URL_ROOMS_DELETE } from '../global-config';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Room } from '../entityclasses/room';
@@ -13,7 +13,7 @@ export class RoomsService {
 	headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 
-	constructor(private httpClient: HttpClient) {}
+	constructor(private httpClient: HttpClient) { }
 
 	listAllRooms(): Observable<any> {
 		return this.httpClient.get(this.baseApiUrl).pipe(
@@ -97,6 +97,15 @@ export class RoomsService {
 		let completeUrl: string = `${this.baseApiUrl}/${id}`;
 		console.log(completeUrl);
 		return this.httpClient.put(completeUrl, data).pipe(
+			catchError(this.handleError)
+		);
+	}
+
+	/* Delete a Room*/
+	deleteRoom(code: Room, id: any): Observable<any> {
+		let fullUrl: string = BASE_API_URL_ROOMS_DELETE + '/' + id;
+		console.log(fullUrl, code);
+		return this.httpClient.delete(fullUrl).pipe(
 			catchError(this.handleError)
 		);
 	}

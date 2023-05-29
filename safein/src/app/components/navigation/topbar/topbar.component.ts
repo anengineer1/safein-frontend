@@ -3,6 +3,12 @@ import { TokenStorageService } from 'src/app/_services/auth/token-storage.servic
 import { UserReadComponent } from '../../user-account/user-read/user-read.component';
 import { SwitchModalService } from 'src/app/_services/switch-modal.service';
 import { Router } from '@angular/router';
+import { Customer } from 'src/app/entityclasses/customer';
+import { BookingData } from 'src/app/entityclasses/booking-data';
+import { CustomersService } from '../../../services/customers.service';
+import { BookingsService } from 'src/app/_services/bookings.service';
+import { HandlesService } from 'src/app/_services/handles.service';
+import { Handles } from 'src/app/entityclasses/handles';
 
 
 @Component({
@@ -23,9 +29,13 @@ export class TopbarComponent implements OnInit {
 	showModeratorBoard = false;
 	username?: string;
 	role?: string;
+	customer: Customer | undefined | null = null;
+	booking: BookingData | undefined |null = null;
+	numberCustomers: number = 0;
+	numberHandles: number = 0;
 
 	//Constructor with TokenStorageService as a parameter
-	constructor(private tss: TokenStorageService, private modalService: SwitchModalService, private router:Router) { 
+	constructor(private tss: TokenStorageService, private modalService: SwitchModalService, private router:Router, private customersService:CustomersService, private handleService: HandlesService){ 
 		
 		//MODAL
 		this.showModal = false;
@@ -35,7 +45,6 @@ export class TopbarComponent implements OnInit {
 	ngOnInit(): void {
 
 		this.modalService.$modal.subscribe((value) => { this.showModal = value });
-
 		//SIGNIN
 		this.isLoggedIn = !!this.tss.getToken();
 
@@ -49,7 +58,13 @@ export class TopbarComponent implements OnInit {
 			//this.showModeratorBoard = this.roles.includes('ROLE_EDITOR');
 
 			this.username = user.username;
+
+					//Get Numbers of topbar: bookings and customers
+		this.getAllCustomers();
+		this.listAllHandles();
 		}
+
+
 	}
 
 	/* Function to User Logout */
@@ -68,6 +83,30 @@ export class TopbarComponent implements OnInit {
 	/* Function to Close a Modal as a component */
 	closeModal() {
 		this.showModal = false;
+	}
+
+	/* Functions to get number of bookings and customers*/
+	getAllCustomers(): void {
+		this.customersService.listAllCustomers().subscribe(
+			(customers: Customer[]): void => {
+				 //console.log(customers.length);
+				this.numberCustomers = customers.length;
+			},
+			(error: any): void => {
+				console.log(error);
+			}
+		)
+	}
+
+	listAllHandles() {
+		this.handleService.listAllHandles().subscribe(
+			{
+				next: (handles: Handles[]): void => {
+				    this.numberHandles = handles.length;
+				},
+				error: (error: any): void => { console.log(error) }
+			}
+		)
 	}
 
 }
