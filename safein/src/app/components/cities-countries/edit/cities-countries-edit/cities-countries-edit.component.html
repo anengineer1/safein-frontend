@@ -33,27 +33,6 @@
                     </div>
                 </div>
 
-                <!-- LATITUDE -->
-                <div class="row g-1 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputLatitude" class="col-form-label">Latitude: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputLatitude" class="form-control" #ccLatitude name="citieslatitude"
-                            [(ngModel)]="citiesobj.latitude" value="{{citiesobj.latitude}}">
-                    </div>
-                </div>
-
-                <!-- LONGITUDE -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputLongitude" class="col-form-label">Longitude: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputLongitude" class="form-control" #ccLongitude
-                            name="citieslongitude" [(ngModel)]="citiesobj.longitude" value="{{citiesobj.longitude}}">
-                    </div>
-                </div>
 
 
                 <!-- NAME OF THE CITY  -->
@@ -181,36 +160,7 @@
                     </div>
                 </div>
 
-                <!-- LATITUDE -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputcoLatitude" class="col-form-label">Latitude: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputcoLatitude" class="form-control" #cccoLatitude
-                            [(ngModel)]="countryobj.latitude" value="{{countryobj.latitude}}">
-                    </div>
-                </div>
-
-                <!-- LONGITUDE -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputLongitude" class="col-form-label">Longitude: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputcoLongitude" class="form-control" #cccoLongitude
-                            [(ngModel)]="countryobj.longitude" value="{{countryobj.longitude}}">
-                    </div>
-                </div>
-
-
-                <!--     BUTTOM to update a Country -->
-                <div class="row g-3 mb-3 align-items-center">
-                    <div class="col-9 col-sm-2">
-                        <button type="button" class="btn btn-secondary btn-lg button_1"
-                            (click)="updateCountry(this.countryobj,this.countryobj.id)">Update Country</button>
-                    </div>
-                </div>
+               
             </div>
 
         </div>

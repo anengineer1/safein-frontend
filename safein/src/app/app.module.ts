@@ -56,6 +56,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { authInterceptorProvider } from './_helpers/auth.interceptor';
 import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +110,7 @@ import { UserUpdateComponent } from './components/user-account/user-update/user-
 	RoomHotelsViewerCountriesComponent,
 	RoomHotelsViewerHotelsComponent,
 	RoomHotelsViewerRoomsComponent,
+ AboutUsComponent,
   ],
   imports: [
     HttpClientModule,
