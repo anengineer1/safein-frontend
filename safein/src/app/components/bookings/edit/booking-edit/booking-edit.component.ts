@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { BookingsService } from 'src/app/_services/bookings.service';
 import { HandlesService } from 'src/app/_services/handles.service';
@@ -7,6 +8,7 @@ import { Customer } from 'src/app/entityclasses/customer';
 import { Handles } from 'src/app/entityclasses/handles';
 import { Room } from 'src/app/entityclasses/room';
 import { CustomersService } from 'src/app/services/customers.service';
+
 
 @Component({
 	selector: 'app-booking-edit',
@@ -36,7 +38,8 @@ export class BookingEditComponent implements OnInit {
 	constructor(private bookingService: BookingsService,
 		private customerService: CustomersService,
 		private handlesService: HandlesService,
-		private roomService: RoomsService) {
+		private roomService: RoomsService,
+		private datePipe: DatePipe) {
 	}
 
 	ngOnInit(): void {
@@ -72,6 +75,25 @@ export class BookingEditComponent implements OnInit {
 		)
 	}
 
+	formatDepartureDate(event: any) {
+		let formattedDate: string | null = this.datePipe.transform(event, 'yyyy-MM-ddTHH:mm:ss');
+		console.log(formattedDate);
+		if (formattedDate) {
+			let date = new Date(formattedDate);
+			this.currentHandleForUpdate.departureDate = date;
+			console.log(date);
+		}
+	}
+
+	formatArrivalDate(event: any) {
+		let formattedDate: string | null = this.datePipe.transform(event, 'yyyy-MM-ddTHH:mm:ss');
+		console.log(formattedDate);
+		if (formattedDate) {
+			let date = new Date(formattedDate);
+			this.currentHandleForUpdate.arrivalDate = date;
+			console.log(date);
+		}
+	}
 
 	getAllBookingData(): void {
 		this.bookingService.listAllBookingDatas().subscribe({
@@ -126,6 +148,7 @@ export class BookingEditComponent implements OnInit {
 		if (this.roomForHandleSelector.id !== 0) {
 			this.currentHandleForUpdate.room = this.roomForHandleSelector;
 		}
+
 		console.log(this.currentHandleForUpdate);
 		this.handlesService.updateHandle(this.currentHandleForUpdate.id, this.currentHandleForUpdate).subscribe({
 			next: response => {

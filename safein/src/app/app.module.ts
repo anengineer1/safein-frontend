@@ -56,6 +56,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { authInterceptorProvider } from './_helpers/auth.interceptor';
 import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -117,7 +118,8 @@ import { UserUpdateComponent } from './components/user-account/user-update/user-
     FormsModule,
   ],
  providers: [
-    authInterceptorProvider
+     authInterceptorProvider,
+     DatePipe
   ],
   bootstrap: [AppComponent]
 })

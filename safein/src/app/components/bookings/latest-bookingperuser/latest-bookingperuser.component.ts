@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenStorageService } from 'src/app/_services/auth/token-storage.service';
 import { HandlesService } from 'src/app/_services/handles.service';
 import { Handles } from 'src/app/entityclasses/handles';
 
@@ -12,7 +13,8 @@ export class LatestBookingperuserComponent {
 	handle: Handles | undefined | null = null;
 	handleList: Handles[] = [];
 
-	constructor(private handleService: HandlesService) {}
+	constructor(private handleService: HandlesService,
+		private ts: TokenStorageService) {}
 
 	assignHandle(hhandle: Handles): void {
 		this.handle = hhandle;
@@ -22,7 +24,8 @@ export class LatestBookingperuserComponent {
 	}
 
 	listLatestsHandles() {
-		this.handleService.listLatestsHandlesByUserEmail('mrraynet@gmail.com').subscribe(
+		let ruser = this.ts.getUser();
+		this.handleService.listLatestsHandlesByUserEmail(ruser.email).subscribe(
 			{
 				next: (handles: Handles[]): void => {
 					this.handleList = handles;
