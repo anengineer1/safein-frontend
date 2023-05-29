@@ -57,6 +57,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { authInterceptorProvider } from './_helpers/auth.interceptor';
 import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
 import { DatePipe } from '@angular/common';
+import { AuthImplementationService } from './_services/auth-implementation.service';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ import { DatePipe } from '@angular/common';
   ],
  providers: [
      authInterceptorProvider,
-     DatePipe
+     DatePipe,
+     AuthImplementationService
   ],
   bootstrap: [AppComponent]
 })
