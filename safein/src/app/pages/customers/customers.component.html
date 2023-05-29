@@ -8,11 +8,10 @@
 
 		<div class="col-md-1 p-2 m-2"></div>
 
-		<div class="col-md-5 p-2 m-2 ">
+		<div class="col-md-5 p-2 m-2 " *ngIf="userRole == 'admin' || userRole == 'editor'">
 			<div class="left__container">
-			  <app-customer-create-column></app-customer-create-column>
+				<app-customer-create-column></app-customer-create-column>
 			</div>
 		</div>
 	</div>
 </div>
-

@@ -9,7 +9,7 @@
 		<div class="col-md-1 p-2 m-2"></div>
 
 		<div class="col-md-5 p-2 m-2">
-			<div class="right__container">
+			<div class="right__container" *ngIf="userRole == 'admin' || userRole == 'editor'">
 				<app-room-hotels-columncreation></app-room-hotels-columncreation>
 			</div>
 		</div>

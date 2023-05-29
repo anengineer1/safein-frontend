@@ -8,11 +8,11 @@
       <button class="nav-link active rounded text-dark" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i
         class="bi bi-plus-lg me-2"></i>Create a City or Country</button>
       <button class="nav-link rounded text-dark" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="bi bi-pencil-square me-2"></i>Edit a City or Country</button>
-      <button class="nav-link rounded text-dark" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="bi bi-trash3 me-2"></i>Delete a City or Country</button>
+      <button class="nav-link rounded text-dark" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" *ngIf="userRole == 'admin'"><i class="bi bi-trash3 me-2"></i>Delete a City or Country</button>
     </div>
   </nav>
   <div class="tab-content bg-light rounded mt-0" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0"><app-cities-countries-create></app-cities-countries-create></div>
     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0"><app-cities-countries-edit></app-cities-countries-edit></div>
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0"><app-cities-countries-delete></app-cities-countries-delete></div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0" *ngIf="userRole == 'admin'"><app-cities-countries-delete></app-cities-countries-delete></div>
   </div>
