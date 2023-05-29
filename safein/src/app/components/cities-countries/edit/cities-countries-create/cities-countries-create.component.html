@@ -48,6 +48,7 @@
                 </div>
 
 
+
                 <!-- LATITUDE -->
                 <div class="row g-3 mb-1 align-items-center">
                     <div class="col-3 col-sm-5">
@@ -142,31 +143,13 @@
                     </div>
                 </div>
 
-                <!-- LATITUDE -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputcoLatitude" class="col-form-label">Latitude: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputcoLatitude" class="form-control" #cccoLatitude required
-                            value="{{countryobj.latitude}}" [(ngModel)]="countryobj.latitude" name="countrylatitude">
-                    </div>
-                </div>
-
-                <!-- LONGITUDE -->
-                <div class="row g-3 mb-1 align-items-center">
-                    <div class="col-3 col-sm-5">
-                        <label for="inputLongitude" class="col-form-label">Longitude: </label>
-                    </div>
-                    <div class="col-6">
-                        <input type="number" id="inputcoLongitude" class="form-control" #cccoLongitude required
-                            [(ngModel)]="countryobj.longitude" value="{{countryobj.longitude}}" name="countrylongitude">
-                    </div>
-                </div>
+             
+                
                 <div class="btn-group">
                     <a class="ms-3 btn-primary btn "
                         onclick=" window.open('https://www.google.com/maps','Google Maps','width=600,height=400')">
                         <i  class="bi bi-pin-map fa-2x"></i></a>
+
                 </div>
 
                             <!--     BUTTON to add a handle -->
