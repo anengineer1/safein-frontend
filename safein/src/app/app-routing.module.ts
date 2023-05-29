@@ -11,22 +11,25 @@ import { CustomersComponent } from './pages/customers/customers.component';
 import { UserReadComponent } from './components/user-account/user-read/user-read.component';
 import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
 import { StyleTestComponent } from './components/style-test/style-test.component';
+import { AuthImplementationService } from './_services/auth-implementation.service';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+
 
 
 const routes: Routes = [
 	{ path: '', redirectTo: 'account', pathMatch: 'full' },
 	{ path: "signin", component: SigninComponent }, //User Account: Signin
-	{ path: "account", component: AccountComponent, children:[] },//User Account
-	{ path: "user-profile", component: UserReadComponent}, //User Profile read
-	{path: "user-profile-update", component: UserUpdateComponent}, //User Profile update
+	{ path: "account", component: AccountComponent, children: [] },//User Account
+	{ path: "user-profile", component: UserReadComponent }, //User Profile read
+	{ path: "user-profile-update", component: UserUpdateComponent }, //User Profile update
 	{
 		path: "workingspace",
 		component: WorkingspaceComponent, children: [
 
 			{ // Home
 				path: "home",
-				component: HomeComponent
+				component: HomeComponent,
+
 			},
 			{ // Customers
 				path: "customers",
@@ -45,7 +48,7 @@ const routes: Routes = [
 				path: "bookings",
 				component: BookingsComponent
 			},
-			{path: "profile", component: UserReadComponent},//User Profile
+			{ path: "profile", component: UserReadComponent },//User Profile
 			{ // Bookings route
 				path: "stylesheet",
 				component: StyleTestComponent
@@ -54,7 +57,8 @@ const routes: Routes = [
 				path: "aboutus",
 				component: AboutUsComponent
 			}
-		]
+		],
+		canActivate: [AuthImplementationService]
 	}
 ];
 
@@ -62,4 +66,4 @@ const routes: Routes = [
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
