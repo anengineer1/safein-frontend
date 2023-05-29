@@ -81,6 +81,7 @@ export class RoomHotelsEditComponent implements OnInit {
 		console.log(this.currentRoom);
 		this.roomsService.updateRoom(this.currentRoom.id, this.currentRoom).subscribe({
 			next: response => {
+				alert('Room : ' + this.currentRoom.id + ' updated successfully');
 				console.log(response);
 			},
 
@@ -97,6 +98,7 @@ export class RoomHotelsEditComponent implements OnInit {
 		console.log(this.currentHotel);
 		this.hotelsService.updateHotel(this.currentHotel.id, this.currentHotel).subscribe({
 			next: response => {
+				alert('Hotel : ' + this.currentHotel.id + ' updated successfully');
 				console.log(response);
 			},
 

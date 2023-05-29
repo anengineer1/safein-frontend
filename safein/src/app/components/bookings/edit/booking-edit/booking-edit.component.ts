@@ -130,6 +130,7 @@ export class BookingEditComponent implements OnInit {
 		console.log(this.currentBookingForUpdate);
 		this.bookingService.updateBookingData(this.currentBookingForUpdate.id, this.currentBookingForUpdate).subscribe({
 			next: response => {
+				alert('Booking : ' + this.currentBookingForUpdate.id + ' updated successfully');
 				console.log(response);
 			},
 			error: error => {
@@ -152,6 +153,7 @@ export class BookingEditComponent implements OnInit {
 		console.log(this.currentHandleForUpdate);
 		this.handlesService.updateHandle(this.currentHandleForUpdate.id, this.currentHandleForUpdate).subscribe({
 			next: response => {
+				alert('Handle : ' + this.currentHandleForUpdate.id + ' updated successfully');
 				console.log(response);
 			},
 			error: error => {
