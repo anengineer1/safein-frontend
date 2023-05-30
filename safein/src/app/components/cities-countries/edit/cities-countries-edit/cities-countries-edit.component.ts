@@ -31,9 +31,11 @@ export class CitiesCountriesEditComponent implements OnInit{
       this.citiesserv.update(this.citiesobj, this.citiesobj.id).subscribe({
 	  next: response => {
 	      console.log(response);
+        alert('City : '+ this.citiesobj.name+ ' was updated successfully');   
 	  },
 	  error: error => {
 	      console.log(error);
+        alert('Error updating city');
 	  }
       }
 
@@ -44,9 +46,11 @@ export class CitiesCountriesEditComponent implements OnInit{
     this.countries.update(this.countryobj,this.countryobj.id).subscribe({
 	next: response => {
 	    console.log(response);
+      alert('Country : '+ this.countryobj.countryName+ ' was updated successfully');   
 	},
 	error: error => {
 	    console.log(error);
+      alert('Error updating country');
 	}
     }
   )

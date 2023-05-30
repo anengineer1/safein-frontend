@@ -42,20 +42,22 @@ export class CitiesCountriesCreateComponent implements  OnInit{
   saveCity(){
     this.citieserv.create(this.citiesobj).subscribe((cities: City[]): void => {
       this.citieslist = cities;
+      alert('City added successfully'); 
     },
     (error: any): void => {
       console.log(error);
+      alert('Error adding cities'); 
     })
   }
 
   saveCountry(){
     this.countries.create(this.countryobj).subscribe((countries: Country[]): void => {
       this.countrylist = countries;
+      alert('Country added successfully'); 
     },
     (error: any): void => {
       console.log(error);
+      alert('Error adding countries'); 
     })
   }
-
-  
 }

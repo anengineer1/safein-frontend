@@ -28,9 +28,11 @@ export class CustomerCreateComponent implements OnInit {
       (customers: Customer[]): void => {
         this.customerslist = customers;
         console.log(this.customer);
+        alert("Customer:"+ this.customer.name +"create successfully");
       },
       (error: any): void => {
         console.log(error);
+        alert('Error creating Customer: ' + error);
       }
     );
     console.log(this.customer);

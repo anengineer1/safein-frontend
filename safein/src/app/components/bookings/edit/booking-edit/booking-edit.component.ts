@@ -135,6 +135,7 @@ export class BookingEditComponent implements OnInit {
 			},
 			error: error => {
 				console.log(error);
+				alert('Error updating booking information'); 
 			}
 		}
 		)

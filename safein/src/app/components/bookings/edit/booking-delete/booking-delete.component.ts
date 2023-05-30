@@ -75,7 +75,10 @@ getAllCustomers(){
       console.log(response);
       alert('Booking deleted successfully');
     },
-    (error: any): void => { console.log(error); }
+    (error: any): void => { 
+      console.log(error);
+      alert('Error deleting booking'); 
+     }
   );
   }
 
@@ -86,7 +89,10 @@ getAllCustomers(){
         console.log(response);
         alert('Booking deleted successfully');
       },
-      (error: any): void => { console.log(error); }
+      (error: any): void => { 
+        console.log(error);
+        alert('Error deleting handle'); 
+      }
     );
     }
 

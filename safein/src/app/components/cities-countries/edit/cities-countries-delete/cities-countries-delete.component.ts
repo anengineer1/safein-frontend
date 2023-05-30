@@ -70,9 +70,12 @@ export class CitiesCountriesDeleteComponent implements OnInit {
     this.citiesService.deleteCity(this.cities, this.cities.id).subscribe(
       response => {
         //console.log(response);
-        alert("City deleted successfully");
+        alert("City:"+ this.cities.name +"deleted successfully");
       },
-      (error: any): void => { console.log(error); }
+      (error: any): void => { 
+        console.log(error);
+        alert("Error deleting city");
+       }
     );
   }
 

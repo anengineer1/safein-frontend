@@ -162,6 +162,7 @@ saveBooking(){
     }),
   (error:any):void => {
      console.log(error);
+     alert('Step 1: booking failed'); 
   }
 }
 
@@ -186,6 +187,7 @@ saveHandle(){
     }),
   (error:any):void => {
     console.log(error);
+    alert('Step 2: handle failed'); 
   }
 }
 

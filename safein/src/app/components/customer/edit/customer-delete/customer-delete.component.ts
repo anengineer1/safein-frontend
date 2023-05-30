@@ -27,9 +27,11 @@ export class CustomerDeleteComponent implements OnInit {
     this.customers.delete(this.customerobj.id).subscribe({
       next: response => {
         console.log(response);
+        alert("Customer:"+ this.customerobj.name +"deleted successfully");
       },
       error: (error: any): void => {
         console.log(error);
+        alert("Error deleting customer");
       }})
   }
 
