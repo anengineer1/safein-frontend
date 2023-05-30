@@ -13,23 +13,25 @@
                     <div class="col-sm-8 mt-3 text-left custom_form_1 ms-3">
                         <h3>Login with your Username and Password</h3>
                     </div>
-                    <div class="col-sm-3 float-right me-3">
-                        <i class="bi bi-unlock-fill"></i>
+                    <div class="col-sm-3 float-right me-3 mt-3">
+                        <i class="bi bi-unlock-fill nav_hidden"></i>
                     </div>
 
                 </div>
 
                 <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-                    <div class="col-sm-11 mb-3 mt-3 ">
+                    <div class="col-sm-11 mb-3 mt-3 form__signin">
                         <input type="text" class="form-control" id="inputUsername1" name="username" placeholder="Username" [(ngModel)]="form.username" #username="ngModel" required >
                         <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">Username is required!</div>
                     </div>
-                    <div class="col-sm-11 mb-3">
+                    <div class="col-sm-11 mb-3 form__signin">
                         <input type="password" class="form-control" id="inputPassword1" placeholder="Password" name="password" [(ngModel)]="form.password" #password="ngModel" required minlength="6" >
+                        <p class="recover_password ms-3 float-center"><button class="fs-6 btn-secondary" (click)="recoverPassword()">Did you forget your password?</button></p>
                         <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
                             <div *ngIf="password.errors['required']"> Password is required!</div>
                             <div *ngIf="password.errors['minlength']"> Password must be at least 6 characters</div>
-                            </div>
+                        </div>
+                        
                     </div>
                     <div class="col-sm-11 mb-3 ms-3 me-3">
                         <button class="form-control btn btn-success" id="button1">Login</button>

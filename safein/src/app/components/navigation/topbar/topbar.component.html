@@ -1,58 +1,139 @@
-<nav class="navbar navbar-expand  navbar-light col-12 navbar_2 bg-light g-0 py-0 navbar-custom">
-    <div class="container-fluid g-0">
-        <a class="navbar-brand d-block g-0 ms-1 py-0" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-            <img src="../../../../assets/logo/logo_navbar.png" alt="" width="54" height="57"
-                class="d-inline-block align-text-top ">
+<nav
+  class="navbar navbar-expand-lg navbar-light col-12 navbar_2 bg-light g-0 py-0 navbar-custom"
+>
+  <div class="container-fluid g-0">
+    <a
+      class="navbar-brand d-block g-0 ms-1 py-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="true"
+      aria-label="Toggle navigation"
+    >
+      <img
+        src="../../../../assets/logo/logo_navbar.png"
+        alt=""
+        width="54"
+        height="57"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+    <div class="navbar-collapse ms-3 me-3">
+      <!--         NAVBAR SIDE TOGGLE  -->
+      <a
+        class="btn btn__navbar__custom border navbar-toggler"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        href="workingspace/home"
+        role="button"
+        aria-controls="navbarNav"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="black"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+          />
+        </svg>
+      </a>
+
+      <!--         BUTTON TOGGLE 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#">
+                <span class="navbar-toggler-icon"></span>
+            </button>-->
+
+      <!--     HOME  -->
+      <ul class="navbar-nav ms-3 me-3">
+        <li class="nav-item ms-3">
+          <div class="navbar-nav">
+            <a
+              class="nav-link ms-3 me-3 nav_hidden"
+              routerLink="/workingspace/home"
+              routerLinkActive="activate"
+            >
+              <h5>Home</h5>
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="navbar-nav nav_hidden">
+        <div class="ms-3 me-3 fw-bold">
+          <span>Active Bookings: {{ numberHandles }}</span>
+        </div>
+        <div class="ms-3 me-3 fw-bold">
+          <span>Number of Clients: {{ numberCustomers }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!--  Shows date in real time format -->
+    <div class="navbar-nav float-center nav_hidden">
+      <div class="me-3 mt-4 me-3 fw-bold datebarnav" id="">
+        <app-datebar></app-datebar>
+      </div>
+    </div>
+
+    <div class="navbar-nav flex-row mt-1 ms-3 me-3">
+      <span class="ms-3 me-3 text-success nav_hidden"
+        ><i class="bi bi-bell-fill"></i
+      ></span>
+      <!--    Shows Welcome to user and her role -->
+      <span class="ms-3 me-3 fw-bold nav_hidden" *ngIf="isLoggedIn"
+        >Hello {{ username }},({{ role }})</span
+      >
+    </div>
+
+    <ul class="navbar-nav d-flex flex-row" id="navbarToggle">
+      <!-- User Icon dropdown -->
+      <li class="nav-item me-lg-3 dropdown dropstart">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi bi-person-square text-success fs-2"></i>
         </a>
 
-        <div class="collapse navbar-collapse ms-3 me-3">
-            <ul class="navbar-nav ms-3 me-3">
-                <li class="nav-item ms-3">
-                    <a class="nav-link ms-3 me-3" routerLink="/workingspace/home" routerLinkActive="activate"><h5>Home</h5></a>
-                </li>
-            </ul>
-            <div class="navbar-nav">
-                <div class="ms-3 me-3  fw-bold"><span>Active Bookings: {{numberHandles}}</span></div>
-                <div class="ms-3 me-3  fw-bold"><span>Number of Customers: {{numberCustomers}}</span></div>
-            </div>
-        </div>
-        <!--  Shows date in real time format -->
-        <div class="navbar-nav float-center">
-            <div class="me-3 mt-4 me-3 fw-bold"><app-datebar></app-datebar></div>
-        </div>
-        <div class="navbar-nav flex-row mt-1 ms-3 me-3">
-            <span class="ms-3 me-3  text-success"><i class="bi bi-bell-fill"></i></span>
-            <!--    Shows Welcome to user and her role -->
-            <span class="ms-3 me-3 fw-bold" *ngIf="isLoggedIn">Hello {{username}},({{role}})</span>
-        </div>
-
-        <ul class="navbar-nav d-flex flex-row">
-
-            <!-- User Icon dropdown -->
-            <li class="nav-item me-lg-3 dropdown dropstart">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <i class="bi bi-person-square text-success fs-2"></i>
-                </a>
-            
-                <ul class="dropdown-menu me-3 bg-success nav-dark">
-                    <li >
-                        <a tabindex="1" id="userprofile" class=" nav-link dropdown-item text-light"  (click)="openModal()">My Profile</a>
-                      <!--   routerLink="/workingspace/profile" -->
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider text-light" />
-                    </li>
-                    <li>
-                        <a tabindex="1" id="userlogout" class="dropdown-item text-light" (click)="logout()" routerLink="account">Sign Out</a>
-                    </li>
-                </ul>
-            </li>
+        <ul class="dropdown-menu me-3 bg-success nav-dark">
+          <li>
+            <a
+              tabindex="1"
+              id="userprofile"
+              class="nav-link dropdown-item text-light"
+              (click)="openModal()"
+              >My Profile</a
+            >
+            <!--   routerLink="/workingspace/profile" -->
+          </li>
+          <li>
+            <hr class="dropdown-divider text-light" />
+          </li>
+          <li>
+            <a
+              tabindex="1"
+              id="userlogout"
+              class="dropdown-item text-light"
+              (click)="logout()"
+              routerLink="account"
+              >Sign Out</a
+            >
+          </li>
         </ul>
-        <div class="" *ngIf="showModal==true" >
-            <app-user-read   (onCloseModal)="closeModal()"></app-user-read>
-        </div>
-
+      </li>
+    </ul>
+    <div class="" *ngIf="showModal == true">
+      <app-user-read (onCloseModal)="closeModal()"></app-user-read>
     </div>
+  </div>
+
 </nav>
