@@ -73,13 +73,18 @@ export class RoomHotelsCreateComponent implements OnInit {
 	}
 
 	insertNewRoom() {
-		this.currentRoom.hotel = this.currentHotelForInsertion;
+		console.log(this.currentHotelForRoom);
+		this.currentRoom.hotel.id = this.currentHotelForRoom.id;
+		console.log(this.currentRoom);
 		this.roomsService.createRoom(this.currentRoom).subscribe({
 			next: response => {
 				console.log(response);
+				alert('Room code: '+ JSON.stringify(response.code) +' was registered successfully!');
 			},
 
-			error: error => { console.log(error) }
+			error: error => { console.log(error);
+			alert('Error adding room'); 
+			}
 		}
 		)
 	}
@@ -90,8 +95,11 @@ export class RoomHotelsCreateComponent implements OnInit {
 		this.hotelService.create(this.currentHotelForInsertion).subscribe({
 			next: response => {
 				console.log(response);
+				alert('Hotel id: '+ JSON.stringify(response.name) +' was registered successfully!');
 			},
-			error: error => { console.log(error) }
+			error: error => { 
+				console.log(error);
+				alert('Error adding hotel'); }
 		})
 	}
 	getAllCity(){
