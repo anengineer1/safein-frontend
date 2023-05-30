@@ -71,7 +71,7 @@ export class CountriesService {
 
 	/*Update a Country*/
 	update(code: Country, id: any): Observable<any> {
-		console.log(`${this.baseApiUrl}`);
+		console.log(`${this.baseApiUrl}/${id}`);
 		return this.httpClient
 			.put(`${this.baseApiUrl}/${id}`, code)
 			.pipe(catchError(this.handleError));

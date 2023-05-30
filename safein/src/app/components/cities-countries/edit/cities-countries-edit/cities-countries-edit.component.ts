@@ -12,6 +12,12 @@ import { CountriesService } from 'src/app/services/countries.service';
 
 export class CitiesCountriesEditComponent implements OnInit{
 
+    countryobj: Country = new Country;
+  countrylist : Country [] = [];
+  citieslist: City [] = [];
+    citiesobj: City = new City;
+    countryobjForCity: Country = new Country;
+    
   ngOnInit(): void {
     this.getAllCountries();
     this.getAllCity();
@@ -19,26 +25,31 @@ export class CitiesCountriesEditComponent implements OnInit{
   
   constructor(private countries: CountriesService,private citiesserv: CitiesService) {}
 
-  countryobj: Country = new Country;
-  countrylist : Country [] = [];
-  citieslist: City [] = [];
-  citiesobj: City = new City;
 
+    updateCity(){
+      this.citiesobj.country = this.countryobjForCity;
+      this.citiesserv.update(this.citiesobj, this.citiesobj.id).subscribe({
+	  next: response => {
+	      console.log(response);
+	  },
+	  error: error => {
+	      console.log(error);
+	  }
+      }
 
-updateCity(code:City,id:any){
-  this.citiesserv.update(code,this.citiesobj.id).subscribe((citieserv: Country[]): void => {
-  },
-  (error: any): void => {
-    console.log(error);
-  })
+      )
 }
-updateCountry(code:Country,id:any){
-  this.countries.update(code,this.countryobj.id).subscribe((countries: Country[]): void => {
-    console.log(City,id);    
-  },
-  (error: any): void => {
-    console.log(error);
-  })
+    updateCountry(){
+      console.log("go",this.countryobj);
+    this.countries.update(this.countryobj,this.countryobj.id).subscribe({
+	next: response => {
+	    console.log(response);
+	},
+	error: error => {
+	    console.log(error);
+	}
+    }
+  )
 }
 
 listAllCites(){

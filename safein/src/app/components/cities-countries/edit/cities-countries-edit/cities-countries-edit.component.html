@@ -40,10 +40,12 @@
                     </div>
 
                     <div class="col-sm-7">
-                        <select class="form-select form-select-sm" aria-label="form-select-sm example" #customercontry
-                            name="citiescountryname" [(ngModel)]="citiesobj" [ngModelOptions]="{standalone:true}">
-                            <option [ngValue]="citiesobj" *ngFor="let countryelem of countrylist">
-                                {{citiesobj.country.countryName}}</option>
+			    <select class="form-select form-select-sm" id="inputCountryName"
+                            aria-label="form-select-sm example" name="countrynameselect" #countryName
+                            [(ngModel)]="countryobjForCity">
+                            <option [ngValue]="contry" *ngFor="let contry of countrylist"  [selected]="citiesobj.country.id === contry.id">
+                                {{ contry.countryName }}
+                            </option>
                         </select>
                     </div>
                 </div>
@@ -68,7 +70,7 @@
                 <div class="row g-2 mb-1 align-items-center">
                     <div class="col-auto col-sm-12">
                         <button type="button" class="btn btn-secondary btn-lg button_1"
-                            (click)="updateCity(this.citiesobj,citiesobj.id)">Update City</button>
+                            (click)="updateCity()">Update City</button>
                     </div>
                 </div>
 
@@ -96,11 +98,11 @@
                 <!-- Select a country  name  -->
                 <div class="row g-1 mb-1 align-items-center">
                     <div class="col-sm-4">
-                        <label for="inputCountryName" class="col-form-label">Country Name:</label>
+                        <label for="inputCountryNameOficial" class="col-form-label">Country Name:</label>
                     </div>
                     <div class="col-sm-7">
-                        <select class="form-select form-select-sm" id="inputCountryName"
-                            aria-label="form-select-sm example" name="countryname" #countryName
+                        <select class="form-select form-select-sm" id="inputCountryNameOficial"
+                            aria-label="form-select-sm example" name="countrynameOficial" #countryName
                             [(ngModel)]="countryobj">
                             <option [ngValue]="contry" *ngFor="let contry of countrylist">
                                 {{ contry.countryName }}
@@ -118,7 +120,7 @@
                         <label for="inputCountryName" class="col-form-label">Country Name: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputinputCountryName" class="form-control" #countryName
+                        <input type="text" id="inputinputCountryName" class="form-control" name="inputinputCountryName" #countryName
                             [(ngModel)]="countryobj.countryName" value="{{countryobj.countryName}}">
                     </div>
                 </div>
@@ -129,7 +131,7 @@
                         <label for="inputCountryCode" class="col-form-label">Country Code: </label>
                     </div>
                     <div class="col-6">
-                        <input type="text" id="inputinputCountryCode" class="form-control" #countryCode
+                        <input type="text" id="inputinputCountryCode" class="form-control" name="inputinputCountryCode" #countryCode
                             [(ngModel)]="countryobj.countryCode" value="{{countryobj.countryCode}}">
                     </div>
                 </div>
@@ -156,10 +158,13 @@
                                 name="countrysituation1">{{countryelem.situation}}</option>
                         </select> -->
                         <select class="form-select form-select-sm" aria-label="form-select-sm example"
-                            #countrysituation name="countrysituation" [(ngModel)]="countryobj"
-                            [ngModelOptions]="{standalone:true}">
-                            <option [ngValue]="countryobj" *ngFor="let countryelem of countrylist"
-                                name="countrysituation2">{{countryelem.situation}}</option>
+                            #countrysituation name="countrysituation" [(ngModel)]="countryobj.situation">
+                          <option value="Tension Between Countries">Tension Between Countries</option>
+			  <option value="Risk of war">Risk of war</option>
+			  <option value="War">War</option>
+			  <option value="Political instability">Political instability</option>
+			  <option value="Natural Disaster">Natural Disaster</option>
+			  <option value="Peace">Peace</option>
                         </select>
                     </div>
                 </div>
@@ -171,7 +176,7 @@
                 <div class="row mb-3 mt- 3align-items-center">
                     <div class="col-sm-12">
                         <button type="button" class="btn btn-secondary btn-lg button_1"
-                            (click)="updateCountry(this.countryobj,this.countryobj.id)">Update Country</button>
+                            (click)="updateCountry()">Update Country</button>
                     </div>
                 </div>
 
