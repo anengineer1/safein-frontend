@@ -27,32 +27,41 @@ export class RoomHotelsDeleteComponent implements OnInit {
 
 	getAllHotels(): void {
 		this.hotelsService.listAllHotels().subscribe(
-			{
-				next: (hotels: Hotel[]) => {
-					this.hotelList = hotels;
-				},
-				error: error => {
-					console.log(error);
-				}
+			(hotelsService: Hotel[]): void => {
+			  this.hotelList = hotelsService;
+			  console.log(this.hotelList);
+			},
+			(error: any): void => {console.log(error);
 			}
-		)
+		  )
 	}
 
 	getAllRooms(): void {
 		this.roomsService.listAllRooms().subscribe(
-			{
-				next: (rooms: Room[]) => {
-					this.roomsList = rooms;
-					console.log(this.roomsList);
-				}
+			(roomsService: Room[]): void => {
+			  this.roomsList = roomsService;
+			  console.log(this.roomsList)
+			},
+			(error: any): void => {console.log(error);
 			}
-		)
+		  )
 	}
 
 	/* Delete Hotel*/
 	deleteHotel() {
+/* 
+		this.countriesService.deleteCountry(this.country, this.country.id).subscribe(
+			response => {
+			  console.log(response);
+			  alert("Country  "+ this.country.countryName +" deleted successfully");
+			},
+			(error: any): void => {
+			  console.log(error);
+			}) */
+
+
 		console.log("delete " + this.currentHotel, this.currentHotel.id);
-		this.hotelsService.deleteHotel(this.currentHotel, this.currentHotel.id).subscribe((hotel: Hotel[]): void => {
+		this.hotelsService.deleteHotel(this.currentHotel, this.currentHotel.id).subscribe(response => {
 			alert("Hotel : "+ this.currentHotel.name +" deleted successfully");
 		},
 			(error: any): void => {
@@ -63,6 +72,17 @@ export class RoomHotelsDeleteComponent implements OnInit {
 
 	/* Delete Hotel*/
 	deleteRoom() {
+
+		this.roomsService.deleteRoom(this.currentRoom, this.currentRoom.id).subscribe(
+			response => {
+			  //console.log(response);
+			  alert("Room  :"+ this.currentRoom.code +" deleted successfully");
+			},
+			(error: any): void => {
+			  console.log(error);
+			})
+			
+		/* 
 		console.log("delete " + this.currentRoom, this.currentRoom.id);
 		this.roomsService.deleteRoom(this.currentRoom, this.currentRoom.id).subscribe((room: Room[]): void => {
 			alert("Room  :"+ this.currentRoom.code +" deleted successfully");
@@ -71,6 +91,7 @@ export class RoomHotelsDeleteComponent implements OnInit {
 				console.log(error);
 				alert("Error deleting Room)");
 			})
+		}) */
 	}
 
 }

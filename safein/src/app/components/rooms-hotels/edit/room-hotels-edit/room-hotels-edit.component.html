@@ -69,12 +69,9 @@
 						<label for="inputhotelsecurity" class="col-form-label">Security Level:</label>
 					</div>
 					<div class="col-12">
-						<select class="form-select form-select-sm" aria-label="form-select-sm example" #inputhotelsecurity
+						<input class="form-select form-select-sm" aria-label="form-select-sm example" name="seclevel"
+						#inputhotelsecurity
 							name="inputhotelsecurity" [(ngModel)]="currentHotel.securityLevel">
-							<option value="Diplomatic coverage and private security">Diplomatic coverage and private security</option>
-							<option value="Private security">Private security</option>
-							<option value="Diplomatic coverage">Diplomatic coverage</option>
-						</select>
 					</div>
 				</div>
 				<!-- EnergySuficient  -->
