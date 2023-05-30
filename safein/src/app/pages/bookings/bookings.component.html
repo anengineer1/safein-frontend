@@ -1,6 +1,6 @@
 <div class="container-fluid g-0">
 	<div class="row">
-		<div class="col-md-5 p-2 m-2">
+		<div [ngClass]="{'col-md-11 p-3 m-2': userRole === 'user', 'col-md-5 p-2 m-2': userRole !== 'user'}">
 			<div class="rigth__container">
 				<app-bookings-viewer-column></app-bookings-viewer-column>
 			</div>
@@ -8,10 +8,12 @@
 
 		<div class="col-1"></div>
 
-		<div class="col-md-5 p-2 m-2 ">
+		<div class="col-md-5 p-2 m-2 " *ngIf="userRole == 'admin' || userRole == 'editor'">
+
 			<div class="left__container">
 				<app-bookings-create-column></app-bookings-create-column>
 			</div>
+
 		</div>
 	</div>
 </div>

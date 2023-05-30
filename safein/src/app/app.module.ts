@@ -57,6 +57,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { authInterceptorProvider } from './_helpers/auth.interceptor';
 import { UserUpdateComponent } from './components/user-account/user-update/user-update.component';
 import { DatePipe } from '@angular/common';
+import { AuthImplementationService } from './_services/auth-implementation.service';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -110,6 +112,7 @@ import { DatePipe } from '@angular/common';
 	RoomHotelsViewerCountriesComponent,
 	RoomHotelsViewerHotelsComponent,
 	RoomHotelsViewerRoomsComponent,
+  AboutUsComponent,
   ],
   imports: [
     HttpClientModule,
@@ -119,7 +122,8 @@ import { DatePipe } from '@angular/common';
   ],
  providers: [
      authInterceptorProvider,
-     DatePipe
+     DatePipe,
+     AuthImplementationService
   ],
   bootstrap: [AppComponent]
 })

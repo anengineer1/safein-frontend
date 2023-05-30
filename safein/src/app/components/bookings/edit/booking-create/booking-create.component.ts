@@ -16,7 +16,7 @@ import { HotelsService } from 'src/app/_services/hotels.service';
 import { TokenStorageService } from 'src/app/_services/auth/token-storage.service';
 import { Suser } from 'src/app/entityclasses/suser';
 import { UserService } from 'src/app/_services/user.service';
-import { NavbarComponent } from '../../../../../../../../eilmadc-c5-ud35-components/src/app/navbar/navbar.component';
+import { NavbarComponent } from 'src/app/components/navigation/navbar/navbar.component';
 
 @Component({
   selector: 'app-booking-create',

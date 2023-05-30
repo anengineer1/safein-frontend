@@ -1,29 +1,15 @@
 <nav class="navbar py-0 nav_hidden">
-  <div class="position-relative" id="navbarNav">
-    <div
-      class="d-flex flex-column bg-secondary align-items-center collapse collapse-horizontal float-left"
-      style="width: 4rem; height: 100vh"
-    >
-      <div class="border-top align-items-center">
-        <a
-          class="btn justify-content-center btn__navbar__custom border-bottom"
-          data-bs-toggle="offcanvas"
-          href="#offcanvasExample"
-          role="button"
-          aria-controls="offcanvasExample"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="black"
-            class="bi bi-list"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            />
+  <div ass="position-relative" id="navbarNav">
+    <div class="d-flex flex-column  bg-secondary align-items-center collapse collapse-horizontal float-left"
+      style="width: 4rem; height: 100vh;">
+
+      <div class="border-top align-items-center ">
+        <a class="btn justify-content-center btn__navbar__custom border-bottom" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+          aria-controls="offcanvasExample">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
           </svg>
         </a>
       </div>
@@ -130,6 +116,18 @@
             </svg>
           </a>
         </div>
+
+        <!-- ABOUT US -->
+        <div class="nav-item ">
+          <a href="#" class="nav-link py-3" title="cities-countries" data-bs-toggle="collapse"
+            data-bs-placement="right" routerLink="/workingspace/aboutus" routerLinkActive="activate">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
+              <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+              <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            </svg>
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -137,65 +135,33 @@
 
 <!------Se muetra al desplegar ------>
 
-<div
-  class="offcanvas offcanvas-start"
-  tabindex="-1"
-  id="offcanvasExample"
-  aria-labelledby="offcanvasExampleLabel"
->
+<div class="offcanvas offcanvas-start bg-secondary" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Safein</h5>
-    <button
-      type="button"
-      class="btn-close text-reset"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
+    <a class="navbar-brand d-block g-0 ms-1 py-0 align-items-center center-block" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+    <img src="../../../../assets/logo/Logo_menu.png" alt="" width="54" height="57"
+        class="d-inline-block align-text-top ">
+</a>
     <div>
-      <div class="nav-item">
-        <a
-          href="#"
-          class="nav-link py-3"
-          title="bookings"
-          data-bs-toggle="collapse"
-          data-bs-placement="left"
-          routerLink="/workingspace/bookings"
-          routerLinkActive="activate"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="black"
-            class="bi bi-airplane-engines"
-            viewBox="0 0 16 16"
-          >
+
+      <div class="nav-item ">
+        <a href="#" class="nav-link py-3 " title="bookings" data-bs-toggle="collapse" data-bs-placement="left" routerLink="/workingspace/bookings" routerLinkActive="activate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-airplane-engines m-2"
+            viewBox="0 0 16 16" >
             <path
               d="M8 0c-.787 0-1.292.592-1.572 1.151A4.347 4.347 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0ZM7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1c.213 0 .458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5.5 0 0 0-.576-.411L1 11.41v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 7 7V3Z"
             /></svg
           ><span>Bookings</span>
         </a>
       </div>
-      <div class="nav-item">
-        <a
-          href="#"
-          class="nav-link py-3"
-          title="customers"
-          data-bs-toggle="collapse"
-          data-bs-placement="right"
-          routerLink="/workingspace/customers"
-          routerLinkActive="activate"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="black"
-            class="bi bi-people-fill"
-            viewBox="0 0 16 16"
-          >
+
+      <div class="nav-item ">
+        <a href="#" class="nav-link py-3" title="customers" data-bs-toggle="collapse" data-bs-placement="right" routerLink="/workingspace/customers" routerLinkActive="activate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-people-fill m-2"
+            viewBox="0 0 16 16">
             <path
               d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
             /></svg
@@ -203,24 +169,11 @@
         </a>
       </div>
 
-      <div class="nav-item">
-        <a
-          href="#"
-          class="nav-link py-3"
-          title="rooms"
-          data-bs-toggle="collapse"
-          data-bs-placement="right"
-          routerLink="/workingspace/rooms-hotels"
-          routerLinkActive="activate"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="black"
-            class="bi bi-door-closed"
-            viewBox="0 0 16 16"
-          >
+      <div class="nav-item  ">
+        <a href="#" class="nav-link py-3" title="rooms" data-bs-toggle="collapse"
+          data-bs-placement="right" routerLink="/workingspace/rooms-hotels" routerLinkActive="activate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-door-closed m-2"
+            viewBox="0 0 16 16">
             <path
               d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"
             />
@@ -228,45 +181,33 @@
           ><span>rooms-hotels</span>
         </a>
       </div>
-      <div class="nav-item">
-        <a
-          href="#"
-          class="nav-link py-3"
-          title="cities-countries"
-          data-bs-toggle="collapse"
-          data-bs-placement="right"
-          routerLink="/workingspace/cities-countries"
-          routerLinkActive="activate"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="black"
-            class="bi bi-buildings"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022ZM6 8.694 1 10.36V15h5V8.694ZM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15Z"
-            />
-            <path
-              d="M2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-2 2h1v1H2v-1Zm2 0h1v1H4v-1Zm4-4h1v1H8V9Zm2 0h1v1h-1V9Zm-2 2h1v1H8v-1Zm2 0h1v1h-1v-1Zm2-2h1v1h-1V9Zm0 2h1v1h-1v-1ZM8 7h1v1H8V7Zm2 0h1v1h-1V7Zm2 0h1v1h-1V7ZM8 5h1v1H8V5Zm2 0h1v1h-1V5Zm2 0h1v1h-1V5Zm0-2h1v1h-1V3Z"
-            /></svg
-          ><span>cities-countries</span>
+
+      <div class="nav-item ">
+        <a href="#" class="nav-link py-3" title="cities-countries" data-bs-toggle="collapse"
+            data-bs-placement="right" routerLink="/workingspace/cities-countries" routerLinkActive="activate">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-buildings m-2"
+              viewBox="0 0 16 16">
+              <path
+                d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022ZM6 8.694 1 10.36V15h5V8.694ZM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15Z" />
+              <path
+                d="M2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-2 2h1v1H2v-1Zm2 0h1v1H4v-1Zm4-4h1v1H8V9Zm2 0h1v1h-1V9Zm-2 2h1v1H8v-1Zm2 0h1v1h-1v-1Zm2-2h1v1h-1V9Zm0 2h1v1h-1v-1ZM8 7h1v1H8V7Zm2 0h1v1h-1V7Zm2 0h1v1h-1V7ZM8 5h1v1H8V5Zm2 0h1v1h-1V5Zm2 0h1v1h-1V5Zm0-2h1v1h-1V3Z" />
+            </svg><span>cities-countries</span>
+          </a>
+      </div>
+      <div class="nav-item ">
+        <a href="#" class="nav-link py-3" title="About us" data-bs-toggle="collapse"
+          data-bs-placement="right" routerLink="/workingspace/aboutus" routerLinkActive="activate">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person m-2" viewBox="0 0 16 16">
+            <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+            <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          </svg><span>About us</span>
         </a>
       </div>
-      <div class="nav-item">
-        <a
-          href="#"
-          class="nav-link py-3"
-          title="hoja de estilos"
-          data-bs-toggle="collapse"
-          data-bs-placement="right"
-          routerLink="/workingspace/stylesheet"
-          routerLinkActive="activate"
-        >
-          <span>Hoja de estilos</span>
-        </a>
+      <div class="nav-item ">
+        <a href="#" class="nav-link m-2" title="hoja de estilos" data-bs-toggle="collapse"
+            data-bs-placement="right" routerLink="/workingspace/stylesheet" routerLinkActive="activate">
+           <span>Hoja de estilos</span>
+          </a>
       </div>
     </div>
   </div>

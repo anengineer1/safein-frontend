@@ -1,5 +1,7 @@
-# safein Project (Frontend)
-Safein's frontend
+# Safein Project (Frontend)
+SafeIn is a web application that manages special bookings that focuses on press media
+people(journalists, war correspondents,others..). SafeIn provides the security they need as
+there are some countries whose situation can endanger their live or lifestyle.
 ## Technology Stack 🖥
 We used: 
 - Angular CLI
