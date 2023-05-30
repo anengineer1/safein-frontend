@@ -37,8 +37,8 @@ export class CustomersService {
 			.pipe(catchError(this.handleError));
 	}
 
-	delete(code: Customer, id: any): Observable<any> {
-		console.log(`${this.baseApiUrl}/${id}`, code);
+	delete(id: any): Observable<any> {
+		console.log(`${this.baseApiUrl}/${id}`, id);
 		return this.httpClient
 			.delete(`${this.baseApiUrl}/${id}`)
 			.pipe(catchError(this.handleError));

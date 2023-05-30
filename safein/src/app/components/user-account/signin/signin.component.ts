@@ -74,5 +74,9 @@ export class SigninComponent implements OnInit {
     window.location.reload();
   }
 
+  recoverPassword(){
+    alert ("Please contact : \n - Your local administrator to recover your password or \n - Contact with admin@safein.net \n Thank you in advance");
+  }
+
 }
 

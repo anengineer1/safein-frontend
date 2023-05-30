@@ -1,8 +1,112 @@
 
+/*---------------------RESPONSIVE- Media Queries--------------------*/
+
+/* On screens that are 992px wide or less, the background color is transparent */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: transparent;
+  }
+}
+
+/* On screens that are 600px wide or less, the background color is transparent */
+@media screen and (max-width: 640px) {
+
+  html{
+    height: 100vh;
+    display: flex;
+    width: 360px;
+    background: #414141 !important;
+  }
+
+
+  .container{
+    font-size: smaller;
+    display: flex table-column;
+    margin:auto;
+    padding: auto;
+    margin-right:0px;
+    width: 100%;
+}
+
+ .navbar{
+  display:row;
+  flex-wrap: initial;
+  width: 360px;
+ }
+
+.nav_hidden{
+  visibility: hidden;
+  display: none;
+}
+
+.row{
+  display:flex-end;
+  margin:0px;
+  padding: 0px;
+}
+
+.col-md-5, .m-2{ 
+  margin-left: 0px !important;
+  margin-right: 1px !important;
+}
+
+
+
+button{
+  font-size: 12px !important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.btn{
+  font-size: 12px !important;
+}
+
+table{
+  font-size:14px;
+}
+
+.col-form-label , label {
+  font-size: 14px !important;
+  height: fit-content !important;
+}
+
+input, select {
+  margin-left:10%;
+  font-size: 12px !important;
+  height: fit-content !important;
+}
+
+.btn{--bs-btn-padding-y: 0.100rem;}
+.nav-tabs, .nav-profile-tabs{
+  padding: 0.100rem;
+  font-size: 14px !important;
+  font-weight: bold;
+}
+
+h3,h4{
+  font-size: 15px !important;
+}
+
+//Login Form
+.custom_1{
+  width: 300px !important;
+  margin-left: 5%;
+  margin-bottom: 0px !important;
+}
+
+.form__signin{
+  margin-right: 11% !important;
+}
+
+}
+
+/*---------------------RESPONSIVE- Media Queries WEB--------------------*/
+
 html{
   //background: url('../assets/images/mapamundi_background.png') no-repeat;
   background: url('../assets/images/image_big.png') repeat;
-  background-size: 95%;
+  background-size: 100%;
   height:100vh;
   }
 
