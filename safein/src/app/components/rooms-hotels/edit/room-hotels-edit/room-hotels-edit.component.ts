@@ -85,7 +85,10 @@ export class RoomHotelsEditComponent implements OnInit {
 				console.log(response);
 			},
 
-			error: error => { console.log(error) }
+			error: error => { 
+				console.log(error);
+				alert('Error updating room');
+			 }
 		}
 		)
 	}
@@ -102,7 +105,8 @@ export class RoomHotelsEditComponent implements OnInit {
 				console.log(response);
 			},
 
-			error: error => { console.log(error) }
+			error: error => { console.log(error);
+				alert('Error updating room'); }
 		}
 		)
 	}

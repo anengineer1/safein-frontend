@@ -57,6 +57,7 @@ export class RoomHotelsDeleteComponent implements OnInit {
 		},
 			(error: any): void => {
 				console.log(error);
+				alert("Error deleting hotel)");
 			})
 	}
 
@@ -68,6 +69,7 @@ export class RoomHotelsDeleteComponent implements OnInit {
 		},
 			(error: any): void => {
 				console.log(error);
+				alert("Error deleting Room)");
 			})
 	}
 
